@@ -1,7 +1,7 @@
 require 'etap.rb'
 
 
-module Etapper::Server
+module Etapper
 
 class MessagingService
   # SYNOPSIS

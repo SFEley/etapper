@@ -3,7 +3,7 @@ require 'etapServant.rb'
 require 'etapMappingRegistry.rb'
 require 'soap/rpc/standaloneServer'
 
-module Etapper; module Server
+module Etapper
 
 class MessagingService
   NsService = "etapestryAPI/service"
@@ -12,7 +12,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "addAccount"),
       "",
       "addAccount",
-      [ ["in", "Account_1", ["Etapper::Server::Account", "etapestryAPI/service", "Account"]],
+      [ ["in", "Account_1", ["Etapper::Account", "etapestryAPI/service", "Account"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
@@ -22,7 +22,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "addAndProcessGift"),
       "",
       "addAndProcessGift",
-      [ ["in", "Gift_1", ["Etapper::Server::Gift", "etapestryAPI/service", "Gift"]],
+      [ ["in", "Gift_1", ["Etapper::Gift", "etapestryAPI/service", "Gift"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
@@ -32,7 +32,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "addAndProcessPayment"),
       "",
       "addAndProcessPayment",
-      [ ["in", "Payment_1", ["Etapper::Server::Payment", "etapestryAPI/service", "Payment"]],
+      [ ["in", "Payment_1", ["Etapper::Payment", "etapestryAPI/service", "Payment"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
@@ -42,7 +42,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "addContact"),
       "",
       "addContact",
-      [ ["in", "Contact_1", ["Etapper::Server::Contact", "etapestryAPI/service", "Contact"]],
+      [ ["in", "Contact_1", ["Etapper::Contact", "etapestryAPI/service", "Contact"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
@@ -52,7 +52,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "addDisbursement"),
       "",
       "addDisbursement",
-      [ ["in", "Disbursement_1", ["Etapper::Server::Disbursement", "etapestryAPI/service", "Disbursement"]],
+      [ ["in", "Disbursement_1", ["Etapper::Disbursement", "etapestryAPI/service", "Disbursement"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
@@ -62,7 +62,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "addGift"),
       "",
       "addGift",
-      [ ["in", "Gift_1", ["Etapper::Server::Gift", "etapestryAPI/service", "Gift"]],
+      [ ["in", "Gift_1", ["Etapper::Gift", "etapestryAPI/service", "Gift"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
@@ -72,8 +72,8 @@ class MessagingService
     [ XSD::QName.new(NsService, "addLoginCredentials"),
       "",
       "addLoginCredentials",
-      [ ["in", "LoginCredentialsRequest_1", ["Etapper::Server::LoginCredentialsRequest", "etapestryAPI/service", "LoginCredentialsRequest"]],
-        ["retval", "result", ["Etapper::Server::LoginCredentialsResponse", "etapestryAPI/service", "LoginCredentialsResponse"]] ],
+      [ ["in", "LoginCredentialsRequest_1", ["Etapper::LoginCredentialsRequest", "etapestryAPI/service", "LoginCredentialsRequest"]],
+        ["retval", "result", ["Etapper::LoginCredentialsResponse", "etapestryAPI/service", "LoginCredentialsResponse"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -81,7 +81,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "addNote"),
       "",
       "addNote",
-      [ ["in", "Note_1", ["Etapper::Server::Note", "etapestryAPI/service", "Note"]],
+      [ ["in", "Note_1", ["Etapper::Note", "etapestryAPI/service", "Note"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
@@ -91,8 +91,8 @@ class MessagingService
     [ XSD::QName.new(NsService, "addOutlookIntegrationEmail"),
       "",
       "addOutlookIntegrationEmail",
-      [ ["in", "OutlookIntegrationEmail_1", ["Etapper::Server::OutlookIntegrationEmail", "etapestryAPI/service", "OutlookIntegrationEmail"]],
-        ["in", "arrayOfAccount_2", ["Etapper::Server::ArrayOfAccount", "etapestryAPI/service", "ArrayOfAccount"]],
+      [ ["in", "OutlookIntegrationEmail_1", ["Etapper::OutlookIntegrationEmail", "etapestryAPI/service", "OutlookIntegrationEmail"]],
+        ["in", "arrayOfAccount_2", ["Etapper::ArrayOfAccount", "etapestryAPI/service", "ArrayOfAccount"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
@@ -123,7 +123,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "addPayment"),
       "",
       "addPayment",
-      [ ["in", "Payment_1", ["Etapper::Server::Payment", "etapestryAPI/service", "Payment"]],
+      [ ["in", "Payment_1", ["Etapper::Payment", "etapestryAPI/service", "Payment"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
@@ -133,7 +133,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "addPledge"),
       "",
       "addPledge",
-      [ ["in", "Pledge_1", ["Etapper::Server::Pledge", "etapestryAPI/service", "Pledge"]],
+      [ ["in", "Pledge_1", ["Etapper::Pledge", "etapestryAPI/service", "Pledge"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
@@ -143,7 +143,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "addRecurringGift"),
       "",
       "addRecurringGift",
-      [ ["in", "RecurringGift_1", ["Etapper::Server::RecurringGift", "etapestryAPI/service", "RecurringGift"]],
+      [ ["in", "RecurringGift_1", ["Etapper::RecurringGift", "etapestryAPI/service", "RecurringGift"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
@@ -153,7 +153,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "addSoftCredit"),
       "",
       "addSoftCredit",
-      [ ["in", "SoftCredit_1", ["Etapper::Server::SoftCredit", "etapestryAPI/service", "SoftCredit"]],
+      [ ["in", "SoftCredit_1", ["Etapper::SoftCredit", "etapestryAPI/service", "SoftCredit"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
@@ -163,7 +163,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "connect"),
       "",
       "connect",
-      [ ["in", "ConnectRequest_1", ["Etapper::Server::ConnectRequest", "etapestryAPI/service", "ConnectRequest"]],
+      [ ["in", "ConnectRequest_1", ["Etapper::ConnectRequest", "etapestryAPI/service", "ConnectRequest"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
@@ -172,7 +172,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "externalLogin"),
       "",
       "externalLogin",
-      [ ["in", "ExternalLoginRequest_1", ["Etapper::Server::ExternalLoginRequest", "etapestryAPI/service", "ExternalLoginRequest"]],
+      [ ["in", "ExternalLoginRequest_1", ["Etapper::ExternalLoginRequest", "etapestryAPI/service", "ExternalLoginRequest"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
@@ -184,7 +184,7 @@ class MessagingService
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
         ["in", "String_2", ["::SOAP::SOAPString"]],
         ["in", "boolean_3", ["::SOAP::SOAPBoolean"]],
-        ["retval", "result", ["Etapper::Server::ArrayOfAccount", "etapestryAPI/service", "ArrayOfAccount"]] ],
+        ["retval", "result", ["Etapper::ArrayOfAccount", "etapestryAPI/service", "ArrayOfAccount"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -193,7 +193,7 @@ class MessagingService
       "",
       "getAccount",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::Account", "etapestryAPI/service", "Account"]] ],
+        ["retval", "result", ["Etapper::Account", "etapestryAPI/service", "Account"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -202,7 +202,7 @@ class MessagingService
       "",
       "getAccountById",
       [ ["in", "int_1", ["::SOAP::SOAPInt"]],
-        ["retval", "result", ["Etapper::Server::Account", "etapestryAPI/service", "Account"]] ],
+        ["retval", "result", ["Etapper::Account", "etapestryAPI/service", "Account"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -213,7 +213,7 @@ class MessagingService
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
         ["in", "String_2", ["::SOAP::SOAPString"]],
         ["in", "boolean_3", ["::SOAP::SOAPBoolean"]],
-        ["retval", "result", ["Etapper::Server::Account", "etapestryAPI/service", "Account"]] ],
+        ["retval", "result", ["Etapper::Account", "etapestryAPI/service", "Account"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -221,8 +221,8 @@ class MessagingService
     [ XSD::QName.new(NsService, "getAccountByUniqueDefinedValue"),
       "",
       "getAccountByUniqueDefinedValue",
-      [ ["in", "DefinedValue_1", ["Etapper::Server::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
-        ["retval", "result", ["Etapper::Server::Account", "etapestryAPI/service", "Account"]] ],
+      [ ["in", "DefinedValue_1", ["Etapper::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
+        ["retval", "result", ["Etapper::Account", "etapestryAPI/service", "Account"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -231,7 +231,7 @@ class MessagingService
       "",
       "getAccountFromPhoneAThonList",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::Account", "etapestryAPI/service", "Account"]] ],
+        ["retval", "result", ["Etapper::Account", "etapestryAPI/service", "Account"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -240,7 +240,7 @@ class MessagingService
       "",
       "getAccountInvolvePrivacySettings",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::Account", "etapestryAPI/service", "Account"]] ],
+        ["retval", "result", ["Etapper::Account", "etapestryAPI/service", "Account"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -248,7 +248,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getAccountRef"),
       "",
       "getAccountRef",
-      [ ["in", "DefinedValue_1", ["Etapper::Server::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
+      [ ["in", "DefinedValue_1", ["Etapper::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
@@ -258,7 +258,7 @@ class MessagingService
       "",
       "getApproaches",
       [ ["in", "boolean_1", ["::SOAP::SOAPBoolean"]],
-        ["retval", "result", ["Etapper::Server::ArrayOfstring", "etapestryAPI/service", "ArrayOfstring"]] ],
+        ["retval", "result", ["Etapper::ArrayOfstring", "etapestryAPI/service", "ArrayOfstring"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -267,7 +267,7 @@ class MessagingService
       "",
       "getCachedCartElements",
       [ ["in", "int_1", ["::SOAP::SOAPInt"]],
-        ["retval", "result", ["Etapper::Server::PagedCartElementsResponse", "etapestryAPI/service", "PagedCartElementsResponse"]] ],
+        ["retval", "result", ["Etapper::PagedCartElementsResponse", "etapestryAPI/service", "PagedCartElementsResponse"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -276,7 +276,7 @@ class MessagingService
       "",
       "getCachedDefinedFields",
       [ ["in", "int_1", ["::SOAP::SOAPInt"]],
-        ["retval", "result", ["Etapper::Server::PagedDefinedFieldsResponse", "etapestryAPI/service", "PagedDefinedFieldsResponse"]] ],
+        ["retval", "result", ["Etapper::PagedDefinedFieldsResponse", "etapestryAPI/service", "PagedDefinedFieldsResponse"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -285,7 +285,7 @@ class MessagingService
       "",
       "getCachedJournalEntries",
       [ ["in", "int_1", ["::SOAP::SOAPInt"]],
-        ["retval", "result", ["Etapper::Server::PagedJournalEntriesResponse", "etapestryAPI/service", "PagedJournalEntriesResponse"]] ],
+        ["retval", "result", ["Etapper::PagedJournalEntriesResponse", "etapestryAPI/service", "PagedJournalEntriesResponse"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -294,7 +294,7 @@ class MessagingService
       "",
       "getCachedQueryResults",
       [ ["in", "int_1", ["::SOAP::SOAPInt"]],
-        ["retval", "result", ["Etapper::Server::PagedQueryResultsResponse", "etapestryAPI/service", "PagedQueryResultsResponse"]] ],
+        ["retval", "result", ["Etapper::PagedQueryResultsResponse", "etapestryAPI/service", "PagedQueryResultsResponse"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -303,7 +303,7 @@ class MessagingService
       "",
       "getCalendarItem",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::CalendarItem", "etapestryAPI/service", "CalendarItem"]] ],
+        ["retval", "result", ["Etapper::CalendarItem", "etapestryAPI/service", "CalendarItem"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -312,7 +312,7 @@ class MessagingService
       "",
       "getCampaigns",
       [ ["in", "boolean_1", ["::SOAP::SOAPBoolean"]],
-        ["retval", "result", ["Etapper::Server::ArrayOfstring", "etapestryAPI/service", "ArrayOfstring"]] ],
+        ["retval", "result", ["Etapper::ArrayOfstring", "etapestryAPI/service", "ArrayOfstring"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -321,7 +321,7 @@ class MessagingService
       "",
       "getCartCategory",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::CartCategory", "etapestryAPI/service", "CartCategory"]] ],
+        ["retval", "result", ["Etapper::CartCategory", "etapestryAPI/service", "CartCategory"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -329,8 +329,8 @@ class MessagingService
     [ XSD::QName.new(NsService, "getCartElements"),
       "",
       "getCartElements",
-      [ ["in", "PagedCartElementsRequest_1", ["Etapper::Server::PagedCartElementsRequest", "etapestryAPI/service", "PagedCartElementsRequest"]],
-        ["retval", "result", ["Etapper::Server::PagedCartElementsResponse", "etapestryAPI/service", "PagedCartElementsResponse"]] ],
+      [ ["in", "PagedCartElementsRequest_1", ["Etapper::PagedCartElementsRequest", "etapestryAPI/service", "PagedCartElementsRequest"]],
+        ["retval", "result", ["Etapper::PagedCartElementsResponse", "etapestryAPI/service", "PagedCartElementsResponse"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -339,7 +339,7 @@ class MessagingService
       "",
       "getCartItem",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::CartItem", "etapestryAPI/service", "CartItem"]] ],
+        ["retval", "result", ["Etapper::CartItem", "etapestryAPI/service", "CartItem"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -348,7 +348,7 @@ class MessagingService
       "",
       "getCartPreferences",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::CartPreferences", "etapestryAPI/service", "CartPreferences"]] ],
+        ["retval", "result", ["Etapper::CartPreferences", "etapestryAPI/service", "CartPreferences"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -357,7 +357,7 @@ class MessagingService
       "",
       "getContact",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::Contact", "etapestryAPI/service", "Contact"]] ],
+        ["retval", "result", ["Etapper::Contact", "etapestryAPI/service", "Contact"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -365,8 +365,8 @@ class MessagingService
     [ XSD::QName.new(NsService, "getContactByUniqueDefinedValue"),
       "",
       "getContactByUniqueDefinedValue",
-      [ ["in", "DefinedValue_1", ["Etapper::Server::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
-        ["retval", "result", ["Etapper::Server::Contact", "etapestryAPI/service", "Contact"]] ],
+      [ ["in", "DefinedValue_1", ["Etapper::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
+        ["retval", "result", ["Etapper::Contact", "etapestryAPI/service", "Contact"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -374,7 +374,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getContactRef"),
       "",
       "getContactRef",
-      [ ["in", "DefinedValue_1", ["Etapper::Server::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
+      [ ["in", "DefinedValue_1", ["Etapper::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
@@ -384,7 +384,7 @@ class MessagingService
       "",
       "getDeclaration",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::Declaration", "etapestryAPI/service", "Declaration"]] ],
+        ["retval", "result", ["Etapper::Declaration", "etapestryAPI/service", "Declaration"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -394,7 +394,7 @@ class MessagingService
       "getDefinedField",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
-        ["retval", "result", ["Etapper::Server::DefinedField", "etapestryAPI/service", "DefinedField"]] ],
+        ["retval", "result", ["Etapper::DefinedField", "etapestryAPI/service", "DefinedField"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -402,8 +402,8 @@ class MessagingService
     [ XSD::QName.new(NsService, "getDefinedFields"),
       "",
       "getDefinedFields",
-      [ ["in", "PagedDefinedFieldsRequest_1", ["Etapper::Server::PagedDefinedFieldsRequest", "etapestryAPI/service", "PagedDefinedFieldsRequest"]],
-        ["retval", "result", ["Etapper::Server::PagedDefinedFieldsResponse", "etapestryAPI/service", "PagedDefinedFieldsResponse"]] ],
+      [ ["in", "PagedDefinedFieldsRequest_1", ["Etapper::PagedDefinedFieldsRequest", "etapestryAPI/service", "PagedDefinedFieldsRequest"]],
+        ["retval", "result", ["Etapper::PagedDefinedFieldsResponse", "etapestryAPI/service", "PagedDefinedFieldsResponse"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -412,7 +412,7 @@ class MessagingService
       "",
       "getDisbursement",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::Disbursement", "etapestryAPI/service", "Disbursement"]] ],
+        ["retval", "result", ["Etapper::Disbursement", "etapestryAPI/service", "Disbursement"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -420,7 +420,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getDonorLoginPreferences"),
       "",
       "getDonorLoginPreferences",
-      [ ["retval", "result", ["Etapper::Server::DonorLoginPreferences", "etapestryAPI/service", "DonorLoginPreferences"]] ],
+      [ ["retval", "result", ["Etapper::DonorLoginPreferences", "etapestryAPI/service", "DonorLoginPreferences"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -428,8 +428,8 @@ class MessagingService
     [ XSD::QName.new(NsService, "getDuplicateAccount"),
       "",
       "getDuplicateAccount",
-      [ ["in", "DuplicateAccountSearch_1", ["Etapper::Server::DuplicateAccountSearch", "etapestryAPI/service", "DuplicateAccountSearch"]],
-        ["retval", "result", ["Etapper::Server::Account", "etapestryAPI/service", "Account"]] ],
+      [ ["in", "DuplicateAccountSearch_1", ["Etapper::DuplicateAccountSearch", "etapestryAPI/service", "DuplicateAccountSearch"]],
+        ["retval", "result", ["Etapper::Account", "etapestryAPI/service", "Account"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -437,8 +437,8 @@ class MessagingService
     [ XSD::QName.new(NsService, "getDuplicateAccounts"),
       "",
       "getDuplicateAccounts",
-      [ ["in", "DuplicateAccountSearch_1", ["Etapper::Server::DuplicateAccountSearch", "etapestryAPI/service", "DuplicateAccountSearch"]],
-        ["retval", "result", ["Etapper::Server::ArrayOfAccount", "etapestryAPI/service", "ArrayOfAccount"]] ],
+      [ ["in", "DuplicateAccountSearch_1", ["Etapper::DuplicateAccountSearch", "etapestryAPI/service", "DuplicateAccountSearch"]],
+        ["retval", "result", ["Etapper::ArrayOfAccount", "etapestryAPI/service", "ArrayOfAccount"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -446,8 +446,8 @@ class MessagingService
     [ XSD::QName.new(NsService, "getDynamicQueryResults"),
       "",
       "getDynamicQueryResults",
-      [ ["in", "PagedDynamicQueryResultsRequest_1", ["Etapper::Server::PagedDynamicQueryResultsRequest", "etapestryAPI/service", "PagedDynamicQueryResultsRequest"]],
-        ["retval", "result", ["Etapper::Server::PagedQueryResultsResponse", "etapestryAPI/service", "PagedQueryResultsResponse"]] ],
+      [ ["in", "PagedDynamicQueryResultsRequest_1", ["Etapper::PagedDynamicQueryResultsRequest", "etapestryAPI/service", "PagedDynamicQueryResultsRequest"]],
+        ["retval", "result", ["Etapper::PagedQueryResultsResponse", "etapestryAPI/service", "PagedQueryResultsResponse"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -457,7 +457,7 @@ class MessagingService
       "getEntityRole",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
-        ["retval", "result", ["Etapper::Server::EntityRole", "etapestryAPI/service", "EntityRole"]] ],
+        ["retval", "result", ["Etapper::EntityRole", "etapestryAPI/service", "EntityRole"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -465,8 +465,8 @@ class MessagingService
     [ XSD::QName.new(NsService, "getExistingQueryResults"),
       "",
       "getExistingQueryResults",
-      [ ["in", "PagedExistingQueryResultsRequest_1", ["Etapper::Server::PagedExistingQueryResultsRequest", "etapestryAPI/service", "PagedExistingQueryResultsRequest"]],
-        ["retval", "result", ["Etapper::Server::PagedQueryResultsResponse", "etapestryAPI/service", "PagedQueryResultsResponse"]] ],
+      [ ["in", "PagedExistingQueryResultsRequest_1", ["Etapper::PagedExistingQueryResultsRequest", "etapestryAPI/service", "PagedExistingQueryResultsRequest"]],
+        ["retval", "result", ["Etapper::PagedQueryResultsResponse", "etapestryAPI/service", "PagedQueryResultsResponse"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -475,7 +475,7 @@ class MessagingService
       "",
       "getFunds",
       [ ["in", "boolean_1", ["::SOAP::SOAPBoolean"]],
-        ["retval", "result", ["Etapper::Server::ArrayOfstring", "etapestryAPI/service", "ArrayOfstring"]] ],
+        ["retval", "result", ["Etapper::ArrayOfstring", "etapestryAPI/service", "ArrayOfstring"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -484,7 +484,7 @@ class MessagingService
       "",
       "getGift",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::Gift", "etapestryAPI/service", "Gift"]] ],
+        ["retval", "result", ["Etapper::Gift", "etapestryAPI/service", "Gift"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -493,7 +493,7 @@ class MessagingService
       "",
       "getInvitation",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::Invitation", "etapestryAPI/service", "Invitation"]] ],
+        ["retval", "result", ["Etapper::Invitation", "etapestryAPI/service", "Invitation"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -501,8 +501,8 @@ class MessagingService
     [ XSD::QName.new(NsService, "getJournalEntries"),
       "",
       "getJournalEntries",
-      [ ["in", "PagedJournalEntriesRequest_1", ["Etapper::Server::PagedJournalEntriesRequest", "etapestryAPI/service", "PagedJournalEntriesRequest"]],
-        ["retval", "result", ["Etapper::Server::PagedJournalEntriesResponse", "etapestryAPI/service", "PagedJournalEntriesResponse"]] ],
+      [ ["in", "PagedJournalEntriesRequest_1", ["Etapper::PagedJournalEntriesRequest", "etapestryAPI/service", "PagedJournalEntriesRequest"]],
+        ["retval", "result", ["Etapper::PagedJournalEntriesResponse", "etapestryAPI/service", "PagedJournalEntriesResponse"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -511,7 +511,7 @@ class MessagingService
       "",
       "getLetters",
       [ ["in", "boolean_1", ["::SOAP::SOAPBoolean"]],
-        ["retval", "result", ["Etapper::Server::ArrayOfstring", "etapestryAPI/service", "ArrayOfstring"]] ],
+        ["retval", "result", ["Etapper::ArrayOfstring", "etapestryAPI/service", "ArrayOfstring"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -519,7 +519,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getMyAccount"),
       "",
       "getMyAccount",
-      [ ["retval", "result", ["Etapper::Server::Account", "etapestryAPI/service", "Account"]] ],
+      [ ["retval", "result", ["Etapper::Account", "etapestryAPI/service", "Account"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -529,7 +529,7 @@ class MessagingService
       "getMyAccountByPersonaType",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
-        ["retval", "result", ["Etapper::Server::Account", "etapestryAPI/service", "Account"]] ],
+        ["retval", "result", ["Etapper::Account", "etapestryAPI/service", "Account"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -537,7 +537,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getMyEntityRole"),
       "",
       "getMyEntityRole",
-      [ ["retval", "result", ["Etapper::Server::EntityRole", "etapestryAPI/service", "EntityRole"]] ],
+      [ ["retval", "result", ["Etapper::EntityRole", "etapestryAPI/service", "EntityRole"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -545,7 +545,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getMyJournalEntries"),
       "",
       "getMyJournalEntries",
-      [ ["retval", "result", ["Etapper::Server::Collection", "http://java.sun.com/jax-rpc-ri/internal", "collection"]] ],
+      [ ["retval", "result", ["Etapper::Collection", "http://java.sun.com/jax-rpc-ri/internal", "collection"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -553,7 +553,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getMyJournalSummary"),
       "",
       "getMyJournalSummary",
-      [ ["retval", "result", ["Etapper::Server::JournalSummary", "etapestryAPI/service", "JournalSummary"]] ],
+      [ ["retval", "result", ["Etapper::JournalSummary", "etapestryAPI/service", "JournalSummary"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -561,7 +561,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getMyPrivacyPreferences"),
       "",
       "getMyPrivacyPreferences",
-      [ ["retval", "result", ["Etapper::Server::PrivacyPreferences", "etapestryAPI/service", "PrivacyPreferences"]] ],
+      [ ["retval", "result", ["Etapper::PrivacyPreferences", "etapestryAPI/service", "PrivacyPreferences"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -569,7 +569,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getNextCartElements"),
       "",
       "getNextCartElements",
-      [ ["retval", "result", ["Etapper::Server::PagedCartElementsResponse", "etapestryAPI/service", "PagedCartElementsResponse"]] ],
+      [ ["retval", "result", ["Etapper::PagedCartElementsResponse", "etapestryAPI/service", "PagedCartElementsResponse"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -577,7 +577,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getNextDefinedFields"),
       "",
       "getNextDefinedFields",
-      [ ["retval", "result", ["Etapper::Server::PagedDefinedFieldsResponse", "etapestryAPI/service", "PagedDefinedFieldsResponse"]] ],
+      [ ["retval", "result", ["Etapper::PagedDefinedFieldsResponse", "etapestryAPI/service", "PagedDefinedFieldsResponse"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -585,7 +585,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getNextJournalEntries"),
       "",
       "getNextJournalEntries",
-      [ ["retval", "result", ["Etapper::Server::PagedJournalEntriesResponse", "etapestryAPI/service", "PagedJournalEntriesResponse"]] ],
+      [ ["retval", "result", ["Etapper::PagedJournalEntriesResponse", "etapestryAPI/service", "PagedJournalEntriesResponse"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -593,7 +593,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getNextQueryResults"),
       "",
       "getNextQueryResults",
-      [ ["retval", "result", ["Etapper::Server::PagedQueryResultsResponse", "etapestryAPI/service", "PagedQueryResultsResponse"]] ],
+      [ ["retval", "result", ["Etapper::PagedQueryResultsResponse", "etapestryAPI/service", "PagedQueryResultsResponse"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -602,7 +602,7 @@ class MessagingService
       "",
       "getNote",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::Note", "etapestryAPI/service", "Note"]] ],
+        ["retval", "result", ["Etapper::Note", "etapestryAPI/service", "Note"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -610,8 +610,8 @@ class MessagingService
     [ XSD::QName.new(NsService, "getNoteByUniqueDefinedValue"),
       "",
       "getNoteByUniqueDefinedValue",
-      [ ["in", "DefinedValue_1", ["Etapper::Server::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
-        ["retval", "result", ["Etapper::Server::Note", "etapestryAPI/service", "Note"]] ],
+      [ ["in", "DefinedValue_1", ["Etapper::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
+        ["retval", "result", ["Etapper::Note", "etapestryAPI/service", "Note"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -619,7 +619,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getNoteRef"),
       "",
       "getNoteRef",
-      [ ["in", "DefinedValue_1", ["Etapper::Server::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
+      [ ["in", "DefinedValue_1", ["Etapper::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
@@ -629,7 +629,7 @@ class MessagingService
       "",
       "getOrderItem",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::OrderItem", "etapestryAPI/service", "OrderItem"]] ],
+        ["retval", "result", ["Etapper::OrderItem", "etapestryAPI/service", "OrderItem"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -638,7 +638,7 @@ class MessagingService
       "",
       "getOrderShipping",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::OrderShipping", "etapestryAPI/service", "OrderShipping"]] ],
+        ["retval", "result", ["Etapper::OrderShipping", "etapestryAPI/service", "OrderShipping"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -647,7 +647,7 @@ class MessagingService
       "",
       "getOrderTax",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::OrderTax", "etapestryAPI/service", "OrderTax"]] ],
+        ["retval", "result", ["Etapper::OrderTax", "etapestryAPI/service", "OrderTax"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -655,7 +655,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getOrganizationPreferences"),
       "",
       "getOrganizationPreferences",
-      [ ["retval", "result", ["Etapper::Server::OrganizationPreferences", "etapestryAPI/service", "OrganizationPreferences"]] ],
+      [ ["retval", "result", ["Etapper::OrganizationPreferences", "etapestryAPI/service", "OrganizationPreferences"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -663,7 +663,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getOutlookIntegrationContactMethods"),
       "",
       "getOutlookIntegrationContactMethods",
-      [ ["retval", "result", ["Etapper::Server::ArrayOfDefinedValue", "etapestryAPI/service", "ArrayOfDefinedValue"]] ],
+      [ ["retval", "result", ["Etapper::ArrayOfDefinedValue", "etapestryAPI/service", "ArrayOfDefinedValue"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -680,7 +680,7 @@ class MessagingService
       "",
       "getPayment",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::Payment", "etapestryAPI/service", "Payment"]] ],
+        ["retval", "result", ["Etapper::Payment", "etapestryAPI/service", "Payment"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -689,7 +689,7 @@ class MessagingService
       "",
       "getPhoneAThonLists",
       [ ["in", "boolean_1", ["::SOAP::SOAPBoolean"]],
-        ["retval", "result", ["Etapper::Server::ArrayOfPhoneAThonList", "etapestryAPI/service", "ArrayOfPhoneAThonList"]] ],
+        ["retval", "result", ["Etapper::ArrayOfPhoneAThonList", "etapestryAPI/service", "ArrayOfPhoneAThonList"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -698,7 +698,7 @@ class MessagingService
       "",
       "getPledge",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::Pledge", "etapestryAPI/service", "Pledge"]] ],
+        ["retval", "result", ["Etapper::Pledge", "etapestryAPI/service", "Pledge"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -707,7 +707,7 @@ class MessagingService
       "",
       "getPrivacyPreferences",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::PrivacyPreferences", "etapestryAPI/service", "PrivacyPreferences"]] ],
+        ["retval", "result", ["Etapper::PrivacyPreferences", "etapestryAPI/service", "PrivacyPreferences"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -717,7 +717,7 @@ class MessagingService
       "getQueryResultStats",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
         ["in", "String_2", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::QueryResultStats", "etapestryAPI/service", "QueryResultStats"]] ],
+        ["retval", "result", ["Etapper::QueryResultStats", "etapestryAPI/service", "QueryResultStats"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -726,7 +726,7 @@ class MessagingService
       "",
       "getRecurringGift",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::RecurringGift", "etapestryAPI/service", "RecurringGift"]] ],
+        ["retval", "result", ["Etapper::RecurringGift", "etapestryAPI/service", "RecurringGift"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -735,7 +735,7 @@ class MessagingService
       "",
       "getRecurringGiftSchedule",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::RecurringGiftSchedule", "etapestryAPI/service", "RecurringGiftSchedule"]] ],
+        ["retval", "result", ["Etapper::RecurringGiftSchedule", "etapestryAPI/service", "RecurringGiftSchedule"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -744,7 +744,7 @@ class MessagingService
       "",
       "getSegmentedDonation",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::SegmentedDonation", "etapestryAPI/service", "SegmentedDonation"]] ],
+        ["retval", "result", ["Etapper::SegmentedDonation", "etapestryAPI/service", "SegmentedDonation"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -753,7 +753,7 @@ class MessagingService
       "",
       "getSegmentedOrder",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::SegmentedOrder", "etapestryAPI/service", "SegmentedOrder"]] ],
+        ["retval", "result", ["Etapper::SegmentedOrder", "etapestryAPI/service", "SegmentedOrder"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -762,7 +762,7 @@ class MessagingService
       "",
       "getSegmentedPledge",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::SegmentedPledge", "etapestryAPI/service", "SegmentedPledge"]] ],
+        ["retval", "result", ["Etapper::SegmentedPledge", "etapestryAPI/service", "SegmentedPledge"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -771,7 +771,7 @@ class MessagingService
       "",
       "getSoftCredit",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
-        ["retval", "result", ["Etapper::Server::SoftCredit", "etapestryAPI/service", "SoftCredit"]] ],
+        ["retval", "result", ["Etapper::SoftCredit", "etapestryAPI/service", "SoftCredit"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -781,7 +781,7 @@ class MessagingService
       "getSystemDefinedValues",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
-        ["retval", "result", ["Etapper::Server::ArrayOfDefinedValue", "etapestryAPI/service", "ArrayOfDefinedValue"]] ],
+        ["retval", "result", ["Etapper::ArrayOfDefinedValue", "etapestryAPI/service", "ArrayOfDefinedValue"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -798,7 +798,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getTransactionByUniqueDefinedValue"),
       "",
       "getTransactionByUniqueDefinedValue",
-      [ ["in", "DefinedValue_1", ["Etapper::Server::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
+      [ ["in", "DefinedValue_1", ["Etapper::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
         ["retval", "result", [nil]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
@@ -808,7 +808,7 @@ class MessagingService
       "",
       "getTransactionProcessors",
       [ ["in", "boolean_1", ["::SOAP::SOAPBoolean"]],
-        ["retval", "result", ["Etapper::Server::ArrayOfTransactionProcessor", "etapestryAPI/service", "ArrayOfTransactionProcessor"]] ],
+        ["retval", "result", ["Etapper::ArrayOfTransactionProcessor", "etapestryAPI/service", "ArrayOfTransactionProcessor"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -816,7 +816,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "getTransactionRef"),
       "",
       "getTransactionRef",
-      [ ["in", "DefinedValue_1", ["Etapper::Server::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
+      [ ["in", "DefinedValue_1", ["Etapper::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
@@ -827,7 +827,7 @@ class MessagingService
       "getUserDefinedSetValues",
       [ ["in", "String_1", ["::SOAP::SOAPString"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
-        ["retval", "result", ["Etapper::Server::ArrayOfDefinedValue", "etapestryAPI/service", "ArrayOfDefinedValue"]] ],
+        ["retval", "result", ["Etapper::ArrayOfDefinedValue", "etapestryAPI/service", "ArrayOfDefinedValue"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -867,7 +867,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "initLinkedTransaction"),
       "",
       "initLinkedTransaction",
-      [ ["retval", "result", ["Etapper::Server::LinkedTransaction", "etapestryAPI/service", "LinkedTransaction"]] ],
+      [ ["retval", "result", ["Etapper::LinkedTransaction", "etapestryAPI/service", "LinkedTransaction"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -917,7 +917,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "processAccountChange"),
       "",
       "processAccountChange",
-      [ ["in", "AccountChangeRequest_1", ["Etapper::Server::AccountChangeRequest", "etapestryAPI/service", "AccountChangeRequest"]] ],
+      [ ["in", "AccountChangeRequest_1", ["Etapper::AccountChangeRequest", "etapestryAPI/service", "AccountChangeRequest"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -925,8 +925,8 @@ class MessagingService
     [ XSD::QName.new(NsService, "processCartOrder"),
       "",
       "processCartOrder",
-      [ ["in", "CartOrderRequest_1", ["Etapper::Server::CartOrderRequest", "etapestryAPI/service", "CartOrderRequest"]],
-        ["retval", "result", ["Etapper::Server::CartOrderResponse", "etapestryAPI/service", "CartOrderResponse"]] ],
+      [ ["in", "CartOrderRequest_1", ["Etapper::CartOrderRequest", "etapestryAPI/service", "CartOrderRequest"]],
+        ["retval", "result", ["Etapper::CartOrderResponse", "etapestryAPI/service", "CartOrderResponse"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -934,8 +934,8 @@ class MessagingService
     [ XSD::QName.new(NsService, "processEcommerceRequest"),
       "",
       "processEcommerceRequest",
-      [ ["in", "EcommerceRequest_1", ["Etapper::Server::EcommerceRequest", "etapestryAPI/service", "EcommerceRequest"]],
-        ["retval", "result", ["Etapper::Server::EcommerceResponse", "etapestryAPI/service", "EcommerceResponse"]] ],
+      [ ["in", "EcommerceRequest_1", ["Etapper::EcommerceRequest", "etapestryAPI/service", "EcommerceRequest"]],
+        ["retval", "result", ["Etapper::EcommerceResponse", "etapestryAPI/service", "EcommerceResponse"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
         :faults => {} }
@@ -943,7 +943,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "processForgottenPasswordEmailHelp"),
       "",
       "processForgottenPasswordEmailHelp",
-      [ ["in", "ForgottenPasswordEmailHelpRequest_1", ["Etapper::Server::ForgottenPasswordEmailHelpRequest", "etapestryAPI/service", "ForgottenPasswordEmailHelpRequest"]],
+      [ ["in", "ForgottenPasswordEmailHelpRequest_1", ["Etapper::ForgottenPasswordEmailHelpRequest", "etapestryAPI/service", "ForgottenPasswordEmailHelpRequest"]],
         ["retval", "result", ["::SOAP::SOAPInt"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
@@ -952,7 +952,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "processForgottenPasswordResetHelp"),
       "",
       "processForgottenPasswordResetHelp",
-      [ ["in", "ForgottenPasswordResetHelpRequest_1", ["Etapper::Server::ForgottenPasswordResetHelpRequest", "etapestryAPI/service", "ForgottenPasswordResetHelpRequest"]],
+      [ ["in", "ForgottenPasswordResetHelpRequest_1", ["Etapper::ForgottenPasswordResetHelpRequest", "etapestryAPI/service", "ForgottenPasswordResetHelpRequest"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
@@ -961,7 +961,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "processTransaction"),
       "",
       "processTransaction",
-      [ ["in", "ProcessTransactionRequest_1", ["Etapper::Server::ProcessTransactionRequest", "etapestryAPI/service", "ProcessTransactionRequest"]],
+      [ ["in", "ProcessTransactionRequest_1", ["Etapper::ProcessTransactionRequest", "etapestryAPI/service", "ProcessTransactionRequest"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
@@ -980,7 +980,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "sendEmail"),
       "",
       "sendEmail",
-      [ ["in", "SendEmailRequest_1", ["Etapper::Server::SendEmailRequest", "etapestryAPI/service", "SendEmailRequest"]],
+      [ ["in", "SendEmailRequest_1", ["Etapper::SendEmailRequest", "etapestryAPI/service", "SendEmailRequest"]],
         ["retval", "result", ["::SOAP::SOAPInt"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
@@ -989,7 +989,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "updateAccount"),
       "",
       "updateAccount",
-      [ ["in", "Account_1", ["Etapper::Server::Account", "etapestryAPI/service", "Account"]],
+      [ ["in", "Account_1", ["Etapper::Account", "etapestryAPI/service", "Account"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
@@ -999,7 +999,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "updateContact"),
       "",
       "updateContact",
-      [ ["in", "Contact_1", ["Etapper::Server::Contact", "etapestryAPI/service", "Contact"]],
+      [ ["in", "Contact_1", ["Etapper::Contact", "etapestryAPI/service", "Contact"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
@@ -1019,7 +1019,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "updateGift"),
       "",
       "updateGift",
-      [ ["in", "Gift_1", ["Etapper::Server::Gift", "etapestryAPI/service", "Gift"]],
+      [ ["in", "Gift_1", ["Etapper::Gift", "etapestryAPI/service", "Gift"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
@@ -1054,7 +1054,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "updateNote"),
       "",
       "updateNote",
-      [ ["in", "Note_1", ["Etapper::Server::Note", "etapestryAPI/service", "Note"]],
+      [ ["in", "Note_1", ["Etapper::Note", "etapestryAPI/service", "Note"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]],
         ["retval", "result", ["::SOAP::SOAPString"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
@@ -1064,7 +1064,7 @@ class MessagingService
     [ XSD::QName.new(NsService, "updatePrivacyPreferences"),
       "",
       "updatePrivacyPreferences",
-      [ ["in", "PrivacyPreferences_1", ["Etapper::Server::PrivacyPreferences", "etapestryAPI/service", "PrivacyPreferences"]],
+      [ ["in", "PrivacyPreferences_1", ["Etapper::PrivacyPreferences", "etapestryAPI/service", "PrivacyPreferences"]],
         ["in", "boolean_2", ["::SOAP::SOAPBoolean"]] ],
       { :request_style =>  :rpc, :request_use =>  :encoded,
         :response_style => :rpc, :response_use => :encoded,
@@ -1097,15 +1097,15 @@ class MessagingService
   ]
 end
 
-end; end
+end
 
-module Etapper; module Server
+module Etapper
 
 class MessagingServiceApp < ::SOAP::RPC::StandaloneServer
   def initialize(*arg)
     super(*arg)
-    servant = Etapper::Server::MessagingService.new
-    Etapper::Server::MessagingService::Methods.each do |definitions|
+    servant = Etapper::MessagingService.new
+    Etapper::MessagingService::Methods.each do |definitions|
       opt = definitions.last
       if opt[:request_style] == :document
         @router.add_document_operation(servant, *definitions)
@@ -1118,11 +1118,11 @@ class MessagingServiceApp < ::SOAP::RPC::StandaloneServer
   end
 end
 
-end; end
+end
 
 if $0 == __FILE__
   # Change listen port.
-  server = Etapper::Server::MessagingServiceApp.new('app', nil, '0.0.0.0', 10080)
+  server = Etapper::MessagingServiceApp.new('app', nil, '0.0.0.0', 10080)
   trap(:INT) do
     server.shutdown
   end

@@ -1,7 +1,7 @@
-require 'service.rb'
+require 'etap.rb'
 require 'soap/mapping'
 
-module Etapper; module Client
+module Etapper
 
 module ServiceMappingRegistry
   EncodedRegistry = ::SOAP::Mapping::EncodedRegistry.new
@@ -9,17 +9,17 @@ module ServiceMappingRegistry
   NsService = "etapestryAPI/service"
 
   EncodedRegistry.set(
-    Etapper::Client::Collection,
+    Etapper::Collection,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new("http://www.w3.org/2001/XMLSchema", "anyType") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Account,
+    :class => Etapper::Account,
     :schema_type => XSD::QName.new(NsService, "Account"),
     :schema_element => [
-      ["accountDefinedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "accountDefinedValues")], [0, 1]],
+      ["accountDefinedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "accountDefinedValues")], [0, 1]],
       ["accountRoleType", ["SOAP::SOAPInt", XSD::QName.new(nil, "accountRoleType")], [0, 1]],
       ["address", ["SOAP::SOAPString", XSD::QName.new(nil, "address")], [0, 1]],
       ["city", ["SOAP::SOAPString", XSD::QName.new(nil, "city")], [0, 1]],
@@ -37,10 +37,10 @@ module ServiceMappingRegistry
       ["name", ["SOAP::SOAPString", XSD::QName.new(nil, "name")], [0, 1]],
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]],
       ["passwordExpired", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "passwordExpired")], [0, 1]],
-      ["personaDefinedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "personaDefinedValues")], [0, 1]],
+      ["personaDefinedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "personaDefinedValues")], [0, 1]],
       ["personaType", ["SOAP::SOAPString", XSD::QName.new(nil, "personaType")], [0, 1]],
-      ["personaTypes", ["Etapper::Client::ArrayOfstring", XSD::QName.new(nil, "personaTypes")], [0, 1]],
-      ["phones", ["Etapper::Client::ArrayOfPhone", XSD::QName.new(nil, "phones")], [0, 1]],
+      ["personaTypes", ["Etapper::ArrayOfstring", XSD::QName.new(nil, "personaTypes")], [0, 1]],
+      ["phones", ["Etapper::ArrayOfPhone", XSD::QName.new(nil, "phones")], [0, 1]],
       ["postalCode", ["SOAP::SOAPString", XSD::QName.new(nil, "postalCode")], [0, 1]],
       ["primaryPersona", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "primaryPersona")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
@@ -56,14 +56,14 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfDefinedValue,
+    Etapper::ArrayOfDefinedValue,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new(NsService, "DefinedValue") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::DefinedValue,
+    :class => Etapper::DefinedValue,
     :schema_type => XSD::QName.new(NsService, "DefinedValue"),
     :schema_element => [
       ["dataType", ["SOAP::SOAPInt", XSD::QName.new(nil, "dataType")], [0, 1]],
@@ -76,21 +76,21 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfstring,
+    Etapper::ArrayOfstring,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new("http://www.w3.org/2001/XMLSchema", "string") }
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfPhone,
+    Etapper::ArrayOfPhone,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new(NsService, "Phone") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Phone,
+    :class => Etapper::Phone,
     :schema_type => XSD::QName.new(NsService, "Phone"),
     :schema_element => [
       ["number", ["SOAP::SOAPString", XSD::QName.new(nil, "number")], [0, 1]],
@@ -99,17 +99,17 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Gift,
+    :class => Etapper::Gift,
     :schema_type => XSD::QName.new(NsService, "Gift"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["letter", ["SOAP::SOAPString", XSD::QName.new(nil, "letter")], [0, 1]],
@@ -124,23 +124,23 @@ module ServiceMappingRegistry
       ["recognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "recognitionType")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["segmentedTransactionRef", ["SOAP::SOAPString", XSD::QName.new(nil, "segmentedTransactionRef")], [0, 1]],
-      ["softCredit", ["Etapper::Client::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
+      ["softCredit", ["Etapper::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
       ["tributeAccountName", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountName")], [0, 1]],
       ["tributeAccountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountRef")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
-      ["valuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
+      ["valuable", ["Etapper::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
     ]
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfAttachment,
+    Etapper::ArrayOfAttachment,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new(NsService, "Attachment") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Attachment,
+    :class => Etapper::Attachment,
     :schema_type => XSD::QName.new(NsService, "Attachment"),
     :schema_element => [
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
@@ -152,7 +152,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::SoftCredit,
+    :class => Etapper::SoftCredit,
     :schema_type => XSD::QName.new(NsService, "SoftCredit"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
@@ -174,24 +174,24 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Valuable,
+    :class => Etapper::Valuable,
     :schema_type => XSD::QName.new(NsService, "Valuable"),
     :schema_element => [
-      ["bond", ["Etapper::Client::Bond", XSD::QName.new(nil, "bond")], [0, 1]],
-      ["cash", ["Etapper::Client::Cash", XSD::QName.new(nil, "cash")], [0, 1]],
-      ["check", ["Etapper::Client::Check", XSD::QName.new(nil, "check")], [0, 1]],
-      ["creditCard", ["Etapper::Client::CreditCard", XSD::QName.new(nil, "creditCard")], [0, 1]],
-      ["electronicFundsTransfer", ["Etapper::Client::ElectronicFundsTransfer", XSD::QName.new(nil, "electronicFundsTransfer")], [0, 1]],
-      ["inKind", ["Etapper::Client::InKind", XSD::QName.new(nil, "inKind")], [0, 1]],
-      ["insurance", ["Etapper::Client::Insurance", XSD::QName.new(nil, "insurance")], [0, 1]],
-      ["realEstate", ["Etapper::Client::RealEstate", XSD::QName.new(nil, "realEstate")], [0, 1]],
-      ["stock", ["Etapper::Client::Stock", XSD::QName.new(nil, "stock")], [0, 1]],
+      ["bond", ["Etapper::Bond", XSD::QName.new(nil, "bond")], [0, 1]],
+      ["cash", ["Etapper::Cash", XSD::QName.new(nil, "cash")], [0, 1]],
+      ["check", ["Etapper::Check", XSD::QName.new(nil, "check")], [0, 1]],
+      ["creditCard", ["Etapper::CreditCard", XSD::QName.new(nil, "creditCard")], [0, 1]],
+      ["electronicFundsTransfer", ["Etapper::ElectronicFundsTransfer", XSD::QName.new(nil, "electronicFundsTransfer")], [0, 1]],
+      ["inKind", ["Etapper::InKind", XSD::QName.new(nil, "inKind")], [0, 1]],
+      ["insurance", ["Etapper::Insurance", XSD::QName.new(nil, "insurance")], [0, 1]],
+      ["realEstate", ["Etapper::RealEstate", XSD::QName.new(nil, "realEstate")], [0, 1]],
+      ["stock", ["Etapper::Stock", XSD::QName.new(nil, "stock")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]]
     ]
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Bond,
+    :class => Etapper::Bond,
     :schema_type => XSD::QName.new(NsService, "Bond"),
     :schema_element => [
       ["actualValue", ["SOAP::SOAPDouble", XSD::QName.new(nil, "actualValue")], [0, 1]],
@@ -203,7 +203,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Cash,
+    :class => Etapper::Cash,
     :schema_type => XSD::QName.new(NsService, "Cash"),
     :schema_element => [
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]]
@@ -211,7 +211,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Check,
+    :class => Etapper::Check,
     :schema_type => XSD::QName.new(NsService, "Check"),
     :schema_element => [
       ["account", ["SOAP::SOAPString", XSD::QName.new(nil, "account")], [0, 1]],
@@ -225,7 +225,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::CreditCard,
+    :class => Etapper::CreditCard,
     :schema_type => XSD::QName.new(NsService, "CreditCard"),
     :schema_element => [
       ["authorizationCode", ["SOAP::SOAPString", XSD::QName.new(nil, "authorizationCode")], [0, 1]],
@@ -243,7 +243,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::ElectronicFundsTransfer,
+    :class => Etapper::ElectronicFundsTransfer,
     :schema_type => XSD::QName.new(NsService, "ElectronicFundsTransfer"),
     :schema_element => [
       ["accountNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "accountNumber")], [0, 1]],
@@ -264,7 +264,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::InKind,
+    :class => Etapper::InKind,
     :schema_type => XSD::QName.new(NsService, "InKind"),
     :schema_element => [
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]],
@@ -274,7 +274,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Insurance,
+    :class => Etapper::Insurance,
     :schema_type => XSD::QName.new(NsService, "Insurance"),
     :schema_element => [
       ["beneficiary", ["SOAP::SOAPString", XSD::QName.new(nil, "beneficiary")], [0, 1]],
@@ -291,7 +291,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::RealEstate,
+    :class => Etapper::RealEstate,
     :schema_type => XSD::QName.new(NsService, "RealEstate"),
     :schema_element => [
       ["location", ["SOAP::SOAPString", XSD::QName.new(nil, "location")], [0, 1]],
@@ -305,7 +305,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Stock,
+    :class => Etapper::Stock,
     :schema_type => XSD::QName.new(NsService, "Stock"),
     :schema_element => [
       ["brokerName", ["SOAP::SOAPString", XSD::QName.new(nil, "brokerName")], [0, 1]],
@@ -321,17 +321,17 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Payment,
+    :class => Etapper::Payment,
     :schema_type => XSD::QName.new(NsService, "Payment"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["letter", ["SOAP::SOAPString", XSD::QName.new(nil, "letter")], [0, 1]],
@@ -346,23 +346,23 @@ module ServiceMappingRegistry
       ["recognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "recognitionType")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["segmentedTransactionRef", ["SOAP::SOAPString", XSD::QName.new(nil, "segmentedTransactionRef")], [0, 1]],
-      ["softCredit", ["Etapper::Client::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
+      ["softCredit", ["Etapper::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
       ["tributeAccountName", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountName")], [0, 1]],
       ["tributeAccountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountRef")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
-      ["valuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
+      ["valuable", ["Etapper::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
     ]
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Contact,
+    :class => Etapper::Contact,
     :schema_type => XSD::QName.new(NsService, "Contact"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["method", ["SOAP::SOAPString", XSD::QName.new(nil, "method")], [0, 1]],
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]],
@@ -373,17 +373,17 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Disbursement,
+    :class => Etapper::Disbursement,
     :schema_type => XSD::QName.new(NsService, "Disbursement"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["letter", ["SOAP::SOAPString", XSD::QName.new(nil, "letter")], [0, 1]],
@@ -392,22 +392,22 @@ module ServiceMappingRegistry
       ["receipt", ["SOAP::SOAPString", XSD::QName.new(nil, "receipt")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
-      ["valuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
+      ["valuable", ["Etapper::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
     ]
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::LoginCredentialsRequest,
+    :class => Etapper::LoginCredentialsRequest,
     :schema_type => XSD::QName.new(NsService, "LoginCredentialsRequest"),
     :schema_element => [
-      ["account", ["Etapper::Client::Account", XSD::QName.new(nil, "account")], [0, 1]],
+      ["account", ["Etapper::Account", XSD::QName.new(nil, "account")], [0, 1]],
       ["confirmationLoginURL", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationLoginURL")], [0, 1]],
       ["confirmationMessageFooter", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationMessageFooter")], [0, 1]],
       ["confirmationMessageHeader", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationMessageHeader")], [0, 1]],
       ["confirmationSender", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationSender")], [0, 1]],
       ["confirmationSignature", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationSignature")], [0, 1]],
       ["confirmationSubject", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationSubject")], [0, 1]],
-      ["duplicateSearchCriteria", ["Etapper::Client::ArrayOfSearchCriteria", XSD::QName.new(nil, "duplicateSearchCriteria")], [0, 1]],
+      ["duplicateSearchCriteria", ["Etapper::ArrayOfSearchCriteria", XSD::QName.new(nil, "duplicateSearchCriteria")], [0, 1]],
       ["duplicateSearchQuery", ["SOAP::SOAPString", XSD::QName.new(nil, "duplicateSearchQuery")], [0, 1]],
       ["failureEmail", ["SOAP::SOAPString", XSD::QName.new(nil, "failureEmail")], [0, 1]],
       ["loginId", ["SOAP::SOAPString", XSD::QName.new(nil, "loginId")], [0, 1]],
@@ -420,25 +420,25 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfSearchCriteria,
+    Etapper::ArrayOfSearchCriteria,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new(NsService, "SearchCriteria") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::SearchCriteria,
+    :class => Etapper::SearchCriteria,
     :schema_type => XSD::QName.new(NsService, "SearchCriteria"),
     :schema_element => [
       ["action", ["SOAP::SOAPString", XSD::QName.new(nil, "action")], [0, 1]],
       ["field", ["SOAP::SOAPString", XSD::QName.new(nil, "field")], [0, 1]],
       ["type", ["SOAP::SOAPString", XSD::QName.new(nil, "type")], [0, 1]],
-      ["values", ["Etapper::Client::ArrayOfstring", XSD::QName.new(nil, "values")], [0, 1]]
+      ["values", ["Etapper::ArrayOfstring", XSD::QName.new(nil, "values")], [0, 1]]
     ]
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::LoginCredentialsResponse,
+    :class => Etapper::LoginCredentialsResponse,
     :schema_type => XSD::QName.new(NsService, "LoginCredentialsResponse"),
     :schema_element => [
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
@@ -448,14 +448,14 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Note,
+    :class => Etapper::Note,
     :schema_type => XSD::QName.new(NsService, "Note"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["immutable", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "immutable")], [0, 1]],
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]],
@@ -465,12 +465,12 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::OutlookIntegrationEmail,
+    :class => Etapper::OutlookIntegrationEmail,
     :schema_type => XSD::QName.new(NsService, "OutlookIntegrationEmail"),
     :schema_element => [
       ["bCC", ["SOAP::SOAPString", XSD::QName.new(nil, "BCC")], [0, 1]],
       ["cC", ["SOAP::SOAPString", XSD::QName.new(nil, "CC")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["contactMethodRef", ["SOAP::SOAPString", XSD::QName.new(nil, "contactMethodRef")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
       ["from", ["SOAP::SOAPString", XSD::QName.new(nil, "from")], [0, 1]],
@@ -481,25 +481,25 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfAccount,
+    Etapper::ArrayOfAccount,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new(NsService, "Account") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Pledge,
+    :class => Etapper::Pledge,
     :schema_type => XSD::QName.new(NsService, "Pledge"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
-      ["customSchedule", ["Etapper::Client::CustomPaymentSchedule", XSD::QName.new(nil, "customSchedule")], [0, 1]],
+      ["customSchedule", ["Etapper::CustomPaymentSchedule", XSD::QName.new(nil, "customSchedule")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["initialPaymentAmount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "initialPaymentAmount")], [0, 1]],
@@ -514,15 +514,15 @@ module ServiceMappingRegistry
       ["originalAccountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "originalAccountRef")], [0, 1]],
       ["originalTransactionRef", ["SOAP::SOAPString", XSD::QName.new(nil, "originalTransactionRef")], [0, 1]],
       ["outstandingBalance", ["SOAP::SOAPDouble", XSD::QName.new(nil, "outstandingBalance")], [0, 1]],
-      ["paymentValuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "paymentValuable")], [0, 1]],
+      ["paymentValuable", ["Etapper::Valuable", XSD::QName.new(nil, "paymentValuable")], [0, 1]],
       ["receipt", ["SOAP::SOAPString", XSD::QName.new(nil, "receipt")], [0, 1]],
       ["recognitionName", ["SOAP::SOAPString", XSD::QName.new(nil, "recognitionName")], [0, 1]],
       ["recognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "recognitionType")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
-      ["scheduledValuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "scheduledValuable")], [0, 1]],
+      ["scheduledValuable", ["Etapper::Valuable", XSD::QName.new(nil, "scheduledValuable")], [0, 1]],
       ["segmentedTransactionRef", ["SOAP::SOAPString", XSD::QName.new(nil, "segmentedTransactionRef")], [0, 1]],
-      ["softCredit", ["Etapper::Client::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
-      ["standardSchedule", ["Etapper::Client::StandardPaymentSchedule", XSD::QName.new(nil, "standardSchedule")], [0, 1]],
+      ["softCredit", ["Etapper::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
+      ["standardSchedule", ["Etapper::StandardPaymentSchedule", XSD::QName.new(nil, "standardSchedule")], [0, 1]],
       ["tributeAccountName", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountName")], [0, 1]],
       ["tributeAccountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountRef")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
@@ -531,32 +531,32 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::CustomPaymentSchedule,
+    :class => Etapper::CustomPaymentSchedule,
     :schema_type => XSD::QName.new(NsService, "CustomPaymentSchedule"),
     :schema_element => [
-      ["installmentAmounts", ["Etapper::Client::ArrayOfdouble", XSD::QName.new(nil, "installmentAmounts")], [0, 1]],
-      ["installmentDates", ["Etapper::Client::ArrayOfdateTime", XSD::QName.new(nil, "installmentDates")], [0, 1]],
+      ["installmentAmounts", ["Etapper::ArrayOfdouble", XSD::QName.new(nil, "installmentAmounts")], [0, 1]],
+      ["installmentDates", ["Etapper::ArrayOfdateTime", XSD::QName.new(nil, "installmentDates")], [0, 1]],
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]],
       ["processType", ["SOAP::SOAPInt", XSD::QName.new(nil, "processType")], [0, 1]]
     ]
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfdouble,
+    Etapper::ArrayOfdouble,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new("http://www.w3.org/2001/XMLSchema", "double") }
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfdateTime,
+    Etapper::ArrayOfdateTime,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new("http://www.w3.org/2001/XMLSchema", "dateTime") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::StandardPaymentSchedule,
+    :class => Etapper::StandardPaymentSchedule,
     :schema_type => XSD::QName.new(NsService, "StandardPaymentSchedule"),
     :schema_element => [
       ["firstInstallmentDate", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "firstInstallmentDate")], [0, 1]],
@@ -569,18 +569,18 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::RecurringGift,
+    :class => Etapper::RecurringGift,
     :schema_type => XSD::QName.new(NsService, "RecurringGift"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
       ["copyRgsElements", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "copyRgsElements")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["letter", ["SOAP::SOAPString", XSD::QName.new(nil, "letter")], [0, 1]],
@@ -595,16 +595,16 @@ module ServiceMappingRegistry
       ["recognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "recognitionType")], [0, 1]],
       ["recurringGiftScheduleRef", ["SOAP::SOAPString", XSD::QName.new(nil, "recurringGiftScheduleRef")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
-      ["softCredit", ["Etapper::Client::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
+      ["softCredit", ["Etapper::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
       ["tributeAccountName", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountName")], [0, 1]],
       ["tributeAccountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountRef")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
-      ["valuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
+      ["valuable", ["Etapper::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
     ]
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::ConnectRequest,
+    :class => Etapper::ConnectRequest,
     :schema_type => XSD::QName.new(NsService, "ConnectRequest"),
     :schema_element => [
       ["applicationContext", ["SOAP::SOAPString", XSD::QName.new(nil, "applicationContext")], [0, 1]],
@@ -614,7 +614,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::ExternalLoginRequest,
+    :class => Etapper::ExternalLoginRequest,
     :schema_type => XSD::QName.new(NsService, "ExternalLoginRequest"),
     :schema_element => [
       ["applicationContext", ["SOAP::SOAPString", XSD::QName.new(nil, "applicationContext")], [0, 1]],
@@ -626,11 +626,11 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::PagedCartElementsResponse,
+    :class => Etapper::PagedCartElementsResponse,
     :schema_type => XSD::QName.new(NsService, "PagedCartElementsResponse"),
     :schema_element => [
       ["count", ["SOAP::SOAPInt", XSD::QName.new(nil, "count")], [0, 1]],
-      ["data", ["Etapper::Client::Collection", XSD::QName.new(nil, "data")], [0, 1]],
+      ["data", ["Etapper::Collection", XSD::QName.new(nil, "data")], [0, 1]],
       ["pages", ["SOAP::SOAPInt", XSD::QName.new(nil, "pages")], [0, 1]],
       ["start", ["SOAP::SOAPInt", XSD::QName.new(nil, "start")], [0, 1]],
       ["total", ["SOAP::SOAPInt", XSD::QName.new(nil, "total")], [0, 1]],
@@ -639,11 +639,11 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::PagedDefinedFieldsResponse,
+    :class => Etapper::PagedDefinedFieldsResponse,
     :schema_type => XSD::QName.new(NsService, "PagedDefinedFieldsResponse"),
     :schema_element => [
       ["count", ["SOAP::SOAPInt", XSD::QName.new(nil, "count")], [0, 1]],
-      ["data", ["Etapper::Client::Collection", XSD::QName.new(nil, "data")], [0, 1]],
+      ["data", ["Etapper::Collection", XSD::QName.new(nil, "data")], [0, 1]],
       ["pages", ["SOAP::SOAPInt", XSD::QName.new(nil, "pages")], [0, 1]],
       ["start", ["SOAP::SOAPInt", XSD::QName.new(nil, "start")], [0, 1]],
       ["total", ["SOAP::SOAPInt", XSD::QName.new(nil, "total")], [0, 1]],
@@ -652,11 +652,11 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::PagedJournalEntriesResponse,
+    :class => Etapper::PagedJournalEntriesResponse,
     :schema_type => XSD::QName.new(NsService, "PagedJournalEntriesResponse"),
     :schema_element => [
       ["count", ["SOAP::SOAPInt", XSD::QName.new(nil, "count")], [0, 1]],
-      ["data", ["Etapper::Client::Collection", XSD::QName.new(nil, "data")], [0, 1]],
+      ["data", ["Etapper::Collection", XSD::QName.new(nil, "data")], [0, 1]],
       ["pages", ["SOAP::SOAPInt", XSD::QName.new(nil, "pages")], [0, 1]],
       ["start", ["SOAP::SOAPInt", XSD::QName.new(nil, "start")], [0, 1]],
       ["total", ["SOAP::SOAPInt", XSD::QName.new(nil, "total")], [0, 1]],
@@ -665,11 +665,11 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::PagedQueryResultsResponse,
+    :class => Etapper::PagedQueryResultsResponse,
     :schema_type => XSD::QName.new(NsService, "PagedQueryResultsResponse"),
     :schema_element => [
       ["count", ["SOAP::SOAPInt", XSD::QName.new(nil, "count")], [0, 1]],
-      ["data", ["Etapper::Client::Collection", XSD::QName.new(nil, "data")], [0, 1]],
+      ["data", ["Etapper::Collection", XSD::QName.new(nil, "data")], [0, 1]],
       ["pages", ["SOAP::SOAPInt", XSD::QName.new(nil, "pages")], [0, 1]],
       ["start", ["SOAP::SOAPInt", XSD::QName.new(nil, "start")], [0, 1]],
       ["total", ["SOAP::SOAPInt", XSD::QName.new(nil, "total")], [0, 1]],
@@ -678,19 +678,19 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::CalendarItem,
+    :class => Etapper::CalendarItem,
     :schema_type => XSD::QName.new(NsService, "CalendarItem"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["endTime", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "endTime")], [0, 1]],
-      ["invitations", ["Etapper::Client::ArrayOfInvitation", XSD::QName.new(nil, "invitations")], [0, 1]],
+      ["invitations", ["Etapper::ArrayOfInvitation", XSD::QName.new(nil, "invitations")], [0, 1]],
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]],
       ["priority", ["SOAP::SOAPInt", XSD::QName.new(nil, "priority")], [0, 1]],
       ["private", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "private")], [0, 1]],
-      ["recurringSchedule", ["Etapper::Client::RecurringSchedule", XSD::QName.new(nil, "recurringSchedule")], [0, 1]],
+      ["recurringSchedule", ["Etapper::RecurringSchedule", XSD::QName.new(nil, "recurringSchedule")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["remind", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "remind")], [0, 1]],
       ["startTime", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "startTime")], [0, 1]],
@@ -701,19 +701,19 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfInvitation,
+    Etapper::ArrayOfInvitation,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new(NsService, "Invitation") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Invitation,
+    :class => Etapper::Invitation,
     :schema_type => XSD::QName.new(NsService, "Invitation"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
-      ["calendarItem", ["Etapper::Client::CalendarItem", XSD::QName.new(nil, "calendarItem")], [0, 1]],
+      ["calendarItem", ["Etapper::CalendarItem", XSD::QName.new(nil, "calendarItem")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["remind", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "remind")], [0, 1]],
@@ -723,7 +723,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::RecurringSchedule,
+    :class => Etapper::RecurringSchedule,
     :schema_type => XSD::QName.new(NsService, "RecurringSchedule"),
     :schema_element => [
       ["frequency", ["SOAP::SOAPInt", XSD::QName.new(nil, "frequency")], [0, 1]],
@@ -734,18 +734,18 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::CartCategory,
+    :class => Etapper::CartCategory,
     :schema_type => XSD::QName.new(NsService, "CartCategory"),
     :schema_element => [
       ["description", ["SOAP::SOAPString", XSD::QName.new(nil, "description")], [0, 1]],
       ["disabled", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "disabled")], [0, 1]],
-      ["image", ["Etapper::Client::CartImage", XSD::QName.new(nil, "image")], [0, 1]],
+      ["image", ["Etapper::CartImage", XSD::QName.new(nil, "image")], [0, 1]],
       ["immediateCategories", ["SOAP::SOAPInt", XSD::QName.new(nil, "immediateCategories")], [0, 1]],
       ["immediateItems", ["SOAP::SOAPInt", XSD::QName.new(nil, "immediateItems")], [0, 1]],
       ["name", ["SOAP::SOAPString", XSD::QName.new(nil, "name")], [0, 1]],
       ["nestedCategories", ["SOAP::SOAPInt", XSD::QName.new(nil, "nestedCategories")], [0, 1]],
       ["nestedItems", ["SOAP::SOAPInt", XSD::QName.new(nil, "nestedItems")], [0, 1]],
-      ["parents", ["Etapper::Client::ArrayOfCartParent", XSD::QName.new(nil, "parents")], [0, 1]],
+      ["parents", ["Etapper::ArrayOfCartParent", XSD::QName.new(nil, "parents")], [0, 1]],
       ["publishEndDate", ["SOAP::SOAPString", XSD::QName.new(nil, "publishEndDate")], [0, 1]],
       ["publishStartDate", ["SOAP::SOAPString", XSD::QName.new(nil, "publishStartDate")], [0, 1]],
       ["publishableNow", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "publishableNow")], [0, 1]],
@@ -755,7 +755,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::CartImage,
+    :class => Etapper::CartImage,
     :schema_type => XSD::QName.new(NsService, "CartImage"),
     :schema_element => [
       ["description", ["SOAP::SOAPString", XSD::QName.new(nil, "description")], [0, 1]],
@@ -764,14 +764,14 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfCartParent,
+    Etapper::ArrayOfCartParent,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new(NsService, "CartParent") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::CartParent,
+    :class => Etapper::CartParent,
     :schema_type => XSD::QName.new(NsService, "CartParent"),
     :schema_element => [
       ["name", ["SOAP::SOAPString", XSD::QName.new(nil, "name")], [0, 1]],
@@ -780,7 +780,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::PagedCartElementsRequest,
+    :class => Etapper::PagedCartElementsRequest,
     :schema_type => XSD::QName.new(NsService, "PagedCartElementsRequest"),
     :schema_element => [
       ["clearCache", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "clearCache")], [0, 1]],
@@ -797,7 +797,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::CartItem,
+    :class => Etapper::CartItem,
     :schema_type => XSD::QName.new(NsService, "CartItem"),
     :schema_element => [
       ["deductibleAmount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "deductibleAmount")], [0, 1]],
@@ -805,29 +805,29 @@ module ServiceMappingRegistry
       ["longDescription", ["SOAP::SOAPString", XSD::QName.new(nil, "longDescription")], [0, 1]],
       ["name", ["SOAP::SOAPString", XSD::QName.new(nil, "name")], [0, 1]],
       ["nonTaxableAmount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "nonTaxableAmount")], [0, 1]],
-      ["parents", ["Etapper::Client::ArrayOfCartParent", XSD::QName.new(nil, "parents")], [0, 1]],
+      ["parents", ["Etapper::ArrayOfCartParent", XSD::QName.new(nil, "parents")], [0, 1]],
       ["publishEndDate", ["SOAP::SOAPString", XSD::QName.new(nil, "publishEndDate")], [0, 1]],
       ["publishStartDate", ["SOAP::SOAPString", XSD::QName.new(nil, "publishStartDate")], [0, 1]],
       ["publishableNow", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "publishableNow")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
-      ["regularImages", ["Etapper::Client::ArrayOfCartImage", XSD::QName.new(nil, "regularImages")], [0, 1]],
+      ["regularImages", ["Etapper::ArrayOfCartImage", XSD::QName.new(nil, "regularImages")], [0, 1]],
       ["regularPrice", ["SOAP::SOAPDouble", XSD::QName.new(nil, "regularPrice")], [0, 1]],
       ["shippingPrice", ["SOAP::SOAPDouble", XSD::QName.new(nil, "shippingPrice")], [0, 1]],
       ["shortDescription", ["SOAP::SOAPString", XSD::QName.new(nil, "shortDescription")], [0, 1]],
-      ["thumbImage", ["Etapper::Client::CartImage", XSD::QName.new(nil, "thumbImage")], [0, 1]],
+      ["thumbImage", ["Etapper::CartImage", XSD::QName.new(nil, "thumbImage")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]]
     ]
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfCartImage,
+    Etapper::ArrayOfCartImage,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new(NsService, "CartImage") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::CartPreferences,
+    :class => Etapper::CartPreferences,
     :schema_type => XSD::QName.new(NsService, "CartPreferences"),
     :schema_element => [
       ["expressShippingPrice", ["SOAP::SOAPDouble", XSD::QName.new(nil, "expressShippingPrice")], [0, 1]],
@@ -836,7 +836,7 @@ module ServiceMappingRegistry
       ["salesTaxKey", ["SOAP::SOAPInt", XSD::QName.new(nil, "salesTaxKey")], [0, 1]],
       ["siteName", ["SOAP::SOAPString", XSD::QName.new(nil, "siteName")], [0, 1]],
       ["siteTitle", ["SOAP::SOAPString", XSD::QName.new(nil, "siteTitle")], [0, 1]],
-      ["stateTaxRates", ["Etapper::Client::ArrayOfStateTaxRate", XSD::QName.new(nil, "stateTaxRates")], [0, 1]],
+      ["stateTaxRates", ["Etapper::ArrayOfStateTaxRate", XSD::QName.new(nil, "stateTaxRates")], [0, 1]],
       ["successMessage", ["SOAP::SOAPString", XSD::QName.new(nil, "successMessage")], [0, 1]],
       ["templateSetFolder", ["SOAP::SOAPString", XSD::QName.new(nil, "templateSetFolder")], [0, 1]],
       ["welcomeMessage", ["SOAP::SOAPString", XSD::QName.new(nil, "welcomeMessage")], [0, 1]]
@@ -844,14 +844,14 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfStateTaxRate,
+    Etapper::ArrayOfStateTaxRate,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new(NsService, "StateTaxRate") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::StateTaxRate,
+    :class => Etapper::StateTaxRate,
     :schema_type => XSD::QName.new(NsService, "StateTaxRate"),
     :schema_element => [
       ["rate", ["SOAP::SOAPDouble", XSD::QName.new(nil, "rate")], [0, 1]],
@@ -860,13 +860,13 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Declaration,
+    :class => Etapper::Declaration,
     :schema_type => XSD::QName.new(NsService, "Declaration"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["address", ["SOAP::SOAPString", XSD::QName.new(nil, "address")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["city", ["SOAP::SOAPString", XSD::QName.new(nil, "city")], [0, 1]],
       ["confirmationDate", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "confirmationDate")], [0, 1]],
       ["country", ["SOAP::SOAPString", XSD::QName.new(nil, "country")], [0, 1]],
@@ -884,10 +884,10 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::DefinedField,
+    :class => Etapper::DefinedField,
     :schema_type => XSD::QName.new(NsService, "DefinedField"),
     :schema_element => [
-      ["applicationTypes", ["Etapper::Client::ArrayOfint", XSD::QName.new(nil, "applicationTypes")], [0, 1]],
+      ["applicationTypes", ["Etapper::ArrayOfint", XSD::QName.new(nil, "applicationTypes")], [0, 1]],
       ["category", ["SOAP::SOAPString", XSD::QName.new(nil, "category")], [0, 1]],
       ["dataType", ["SOAP::SOAPInt", XSD::QName.new(nil, "dataType")], [0, 1]],
       ["desc", ["SOAP::SOAPString", XSD::QName.new(nil, "desc")], [0, 1]],
@@ -896,28 +896,28 @@ module ServiceMappingRegistry
       ["name", ["SOAP::SOAPString", XSD::QName.new(nil, "name")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["required", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "required")], [0, 1]],
-      ["securityRights", ["Etapper::Client::ArrayOfDefinedFieldValue", XSD::QName.new(nil, "securityRights")], [0, 1]],
+      ["securityRights", ["Etapper::ArrayOfDefinedFieldValue", XSD::QName.new(nil, "securityRights")], [0, 1]],
       ["system", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "system")], [0, 1]],
-      ["values", ["Etapper::Client::ArrayOfDefinedFieldValue", XSD::QName.new(nil, "values")], [0, 1]]
+      ["values", ["Etapper::ArrayOfDefinedFieldValue", XSD::QName.new(nil, "values")], [0, 1]]
     ]
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfint,
+    Etapper::ArrayOfint,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new("http://www.w3.org/2001/XMLSchema", "int") }
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfDefinedFieldValue,
+    Etapper::ArrayOfDefinedFieldValue,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new(NsService, "DefinedFieldValue") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::DefinedFieldValue,
+    :class => Etapper::DefinedFieldValue,
     :schema_type => XSD::QName.new(NsService, "DefinedFieldValue"),
     :schema_element => [
       ["desc", ["SOAP::SOAPString", XSD::QName.new(nil, "desc")], [0, 1]],
@@ -928,22 +928,22 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::PagedDefinedFieldsRequest,
+    :class => Etapper::PagedDefinedFieldsRequest,
     :schema_type => XSD::QName.new(NsService, "PagedDefinedFieldsRequest"),
     :schema_element => [
       ["clearCache", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "clearCache")], [0, 1]],
       ["count", ["SOAP::SOAPInt", XSD::QName.new(nil, "count")], [0, 1]],
       ["start", ["SOAP::SOAPInt", XSD::QName.new(nil, "start")], [0, 1]],
-      ["applicationTypes", ["Etapper::Client::ArrayOfint", XSD::QName.new(nil, "applicationTypes")], [0, 1]],
-      ["categories", ["Etapper::Client::ArrayOfstring", XSD::QName.new(nil, "categories")], [0, 1]],
+      ["applicationTypes", ["Etapper::ArrayOfint", XSD::QName.new(nil, "applicationTypes")], [0, 1]],
+      ["categories", ["Etapper::ArrayOfstring", XSD::QName.new(nil, "categories")], [0, 1]],
       ["includeDisabledFields", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "includeDisabledFields")], [0, 1]],
       ["includeDisabledValues", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "includeDisabledValues")], [0, 1]],
-      ["names", ["Etapper::Client::ArrayOfstring", XSD::QName.new(nil, "names")], [0, 1]]
+      ["names", ["Etapper::ArrayOfstring", XSD::QName.new(nil, "names")], [0, 1]]
     ]
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::DonorLoginPreferences,
+    :class => Etapper::DonorLoginPreferences,
     :schema_type => XSD::QName.new(NsService, "DonorLoginPreferences"),
     :schema_element => [
       ["welcomePageHtml", ["SOAP::SOAPString", XSD::QName.new(nil, "welcomePageHtml")], [0, 1]]
@@ -951,7 +951,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::DuplicateAccountSearch,
+    :class => Etapper::DuplicateAccountSearch,
     :schema_type => XSD::QName.new(NsService, "DuplicateAccountSearch"),
     :schema_element => [
       ["accountRoleTypes", ["SOAP::SOAPInt", XSD::QName.new(nil, "accountRoleTypes")], [0, 1]],
@@ -964,7 +964,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::PagedDynamicQueryResultsRequest,
+    :class => Etapper::PagedDynamicQueryResultsRequest,
     :schema_type => XSD::QName.new(NsService, "PagedDynamicQueryResultsRequest"),
     :schema_element => [
       ["clearCache", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "clearCache")], [0, 1]],
@@ -977,16 +977,16 @@ module ServiceMappingRegistry
       ["matchAny", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "matchAny")], [0, 1]],
       ["personaOption", ["SOAP::SOAPString", XSD::QName.new(nil, "personaOption")], [0, 1]],
       ["returnType", ["SOAP::SOAPInt", XSD::QName.new(nil, "returnType")], [0, 1]],
-      ["searchCriteria", ["Etapper::Client::ArrayOfSearchCriteria", XSD::QName.new(nil, "searchCriteria")], [0, 1]]
+      ["searchCriteria", ["Etapper::ArrayOfSearchCriteria", XSD::QName.new(nil, "searchCriteria")], [0, 1]]
     ]
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::EntityRole,
+    :class => Etapper::EntityRole,
     :schema_type => XSD::QName.new(NsService, "EntityRole"),
     :schema_element => [
       ["accountRoleType", ["SOAP::SOAPInt", XSD::QName.new(nil, "accountRoleType")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["donorRecognitionName", ["SOAP::SOAPString", XSD::QName.new(nil, "donorRecognitionName")], [0, 1]],
       ["donorRecognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "donorRecognitionType")], [0, 1]],
       ["donorRoleRef", ["SOAP::SOAPString", XSD::QName.new(nil, "donorRoleRef")], [0, 1]],
@@ -996,7 +996,7 @@ module ServiceMappingRegistry
       ["loginId", ["SOAP::SOAPString", XSD::QName.new(nil, "loginId")], [0, 1]],
       ["loyaltyRating", ["SOAP::SOAPInt", XSD::QName.new(nil, "loyaltyRating")], [0, 1]],
       ["name", ["SOAP::SOAPString", XSD::QName.new(nil, "name")], [0, 1]],
-      ["personas", ["Etapper::Client::ArrayOfPersona", XSD::QName.new(nil, "personas")], [0, 1]],
+      ["personas", ["Etapper::ArrayOfPersona", XSD::QName.new(nil, "personas")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["sortName", ["SOAP::SOAPString", XSD::QName.new(nil, "sortName")], [0, 1]],
       ["tributeRoleRef", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeRoleRef")], [0, 1]],
@@ -1005,25 +1005,25 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfPersona,
+    Etapper::ArrayOfPersona,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new(NsService, "Persona") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::Persona,
+    :class => Etapper::Persona,
     :schema_type => XSD::QName.new(NsService, "Persona"),
     :schema_element => [
       ["address", ["SOAP::SOAPString", XSD::QName.new(nil, "address")], [0, 1]],
       ["city", ["SOAP::SOAPString", XSD::QName.new(nil, "city")], [0, 1]],
       ["country", ["SOAP::SOAPString", XSD::QName.new(nil, "country")], [0, 1]],
       ["county", ["SOAP::SOAPString", XSD::QName.new(nil, "county")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["email", ["SOAP::SOAPString", XSD::QName.new(nil, "email")], [0, 1]],
       ["longSalutation", ["SOAP::SOAPString", XSD::QName.new(nil, "longSalutation")], [0, 1]],
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]],
-      ["phones", ["Etapper::Client::ArrayOfPhone", XSD::QName.new(nil, "phones")], [0, 1]],
+      ["phones", ["Etapper::ArrayOfPhone", XSD::QName.new(nil, "phones")], [0, 1]],
       ["postalCode", ["SOAP::SOAPString", XSD::QName.new(nil, "postalCode")], [0, 1]],
       ["primary", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "primary")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
@@ -1036,7 +1036,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::PagedExistingQueryResultsRequest,
+    :class => Etapper::PagedExistingQueryResultsRequest,
     :schema_type => XSD::QName.new(NsService, "PagedExistingQueryResultsRequest"),
     :schema_element => [
       ["clearCache", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "clearCache")], [0, 1]],
@@ -1048,7 +1048,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::PagedJournalEntriesRequest,
+    :class => Etapper::PagedJournalEntriesRequest,
     :schema_type => XSD::QName.new(NsService, "PagedJournalEntriesRequest"),
     :schema_element => [
       ["clearCache", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "clearCache")], [0, 1]],
@@ -1058,12 +1058,12 @@ module ServiceMappingRegistry
       ["baseQuery", ["SOAP::SOAPString", XSD::QName.new(nil, "baseQuery")], [0, 1]],
       ["endDate", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "endDate")], [0, 1]],
       ["startDate", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "startDate")], [0, 1]],
-      ["types", ["Etapper::Client::ArrayOfint", XSD::QName.new(nil, "types")], [0, 1]]
+      ["types", ["Etapper::ArrayOfint", XSD::QName.new(nil, "types")], [0, 1]]
     ]
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::JournalSummary,
+    :class => Etapper::JournalSummary,
     :schema_type => XSD::QName.new(NsService, "JournalSummary"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
@@ -1081,46 +1081,46 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::PrivacyPreferences,
+    :class => Etapper::PrivacyPreferences,
     :schema_type => XSD::QName.new(NsService, "PrivacyPreferences"),
     :schema_element => [
-      ["accountPrivacyPreference", ["Etapper::Client::PrivacyPreference", XSD::QName.new(nil, "accountPrivacyPreference")], [0, 1]],
+      ["accountPrivacyPreference", ["Etapper::PrivacyPreference", XSD::QName.new(nil, "accountPrivacyPreference")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
-      ["personaPrivacyPreferences", ["Etapper::Client::ArrayOfPrivacyPreference", XSD::QName.new(nil, "personaPrivacyPreferences")], [0, 1]]
+      ["personaPrivacyPreferences", ["Etapper::ArrayOfPrivacyPreference", XSD::QName.new(nil, "personaPrivacyPreferences")], [0, 1]]
     ]
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::PrivacyPreference,
+    :class => Etapper::PrivacyPreference,
     :schema_type => XSD::QName.new(NsService, "PrivacyPreference"),
     :schema_element => [
       ["accountDefined", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "accountDefined")], [0, 1]],
       ["applicationGroup", ["SOAP::SOAPString", XSD::QName.new(nil, "applicationGroup")], [0, 1]],
-      ["hiddenFields", ["Etapper::Client::ArrayOfstring", XSD::QName.new(nil, "hiddenFields")], [0, 1]],
+      ["hiddenFields", ["Etapper::ArrayOfstring", XSD::QName.new(nil, "hiddenFields")], [0, 1]],
       ["personaType", ["SOAP::SOAPString", XSD::QName.new(nil, "personaType")], [0, 1]],
       ["status", ["SOAP::SOAPInt", XSD::QName.new(nil, "status")], [0, 1]]
     ]
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfPrivacyPreference,
+    Etapper::ArrayOfPrivacyPreference,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new(NsService, "PrivacyPreference") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::OrderItem,
+    :class => Etapper::OrderItem,
     :schema_type => XSD::QName.new(NsService, "OrderItem"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["itemName", ["SOAP::SOAPString", XSD::QName.new(nil, "itemName")], [0, 1]],
@@ -1129,20 +1129,20 @@ module ServiceMappingRegistry
       ["letter", ["SOAP::SOAPString", XSD::QName.new(nil, "letter")], [0, 1]],
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]],
       ["offsettingRef", ["SOAP::SOAPString", XSD::QName.new(nil, "offsettingRef")], [0, 1]],
-      ["orderInfo", ["Etapper::Client::OrderInfo", XSD::QName.new(nil, "orderInfo")], [0, 1]],
+      ["orderInfo", ["Etapper::OrderInfo", XSD::QName.new(nil, "orderInfo")], [0, 1]],
       ["receipt", ["SOAP::SOAPString", XSD::QName.new(nil, "receipt")], [0, 1]],
       ["recognitionName", ["SOAP::SOAPString", XSD::QName.new(nil, "recognitionName")], [0, 1]],
       ["recognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "recognitionType")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["segmentedTransactionRef", ["SOAP::SOAPString", XSD::QName.new(nil, "segmentedTransactionRef")], [0, 1]],
-      ["softCredit", ["Etapper::Client::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
+      ["softCredit", ["Etapper::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
-      ["valuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
+      ["valuable", ["Etapper::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
     ]
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::OrderInfo,
+    :class => Etapper::OrderInfo,
     :schema_type => XSD::QName.new(NsService, "OrderInfo"),
     :schema_element => [
       ["billingAddress", ["SOAP::SOAPString", XSD::QName.new(nil, "billingAddress")], [0, 1]],
@@ -1164,17 +1164,17 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::OrderShipping,
+    :class => Etapper::OrderShipping,
     :schema_type => XSD::QName.new(NsService, "OrderShipping"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["letter", ["SOAP::SOAPString", XSD::QName.new(nil, "letter")], [0, 1]],
@@ -1185,24 +1185,24 @@ module ServiceMappingRegistry
       ["recognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "recognitionType")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["segmentedTransactionRef", ["SOAP::SOAPString", XSD::QName.new(nil, "segmentedTransactionRef")], [0, 1]],
-      ["softCredit", ["Etapper::Client::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
+      ["softCredit", ["Etapper::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
-      ["valuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
+      ["valuable", ["Etapper::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
     ]
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::OrderTax,
+    :class => Etapper::OrderTax,
     :schema_type => XSD::QName.new(NsService, "OrderTax"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["letter", ["SOAP::SOAPString", XSD::QName.new(nil, "letter")], [0, 1]],
@@ -1213,16 +1213,16 @@ module ServiceMappingRegistry
       ["recognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "recognitionType")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["segmentedTransactionRef", ["SOAP::SOAPString", XSD::QName.new(nil, "segmentedTransactionRef")], [0, 1]],
-      ["softCredit", ["Etapper::Client::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
+      ["softCredit", ["Etapper::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
       ["taxRate", ["SOAP::SOAPDouble", XSD::QName.new(nil, "taxRate")], [0, 1]],
       ["taxRegion", ["SOAP::SOAPString", XSD::QName.new(nil, "taxRegion")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
-      ["valuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
+      ["valuable", ["Etapper::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
     ]
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::OrganizationPreferences,
+    :class => Etapper::OrganizationPreferences,
     :schema_type => XSD::QName.new(NsService, "OrganizationPreferences"),
     :schema_element => [
       ["passwordMinimumLength", ["SOAP::SOAPInt", XSD::QName.new(nil, "passwordMinimumLength")], [0, 1]],
@@ -1231,14 +1231,14 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfPhoneAThonList,
+    Etapper::ArrayOfPhoneAThonList,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new(NsService, "PhoneAThonList") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::PhoneAThonList,
+    :class => Etapper::PhoneAThonList,
     :schema_type => XSD::QName.new(NsService, "PhoneAThonList"),
     :schema_element => [
       ["currentCount", ["SOAP::SOAPInt", XSD::QName.new(nil, "currentCount")], [0, 1]],
@@ -1252,7 +1252,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::QueryResultStats,
+    :class => Etapper::QueryResultStats,
     :schema_type => XSD::QName.new(NsService, "QueryResultStats"),
     :schema_element => [
       ["gifted", ["SOAP::SOAPDouble", XSD::QName.new(nil, "gifted")], [0, 1]],
@@ -1265,17 +1265,17 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::RecurringGiftSchedule,
+    :class => Etapper::RecurringGiftSchedule,
     :schema_type => XSD::QName.new(NsService, "RecurringGiftSchedule"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["letter", ["SOAP::SOAPString", XSD::QName.new(nil, "letter")], [0, 1]],
@@ -1291,9 +1291,9 @@ module ServiceMappingRegistry
       ["recognitionName", ["SOAP::SOAPString", XSD::QName.new(nil, "recognitionName")], [0, 1]],
       ["recognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "recognitionType")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
-      ["schedule", ["Etapper::Client::StandardPaymentSchedule", XSD::QName.new(nil, "schedule")], [0, 1]],
-      ["scheduledValuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "scheduledValuable")], [0, 1]],
-      ["softCredit", ["Etapper::Client::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
+      ["schedule", ["Etapper::StandardPaymentSchedule", XSD::QName.new(nil, "schedule")], [0, 1]],
+      ["scheduledValuable", ["Etapper::Valuable", XSD::QName.new(nil, "scheduledValuable")], [0, 1]],
+      ["softCredit", ["Etapper::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
       ["tributeAccountName", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountName")], [0, 1]],
       ["tributeAccountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountRef")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]]
@@ -1301,7 +1301,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::SegmentedDonation,
+    :class => Etapper::SegmentedDonation,
     :schema_type => XSD::QName.new(NsService, "SegmentedDonation"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
@@ -1310,7 +1310,7 @@ module ServiceMappingRegistry
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["offsettingRef", ["SOAP::SOAPString", XSD::QName.new(nil, "offsettingRef")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
-      ["segments", ["Etapper::Client::ArrayOfanyType", XSD::QName.new(nil, "segments")], [0, 1]],
+      ["segments", ["Etapper::ArrayOfanyType", XSD::QName.new(nil, "segments")], [0, 1]],
       ["totalAmount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "totalAmount")], [0, 1]],
       ["totalNonDeductibleAmount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "totalNonDeductibleAmount")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]]
@@ -1318,14 +1318,14 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfanyType,
+    Etapper::ArrayOfanyType,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new("http://www.w3.org/2001/XMLSchema", "anyType") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::SegmentedOrder,
+    :class => Etapper::SegmentedOrder,
     :schema_type => XSD::QName.new(NsService, "SegmentedOrder"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
@@ -1333,26 +1333,26 @@ module ServiceMappingRegistry
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["offsettingRef", ["SOAP::SOAPString", XSD::QName.new(nil, "offsettingRef")], [0, 1]],
-      ["orderInfo", ["Etapper::Client::OrderInfo", XSD::QName.new(nil, "orderInfo")], [0, 1]],
+      ["orderInfo", ["Etapper::OrderInfo", XSD::QName.new(nil, "orderInfo")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
-      ["segments", ["Etapper::Client::ArrayOfanyType", XSD::QName.new(nil, "segments")], [0, 1]],
+      ["segments", ["Etapper::ArrayOfanyType", XSD::QName.new(nil, "segments")], [0, 1]],
       ["totalAmount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "totalAmount")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]]
     ]
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::SegmentedPledge,
+    :class => Etapper::SegmentedPledge,
     :schema_type => XSD::QName.new(NsService, "SegmentedPledge"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
-      ["consolidatedCustomSchedule", ["Etapper::Client::CustomPaymentSchedule", XSD::QName.new(nil, "consolidatedCustomSchedule")], [0, 1]],
+      ["consolidatedCustomSchedule", ["Etapper::CustomPaymentSchedule", XSD::QName.new(nil, "consolidatedCustomSchedule")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["offsettingRef", ["SOAP::SOAPString", XSD::QName.new(nil, "offsettingRef")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
-      ["segments", ["Etapper::Client::ArrayOfanyType", XSD::QName.new(nil, "segments")], [0, 1]],
+      ["segments", ["Etapper::ArrayOfanyType", XSD::QName.new(nil, "segments")], [0, 1]],
       ["totalAmount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "totalAmount")], [0, 1]],
       ["totalNonDeductibleAmount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "totalNonDeductibleAmount")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
@@ -1361,14 +1361,14 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.set(
-    Etapper::Client::ArrayOfTransactionProcessor,
+    Etapper::ArrayOfTransactionProcessor,
     ::SOAP::SOAPArray,
     ::SOAP::Mapping::EncodedRegistry::TypedArrayFactory,
     { :type => XSD::QName.new(NsService, "TransactionProcessor") }
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::TransactionProcessor,
+    :class => Etapper::TransactionProcessor,
     :schema_type => XSD::QName.new(NsService, "TransactionProcessor"),
     :schema_element => [
       ["default", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "default")], [0, 1]],
@@ -1380,20 +1380,20 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::LinkedTransaction,
+    :class => Etapper::LinkedTransaction,
     :schema_type => XSD::QName.new(NsService, "LinkedTransaction"),
     :schema_element => [
-      ["softCreditAccount", ["Etapper::Client::Account", XSD::QName.new(nil, "softCreditAccount")], [0, 1]],
+      ["softCreditAccount", ["Etapper::Account", XSD::QName.new(nil, "softCreditAccount")], [0, 1]],
       ["transaction", [nil, XSD::QName.new(nil, "transaction")], [0, 1]],
-      ["tributeAccount", ["Etapper::Client::Account", XSD::QName.new(nil, "tributeAccount")], [0, 1]]
+      ["tributeAccount", ["Etapper::Account", XSD::QName.new(nil, "tributeAccount")], [0, 1]]
     ]
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::AccountChangeRequest,
+    :class => Etapper::AccountChangeRequest,
     :schema_type => XSD::QName.new(NsService, "AccountChangeRequest"),
     :schema_element => [
-      ["account", ["Etapper::Client::Account", XSD::QName.new(nil, "account")], [0, 1]],
+      ["account", ["Etapper::Account", XSD::QName.new(nil, "account")], [0, 1]],
       ["createChangeNote", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "createChangeNote")], [0, 1]],
       ["createFieldAndValues", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "createFieldAndValues")], [0, 1]],
       ["notificationEmail", ["SOAP::SOAPString", XSD::QName.new(nil, "notificationEmail")], [0, 1]],
@@ -1402,12 +1402,12 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::CartOrderRequest,
+    :class => Etapper::CartOrderRequest,
     :schema_type => XSD::QName.new(NsService, "CartOrderRequest"),
     :schema_element => [
-      ["account", ["Etapper::Client::Account", XSD::QName.new(nil, "account")], [0, 1]],
+      ["account", ["Etapper::Account", XSD::QName.new(nil, "account")], [0, 1]],
       ["createFieldAndValues", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "createFieldAndValues")], [0, 1]],
-      ["journalEntries", ["Etapper::Client::ArrayOfanyType", XSD::QName.new(nil, "journalEntries")], [0, 1]],
+      ["journalEntries", ["Etapper::ArrayOfanyType", XSD::QName.new(nil, "journalEntries")], [0, 1]],
       ["populateDataSource", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "populateDataSource")], [0, 1]],
       ["processor", ["SOAP::SOAPString", XSD::QName.new(nil, "processor")], [0, 1]],
       ["skipSoftErrors", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "skipSoftErrors")], [0, 1]],
@@ -1417,21 +1417,21 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::CartOrderResponse,
+    :class => Etapper::CartOrderResponse,
     :schema_type => XSD::QName.new(NsService, "CartOrderResponse"),
     :schema_element => [
       ["accountNumber", ["SOAP::SOAPInt", XSD::QName.new(nil, "accountNumber")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["createdNewAccount", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "createdNewAccount")], [0, 1]],
-      ["journalEntryRefs", ["Etapper::Client::ArrayOfstring", XSD::QName.new(nil, "journalEntryRefs")], [0, 1]]
+      ["journalEntryRefs", ["Etapper::ArrayOfstring", XSD::QName.new(nil, "journalEntryRefs")], [0, 1]]
     ]
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::EcommerceRequest,
+    :class => Etapper::EcommerceRequest,
     :schema_type => XSD::QName.new(NsService, "EcommerceRequest"),
     :schema_element => [
-      ["account", ["Etapper::Client::Account", XSD::QName.new(nil, "account")], [0, 1]],
+      ["account", ["Etapper::Account", XSD::QName.new(nil, "account")], [0, 1]],
       ["confirmationMessageFooter", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationMessageFooter")], [0, 1]],
       ["confirmationMessageHeader", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationMessageHeader")], [0, 1]],
       ["confirmationSender", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationSender")], [0, 1]],
@@ -1439,7 +1439,7 @@ module ServiceMappingRegistry
       ["confirmationSubject", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationSubject")], [0, 1]],
       ["createFieldAndValues", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "createFieldAndValues")], [0, 1]],
       ["failureEmail", ["SOAP::SOAPString", XSD::QName.new(nil, "failureEmail")], [0, 1]],
-      ["journalEntries", ["Etapper::Client::ArrayOfanyType", XSD::QName.new(nil, "journalEntries")], [0, 1]],
+      ["journalEntries", ["Etapper::ArrayOfanyType", XSD::QName.new(nil, "journalEntries")], [0, 1]],
       ["notificationEmail", ["SOAP::SOAPString", XSD::QName.new(nil, "notificationEmail")], [0, 1]],
       ["notificationSubject", ["SOAP::SOAPString", XSD::QName.new(nil, "notificationSubject")], [0, 1]],
       ["populateDataSource", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "populateDataSource")], [0, 1]],
@@ -1451,18 +1451,18 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::EcommerceResponse,
+    :class => Etapper::EcommerceResponse,
     :schema_type => XSD::QName.new(NsService, "EcommerceResponse"),
     :schema_element => [
       ["accountNumber", ["SOAP::SOAPInt", XSD::QName.new(nil, "accountNumber")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["createdNewAccount", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "createdNewAccount")], [0, 1]],
-      ["journalEntryRefs", ["Etapper::Client::ArrayOfstring", XSD::QName.new(nil, "journalEntryRefs")], [0, 1]]
+      ["journalEntryRefs", ["Etapper::ArrayOfstring", XSD::QName.new(nil, "journalEntryRefs")], [0, 1]]
     ]
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::ForgottenPasswordEmailHelpRequest,
+    :class => Etapper::ForgottenPasswordEmailHelpRequest,
     :schema_type => XSD::QName.new(NsService, "ForgottenPasswordEmailHelpRequest"),
     :schema_element => [
       ["baseQuery", ["SOAP::SOAPString", XSD::QName.new(nil, "baseQuery")], [0, 1]],
@@ -1476,7 +1476,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::ForgottenPasswordResetHelpRequest,
+    :class => Etapper::ForgottenPasswordResetHelpRequest,
     :schema_type => XSD::QName.new(NsService, "ForgottenPasswordResetHelpRequest"),
     :schema_element => [
       ["code", ["SOAP::SOAPString", XSD::QName.new(nil, "code")], [0, 1]],
@@ -1485,7 +1485,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::ProcessTransactionRequest,
+    :class => Etapper::ProcessTransactionRequest,
     :schema_type => XSD::QName.new(NsService, "ProcessTransactionRequest"),
     :schema_element => [
       ["confirmationMessageFooter", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationMessageFooter")], [0, 1]],
@@ -1503,7 +1503,7 @@ module ServiceMappingRegistry
   )
 
   EncodedRegistry.register(
-    :class => Etapper::Client::SendEmailRequest,
+    :class => Etapper::SendEmailRequest,
     :schema_type => XSD::QName.new(NsService, "SendEmailRequest"),
     :schema_element => [
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
@@ -1517,10 +1517,10 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Account,
+    :class => Etapper::Account,
     :schema_type => XSD::QName.new(NsService, "Account"),
     :schema_element => [
-      ["accountDefinedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "accountDefinedValues")], [0, 1]],
+      ["accountDefinedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "accountDefinedValues")], [0, 1]],
       ["accountRoleType", ["SOAP::SOAPInt", XSD::QName.new(nil, "accountRoleType")], [0, 1]],
       ["address", ["SOAP::SOAPString", XSD::QName.new(nil, "address")], [0, 1]],
       ["city", ["SOAP::SOAPString", XSD::QName.new(nil, "city")], [0, 1]],
@@ -1538,10 +1538,10 @@ module ServiceMappingRegistry
       ["name", ["SOAP::SOAPString", XSD::QName.new(nil, "name")], [0, 1]],
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]],
       ["passwordExpired", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "passwordExpired")], [0, 1]],
-      ["personaDefinedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "personaDefinedValues")], [0, 1]],
+      ["personaDefinedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "personaDefinedValues")], [0, 1]],
       ["personaType", ["SOAP::SOAPString", XSD::QName.new(nil, "personaType")], [0, 1]],
-      ["personaTypes", ["Etapper::Client::ArrayOfstring", XSD::QName.new(nil, "personaTypes")], [0, 1]],
-      ["phones", ["Etapper::Client::ArrayOfPhone", XSD::QName.new(nil, "phones")], [0, 1]],
+      ["personaTypes", ["Etapper::ArrayOfstring", XSD::QName.new(nil, "personaTypes")], [0, 1]],
+      ["phones", ["Etapper::ArrayOfPhone", XSD::QName.new(nil, "phones")], [0, 1]],
       ["postalCode", ["SOAP::SOAPString", XSD::QName.new(nil, "postalCode")], [0, 1]],
       ["primaryPersona", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "primaryPersona")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
@@ -1557,7 +1557,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::DefinedValue,
+    :class => Etapper::DefinedValue,
     :schema_type => XSD::QName.new(NsService, "DefinedValue"),
     :schema_element => [
       ["dataType", ["SOAP::SOAPInt", XSD::QName.new(nil, "dataType")], [0, 1]],
@@ -1570,7 +1570,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Phone,
+    :class => Etapper::Phone,
     :schema_type => XSD::QName.new(NsService, "Phone"),
     :schema_element => [
       ["number", ["SOAP::SOAPString", XSD::QName.new(nil, "number")], [0, 1]],
@@ -1579,17 +1579,17 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Gift,
+    :class => Etapper::Gift,
     :schema_type => XSD::QName.new(NsService, "Gift"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["letter", ["SOAP::SOAPString", XSD::QName.new(nil, "letter")], [0, 1]],
@@ -1604,16 +1604,16 @@ module ServiceMappingRegistry
       ["recognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "recognitionType")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["segmentedTransactionRef", ["SOAP::SOAPString", XSD::QName.new(nil, "segmentedTransactionRef")], [0, 1]],
-      ["softCredit", ["Etapper::Client::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
+      ["softCredit", ["Etapper::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
       ["tributeAccountName", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountName")], [0, 1]],
       ["tributeAccountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountRef")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
-      ["valuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
+      ["valuable", ["Etapper::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Attachment,
+    :class => Etapper::Attachment,
     :schema_type => XSD::QName.new(NsService, "Attachment"),
     :schema_element => [
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
@@ -1625,7 +1625,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::SoftCredit,
+    :class => Etapper::SoftCredit,
     :schema_type => XSD::QName.new(NsService, "SoftCredit"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
@@ -1647,24 +1647,24 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Valuable,
+    :class => Etapper::Valuable,
     :schema_type => XSD::QName.new(NsService, "Valuable"),
     :schema_element => [
-      ["bond", ["Etapper::Client::Bond", XSD::QName.new(nil, "bond")], [0, 1]],
-      ["cash", ["Etapper::Client::Cash", XSD::QName.new(nil, "cash")], [0, 1]],
-      ["check", ["Etapper::Client::Check", XSD::QName.new(nil, "check")], [0, 1]],
-      ["creditCard", ["Etapper::Client::CreditCard", XSD::QName.new(nil, "creditCard")], [0, 1]],
-      ["electronicFundsTransfer", ["Etapper::Client::ElectronicFundsTransfer", XSD::QName.new(nil, "electronicFundsTransfer")], [0, 1]],
-      ["inKind", ["Etapper::Client::InKind", XSD::QName.new(nil, "inKind")], [0, 1]],
-      ["insurance", ["Etapper::Client::Insurance", XSD::QName.new(nil, "insurance")], [0, 1]],
-      ["realEstate", ["Etapper::Client::RealEstate", XSD::QName.new(nil, "realEstate")], [0, 1]],
-      ["stock", ["Etapper::Client::Stock", XSD::QName.new(nil, "stock")], [0, 1]],
+      ["bond", ["Etapper::Bond", XSD::QName.new(nil, "bond")], [0, 1]],
+      ["cash", ["Etapper::Cash", XSD::QName.new(nil, "cash")], [0, 1]],
+      ["check", ["Etapper::Check", XSD::QName.new(nil, "check")], [0, 1]],
+      ["creditCard", ["Etapper::CreditCard", XSD::QName.new(nil, "creditCard")], [0, 1]],
+      ["electronicFundsTransfer", ["Etapper::ElectronicFundsTransfer", XSD::QName.new(nil, "electronicFundsTransfer")], [0, 1]],
+      ["inKind", ["Etapper::InKind", XSD::QName.new(nil, "inKind")], [0, 1]],
+      ["insurance", ["Etapper::Insurance", XSD::QName.new(nil, "insurance")], [0, 1]],
+      ["realEstate", ["Etapper::RealEstate", XSD::QName.new(nil, "realEstate")], [0, 1]],
+      ["stock", ["Etapper::Stock", XSD::QName.new(nil, "stock")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Bond,
+    :class => Etapper::Bond,
     :schema_type => XSD::QName.new(NsService, "Bond"),
     :schema_element => [
       ["actualValue", ["SOAP::SOAPDouble", XSD::QName.new(nil, "actualValue")], [0, 1]],
@@ -1676,7 +1676,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Cash,
+    :class => Etapper::Cash,
     :schema_type => XSD::QName.new(NsService, "Cash"),
     :schema_element => [
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]]
@@ -1684,7 +1684,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Check,
+    :class => Etapper::Check,
     :schema_type => XSD::QName.new(NsService, "Check"),
     :schema_element => [
       ["account", ["SOAP::SOAPString", XSD::QName.new(nil, "account")], [0, 1]],
@@ -1698,7 +1698,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::CreditCard,
+    :class => Etapper::CreditCard,
     :schema_type => XSD::QName.new(NsService, "CreditCard"),
     :schema_element => [
       ["authorizationCode", ["SOAP::SOAPString", XSD::QName.new(nil, "authorizationCode")], [0, 1]],
@@ -1716,7 +1716,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::ElectronicFundsTransfer,
+    :class => Etapper::ElectronicFundsTransfer,
     :schema_type => XSD::QName.new(NsService, "ElectronicFundsTransfer"),
     :schema_element => [
       ["accountNumber", ["SOAP::SOAPString", XSD::QName.new(nil, "accountNumber")], [0, 1]],
@@ -1737,7 +1737,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::InKind,
+    :class => Etapper::InKind,
     :schema_type => XSD::QName.new(NsService, "InKind"),
     :schema_element => [
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]],
@@ -1747,7 +1747,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Insurance,
+    :class => Etapper::Insurance,
     :schema_type => XSD::QName.new(NsService, "Insurance"),
     :schema_element => [
       ["beneficiary", ["SOAP::SOAPString", XSD::QName.new(nil, "beneficiary")], [0, 1]],
@@ -1764,7 +1764,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::RealEstate,
+    :class => Etapper::RealEstate,
     :schema_type => XSD::QName.new(NsService, "RealEstate"),
     :schema_element => [
       ["location", ["SOAP::SOAPString", XSD::QName.new(nil, "location")], [0, 1]],
@@ -1778,7 +1778,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Stock,
+    :class => Etapper::Stock,
     :schema_type => XSD::QName.new(NsService, "Stock"),
     :schema_element => [
       ["brokerName", ["SOAP::SOAPString", XSD::QName.new(nil, "brokerName")], [0, 1]],
@@ -1794,17 +1794,17 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Payment,
+    :class => Etapper::Payment,
     :schema_type => XSD::QName.new(NsService, "Payment"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["letter", ["SOAP::SOAPString", XSD::QName.new(nil, "letter")], [0, 1]],
@@ -1819,23 +1819,23 @@ module ServiceMappingRegistry
       ["recognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "recognitionType")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["segmentedTransactionRef", ["SOAP::SOAPString", XSD::QName.new(nil, "segmentedTransactionRef")], [0, 1]],
-      ["softCredit", ["Etapper::Client::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
+      ["softCredit", ["Etapper::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
       ["tributeAccountName", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountName")], [0, 1]],
       ["tributeAccountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountRef")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
-      ["valuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
+      ["valuable", ["Etapper::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Contact,
+    :class => Etapper::Contact,
     :schema_type => XSD::QName.new(NsService, "Contact"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["method", ["SOAP::SOAPString", XSD::QName.new(nil, "method")], [0, 1]],
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]],
@@ -1846,17 +1846,17 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Disbursement,
+    :class => Etapper::Disbursement,
     :schema_type => XSD::QName.new(NsService, "Disbursement"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["letter", ["SOAP::SOAPString", XSD::QName.new(nil, "letter")], [0, 1]],
@@ -1865,22 +1865,22 @@ module ServiceMappingRegistry
       ["receipt", ["SOAP::SOAPString", XSD::QName.new(nil, "receipt")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
-      ["valuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
+      ["valuable", ["Etapper::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::LoginCredentialsRequest,
+    :class => Etapper::LoginCredentialsRequest,
     :schema_type => XSD::QName.new(NsService, "LoginCredentialsRequest"),
     :schema_element => [
-      ["account", ["Etapper::Client::Account", XSD::QName.new(nil, "account")], [0, 1]],
+      ["account", ["Etapper::Account", XSD::QName.new(nil, "account")], [0, 1]],
       ["confirmationLoginURL", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationLoginURL")], [0, 1]],
       ["confirmationMessageFooter", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationMessageFooter")], [0, 1]],
       ["confirmationMessageHeader", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationMessageHeader")], [0, 1]],
       ["confirmationSender", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationSender")], [0, 1]],
       ["confirmationSignature", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationSignature")], [0, 1]],
       ["confirmationSubject", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationSubject")], [0, 1]],
-      ["duplicateSearchCriteria", ["Etapper::Client::ArrayOfSearchCriteria", XSD::QName.new(nil, "duplicateSearchCriteria")], [0, 1]],
+      ["duplicateSearchCriteria", ["Etapper::ArrayOfSearchCriteria", XSD::QName.new(nil, "duplicateSearchCriteria")], [0, 1]],
       ["duplicateSearchQuery", ["SOAP::SOAPString", XSD::QName.new(nil, "duplicateSearchQuery")], [0, 1]],
       ["failureEmail", ["SOAP::SOAPString", XSD::QName.new(nil, "failureEmail")], [0, 1]],
       ["loginId", ["SOAP::SOAPString", XSD::QName.new(nil, "loginId")], [0, 1]],
@@ -1893,18 +1893,18 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::SearchCriteria,
+    :class => Etapper::SearchCriteria,
     :schema_type => XSD::QName.new(NsService, "SearchCriteria"),
     :schema_element => [
       ["action", ["SOAP::SOAPString", XSD::QName.new(nil, "action")], [0, 1]],
       ["field", ["SOAP::SOAPString", XSD::QName.new(nil, "field")], [0, 1]],
       ["type", ["SOAP::SOAPString", XSD::QName.new(nil, "type")], [0, 1]],
-      ["values", ["Etapper::Client::ArrayOfstring", XSD::QName.new(nil, "values")], [0, 1]]
+      ["values", ["Etapper::ArrayOfstring", XSD::QName.new(nil, "values")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::LoginCredentialsResponse,
+    :class => Etapper::LoginCredentialsResponse,
     :schema_type => XSD::QName.new(NsService, "LoginCredentialsResponse"),
     :schema_element => [
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
@@ -1914,14 +1914,14 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Note,
+    :class => Etapper::Note,
     :schema_type => XSD::QName.new(NsService, "Note"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["immutable", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "immutable")], [0, 1]],
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]],
@@ -1931,12 +1931,12 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::OutlookIntegrationEmail,
+    :class => Etapper::OutlookIntegrationEmail,
     :schema_type => XSD::QName.new(NsService, "OutlookIntegrationEmail"),
     :schema_element => [
       ["bCC", ["SOAP::SOAPString", XSD::QName.new(nil, "BCC")], [0, 1]],
       ["cC", ["SOAP::SOAPString", XSD::QName.new(nil, "CC")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["contactMethodRef", ["SOAP::SOAPString", XSD::QName.new(nil, "contactMethodRef")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
       ["from", ["SOAP::SOAPString", XSD::QName.new(nil, "from")], [0, 1]],
@@ -1947,18 +1947,18 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Pledge,
+    :class => Etapper::Pledge,
     :schema_type => XSD::QName.new(NsService, "Pledge"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
-      ["customSchedule", ["Etapper::Client::CustomPaymentSchedule", XSD::QName.new(nil, "customSchedule")], [0, 1]],
+      ["customSchedule", ["Etapper::CustomPaymentSchedule", XSD::QName.new(nil, "customSchedule")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["initialPaymentAmount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "initialPaymentAmount")], [0, 1]],
@@ -1973,15 +1973,15 @@ module ServiceMappingRegistry
       ["originalAccountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "originalAccountRef")], [0, 1]],
       ["originalTransactionRef", ["SOAP::SOAPString", XSD::QName.new(nil, "originalTransactionRef")], [0, 1]],
       ["outstandingBalance", ["SOAP::SOAPDouble", XSD::QName.new(nil, "outstandingBalance")], [0, 1]],
-      ["paymentValuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "paymentValuable")], [0, 1]],
+      ["paymentValuable", ["Etapper::Valuable", XSD::QName.new(nil, "paymentValuable")], [0, 1]],
       ["receipt", ["SOAP::SOAPString", XSD::QName.new(nil, "receipt")], [0, 1]],
       ["recognitionName", ["SOAP::SOAPString", XSD::QName.new(nil, "recognitionName")], [0, 1]],
       ["recognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "recognitionType")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
-      ["scheduledValuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "scheduledValuable")], [0, 1]],
+      ["scheduledValuable", ["Etapper::Valuable", XSD::QName.new(nil, "scheduledValuable")], [0, 1]],
       ["segmentedTransactionRef", ["SOAP::SOAPString", XSD::QName.new(nil, "segmentedTransactionRef")], [0, 1]],
-      ["softCredit", ["Etapper::Client::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
-      ["standardSchedule", ["Etapper::Client::StandardPaymentSchedule", XSD::QName.new(nil, "standardSchedule")], [0, 1]],
+      ["softCredit", ["Etapper::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
+      ["standardSchedule", ["Etapper::StandardPaymentSchedule", XSD::QName.new(nil, "standardSchedule")], [0, 1]],
       ["tributeAccountName", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountName")], [0, 1]],
       ["tributeAccountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountRef")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
@@ -1990,18 +1990,18 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::CustomPaymentSchedule,
+    :class => Etapper::CustomPaymentSchedule,
     :schema_type => XSD::QName.new(NsService, "CustomPaymentSchedule"),
     :schema_element => [
-      ["installmentAmounts", ["Etapper::Client::ArrayOfdouble", XSD::QName.new(nil, "installmentAmounts")], [0, 1]],
-      ["installmentDates", ["Etapper::Client::ArrayOfdateTime", XSD::QName.new(nil, "installmentDates")], [0, 1]],
+      ["installmentAmounts", ["Etapper::ArrayOfdouble", XSD::QName.new(nil, "installmentAmounts")], [0, 1]],
+      ["installmentDates", ["Etapper::ArrayOfdateTime", XSD::QName.new(nil, "installmentDates")], [0, 1]],
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]],
       ["processType", ["SOAP::SOAPInt", XSD::QName.new(nil, "processType")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::StandardPaymentSchedule,
+    :class => Etapper::StandardPaymentSchedule,
     :schema_type => XSD::QName.new(NsService, "StandardPaymentSchedule"),
     :schema_element => [
       ["firstInstallmentDate", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "firstInstallmentDate")], [0, 1]],
@@ -2014,18 +2014,18 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::RecurringGift,
+    :class => Etapper::RecurringGift,
     :schema_type => XSD::QName.new(NsService, "RecurringGift"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
       ["copyRgsElements", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "copyRgsElements")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["letter", ["SOAP::SOAPString", XSD::QName.new(nil, "letter")], [0, 1]],
@@ -2040,16 +2040,16 @@ module ServiceMappingRegistry
       ["recognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "recognitionType")], [0, 1]],
       ["recurringGiftScheduleRef", ["SOAP::SOAPString", XSD::QName.new(nil, "recurringGiftScheduleRef")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
-      ["softCredit", ["Etapper::Client::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
+      ["softCredit", ["Etapper::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
       ["tributeAccountName", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountName")], [0, 1]],
       ["tributeAccountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountRef")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
-      ["valuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
+      ["valuable", ["Etapper::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::ConnectRequest,
+    :class => Etapper::ConnectRequest,
     :schema_type => XSD::QName.new(NsService, "ConnectRequest"),
     :schema_element => [
       ["applicationContext", ["SOAP::SOAPString", XSD::QName.new(nil, "applicationContext")], [0, 1]],
@@ -2059,7 +2059,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::ExternalLoginRequest,
+    :class => Etapper::ExternalLoginRequest,
     :schema_type => XSD::QName.new(NsService, "ExternalLoginRequest"),
     :schema_element => [
       ["applicationContext", ["SOAP::SOAPString", XSD::QName.new(nil, "applicationContext")], [0, 1]],
@@ -2071,11 +2071,11 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::PagedCartElementsResponse,
+    :class => Etapper::PagedCartElementsResponse,
     :schema_type => XSD::QName.new(NsService, "PagedCartElementsResponse"),
     :schema_element => [
       ["count", ["SOAP::SOAPInt", XSD::QName.new(nil, "count")], [0, 1]],
-      ["data", ["Etapper::Client::Collection", XSD::QName.new(nil, "data")], [0, 1]],
+      ["data", ["Etapper::Collection", XSD::QName.new(nil, "data")], [0, 1]],
       ["pages", ["SOAP::SOAPInt", XSD::QName.new(nil, "pages")], [0, 1]],
       ["start", ["SOAP::SOAPInt", XSD::QName.new(nil, "start")], [0, 1]],
       ["total", ["SOAP::SOAPInt", XSD::QName.new(nil, "total")], [0, 1]],
@@ -2084,11 +2084,11 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::PagedDefinedFieldsResponse,
+    :class => Etapper::PagedDefinedFieldsResponse,
     :schema_type => XSD::QName.new(NsService, "PagedDefinedFieldsResponse"),
     :schema_element => [
       ["count", ["SOAP::SOAPInt", XSD::QName.new(nil, "count")], [0, 1]],
-      ["data", ["Etapper::Client::Collection", XSD::QName.new(nil, "data")], [0, 1]],
+      ["data", ["Etapper::Collection", XSD::QName.new(nil, "data")], [0, 1]],
       ["pages", ["SOAP::SOAPInt", XSD::QName.new(nil, "pages")], [0, 1]],
       ["start", ["SOAP::SOAPInt", XSD::QName.new(nil, "start")], [0, 1]],
       ["total", ["SOAP::SOAPInt", XSD::QName.new(nil, "total")], [0, 1]],
@@ -2097,11 +2097,11 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::PagedJournalEntriesResponse,
+    :class => Etapper::PagedJournalEntriesResponse,
     :schema_type => XSD::QName.new(NsService, "PagedJournalEntriesResponse"),
     :schema_element => [
       ["count", ["SOAP::SOAPInt", XSD::QName.new(nil, "count")], [0, 1]],
-      ["data", ["Etapper::Client::Collection", XSD::QName.new(nil, "data")], [0, 1]],
+      ["data", ["Etapper::Collection", XSD::QName.new(nil, "data")], [0, 1]],
       ["pages", ["SOAP::SOAPInt", XSD::QName.new(nil, "pages")], [0, 1]],
       ["start", ["SOAP::SOAPInt", XSD::QName.new(nil, "start")], [0, 1]],
       ["total", ["SOAP::SOAPInt", XSD::QName.new(nil, "total")], [0, 1]],
@@ -2110,11 +2110,11 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::PagedQueryResultsResponse,
+    :class => Etapper::PagedQueryResultsResponse,
     :schema_type => XSD::QName.new(NsService, "PagedQueryResultsResponse"),
     :schema_element => [
       ["count", ["SOAP::SOAPInt", XSD::QName.new(nil, "count")], [0, 1]],
-      ["data", ["Etapper::Client::Collection", XSD::QName.new(nil, "data")], [0, 1]],
+      ["data", ["Etapper::Collection", XSD::QName.new(nil, "data")], [0, 1]],
       ["pages", ["SOAP::SOAPInt", XSD::QName.new(nil, "pages")], [0, 1]],
       ["start", ["SOAP::SOAPInt", XSD::QName.new(nil, "start")], [0, 1]],
       ["total", ["SOAP::SOAPInt", XSD::QName.new(nil, "total")], [0, 1]],
@@ -2123,19 +2123,19 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::CalendarItem,
+    :class => Etapper::CalendarItem,
     :schema_type => XSD::QName.new(NsService, "CalendarItem"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["endTime", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "endTime")], [0, 1]],
-      ["invitations", ["Etapper::Client::ArrayOfInvitation", XSD::QName.new(nil, "invitations")], [0, 1]],
+      ["invitations", ["Etapper::ArrayOfInvitation", XSD::QName.new(nil, "invitations")], [0, 1]],
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]],
       ["priority", ["SOAP::SOAPInt", XSD::QName.new(nil, "priority")], [0, 1]],
       ["private", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "private")], [0, 1]],
-      ["recurringSchedule", ["Etapper::Client::RecurringSchedule", XSD::QName.new(nil, "recurringSchedule")], [0, 1]],
+      ["recurringSchedule", ["Etapper::RecurringSchedule", XSD::QName.new(nil, "recurringSchedule")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["remind", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "remind")], [0, 1]],
       ["startTime", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "startTime")], [0, 1]],
@@ -2146,12 +2146,12 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Invitation,
+    :class => Etapper::Invitation,
     :schema_type => XSD::QName.new(NsService, "Invitation"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
-      ["calendarItem", ["Etapper::Client::CalendarItem", XSD::QName.new(nil, "calendarItem")], [0, 1]],
+      ["calendarItem", ["Etapper::CalendarItem", XSD::QName.new(nil, "calendarItem")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["remind", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "remind")], [0, 1]],
@@ -2161,7 +2161,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::RecurringSchedule,
+    :class => Etapper::RecurringSchedule,
     :schema_type => XSD::QName.new(NsService, "RecurringSchedule"),
     :schema_element => [
       ["frequency", ["SOAP::SOAPInt", XSD::QName.new(nil, "frequency")], [0, 1]],
@@ -2172,18 +2172,18 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::CartCategory,
+    :class => Etapper::CartCategory,
     :schema_type => XSD::QName.new(NsService, "CartCategory"),
     :schema_element => [
       ["description", ["SOAP::SOAPString", XSD::QName.new(nil, "description")], [0, 1]],
       ["disabled", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "disabled")], [0, 1]],
-      ["image", ["Etapper::Client::CartImage", XSD::QName.new(nil, "image")], [0, 1]],
+      ["image", ["Etapper::CartImage", XSD::QName.new(nil, "image")], [0, 1]],
       ["immediateCategories", ["SOAP::SOAPInt", XSD::QName.new(nil, "immediateCategories")], [0, 1]],
       ["immediateItems", ["SOAP::SOAPInt", XSD::QName.new(nil, "immediateItems")], [0, 1]],
       ["name", ["SOAP::SOAPString", XSD::QName.new(nil, "name")], [0, 1]],
       ["nestedCategories", ["SOAP::SOAPInt", XSD::QName.new(nil, "nestedCategories")], [0, 1]],
       ["nestedItems", ["SOAP::SOAPInt", XSD::QName.new(nil, "nestedItems")], [0, 1]],
-      ["parents", ["Etapper::Client::ArrayOfCartParent", XSD::QName.new(nil, "parents")], [0, 1]],
+      ["parents", ["Etapper::ArrayOfCartParent", XSD::QName.new(nil, "parents")], [0, 1]],
       ["publishEndDate", ["SOAP::SOAPString", XSD::QName.new(nil, "publishEndDate")], [0, 1]],
       ["publishStartDate", ["SOAP::SOAPString", XSD::QName.new(nil, "publishStartDate")], [0, 1]],
       ["publishableNow", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "publishableNow")], [0, 1]],
@@ -2193,7 +2193,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::CartImage,
+    :class => Etapper::CartImage,
     :schema_type => XSD::QName.new(NsService, "CartImage"),
     :schema_element => [
       ["description", ["SOAP::SOAPString", XSD::QName.new(nil, "description")], [0, 1]],
@@ -2202,7 +2202,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::CartParent,
+    :class => Etapper::CartParent,
     :schema_type => XSD::QName.new(NsService, "CartParent"),
     :schema_element => [
       ["name", ["SOAP::SOAPString", XSD::QName.new(nil, "name")], [0, 1]],
@@ -2211,7 +2211,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::PagedCartElementsRequest,
+    :class => Etapper::PagedCartElementsRequest,
     :schema_type => XSD::QName.new(NsService, "PagedCartElementsRequest"),
     :schema_element => [
       ["clearCache", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "clearCache")], [0, 1]],
@@ -2228,7 +2228,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::CartItem,
+    :class => Etapper::CartItem,
     :schema_type => XSD::QName.new(NsService, "CartItem"),
     :schema_element => [
       ["deductibleAmount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "deductibleAmount")], [0, 1]],
@@ -2236,22 +2236,22 @@ module ServiceMappingRegistry
       ["longDescription", ["SOAP::SOAPString", XSD::QName.new(nil, "longDescription")], [0, 1]],
       ["name", ["SOAP::SOAPString", XSD::QName.new(nil, "name")], [0, 1]],
       ["nonTaxableAmount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "nonTaxableAmount")], [0, 1]],
-      ["parents", ["Etapper::Client::ArrayOfCartParent", XSD::QName.new(nil, "parents")], [0, 1]],
+      ["parents", ["Etapper::ArrayOfCartParent", XSD::QName.new(nil, "parents")], [0, 1]],
       ["publishEndDate", ["SOAP::SOAPString", XSD::QName.new(nil, "publishEndDate")], [0, 1]],
       ["publishStartDate", ["SOAP::SOAPString", XSD::QName.new(nil, "publishStartDate")], [0, 1]],
       ["publishableNow", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "publishableNow")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
-      ["regularImages", ["Etapper::Client::ArrayOfCartImage", XSD::QName.new(nil, "regularImages")], [0, 1]],
+      ["regularImages", ["Etapper::ArrayOfCartImage", XSD::QName.new(nil, "regularImages")], [0, 1]],
       ["regularPrice", ["SOAP::SOAPDouble", XSD::QName.new(nil, "regularPrice")], [0, 1]],
       ["shippingPrice", ["SOAP::SOAPDouble", XSD::QName.new(nil, "shippingPrice")], [0, 1]],
       ["shortDescription", ["SOAP::SOAPString", XSD::QName.new(nil, "shortDescription")], [0, 1]],
-      ["thumbImage", ["Etapper::Client::CartImage", XSD::QName.new(nil, "thumbImage")], [0, 1]],
+      ["thumbImage", ["Etapper::CartImage", XSD::QName.new(nil, "thumbImage")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::CartPreferences,
+    :class => Etapper::CartPreferences,
     :schema_type => XSD::QName.new(NsService, "CartPreferences"),
     :schema_element => [
       ["expressShippingPrice", ["SOAP::SOAPDouble", XSD::QName.new(nil, "expressShippingPrice")], [0, 1]],
@@ -2260,7 +2260,7 @@ module ServiceMappingRegistry
       ["salesTaxKey", ["SOAP::SOAPInt", XSD::QName.new(nil, "salesTaxKey")], [0, 1]],
       ["siteName", ["SOAP::SOAPString", XSD::QName.new(nil, "siteName")], [0, 1]],
       ["siteTitle", ["SOAP::SOAPString", XSD::QName.new(nil, "siteTitle")], [0, 1]],
-      ["stateTaxRates", ["Etapper::Client::ArrayOfStateTaxRate", XSD::QName.new(nil, "stateTaxRates")], [0, 1]],
+      ["stateTaxRates", ["Etapper::ArrayOfStateTaxRate", XSD::QName.new(nil, "stateTaxRates")], [0, 1]],
       ["successMessage", ["SOAP::SOAPString", XSD::QName.new(nil, "successMessage")], [0, 1]],
       ["templateSetFolder", ["SOAP::SOAPString", XSD::QName.new(nil, "templateSetFolder")], [0, 1]],
       ["welcomeMessage", ["SOAP::SOAPString", XSD::QName.new(nil, "welcomeMessage")], [0, 1]]
@@ -2268,7 +2268,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::StateTaxRate,
+    :class => Etapper::StateTaxRate,
     :schema_type => XSD::QName.new(NsService, "StateTaxRate"),
     :schema_element => [
       ["rate", ["SOAP::SOAPDouble", XSD::QName.new(nil, "rate")], [0, 1]],
@@ -2277,13 +2277,13 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Declaration,
+    :class => Etapper::Declaration,
     :schema_type => XSD::QName.new(NsService, "Declaration"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["address", ["SOAP::SOAPString", XSD::QName.new(nil, "address")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["city", ["SOAP::SOAPString", XSD::QName.new(nil, "city")], [0, 1]],
       ["confirmationDate", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "confirmationDate")], [0, 1]],
       ["country", ["SOAP::SOAPString", XSD::QName.new(nil, "country")], [0, 1]],
@@ -2301,10 +2301,10 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::DefinedField,
+    :class => Etapper::DefinedField,
     :schema_type => XSD::QName.new(NsService, "DefinedField"),
     :schema_element => [
-      ["applicationTypes", ["Etapper::Client::ArrayOfint", XSD::QName.new(nil, "applicationTypes")], [0, 1]],
+      ["applicationTypes", ["Etapper::ArrayOfint", XSD::QName.new(nil, "applicationTypes")], [0, 1]],
       ["category", ["SOAP::SOAPString", XSD::QName.new(nil, "category")], [0, 1]],
       ["dataType", ["SOAP::SOAPInt", XSD::QName.new(nil, "dataType")], [0, 1]],
       ["desc", ["SOAP::SOAPString", XSD::QName.new(nil, "desc")], [0, 1]],
@@ -2313,14 +2313,14 @@ module ServiceMappingRegistry
       ["name", ["SOAP::SOAPString", XSD::QName.new(nil, "name")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["required", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "required")], [0, 1]],
-      ["securityRights", ["Etapper::Client::ArrayOfDefinedFieldValue", XSD::QName.new(nil, "securityRights")], [0, 1]],
+      ["securityRights", ["Etapper::ArrayOfDefinedFieldValue", XSD::QName.new(nil, "securityRights")], [0, 1]],
       ["system", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "system")], [0, 1]],
-      ["values", ["Etapper::Client::ArrayOfDefinedFieldValue", XSD::QName.new(nil, "values")], [0, 1]]
+      ["values", ["Etapper::ArrayOfDefinedFieldValue", XSD::QName.new(nil, "values")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::DefinedFieldValue,
+    :class => Etapper::DefinedFieldValue,
     :schema_type => XSD::QName.new(NsService, "DefinedFieldValue"),
     :schema_element => [
       ["desc", ["SOAP::SOAPString", XSD::QName.new(nil, "desc")], [0, 1]],
@@ -2331,22 +2331,22 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::PagedDefinedFieldsRequest,
+    :class => Etapper::PagedDefinedFieldsRequest,
     :schema_type => XSD::QName.new(NsService, "PagedDefinedFieldsRequest"),
     :schema_element => [
       ["clearCache", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "clearCache")], [0, 1]],
       ["count", ["SOAP::SOAPInt", XSD::QName.new(nil, "count")], [0, 1]],
       ["start", ["SOAP::SOAPInt", XSD::QName.new(nil, "start")], [0, 1]],
-      ["applicationTypes", ["Etapper::Client::ArrayOfint", XSD::QName.new(nil, "applicationTypes")], [0, 1]],
-      ["categories", ["Etapper::Client::ArrayOfstring", XSD::QName.new(nil, "categories")], [0, 1]],
+      ["applicationTypes", ["Etapper::ArrayOfint", XSD::QName.new(nil, "applicationTypes")], [0, 1]],
+      ["categories", ["Etapper::ArrayOfstring", XSD::QName.new(nil, "categories")], [0, 1]],
       ["includeDisabledFields", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "includeDisabledFields")], [0, 1]],
       ["includeDisabledValues", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "includeDisabledValues")], [0, 1]],
-      ["names", ["Etapper::Client::ArrayOfstring", XSD::QName.new(nil, "names")], [0, 1]]
+      ["names", ["Etapper::ArrayOfstring", XSD::QName.new(nil, "names")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::DonorLoginPreferences,
+    :class => Etapper::DonorLoginPreferences,
     :schema_type => XSD::QName.new(NsService, "DonorLoginPreferences"),
     :schema_element => [
       ["welcomePageHtml", ["SOAP::SOAPString", XSD::QName.new(nil, "welcomePageHtml")], [0, 1]]
@@ -2354,7 +2354,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::DuplicateAccountSearch,
+    :class => Etapper::DuplicateAccountSearch,
     :schema_type => XSD::QName.new(NsService, "DuplicateAccountSearch"),
     :schema_element => [
       ["accountRoleTypes", ["SOAP::SOAPInt", XSD::QName.new(nil, "accountRoleTypes")], [0, 1]],
@@ -2367,7 +2367,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::PagedDynamicQueryResultsRequest,
+    :class => Etapper::PagedDynamicQueryResultsRequest,
     :schema_type => XSD::QName.new(NsService, "PagedDynamicQueryResultsRequest"),
     :schema_element => [
       ["clearCache", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "clearCache")], [0, 1]],
@@ -2380,16 +2380,16 @@ module ServiceMappingRegistry
       ["matchAny", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "matchAny")], [0, 1]],
       ["personaOption", ["SOAP::SOAPString", XSD::QName.new(nil, "personaOption")], [0, 1]],
       ["returnType", ["SOAP::SOAPInt", XSD::QName.new(nil, "returnType")], [0, 1]],
-      ["searchCriteria", ["Etapper::Client::ArrayOfSearchCriteria", XSD::QName.new(nil, "searchCriteria")], [0, 1]]
+      ["searchCriteria", ["Etapper::ArrayOfSearchCriteria", XSD::QName.new(nil, "searchCriteria")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::EntityRole,
+    :class => Etapper::EntityRole,
     :schema_type => XSD::QName.new(NsService, "EntityRole"),
     :schema_element => [
       ["accountRoleType", ["SOAP::SOAPInt", XSD::QName.new(nil, "accountRoleType")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["donorRecognitionName", ["SOAP::SOAPString", XSD::QName.new(nil, "donorRecognitionName")], [0, 1]],
       ["donorRecognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "donorRecognitionType")], [0, 1]],
       ["donorRoleRef", ["SOAP::SOAPString", XSD::QName.new(nil, "donorRoleRef")], [0, 1]],
@@ -2399,7 +2399,7 @@ module ServiceMappingRegistry
       ["loginId", ["SOAP::SOAPString", XSD::QName.new(nil, "loginId")], [0, 1]],
       ["loyaltyRating", ["SOAP::SOAPInt", XSD::QName.new(nil, "loyaltyRating")], [0, 1]],
       ["name", ["SOAP::SOAPString", XSD::QName.new(nil, "name")], [0, 1]],
-      ["personas", ["Etapper::Client::ArrayOfPersona", XSD::QName.new(nil, "personas")], [0, 1]],
+      ["personas", ["Etapper::ArrayOfPersona", XSD::QName.new(nil, "personas")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["sortName", ["SOAP::SOAPString", XSD::QName.new(nil, "sortName")], [0, 1]],
       ["tributeRoleRef", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeRoleRef")], [0, 1]],
@@ -2408,18 +2408,18 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::Persona,
+    :class => Etapper::Persona,
     :schema_type => XSD::QName.new(NsService, "Persona"),
     :schema_element => [
       ["address", ["SOAP::SOAPString", XSD::QName.new(nil, "address")], [0, 1]],
       ["city", ["SOAP::SOAPString", XSD::QName.new(nil, "city")], [0, 1]],
       ["country", ["SOAP::SOAPString", XSD::QName.new(nil, "country")], [0, 1]],
       ["county", ["SOAP::SOAPString", XSD::QName.new(nil, "county")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["email", ["SOAP::SOAPString", XSD::QName.new(nil, "email")], [0, 1]],
       ["longSalutation", ["SOAP::SOAPString", XSD::QName.new(nil, "longSalutation")], [0, 1]],
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]],
-      ["phones", ["Etapper::Client::ArrayOfPhone", XSD::QName.new(nil, "phones")], [0, 1]],
+      ["phones", ["Etapper::ArrayOfPhone", XSD::QName.new(nil, "phones")], [0, 1]],
       ["postalCode", ["SOAP::SOAPString", XSD::QName.new(nil, "postalCode")], [0, 1]],
       ["primary", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "primary")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
@@ -2432,7 +2432,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::PagedExistingQueryResultsRequest,
+    :class => Etapper::PagedExistingQueryResultsRequest,
     :schema_type => XSD::QName.new(NsService, "PagedExistingQueryResultsRequest"),
     :schema_element => [
       ["clearCache", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "clearCache")], [0, 1]],
@@ -2444,7 +2444,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::PagedJournalEntriesRequest,
+    :class => Etapper::PagedJournalEntriesRequest,
     :schema_type => XSD::QName.new(NsService, "PagedJournalEntriesRequest"),
     :schema_element => [
       ["clearCache", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "clearCache")], [0, 1]],
@@ -2454,12 +2454,12 @@ module ServiceMappingRegistry
       ["baseQuery", ["SOAP::SOAPString", XSD::QName.new(nil, "baseQuery")], [0, 1]],
       ["endDate", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "endDate")], [0, 1]],
       ["startDate", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "startDate")], [0, 1]],
-      ["types", ["Etapper::Client::ArrayOfint", XSD::QName.new(nil, "types")], [0, 1]]
+      ["types", ["Etapper::ArrayOfint", XSD::QName.new(nil, "types")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::JournalSummary,
+    :class => Etapper::JournalSummary,
     :schema_type => XSD::QName.new(NsService, "JournalSummary"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
@@ -2477,39 +2477,39 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::PrivacyPreferences,
+    :class => Etapper::PrivacyPreferences,
     :schema_type => XSD::QName.new(NsService, "PrivacyPreferences"),
     :schema_element => [
-      ["accountPrivacyPreference", ["Etapper::Client::PrivacyPreference", XSD::QName.new(nil, "accountPrivacyPreference")], [0, 1]],
+      ["accountPrivacyPreference", ["Etapper::PrivacyPreference", XSD::QName.new(nil, "accountPrivacyPreference")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
-      ["personaPrivacyPreferences", ["Etapper::Client::ArrayOfPrivacyPreference", XSD::QName.new(nil, "personaPrivacyPreferences")], [0, 1]]
+      ["personaPrivacyPreferences", ["Etapper::ArrayOfPrivacyPreference", XSD::QName.new(nil, "personaPrivacyPreferences")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::PrivacyPreference,
+    :class => Etapper::PrivacyPreference,
     :schema_type => XSD::QName.new(NsService, "PrivacyPreference"),
     :schema_element => [
       ["accountDefined", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "accountDefined")], [0, 1]],
       ["applicationGroup", ["SOAP::SOAPString", XSD::QName.new(nil, "applicationGroup")], [0, 1]],
-      ["hiddenFields", ["Etapper::Client::ArrayOfstring", XSD::QName.new(nil, "hiddenFields")], [0, 1]],
+      ["hiddenFields", ["Etapper::ArrayOfstring", XSD::QName.new(nil, "hiddenFields")], [0, 1]],
       ["personaType", ["SOAP::SOAPString", XSD::QName.new(nil, "personaType")], [0, 1]],
       ["status", ["SOAP::SOAPInt", XSD::QName.new(nil, "status")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::OrderItem,
+    :class => Etapper::OrderItem,
     :schema_type => XSD::QName.new(NsService, "OrderItem"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["itemName", ["SOAP::SOAPString", XSD::QName.new(nil, "itemName")], [0, 1]],
@@ -2518,20 +2518,20 @@ module ServiceMappingRegistry
       ["letter", ["SOAP::SOAPString", XSD::QName.new(nil, "letter")], [0, 1]],
       ["note", ["SOAP::SOAPString", XSD::QName.new(nil, "note")], [0, 1]],
       ["offsettingRef", ["SOAP::SOAPString", XSD::QName.new(nil, "offsettingRef")], [0, 1]],
-      ["orderInfo", ["Etapper::Client::OrderInfo", XSD::QName.new(nil, "orderInfo")], [0, 1]],
+      ["orderInfo", ["Etapper::OrderInfo", XSD::QName.new(nil, "orderInfo")], [0, 1]],
       ["receipt", ["SOAP::SOAPString", XSD::QName.new(nil, "receipt")], [0, 1]],
       ["recognitionName", ["SOAP::SOAPString", XSD::QName.new(nil, "recognitionName")], [0, 1]],
       ["recognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "recognitionType")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["segmentedTransactionRef", ["SOAP::SOAPString", XSD::QName.new(nil, "segmentedTransactionRef")], [0, 1]],
-      ["softCredit", ["Etapper::Client::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
+      ["softCredit", ["Etapper::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
-      ["valuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
+      ["valuable", ["Etapper::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::OrderInfo,
+    :class => Etapper::OrderInfo,
     :schema_type => XSD::QName.new(NsService, "OrderInfo"),
     :schema_element => [
       ["billingAddress", ["SOAP::SOAPString", XSD::QName.new(nil, "billingAddress")], [0, 1]],
@@ -2553,17 +2553,17 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::OrderShipping,
+    :class => Etapper::OrderShipping,
     :schema_type => XSD::QName.new(NsService, "OrderShipping"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["letter", ["SOAP::SOAPString", XSD::QName.new(nil, "letter")], [0, 1]],
@@ -2574,24 +2574,24 @@ module ServiceMappingRegistry
       ["recognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "recognitionType")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["segmentedTransactionRef", ["SOAP::SOAPString", XSD::QName.new(nil, "segmentedTransactionRef")], [0, 1]],
-      ["softCredit", ["Etapper::Client::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
+      ["softCredit", ["Etapper::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
-      ["valuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
+      ["valuable", ["Etapper::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::OrderTax,
+    :class => Etapper::OrderTax,
     :schema_type => XSD::QName.new(NsService, "OrderTax"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["letter", ["SOAP::SOAPString", XSD::QName.new(nil, "letter")], [0, 1]],
@@ -2602,16 +2602,16 @@ module ServiceMappingRegistry
       ["recognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "recognitionType")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
       ["segmentedTransactionRef", ["SOAP::SOAPString", XSD::QName.new(nil, "segmentedTransactionRef")], [0, 1]],
-      ["softCredit", ["Etapper::Client::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
+      ["softCredit", ["Etapper::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
       ["taxRate", ["SOAP::SOAPDouble", XSD::QName.new(nil, "taxRate")], [0, 1]],
       ["taxRegion", ["SOAP::SOAPString", XSD::QName.new(nil, "taxRegion")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
-      ["valuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
+      ["valuable", ["Etapper::Valuable", XSD::QName.new(nil, "valuable")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::OrganizationPreferences,
+    :class => Etapper::OrganizationPreferences,
     :schema_type => XSD::QName.new(NsService, "OrganizationPreferences"),
     :schema_element => [
       ["passwordMinimumLength", ["SOAP::SOAPInt", XSD::QName.new(nil, "passwordMinimumLength")], [0, 1]],
@@ -2620,7 +2620,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::PhoneAThonList,
+    :class => Etapper::PhoneAThonList,
     :schema_type => XSD::QName.new(NsService, "PhoneAThonList"),
     :schema_element => [
       ["currentCount", ["SOAP::SOAPInt", XSD::QName.new(nil, "currentCount")], [0, 1]],
@@ -2634,7 +2634,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::QueryResultStats,
+    :class => Etapper::QueryResultStats,
     :schema_type => XSD::QName.new(NsService, "QueryResultStats"),
     :schema_element => [
       ["gifted", ["SOAP::SOAPDouble", XSD::QName.new(nil, "gifted")], [0, 1]],
@@ -2647,17 +2647,17 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::RecurringGiftSchedule,
+    :class => Etapper::RecurringGiftSchedule,
     :schema_type => XSD::QName.new(NsService, "RecurringGiftSchedule"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["amount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "amount")], [0, 1]],
       ["approach", ["SOAP::SOAPString", XSD::QName.new(nil, "approach")], [0, 1]],
-      ["attachments", ["Etapper::Client::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
+      ["attachments", ["Etapper::ArrayOfAttachment", XSD::QName.new(nil, "attachments")], [0, 1]],
       ["campaign", ["SOAP::SOAPString", XSD::QName.new(nil, "campaign")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
-      ["definedValues", ["Etapper::Client::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
+      ["definedValues", ["Etapper::ArrayOfDefinedValue", XSD::QName.new(nil, "definedValues")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["fund", ["SOAP::SOAPString", XSD::QName.new(nil, "fund")], [0, 1]],
       ["letter", ["SOAP::SOAPString", XSD::QName.new(nil, "letter")], [0, 1]],
@@ -2673,9 +2673,9 @@ module ServiceMappingRegistry
       ["recognitionName", ["SOAP::SOAPString", XSD::QName.new(nil, "recognitionName")], [0, 1]],
       ["recognitionType", ["SOAP::SOAPInt", XSD::QName.new(nil, "recognitionType")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
-      ["schedule", ["Etapper::Client::StandardPaymentSchedule", XSD::QName.new(nil, "schedule")], [0, 1]],
-      ["scheduledValuable", ["Etapper::Client::Valuable", XSD::QName.new(nil, "scheduledValuable")], [0, 1]],
-      ["softCredit", ["Etapper::Client::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
+      ["schedule", ["Etapper::StandardPaymentSchedule", XSD::QName.new(nil, "schedule")], [0, 1]],
+      ["scheduledValuable", ["Etapper::Valuable", XSD::QName.new(nil, "scheduledValuable")], [0, 1]],
+      ["softCredit", ["Etapper::SoftCredit", XSD::QName.new(nil, "softCredit")], [0, 1]],
       ["tributeAccountName", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountName")], [0, 1]],
       ["tributeAccountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "tributeAccountRef")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]]
@@ -2683,7 +2683,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::SegmentedDonation,
+    :class => Etapper::SegmentedDonation,
     :schema_type => XSD::QName.new(NsService, "SegmentedDonation"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
@@ -2692,7 +2692,7 @@ module ServiceMappingRegistry
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["offsettingRef", ["SOAP::SOAPString", XSD::QName.new(nil, "offsettingRef")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
-      ["segments", ["Etapper::Client::ArrayOfanyType", XSD::QName.new(nil, "segments")], [0, 1]],
+      ["segments", ["Etapper::ArrayOfanyType", XSD::QName.new(nil, "segments")], [0, 1]],
       ["totalAmount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "totalAmount")], [0, 1]],
       ["totalNonDeductibleAmount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "totalNonDeductibleAmount")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]]
@@ -2700,7 +2700,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::SegmentedOrder,
+    :class => Etapper::SegmentedOrder,
     :schema_type => XSD::QName.new(NsService, "SegmentedOrder"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
@@ -2708,26 +2708,26 @@ module ServiceMappingRegistry
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["offsettingRef", ["SOAP::SOAPString", XSD::QName.new(nil, "offsettingRef")], [0, 1]],
-      ["orderInfo", ["Etapper::Client::OrderInfo", XSD::QName.new(nil, "orderInfo")], [0, 1]],
+      ["orderInfo", ["Etapper::OrderInfo", XSD::QName.new(nil, "orderInfo")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
-      ["segments", ["Etapper::Client::ArrayOfanyType", XSD::QName.new(nil, "segments")], [0, 1]],
+      ["segments", ["Etapper::ArrayOfanyType", XSD::QName.new(nil, "segments")], [0, 1]],
       ["totalAmount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "totalAmount")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::SegmentedPledge,
+    :class => Etapper::SegmentedPledge,
     :schema_type => XSD::QName.new(NsService, "SegmentedPledge"),
     :schema_element => [
       ["accountName", ["SOAP::SOAPString", XSD::QName.new(nil, "accountName")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
-      ["consolidatedCustomSchedule", ["Etapper::Client::CustomPaymentSchedule", XSD::QName.new(nil, "consolidatedCustomSchedule")], [0, 1]],
+      ["consolidatedCustomSchedule", ["Etapper::CustomPaymentSchedule", XSD::QName.new(nil, "consolidatedCustomSchedule")], [0, 1]],
       ["date", ["SOAP::SOAPDateTime", XSD::QName.new(nil, "date")], [0, 1]],
       ["final", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "final")], [0, 1]],
       ["offsettingRef", ["SOAP::SOAPString", XSD::QName.new(nil, "offsettingRef")], [0, 1]],
       ["ref", ["SOAP::SOAPString", XSD::QName.new(nil, "ref")], [0, 1]],
-      ["segments", ["Etapper::Client::ArrayOfanyType", XSD::QName.new(nil, "segments")], [0, 1]],
+      ["segments", ["Etapper::ArrayOfanyType", XSD::QName.new(nil, "segments")], [0, 1]],
       ["totalAmount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "totalAmount")], [0, 1]],
       ["totalNonDeductibleAmount", ["SOAP::SOAPDouble", XSD::QName.new(nil, "totalNonDeductibleAmount")], [0, 1]],
       ["type", ["SOAP::SOAPInt", XSD::QName.new(nil, "type")], [0, 1]],
@@ -2736,7 +2736,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::TransactionProcessor,
+    :class => Etapper::TransactionProcessor,
     :schema_type => XSD::QName.new(NsService, "TransactionProcessor"),
     :schema_element => [
       ["default", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "default")], [0, 1]],
@@ -2748,20 +2748,20 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::LinkedTransaction,
+    :class => Etapper::LinkedTransaction,
     :schema_type => XSD::QName.new(NsService, "LinkedTransaction"),
     :schema_element => [
-      ["softCreditAccount", ["Etapper::Client::Account", XSD::QName.new(nil, "softCreditAccount")], [0, 1]],
+      ["softCreditAccount", ["Etapper::Account", XSD::QName.new(nil, "softCreditAccount")], [0, 1]],
       ["transaction", [nil, XSD::QName.new(nil, "transaction")], [0, 1]],
-      ["tributeAccount", ["Etapper::Client::Account", XSD::QName.new(nil, "tributeAccount")], [0, 1]]
+      ["tributeAccount", ["Etapper::Account", XSD::QName.new(nil, "tributeAccount")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::AccountChangeRequest,
+    :class => Etapper::AccountChangeRequest,
     :schema_type => XSD::QName.new(NsService, "AccountChangeRequest"),
     :schema_element => [
-      ["account", ["Etapper::Client::Account", XSD::QName.new(nil, "account")], [0, 1]],
+      ["account", ["Etapper::Account", XSD::QName.new(nil, "account")], [0, 1]],
       ["createChangeNote", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "createChangeNote")], [0, 1]],
       ["createFieldAndValues", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "createFieldAndValues")], [0, 1]],
       ["notificationEmail", ["SOAP::SOAPString", XSD::QName.new(nil, "notificationEmail")], [0, 1]],
@@ -2770,12 +2770,12 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::CartOrderRequest,
+    :class => Etapper::CartOrderRequest,
     :schema_type => XSD::QName.new(NsService, "CartOrderRequest"),
     :schema_element => [
-      ["account", ["Etapper::Client::Account", XSD::QName.new(nil, "account")], [0, 1]],
+      ["account", ["Etapper::Account", XSD::QName.new(nil, "account")], [0, 1]],
       ["createFieldAndValues", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "createFieldAndValues")], [0, 1]],
-      ["journalEntries", ["Etapper::Client::ArrayOfanyType", XSD::QName.new(nil, "journalEntries")], [0, 1]],
+      ["journalEntries", ["Etapper::ArrayOfanyType", XSD::QName.new(nil, "journalEntries")], [0, 1]],
       ["populateDataSource", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "populateDataSource")], [0, 1]],
       ["processor", ["SOAP::SOAPString", XSD::QName.new(nil, "processor")], [0, 1]],
       ["skipSoftErrors", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "skipSoftErrors")], [0, 1]],
@@ -2785,21 +2785,21 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::CartOrderResponse,
+    :class => Etapper::CartOrderResponse,
     :schema_type => XSD::QName.new(NsService, "CartOrderResponse"),
     :schema_element => [
       ["accountNumber", ["SOAP::SOAPInt", XSD::QName.new(nil, "accountNumber")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["createdNewAccount", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "createdNewAccount")], [0, 1]],
-      ["journalEntryRefs", ["Etapper::Client::ArrayOfstring", XSD::QName.new(nil, "journalEntryRefs")], [0, 1]]
+      ["journalEntryRefs", ["Etapper::ArrayOfstring", XSD::QName.new(nil, "journalEntryRefs")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::EcommerceRequest,
+    :class => Etapper::EcommerceRequest,
     :schema_type => XSD::QName.new(NsService, "EcommerceRequest"),
     :schema_element => [
-      ["account", ["Etapper::Client::Account", XSD::QName.new(nil, "account")], [0, 1]],
+      ["account", ["Etapper::Account", XSD::QName.new(nil, "account")], [0, 1]],
       ["confirmationMessageFooter", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationMessageFooter")], [0, 1]],
       ["confirmationMessageHeader", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationMessageHeader")], [0, 1]],
       ["confirmationSender", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationSender")], [0, 1]],
@@ -2807,7 +2807,7 @@ module ServiceMappingRegistry
       ["confirmationSubject", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationSubject")], [0, 1]],
       ["createFieldAndValues", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "createFieldAndValues")], [0, 1]],
       ["failureEmail", ["SOAP::SOAPString", XSD::QName.new(nil, "failureEmail")], [0, 1]],
-      ["journalEntries", ["Etapper::Client::ArrayOfanyType", XSD::QName.new(nil, "journalEntries")], [0, 1]],
+      ["journalEntries", ["Etapper::ArrayOfanyType", XSD::QName.new(nil, "journalEntries")], [0, 1]],
       ["notificationEmail", ["SOAP::SOAPString", XSD::QName.new(nil, "notificationEmail")], [0, 1]],
       ["notificationSubject", ["SOAP::SOAPString", XSD::QName.new(nil, "notificationSubject")], [0, 1]],
       ["populateDataSource", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "populateDataSource")], [0, 1]],
@@ -2819,18 +2819,18 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::EcommerceResponse,
+    :class => Etapper::EcommerceResponse,
     :schema_type => XSD::QName.new(NsService, "EcommerceResponse"),
     :schema_element => [
       ["accountNumber", ["SOAP::SOAPInt", XSD::QName.new(nil, "accountNumber")], [0, 1]],
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
       ["createdNewAccount", ["SOAP::SOAPBoolean", XSD::QName.new(nil, "createdNewAccount")], [0, 1]],
-      ["journalEntryRefs", ["Etapper::Client::ArrayOfstring", XSD::QName.new(nil, "journalEntryRefs")], [0, 1]]
+      ["journalEntryRefs", ["Etapper::ArrayOfstring", XSD::QName.new(nil, "journalEntryRefs")], [0, 1]]
     ]
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::ForgottenPasswordEmailHelpRequest,
+    :class => Etapper::ForgottenPasswordEmailHelpRequest,
     :schema_type => XSD::QName.new(NsService, "ForgottenPasswordEmailHelpRequest"),
     :schema_element => [
       ["baseQuery", ["SOAP::SOAPString", XSD::QName.new(nil, "baseQuery")], [0, 1]],
@@ -2844,7 +2844,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::ForgottenPasswordResetHelpRequest,
+    :class => Etapper::ForgottenPasswordResetHelpRequest,
     :schema_type => XSD::QName.new(NsService, "ForgottenPasswordResetHelpRequest"),
     :schema_element => [
       ["code", ["SOAP::SOAPString", XSD::QName.new(nil, "code")], [0, 1]],
@@ -2853,7 +2853,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::ProcessTransactionRequest,
+    :class => Etapper::ProcessTransactionRequest,
     :schema_type => XSD::QName.new(NsService, "ProcessTransactionRequest"),
     :schema_element => [
       ["confirmationMessageFooter", ["SOAP::SOAPString", XSD::QName.new(nil, "confirmationMessageFooter")], [0, 1]],
@@ -2871,7 +2871,7 @@ module ServiceMappingRegistry
   )
 
   LiteralRegistry.register(
-    :class => Etapper::Client::SendEmailRequest,
+    :class => Etapper::SendEmailRequest,
     :schema_type => XSD::QName.new(NsService, "SendEmailRequest"),
     :schema_element => [
       ["accountRef", ["SOAP::SOAPString", XSD::QName.new(nil, "accountRef")], [0, 1]],
@@ -2885,4 +2885,4 @@ module ServiceMappingRegistry
   )
 end
 
-end; end
+end

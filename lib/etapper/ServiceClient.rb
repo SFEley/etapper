@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
-require 'serviceDriver.rb'
+require 'etapDriver.rb'
 
 
-module Etapper::Client
+module Etapper
 
 endpoint_url = ARGV.shift
 obj = MessagingService.new(endpoint_url)

@@ -1,10 +1,10 @@
 require 'xsd/qname'
 
-module Etapper; module Server
+module Etapper
 
 
 # {etapestryAPI/service}Account
-#   accountDefinedValues - Etapper::Server::ArrayOfDefinedValue
+#   accountDefinedValues - Etapper::ArrayOfDefinedValue
 #   accountRoleType - SOAP::SOAPInt
 #   address - SOAP::SOAPString
 #   city - SOAP::SOAPString
@@ -22,10 +22,10 @@ module Etapper; module Server
 #   name - SOAP::SOAPString
 #   note - SOAP::SOAPString
 #   passwordExpired - SOAP::SOAPBoolean
-#   personaDefinedValues - Etapper::Server::ArrayOfDefinedValue
+#   personaDefinedValues - Etapper::ArrayOfDefinedValue
 #   personaType - SOAP::SOAPString
-#   personaTypes - Etapper::Server::ArrayOfstring
-#   phones - Etapper::Server::ArrayOfPhone
+#   personaTypes - Etapper::ArrayOfstring
+#   phones - Etapper::ArrayOfPhone
 #   postalCode - SOAP::SOAPString
 #   primaryPersona - SOAP::SOAPBoolean
 #   ref - SOAP::SOAPString
@@ -152,10 +152,10 @@ end
 #   accountRef - SOAP::SOAPString
 #   amount - SOAP::SOAPDouble
 #   approach - SOAP::SOAPString
-#   attachments - Etapper::Server::ArrayOfAttachment
+#   attachments - Etapper::ArrayOfAttachment
 #   campaign - SOAP::SOAPString
 #   date - SOAP::SOAPDateTime
-#   definedValues - Etapper::Server::ArrayOfDefinedValue
+#   definedValues - Etapper::ArrayOfDefinedValue
 #   final - SOAP::SOAPBoolean
 #   fund - SOAP::SOAPString
 #   letter - SOAP::SOAPString
@@ -170,11 +170,11 @@ end
 #   recognitionType - SOAP::SOAPInt
 #   ref - SOAP::SOAPString
 #   segmentedTransactionRef - SOAP::SOAPString
-#   softCredit - Etapper::Server::SoftCredit
+#   softCredit - Etapper::SoftCredit
 #   tributeAccountName - SOAP::SOAPString
 #   tributeAccountRef - SOAP::SOAPString
 #   type - SOAP::SOAPInt
-#   valuable - Etapper::Server::Valuable
+#   valuable - Etapper::Valuable
 class Gift
   attr_accessor :accountName
   attr_accessor :accountRef
@@ -310,15 +310,15 @@ class SoftCredit
 end
 
 # {etapestryAPI/service}Valuable
-#   bond - Etapper::Server::Bond
-#   cash - Etapper::Server::Cash
-#   check - Etapper::Server::Check
-#   creditCard - Etapper::Server::CreditCard
-#   electronicFundsTransfer - Etapper::Server::ElectronicFundsTransfer
-#   inKind - Etapper::Server::InKind
-#   insurance - Etapper::Server::Insurance
-#   realEstate - Etapper::Server::RealEstate
-#   stock - Etapper::Server::Stock
+#   bond - Etapper::Bond
+#   cash - Etapper::Cash
+#   check - Etapper::Check
+#   creditCard - Etapper::CreditCard
+#   electronicFundsTransfer - Etapper::ElectronicFundsTransfer
+#   inKind - Etapper::InKind
+#   insurance - Etapper::Insurance
+#   realEstate - Etapper::RealEstate
+#   stock - Etapper::Stock
 #   type - SOAP::SOAPInt
 class Valuable
   attr_accessor :bond
@@ -615,10 +615,10 @@ end
 #   accountRef - SOAP::SOAPString
 #   amount - SOAP::SOAPDouble
 #   approach - SOAP::SOAPString
-#   attachments - Etapper::Server::ArrayOfAttachment
+#   attachments - Etapper::ArrayOfAttachment
 #   campaign - SOAP::SOAPString
 #   date - SOAP::SOAPDateTime
-#   definedValues - Etapper::Server::ArrayOfDefinedValue
+#   definedValues - Etapper::ArrayOfDefinedValue
 #   final - SOAP::SOAPBoolean
 #   fund - SOAP::SOAPString
 #   letter - SOAP::SOAPString
@@ -633,11 +633,11 @@ end
 #   recognitionType - SOAP::SOAPInt
 #   ref - SOAP::SOAPString
 #   segmentedTransactionRef - SOAP::SOAPString
-#   softCredit - Etapper::Server::SoftCredit
+#   softCredit - Etapper::SoftCredit
 #   tributeAccountName - SOAP::SOAPString
 #   tributeAccountRef - SOAP::SOAPString
 #   type - SOAP::SOAPInt
-#   valuable - Etapper::Server::Valuable
+#   valuable - Etapper::Valuable
 class Payment
   attr_accessor :accountName
   attr_accessor :accountRef
@@ -701,9 +701,9 @@ end
 # {etapestryAPI/service}Contact
 #   accountName - SOAP::SOAPString
 #   accountRef - SOAP::SOAPString
-#   attachments - Etapper::Server::ArrayOfAttachment
+#   attachments - Etapper::ArrayOfAttachment
 #   date - SOAP::SOAPDateTime
-#   definedValues - Etapper::Server::ArrayOfDefinedValue
+#   definedValues - Etapper::ArrayOfDefinedValue
 #   final - SOAP::SOAPBoolean
 #   method - SOAP::SOAPString
 #   note - SOAP::SOAPString
@@ -743,10 +743,10 @@ end
 #   accountRef - SOAP::SOAPString
 #   amount - SOAP::SOAPDouble
 #   approach - SOAP::SOAPString
-#   attachments - Etapper::Server::ArrayOfAttachment
+#   attachments - Etapper::ArrayOfAttachment
 #   campaign - SOAP::SOAPString
 #   date - SOAP::SOAPDateTime
-#   definedValues - Etapper::Server::ArrayOfDefinedValue
+#   definedValues - Etapper::ArrayOfDefinedValue
 #   final - SOAP::SOAPBoolean
 #   fund - SOAP::SOAPString
 #   letter - SOAP::SOAPString
@@ -755,7 +755,7 @@ end
 #   receipt - SOAP::SOAPString
 #   ref - SOAP::SOAPString
 #   type - SOAP::SOAPInt
-#   valuable - Etapper::Server::Valuable
+#   valuable - Etapper::Valuable
 class Disbursement
   attr_accessor :accountName
   attr_accessor :accountRef
@@ -797,14 +797,14 @@ class Disbursement
 end
 
 # {etapestryAPI/service}LoginCredentialsRequest
-#   account - Etapper::Server::Account
+#   account - Etapper::Account
 #   confirmationLoginURL - SOAP::SOAPString
 #   confirmationMessageFooter - SOAP::SOAPString
 #   confirmationMessageHeader - SOAP::SOAPString
 #   confirmationSender - SOAP::SOAPString
 #   confirmationSignature - SOAP::SOAPString
 #   confirmationSubject - SOAP::SOAPString
-#   duplicateSearchCriteria - Etapper::Server::ArrayOfSearchCriteria
+#   duplicateSearchCriteria - Etapper::ArrayOfSearchCriteria
 #   duplicateSearchQuery - SOAP::SOAPString
 #   failureEmail - SOAP::SOAPString
 #   loginId - SOAP::SOAPString
@@ -855,7 +855,7 @@ end
 #   action - SOAP::SOAPString
 #   field - SOAP::SOAPString
 #   type - SOAP::SOAPString
-#   values - Etapper::Server::ArrayOfstring
+#   values - Etapper::ArrayOfstring
 class SearchCriteria
   attr_accessor :action
   attr_accessor :field
@@ -889,9 +889,9 @@ end
 # {etapestryAPI/service}Note
 #   accountName - SOAP::SOAPString
 #   accountRef - SOAP::SOAPString
-#   attachments - Etapper::Server::ArrayOfAttachment
+#   attachments - Etapper::ArrayOfAttachment
 #   date - SOAP::SOAPDateTime
-#   definedValues - Etapper::Server::ArrayOfDefinedValue
+#   definedValues - Etapper::ArrayOfDefinedValue
 #   final - SOAP::SOAPBoolean
 #   immutable - SOAP::SOAPBoolean
 #   note - SOAP::SOAPString
@@ -926,7 +926,7 @@ end
 # {etapestryAPI/service}OutlookIntegrationEmail
 #   bCC - SOAP::SOAPString
 #   cC - SOAP::SOAPString
-#   attachments - Etapper::Server::ArrayOfAttachment
+#   attachments - Etapper::ArrayOfAttachment
 #   contactMethodRef - SOAP::SOAPString
 #   date - SOAP::SOAPDateTime
 #   from - SOAP::SOAPString
@@ -962,11 +962,11 @@ end
 #   accountRef - SOAP::SOAPString
 #   amount - SOAP::SOAPDouble
 #   approach - SOAP::SOAPString
-#   attachments - Etapper::Server::ArrayOfAttachment
+#   attachments - Etapper::ArrayOfAttachment
 #   campaign - SOAP::SOAPString
-#   customSchedule - Etapper::Server::CustomPaymentSchedule
+#   customSchedule - Etapper::CustomPaymentSchedule
 #   date - SOAP::SOAPDateTime
-#   definedValues - Etapper::Server::ArrayOfDefinedValue
+#   definedValues - Etapper::ArrayOfDefinedValue
 #   final - SOAP::SOAPBoolean
 #   fund - SOAP::SOAPString
 #   initialPaymentAmount - SOAP::SOAPDouble
@@ -981,15 +981,15 @@ end
 #   originalAccountRef - SOAP::SOAPString
 #   originalTransactionRef - SOAP::SOAPString
 #   outstandingBalance - SOAP::SOAPDouble
-#   paymentValuable - Etapper::Server::Valuable
+#   paymentValuable - Etapper::Valuable
 #   receipt - SOAP::SOAPString
 #   recognitionName - SOAP::SOAPString
 #   recognitionType - SOAP::SOAPInt
 #   ref - SOAP::SOAPString
-#   scheduledValuable - Etapper::Server::Valuable
+#   scheduledValuable - Etapper::Valuable
 #   segmentedTransactionRef - SOAP::SOAPString
-#   softCredit - Etapper::Server::SoftCredit
-#   standardSchedule - Etapper::Server::StandardPaymentSchedule
+#   softCredit - Etapper::SoftCredit
+#   standardSchedule - Etapper::StandardPaymentSchedule
 #   tributeAccountName - SOAP::SOAPString
 #   tributeAccountRef - SOAP::SOAPString
 #   type - SOAP::SOAPInt
@@ -1073,8 +1073,8 @@ class Pledge
 end
 
 # {etapestryAPI/service}CustomPaymentSchedule
-#   installmentAmounts - Etapper::Server::ArrayOfdouble
-#   installmentDates - Etapper::Server::ArrayOfdateTime
+#   installmentAmounts - Etapper::ArrayOfdouble
+#   installmentDates - Etapper::ArrayOfdateTime
 #   note - SOAP::SOAPString
 #   processType - SOAP::SOAPInt
 class CustomPaymentSchedule
@@ -1121,11 +1121,11 @@ end
 #   accountRef - SOAP::SOAPString
 #   amount - SOAP::SOAPDouble
 #   approach - SOAP::SOAPString
-#   attachments - Etapper::Server::ArrayOfAttachment
+#   attachments - Etapper::ArrayOfAttachment
 #   campaign - SOAP::SOAPString
 #   copyRgsElements - SOAP::SOAPBoolean
 #   date - SOAP::SOAPDateTime
-#   definedValues - Etapper::Server::ArrayOfDefinedValue
+#   definedValues - Etapper::ArrayOfDefinedValue
 #   final - SOAP::SOAPBoolean
 #   fund - SOAP::SOAPString
 #   letter - SOAP::SOAPString
@@ -1140,11 +1140,11 @@ end
 #   recognitionType - SOAP::SOAPInt
 #   recurringGiftScheduleRef - SOAP::SOAPString
 #   ref - SOAP::SOAPString
-#   softCredit - Etapper::Server::SoftCredit
+#   softCredit - Etapper::SoftCredit
 #   tributeAccountName - SOAP::SOAPString
 #   tributeAccountRef - SOAP::SOAPString
 #   type - SOAP::SOAPInt
-#   valuable - Etapper::Server::Valuable
+#   valuable - Etapper::Valuable
 class RecurringGift
   attr_accessor :accountName
   attr_accessor :accountRef
@@ -1247,7 +1247,7 @@ end
 
 # {etapestryAPI/service}PagedCartElementsResponse
 #   count - SOAP::SOAPInt
-#   data - Etapper::Server::Collection
+#   data - Etapper::Collection
 #   pages - SOAP::SOAPInt
 #   start - SOAP::SOAPInt
 #   total - SOAP::SOAPInt
@@ -1272,7 +1272,7 @@ end
 
 # {etapestryAPI/service}PagedDefinedFieldsResponse
 #   count - SOAP::SOAPInt
-#   data - Etapper::Server::Collection
+#   data - Etapper::Collection
 #   pages - SOAP::SOAPInt
 #   start - SOAP::SOAPInt
 #   total - SOAP::SOAPInt
@@ -1297,7 +1297,7 @@ end
 
 # {etapestryAPI/service}PagedJournalEntriesResponse
 #   count - SOAP::SOAPInt
-#   data - Etapper::Server::Collection
+#   data - Etapper::Collection
 #   pages - SOAP::SOAPInt
 #   start - SOAP::SOAPInt
 #   total - SOAP::SOAPInt
@@ -1322,7 +1322,7 @@ end
 
 # {etapestryAPI/service}PagedQueryResultsResponse
 #   count - SOAP::SOAPInt
-#   data - Etapper::Server::Collection
+#   data - Etapper::Collection
 #   pages - SOAP::SOAPInt
 #   start - SOAP::SOAPInt
 #   total - SOAP::SOAPInt
@@ -1348,14 +1348,14 @@ end
 # {etapestryAPI/service}CalendarItem
 #   accountName - SOAP::SOAPString
 #   accountRef - SOAP::SOAPString
-#   attachments - Etapper::Server::ArrayOfAttachment
-#   definedValues - Etapper::Server::ArrayOfDefinedValue
+#   attachments - Etapper::ArrayOfAttachment
+#   definedValues - Etapper::ArrayOfDefinedValue
 #   endTime - SOAP::SOAPDateTime
-#   invitations - Etapper::Server::ArrayOfInvitation
+#   invitations - Etapper::ArrayOfInvitation
 #   note - SOAP::SOAPString
 #   priority - SOAP::SOAPInt
 #   private - SOAP::SOAPBoolean
-#   recurringSchedule - Etapper::Server::RecurringSchedule
+#   recurringSchedule - Etapper::RecurringSchedule
 #   ref - SOAP::SOAPString
 #   remind - SOAP::SOAPBoolean
 #   startTime - SOAP::SOAPDateTime
@@ -1403,7 +1403,7 @@ end
 # {etapestryAPI/service}Invitation
 #   accountName - SOAP::SOAPString
 #   accountRef - SOAP::SOAPString
-#   calendarItem - Etapper::Server::CalendarItem
+#   calendarItem - Etapper::CalendarItem
 #   date - SOAP::SOAPDateTime
 #   ref - SOAP::SOAPString
 #   remind - SOAP::SOAPBoolean
@@ -1453,13 +1453,13 @@ end
 # {etapestryAPI/service}CartCategory
 #   description - SOAP::SOAPString
 #   disabled - SOAP::SOAPBoolean
-#   image - Etapper::Server::CartImage
+#   image - Etapper::CartImage
 #   immediateCategories - SOAP::SOAPInt
 #   immediateItems - SOAP::SOAPInt
 #   name - SOAP::SOAPString
 #   nestedCategories - SOAP::SOAPInt
 #   nestedItems - SOAP::SOAPInt
-#   parents - Etapper::Server::ArrayOfCartParent
+#   parents - Etapper::ArrayOfCartParent
 #   publishEndDate - SOAP::SOAPString
 #   publishStartDate - SOAP::SOAPString
 #   publishableNow - SOAP::SOAPBoolean
@@ -1568,16 +1568,16 @@ end
 #   longDescription - SOAP::SOAPString
 #   name - SOAP::SOAPString
 #   nonTaxableAmount - SOAP::SOAPDouble
-#   parents - Etapper::Server::ArrayOfCartParent
+#   parents - Etapper::ArrayOfCartParent
 #   publishEndDate - SOAP::SOAPString
 #   publishStartDate - SOAP::SOAPString
 #   publishableNow - SOAP::SOAPBoolean
 #   ref - SOAP::SOAPString
-#   regularImages - Etapper::Server::ArrayOfCartImage
+#   regularImages - Etapper::ArrayOfCartImage
 #   regularPrice - SOAP::SOAPDouble
 #   shippingPrice - SOAP::SOAPDouble
 #   shortDescription - SOAP::SOAPString
-#   thumbImage - Etapper::Server::CartImage
+#   thumbImage - Etapper::CartImage
 #   type - SOAP::SOAPInt
 class CartItem
   attr_accessor :deductibleAmount
@@ -1624,7 +1624,7 @@ end
 #   salesTaxKey - SOAP::SOAPInt
 #   siteName - SOAP::SOAPString
 #   siteTitle - SOAP::SOAPString
-#   stateTaxRates - Etapper::Server::ArrayOfStateTaxRate
+#   stateTaxRates - Etapper::ArrayOfStateTaxRate
 #   successMessage - SOAP::SOAPString
 #   templateSetFolder - SOAP::SOAPString
 #   welcomeMessage - SOAP::SOAPString
@@ -1671,7 +1671,7 @@ end
 #   accountName - SOAP::SOAPString
 #   accountRef - SOAP::SOAPString
 #   address - SOAP::SOAPString
-#   attachments - Etapper::Server::ArrayOfAttachment
+#   attachments - Etapper::ArrayOfAttachment
 #   city - SOAP::SOAPString
 #   confirmationDate - SOAP::SOAPDateTime
 #   country - SOAP::SOAPString
@@ -1726,7 +1726,7 @@ class Declaration
 end
 
 # {etapestryAPI/service}DefinedField
-#   applicationTypes - Etapper::Server::ArrayOfint
+#   applicationTypes - Etapper::ArrayOfint
 #   category - SOAP::SOAPString
 #   dataType - SOAP::SOAPInt
 #   desc - SOAP::SOAPString
@@ -1735,9 +1735,9 @@ end
 #   name - SOAP::SOAPString
 #   ref - SOAP::SOAPString
 #   required - SOAP::SOAPBoolean
-#   securityRights - Etapper::Server::ArrayOfDefinedFieldValue
+#   securityRights - Etapper::ArrayOfDefinedFieldValue
 #   system - SOAP::SOAPBoolean
-#   values - Etapper::Server::ArrayOfDefinedFieldValue
+#   values - Etapper::ArrayOfDefinedFieldValue
 class DefinedField
   attr_accessor :applicationTypes
   attr_accessor :category
@@ -1791,11 +1791,11 @@ end
 #   clearCache - SOAP::SOAPBoolean
 #   count - SOAP::SOAPInt
 #   start - SOAP::SOAPInt
-#   applicationTypes - Etapper::Server::ArrayOfint
-#   categories - Etapper::Server::ArrayOfstring
+#   applicationTypes - Etapper::ArrayOfint
+#   categories - Etapper::ArrayOfstring
 #   includeDisabledFields - SOAP::SOAPBoolean
 #   includeDisabledValues - SOAP::SOAPBoolean
-#   names - Etapper::Server::ArrayOfstring
+#   names - Etapper::ArrayOfstring
 class PagedDefinedFieldsRequest
   attr_accessor :clearCache
   attr_accessor :count
@@ -1864,7 +1864,7 @@ end
 #   matchAny - SOAP::SOAPBoolean
 #   personaOption - SOAP::SOAPString
 #   returnType - SOAP::SOAPInt
-#   searchCriteria - Etapper::Server::ArrayOfSearchCriteria
+#   searchCriteria - Etapper::ArrayOfSearchCriteria
 class PagedDynamicQueryResultsRequest
   attr_accessor :clearCache
   attr_accessor :count
@@ -1895,7 +1895,7 @@ end
 
 # {etapestryAPI/service}EntityRole
 #   accountRoleType - SOAP::SOAPInt
-#   definedValues - Etapper::Server::ArrayOfDefinedValue
+#   definedValues - Etapper::ArrayOfDefinedValue
 #   donorRecognitionName - SOAP::SOAPString
 #   donorRecognitionType - SOAP::SOAPInt
 #   donorRoleRef - SOAP::SOAPString
@@ -1905,7 +1905,7 @@ end
 #   loginId - SOAP::SOAPString
 #   loyaltyRating - SOAP::SOAPInt
 #   name - SOAP::SOAPString
-#   personas - Etapper::Server::ArrayOfPersona
+#   personas - Etapper::ArrayOfPersona
 #   ref - SOAP::SOAPString
 #   sortName - SOAP::SOAPString
 #   tributeRoleRef - SOAP::SOAPString
@@ -1953,11 +1953,11 @@ end
 #   city - SOAP::SOAPString
 #   country - SOAP::SOAPString
 #   county - SOAP::SOAPString
-#   definedValues - Etapper::Server::ArrayOfDefinedValue
+#   definedValues - Etapper::ArrayOfDefinedValue
 #   email - SOAP::SOAPString
 #   longSalutation - SOAP::SOAPString
 #   note - SOAP::SOAPString
-#   phones - Etapper::Server::ArrayOfPhone
+#   phones - Etapper::ArrayOfPhone
 #   postalCode - SOAP::SOAPString
 #   primary - SOAP::SOAPBoolean
 #   ref - SOAP::SOAPString
@@ -2036,7 +2036,7 @@ end
 #   baseQuery - SOAP::SOAPString
 #   endDate - SOAP::SOAPDateTime
 #   startDate - SOAP::SOAPDateTime
-#   types - Etapper::Server::ArrayOfint
+#   types - Etapper::ArrayOfint
 class PagedJournalEntriesRequest
   attr_accessor :clearCache
   attr_accessor :count
@@ -2100,9 +2100,9 @@ class JournalSummary
 end
 
 # {etapestryAPI/service}PrivacyPreferences
-#   accountPrivacyPreference - Etapper::Server::PrivacyPreference
+#   accountPrivacyPreference - Etapper::PrivacyPreference
 #   accountRef - SOAP::SOAPString
-#   personaPrivacyPreferences - Etapper::Server::ArrayOfPrivacyPreference
+#   personaPrivacyPreferences - Etapper::ArrayOfPrivacyPreference
 class PrivacyPreferences
   attr_accessor :accountPrivacyPreference
   attr_accessor :accountRef
@@ -2118,7 +2118,7 @@ end
 # {etapestryAPI/service}PrivacyPreference
 #   accountDefined - SOAP::SOAPBoolean
 #   applicationGroup - SOAP::SOAPString
-#   hiddenFields - Etapper::Server::ArrayOfstring
+#   hiddenFields - Etapper::ArrayOfstring
 #   personaType - SOAP::SOAPString
 #   status - SOAP::SOAPInt
 class PrivacyPreference
@@ -2142,10 +2142,10 @@ end
 #   accountRef - SOAP::SOAPString
 #   amount - SOAP::SOAPDouble
 #   approach - SOAP::SOAPString
-#   attachments - Etapper::Server::ArrayOfAttachment
+#   attachments - Etapper::ArrayOfAttachment
 #   campaign - SOAP::SOAPString
 #   date - SOAP::SOAPDateTime
-#   definedValues - Etapper::Server::ArrayOfDefinedValue
+#   definedValues - Etapper::ArrayOfDefinedValue
 #   final - SOAP::SOAPBoolean
 #   fund - SOAP::SOAPString
 #   itemName - SOAP::SOAPString
@@ -2154,15 +2154,15 @@ end
 #   letter - SOAP::SOAPString
 #   note - SOAP::SOAPString
 #   offsettingRef - SOAP::SOAPString
-#   orderInfo - Etapper::Server::OrderInfo
+#   orderInfo - Etapper::OrderInfo
 #   receipt - SOAP::SOAPString
 #   recognitionName - SOAP::SOAPString
 #   recognitionType - SOAP::SOAPInt
 #   ref - SOAP::SOAPString
 #   segmentedTransactionRef - SOAP::SOAPString
-#   softCredit - Etapper::Server::SoftCredit
+#   softCredit - Etapper::SoftCredit
 #   type - SOAP::SOAPInt
-#   valuable - Etapper::Server::Valuable
+#   valuable - Etapper::Valuable
 class OrderItem
   attr_accessor :accountName
   attr_accessor :accountRef
@@ -2276,10 +2276,10 @@ end
 #   accountRef - SOAP::SOAPString
 #   amount - SOAP::SOAPDouble
 #   approach - SOAP::SOAPString
-#   attachments - Etapper::Server::ArrayOfAttachment
+#   attachments - Etapper::ArrayOfAttachment
 #   campaign - SOAP::SOAPString
 #   date - SOAP::SOAPDateTime
-#   definedValues - Etapper::Server::ArrayOfDefinedValue
+#   definedValues - Etapper::ArrayOfDefinedValue
 #   final - SOAP::SOAPBoolean
 #   fund - SOAP::SOAPString
 #   letter - SOAP::SOAPString
@@ -2290,9 +2290,9 @@ end
 #   recognitionType - SOAP::SOAPInt
 #   ref - SOAP::SOAPString
 #   segmentedTransactionRef - SOAP::SOAPString
-#   softCredit - Etapper::Server::SoftCredit
+#   softCredit - Etapper::SoftCredit
 #   type - SOAP::SOAPInt
-#   valuable - Etapper::Server::Valuable
+#   valuable - Etapper::Valuable
 class OrderShipping
   attr_accessor :accountName
   attr_accessor :accountRef
@@ -2346,10 +2346,10 @@ end
 #   accountRef - SOAP::SOAPString
 #   amount - SOAP::SOAPDouble
 #   approach - SOAP::SOAPString
-#   attachments - Etapper::Server::ArrayOfAttachment
+#   attachments - Etapper::ArrayOfAttachment
 #   campaign - SOAP::SOAPString
 #   date - SOAP::SOAPDateTime
-#   definedValues - Etapper::Server::ArrayOfDefinedValue
+#   definedValues - Etapper::ArrayOfDefinedValue
 #   final - SOAP::SOAPBoolean
 #   fund - SOAP::SOAPString
 #   letter - SOAP::SOAPString
@@ -2360,11 +2360,11 @@ end
 #   recognitionType - SOAP::SOAPInt
 #   ref - SOAP::SOAPString
 #   segmentedTransactionRef - SOAP::SOAPString
-#   softCredit - Etapper::Server::SoftCredit
+#   softCredit - Etapper::SoftCredit
 #   taxRate - SOAP::SOAPDouble
 #   taxRegion - SOAP::SOAPString
 #   type - SOAP::SOAPInt
-#   valuable - Etapper::Server::Valuable
+#   valuable - Etapper::Valuable
 class OrderTax
   attr_accessor :accountName
   attr_accessor :accountRef
@@ -2488,10 +2488,10 @@ end
 #   accountRef - SOAP::SOAPString
 #   amount - SOAP::SOAPDouble
 #   approach - SOAP::SOAPString
-#   attachments - Etapper::Server::ArrayOfAttachment
+#   attachments - Etapper::ArrayOfAttachment
 #   campaign - SOAP::SOAPString
 #   date - SOAP::SOAPDateTime
-#   definedValues - Etapper::Server::ArrayOfDefinedValue
+#   definedValues - Etapper::ArrayOfDefinedValue
 #   final - SOAP::SOAPBoolean
 #   fund - SOAP::SOAPString
 #   letter - SOAP::SOAPString
@@ -2507,9 +2507,9 @@ end
 #   recognitionName - SOAP::SOAPString
 #   recognitionType - SOAP::SOAPInt
 #   ref - SOAP::SOAPString
-#   schedule - Etapper::Server::StandardPaymentSchedule
-#   scheduledValuable - Etapper::Server::Valuable
-#   softCredit - Etapper::Server::SoftCredit
+#   schedule - Etapper::StandardPaymentSchedule
+#   scheduledValuable - Etapper::Valuable
+#   softCredit - Etapper::SoftCredit
 #   tributeAccountName - SOAP::SOAPString
 #   tributeAccountRef - SOAP::SOAPString
 #   type - SOAP::SOAPInt
@@ -2584,7 +2584,7 @@ end
 #   final - SOAP::SOAPBoolean
 #   offsettingRef - SOAP::SOAPString
 #   ref - SOAP::SOAPString
-#   segments - Etapper::Server::ArrayOfanyType
+#   segments - Etapper::ArrayOfanyType
 #   totalAmount - SOAP::SOAPDouble
 #   totalNonDeductibleAmount - SOAP::SOAPDouble
 #   type - SOAP::SOAPInt
@@ -2620,9 +2620,9 @@ end
 #   date - SOAP::SOAPDateTime
 #   final - SOAP::SOAPBoolean
 #   offsettingRef - SOAP::SOAPString
-#   orderInfo - Etapper::Server::OrderInfo
+#   orderInfo - Etapper::OrderInfo
 #   ref - SOAP::SOAPString
-#   segments - Etapper::Server::ArrayOfanyType
+#   segments - Etapper::ArrayOfanyType
 #   totalAmount - SOAP::SOAPDouble
 #   type - SOAP::SOAPInt
 class SegmentedOrder
@@ -2654,12 +2654,12 @@ end
 # {etapestryAPI/service}SegmentedPledge
 #   accountName - SOAP::SOAPString
 #   accountRef - SOAP::SOAPString
-#   consolidatedCustomSchedule - Etapper::Server::CustomPaymentSchedule
+#   consolidatedCustomSchedule - Etapper::CustomPaymentSchedule
 #   date - SOAP::SOAPDateTime
 #   final - SOAP::SOAPBoolean
 #   offsettingRef - SOAP::SOAPString
 #   ref - SOAP::SOAPString
-#   segments - Etapper::Server::ArrayOfanyType
+#   segments - Etapper::ArrayOfanyType
 #   totalAmount - SOAP::SOAPDouble
 #   totalNonDeductibleAmount - SOAP::SOAPDouble
 #   type - SOAP::SOAPInt
@@ -2717,9 +2717,9 @@ class TransactionProcessor
 end
 
 # {etapestryAPI/service}LinkedTransaction
-#   softCreditAccount - Etapper::Server::Account
+#   softCreditAccount - Etapper::Account
 #   transaction - (any)
-#   tributeAccount - Etapper::Server::Account
+#   tributeAccount - Etapper::Account
 class LinkedTransaction
   attr_accessor :softCreditAccount
   attr_accessor :transaction
@@ -2733,7 +2733,7 @@ class LinkedTransaction
 end
 
 # {etapestryAPI/service}AccountChangeRequest
-#   account - Etapper::Server::Account
+#   account - Etapper::Account
 #   createChangeNote - SOAP::SOAPBoolean
 #   createFieldAndValues - SOAP::SOAPBoolean
 #   notificationEmail - SOAP::SOAPString
@@ -2755,9 +2755,9 @@ class AccountChangeRequest
 end
 
 # {etapestryAPI/service}CartOrderRequest
-#   account - Etapper::Server::Account
+#   account - Etapper::Account
 #   createFieldAndValues - SOAP::SOAPBoolean
-#   journalEntries - Etapper::Server::ArrayOfanyType
+#   journalEntries - Etapper::ArrayOfanyType
 #   populateDataSource - SOAP::SOAPBoolean
 #   processor - SOAP::SOAPString
 #   skipSoftErrors - SOAP::SOAPBoolean
@@ -2789,7 +2789,7 @@ end
 #   accountNumber - SOAP::SOAPInt
 #   accountRef - SOAP::SOAPString
 #   createdNewAccount - SOAP::SOAPBoolean
-#   journalEntryRefs - Etapper::Server::ArrayOfstring
+#   journalEntryRefs - Etapper::ArrayOfstring
 class CartOrderResponse
   attr_accessor :accountNumber
   attr_accessor :accountRef
@@ -2805,7 +2805,7 @@ class CartOrderResponse
 end
 
 # {etapestryAPI/service}EcommerceRequest
-#   account - Etapper::Server::Account
+#   account - Etapper::Account
 #   confirmationMessageFooter - SOAP::SOAPString
 #   confirmationMessageHeader - SOAP::SOAPString
 #   confirmationSender - SOAP::SOAPString
@@ -2813,7 +2813,7 @@ end
 #   confirmationSubject - SOAP::SOAPString
 #   createFieldAndValues - SOAP::SOAPBoolean
 #   failureEmail - SOAP::SOAPString
-#   journalEntries - Etapper::Server::ArrayOfanyType
+#   journalEntries - Etapper::ArrayOfanyType
 #   notificationEmail - SOAP::SOAPString
 #   notificationSubject - SOAP::SOAPString
 #   populateDataSource - SOAP::SOAPBoolean
@@ -2863,7 +2863,7 @@ end
 #   accountNumber - SOAP::SOAPInt
 #   accountRef - SOAP::SOAPString
 #   createdNewAccount - SOAP::SOAPBoolean
-#   journalEntryRefs - Etapper::Server::ArrayOfstring
+#   journalEntryRefs - Etapper::ArrayOfstring
 class EcommerceResponse
   attr_accessor :accountNumber
   attr_accessor :accountRef
@@ -3068,4 +3068,4 @@ class ArrayOfTransactionProcessor < ::Array
 end
 
 
-end; end
+end
