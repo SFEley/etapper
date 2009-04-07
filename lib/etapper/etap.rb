@@ -1,3 +1,5 @@
+require 'rubygems'
+gem 'soap4r'
 require 'xsd/qname'
 
 module Etapper

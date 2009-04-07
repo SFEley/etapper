@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+require 'rubygems'
+gem 'soap4r'
 require 'etapServant.rb'
 require 'etapMappingRegistry.rb'
 require 'soap/rpc/standaloneServer'
