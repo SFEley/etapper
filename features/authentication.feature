@@ -7,8 +7,11 @@ Feature: eTapestry Authentication
     Given a valid user 'joe_test'
       And password 'mypass'
     When I call login with '<user>' and '<password>'
-    Then I should get result '<result>'
+    Then I should get status '<result>'
   
-  
+  Examples:
+    |user|password|result|
+    |joe_test|mypass|success|
+    |notauser|mypass|
   
   

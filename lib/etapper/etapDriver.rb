@@ -1,5 +1,5 @@
-require 'etap.rb'
-require 'etapMappingRegistry.rb'
+require 'etapper/etap'
+require 'etapper/etapMappingRegistry'
 require 'soap/rpc/driver'
 
 module Etapper

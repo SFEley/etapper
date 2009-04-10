@@ -1,4 +1,4 @@
-require 'etap.rb'
+require 'etapper/etap'
 require 'soap/mapping'
 
 module Etapper
