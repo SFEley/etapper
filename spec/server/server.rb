@@ -14,7 +14,7 @@ module Etapper
 
   class Server < ::SOAP::RPC::StandaloneServer
 
-    def initialize(options = {})
+    def initialize(args = {})
       options = {
         :app => 'EtapperTestServer',
         :namespace =>'etapestryAPI/service',

@@ -3,7 +3,7 @@ require 'etapper/etapMappingRegistry'
 
 module Etapper
 
-  class MessagingService
+  class Services
     NsService = "etapestryAPI/service"
 
     Methods = [

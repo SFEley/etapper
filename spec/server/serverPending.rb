@@ -3,7 +3,7 @@
 
 module Etapper
 
-  class MessagingService
+  class Services
     # SYNOPSIS
     #   addAccount(account_1, boolean_2)
     #
