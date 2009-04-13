@@ -1,4 +1,5 @@
 # WSDL method definitions
+require 'etapper/etapMappingRegistry'
 
 module Etapper
 

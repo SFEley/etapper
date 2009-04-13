@@ -8,7 +8,6 @@ $:.unshift(LIBDIR) unless
 require 'rubygems'
 gem 'soap4r'
 require 'etapServant'
-require 'etapper/etapMappingRegistry'
 require 'soap/rpc/standaloneServer'
 
 module Etapper
@@ -42,7 +41,7 @@ class StubServer
       :namespace =>'etapestryAPI/service', 
       :host => 'localhost', 
       :port => 10080,
-      :logfile => File.dirname(__FILE__) + '..' + '..' + 'tmp' + 'server.log'
+      :logfile => File.join(File.dirname(__FILE__), '..', '..', 'tmp', 'server.log')
     }.merge(args)
     
     server = Etapper::MessagingServiceApp.new(options)
