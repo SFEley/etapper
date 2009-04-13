@@ -1,10 +1,10 @@
 require 'etapper/etap'
-require 'etapPending' # Methods still not implemented
-require 'etapMethods' # WSDL headers
+require 'serverPending' # Methods still not implemented
+require 'serverHeaders' # WSDL headers
 
 module Etapper
 
-  class MessagingService
+  class Services
 
     # LOGIN
     #   login(username, password)
@@ -40,4 +40,3 @@ module Etapper
 
   end
 end
-
