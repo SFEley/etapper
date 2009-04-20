@@ -4,7 +4,6 @@ require 'xsd/qname'
 
 module Etapper
   module API
-
     # {etapestryAPI/service}Account
     #   accountDefinedValues - Etapper::ArrayOfDefinedValue
     #   accountRoleType - SOAP::SOAPInt

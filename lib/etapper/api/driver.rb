@@ -3,13 +3,15 @@ require 'etapper/api/classes'
 require 'etapper/api/mapping_registry'
 require 'etapper/api/session'
 require 'etapper/soap/generator'
+require 'etapper/api/methods'
 
 module Etapper
   module API
+    DefaultEndpointUrl = ETAP_URL
 
-    class Client < ::SOAP::RPC::Driver
-      DefaultEndpointUrl = ETAPESTRY_URL
-      NsService = "etapestryAPI/service"
+    class Driver < ::SOAP::RPC::Driver
+      
+      include Methods
 
       def initialize(endpoint_url = nil)
         endpoint_url ||= DefaultEndpointUrl
@@ -44,5 +46,3 @@ module Etapper
 
   end
 end
-
-require 'etapper/etapMethods'

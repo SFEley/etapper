@@ -2,11 +2,10 @@
 
 module Etapper
   module API
-
-    class Client < ::SOAP::RPC::Driver
+    module Methods
 
       Methods = [
-        [ XSD::QName.new(NsService, "addAccount"),
+        [ XSD::QName.new(ETAP_NS, "addAccount"),
           "",
           "addAccount",
           [ ["in", "Account_1", ["Etapper::Account", "etapestryAPI/service", "Account"]],
@@ -16,7 +15,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "addAndProcessGift"),
+        [ XSD::QName.new(ETAP_NS, "addAndProcessGift"),
           "",
           "addAndProcessGift",
           [ ["in", "Gift_1", ["Etapper::Gift", "etapestryAPI/service", "Gift"]],
@@ -26,7 +25,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "addAndProcessPayment"),
+        [ XSD::QName.new(ETAP_NS, "addAndProcessPayment"),
           "",
           "addAndProcessPayment",
           [ ["in", "Payment_1", ["Etapper::Payment", "etapestryAPI/service", "Payment"]],
@@ -36,7 +35,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "addContact"),
+        [ XSD::QName.new(ETAP_NS, "addContact"),
           "",
           "addContact",
           [ ["in", "Contact_1", ["Etapper::Contact", "etapestryAPI/service", "Contact"]],
@@ -46,7 +45,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "addDisbursement"),
+        [ XSD::QName.new(ETAP_NS, "addDisbursement"),
           "",
           "addDisbursement",
           [ ["in", "Disbursement_1", ["Etapper::Disbursement", "etapestryAPI/service", "Disbursement"]],
@@ -56,7 +55,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "addGift"),
+        [ XSD::QName.new(ETAP_NS, "addGift"),
           "",
           "addGift",
           [ ["in", "Gift_1", ["Etapper::Gift", "etapestryAPI/service", "Gift"]],
@@ -66,7 +65,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "addLoginCredentials"),
+        [ XSD::QName.new(ETAP_NS, "addLoginCredentials"),
           "",
           "addLoginCredentials",
           [ ["in", "LoginCredentialsRequest_1", ["Etapper::LoginCredentialsRequest", "etapestryAPI/service", "LoginCredentialsRequest"]],
@@ -75,7 +74,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "addNote"),
+        [ XSD::QName.new(ETAP_NS, "addNote"),
           "",
           "addNote",
           [ ["in", "Note_1", ["Etapper::Note", "etapestryAPI/service", "Note"]],
@@ -85,7 +84,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "addOutlookIntegrationEmail"),
+        [ XSD::QName.new(ETAP_NS, "addOutlookIntegrationEmail"),
           "",
           "addOutlookIntegrationEmail",
           [ ["in", "OutlookIntegrationEmail_1", ["Etapper::OutlookIntegrationEmail", "etapestryAPI/service", "OutlookIntegrationEmail"]],
@@ -95,7 +94,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "addOutlookIntegrationError"),
+        [ XSD::QName.new(ETAP_NS, "addOutlookIntegrationError"),
           "",
           "addOutlookIntegrationError",
           [ ["in", "String_1", ["::SOAP::SOAPString"]] ],
@@ -103,7 +102,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "addOutlookIntegrationStats"),
+        [ XSD::QName.new(ETAP_NS, "addOutlookIntegrationStats"),
           "",
           "addOutlookIntegrationStats",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -117,7 +116,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "addPayment"),
+        [ XSD::QName.new(ETAP_NS, "addPayment"),
           "",
           "addPayment",
           [ ["in", "Payment_1", ["Etapper::Payment", "etapestryAPI/service", "Payment"]],
@@ -127,7 +126,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "addPledge"),
+        [ XSD::QName.new(ETAP_NS, "addPledge"),
           "",
           "addPledge",
           [ ["in", "Pledge_1", ["Etapper::Pledge", "etapestryAPI/service", "Pledge"]],
@@ -137,7 +136,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "addRecurringGift"),
+        [ XSD::QName.new(ETAP_NS, "addRecurringGift"),
           "",
           "addRecurringGift",
           [ ["in", "RecurringGift_1", ["Etapper::RecurringGift", "etapestryAPI/service", "RecurringGift"]],
@@ -147,7 +146,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "addSoftCredit"),
+        [ XSD::QName.new(ETAP_NS, "addSoftCredit"),
           "",
           "addSoftCredit",
           [ ["in", "SoftCredit_1", ["Etapper::SoftCredit", "etapestryAPI/service", "SoftCredit"]],
@@ -157,7 +156,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "connect"),
+        [ XSD::QName.new(ETAP_NS, "connect"),
           "",
           "connect",
           [ ["in", "ConnectRequest_1", ["Etapper::ConnectRequest", "etapestryAPI/service", "ConnectRequest"]],
@@ -166,7 +165,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "externalLogin"),
+        [ XSD::QName.new(ETAP_NS, "externalLogin"),
           "",
           "externalLogin",
           [ ["in", "ExternalLoginRequest_1", ["Etapper::ExternalLoginRequest", "etapestryAPI/service", "ExternalLoginRequest"]],
@@ -175,7 +174,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "findAccountsForOutlookIntegration"),
+        [ XSD::QName.new(ETAP_NS, "findAccountsForOutlookIntegration"),
           "",
           "findAccountsForOutlookIntegration",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -186,7 +185,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getAccount"),
+        [ XSD::QName.new(ETAP_NS, "getAccount"),
           "",
           "getAccount",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -195,7 +194,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getAccountById"),
+        [ XSD::QName.new(ETAP_NS, "getAccountById"),
           "",
           "getAccountById",
           [ ["in", "int_1", ["::SOAP::SOAPInt"]],
@@ -204,7 +203,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getAccountByPersonaType"),
+        [ XSD::QName.new(ETAP_NS, "getAccountByPersonaType"),
           "",
           "getAccountByPersonaType",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -215,7 +214,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getAccountByUniqueDefinedValue"),
+        [ XSD::QName.new(ETAP_NS, "getAccountByUniqueDefinedValue"),
           "",
           "getAccountByUniqueDefinedValue",
           [ ["in", "DefinedValue_1", ["Etapper::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
@@ -224,7 +223,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getAccountFromPhoneAThonList"),
+        [ XSD::QName.new(ETAP_NS, "getAccountFromPhoneAThonList"),
           "",
           "getAccountFromPhoneAThonList",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -233,7 +232,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getAccountInvolvePrivacySettings"),
+        [ XSD::QName.new(ETAP_NS, "getAccountInvolvePrivacySettings"),
           "",
           "getAccountInvolvePrivacySettings",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -242,7 +241,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getAccountRef"),
+        [ XSD::QName.new(ETAP_NS, "getAccountRef"),
           "",
           "getAccountRef",
           [ ["in", "DefinedValue_1", ["Etapper::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
@@ -251,7 +250,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getApproaches"),
+        [ XSD::QName.new(ETAP_NS, "getApproaches"),
           "",
           "getApproaches",
           [ ["in", "boolean_1", ["::SOAP::SOAPBoolean"]],
@@ -260,7 +259,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getCachedCartElements"),
+        [ XSD::QName.new(ETAP_NS, "getCachedCartElements"),
           "",
           "getCachedCartElements",
           [ ["in", "int_1", ["::SOAP::SOAPInt"]],
@@ -269,7 +268,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getCachedDefinedFields"),
+        [ XSD::QName.new(ETAP_NS, "getCachedDefinedFields"),
           "",
           "getCachedDefinedFields",
           [ ["in", "int_1", ["::SOAP::SOAPInt"]],
@@ -278,7 +277,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getCachedJournalEntries"),
+        [ XSD::QName.new(ETAP_NS, "getCachedJournalEntries"),
           "",
           "getCachedJournalEntries",
           [ ["in", "int_1", ["::SOAP::SOAPInt"]],
@@ -287,7 +286,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getCachedQueryResults"),
+        [ XSD::QName.new(ETAP_NS, "getCachedQueryResults"),
           "",
           "getCachedQueryResults",
           [ ["in", "int_1", ["::SOAP::SOAPInt"]],
@@ -296,7 +295,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getCalendarItem"),
+        [ XSD::QName.new(ETAP_NS, "getCalendarItem"),
           "",
           "getCalendarItem",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -305,7 +304,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getCampaigns"),
+        [ XSD::QName.new(ETAP_NS, "getCampaigns"),
           "",
           "getCampaigns",
           [ ["in", "boolean_1", ["::SOAP::SOAPBoolean"]],
@@ -314,7 +313,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getCartCategory"),
+        [ XSD::QName.new(ETAP_NS, "getCartCategory"),
           "",
           "getCartCategory",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -323,7 +322,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getCartElements"),
+        [ XSD::QName.new(ETAP_NS, "getCartElements"),
           "",
           "getCartElements",
           [ ["in", "PagedCartElementsRequest_1", ["Etapper::PagedCartElementsRequest", "etapestryAPI/service", "PagedCartElementsRequest"]],
@@ -332,7 +331,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getCartItem"),
+        [ XSD::QName.new(ETAP_NS, "getCartItem"),
           "",
           "getCartItem",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -341,7 +340,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getCartPreferences"),
+        [ XSD::QName.new(ETAP_NS, "getCartPreferences"),
           "",
           "getCartPreferences",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -350,7 +349,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getContact"),
+        [ XSD::QName.new(ETAP_NS, "getContact"),
           "",
           "getContact",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -359,7 +358,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getContactByUniqueDefinedValue"),
+        [ XSD::QName.new(ETAP_NS, "getContactByUniqueDefinedValue"),
           "",
           "getContactByUniqueDefinedValue",
           [ ["in", "DefinedValue_1", ["Etapper::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
@@ -368,7 +367,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getContactRef"),
+        [ XSD::QName.new(ETAP_NS, "getContactRef"),
           "",
           "getContactRef",
           [ ["in", "DefinedValue_1", ["Etapper::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
@@ -377,7 +376,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getDeclaration"),
+        [ XSD::QName.new(ETAP_NS, "getDeclaration"),
           "",
           "getDeclaration",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -386,7 +385,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getDefinedField"),
+        [ XSD::QName.new(ETAP_NS, "getDefinedField"),
           "",
           "getDefinedField",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -396,7 +395,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getDefinedFields"),
+        [ XSD::QName.new(ETAP_NS, "getDefinedFields"),
           "",
           "getDefinedFields",
           [ ["in", "PagedDefinedFieldsRequest_1", ["Etapper::PagedDefinedFieldsRequest", "etapestryAPI/service", "PagedDefinedFieldsRequest"]],
@@ -405,7 +404,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getDisbursement"),
+        [ XSD::QName.new(ETAP_NS, "getDisbursement"),
           "",
           "getDisbursement",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -414,7 +413,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getDonorLoginPreferences"),
+        [ XSD::QName.new(ETAP_NS, "getDonorLoginPreferences"),
           "",
           "getDonorLoginPreferences",
           [ ["retval", "result", ["Etapper::DonorLoginPreferences", "etapestryAPI/service", "DonorLoginPreferences"]] ],
@@ -422,7 +421,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getDuplicateAccount"),
+        [ XSD::QName.new(ETAP_NS, "getDuplicateAccount"),
           "",
           "getDuplicateAccount",
           [ ["in", "DuplicateAccountSearch_1", ["Etapper::DuplicateAccountSearch", "etapestryAPI/service", "DuplicateAccountSearch"]],
@@ -431,7 +430,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getDuplicateAccounts"),
+        [ XSD::QName.new(ETAP_NS, "getDuplicateAccounts"),
           "",
           "getDuplicateAccounts",
           [ ["in", "DuplicateAccountSearch_1", ["Etapper::DuplicateAccountSearch", "etapestryAPI/service", "DuplicateAccountSearch"]],
@@ -440,7 +439,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getDynamicQueryResults"),
+        [ XSD::QName.new(ETAP_NS, "getDynamicQueryResults"),
           "",
           "getDynamicQueryResults",
           [ ["in", "PagedDynamicQueryResultsRequest_1", ["Etapper::PagedDynamicQueryResultsRequest", "etapestryAPI/service", "PagedDynamicQueryResultsRequest"]],
@@ -449,7 +448,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getEntityRole"),
+        [ XSD::QName.new(ETAP_NS, "getEntityRole"),
           "",
           "getEntityRole",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -459,7 +458,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getExistingQueryResults"),
+        [ XSD::QName.new(ETAP_NS, "getExistingQueryResults"),
           "",
           "getExistingQueryResults",
           [ ["in", "PagedExistingQueryResultsRequest_1", ["Etapper::PagedExistingQueryResultsRequest", "etapestryAPI/service", "PagedExistingQueryResultsRequest"]],
@@ -468,7 +467,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getFunds"),
+        [ XSD::QName.new(ETAP_NS, "getFunds"),
           "",
           "getFunds",
           [ ["in", "boolean_1", ["::SOAP::SOAPBoolean"]],
@@ -477,7 +476,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getGift"),
+        [ XSD::QName.new(ETAP_NS, "getGift"),
           "",
           "getGift",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -486,7 +485,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getInvitation"),
+        [ XSD::QName.new(ETAP_NS, "getInvitation"),
           "",
           "getInvitation",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -495,7 +494,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getJournalEntries"),
+        [ XSD::QName.new(ETAP_NS, "getJournalEntries"),
           "",
           "getJournalEntries",
           [ ["in", "PagedJournalEntriesRequest_1", ["Etapper::PagedJournalEntriesRequest", "etapestryAPI/service", "PagedJournalEntriesRequest"]],
@@ -504,7 +503,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getLetters"),
+        [ XSD::QName.new(ETAP_NS, "getLetters"),
           "",
           "getLetters",
           [ ["in", "boolean_1", ["::SOAP::SOAPBoolean"]],
@@ -513,7 +512,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getMyAccount"),
+        [ XSD::QName.new(ETAP_NS, "getMyAccount"),
           "",
           "getMyAccount",
           [ ["retval", "result", ["Etapper::Account", "etapestryAPI/service", "Account"]] ],
@@ -521,7 +520,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getMyAccountByPersonaType"),
+        [ XSD::QName.new(ETAP_NS, "getMyAccountByPersonaType"),
           "",
           "getMyAccountByPersonaType",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -531,7 +530,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getMyEntityRole"),
+        [ XSD::QName.new(ETAP_NS, "getMyEntityRole"),
           "",
           "getMyEntityRole",
           [ ["retval", "result", ["Etapper::EntityRole", "etapestryAPI/service", "EntityRole"]] ],
@@ -539,7 +538,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getMyJournalEntries"),
+        [ XSD::QName.new(ETAP_NS, "getMyJournalEntries"),
           "",
           "getMyJournalEntries",
           [ ["retval", "result", ["Etapper::Collection", "http://java.sun.com/jax-rpc-ri/internal", "collection"]] ],
@@ -547,7 +546,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getMyJournalSummary"),
+        [ XSD::QName.new(ETAP_NS, "getMyJournalSummary"),
           "",
           "getMyJournalSummary",
           [ ["retval", "result", ["Etapper::JournalSummary", "etapestryAPI/service", "JournalSummary"]] ],
@@ -555,7 +554,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getMyPrivacyPreferences"),
+        [ XSD::QName.new(ETAP_NS, "getMyPrivacyPreferences"),
           "",
           "getMyPrivacyPreferences",
           [ ["retval", "result", ["Etapper::PrivacyPreferences", "etapestryAPI/service", "PrivacyPreferences"]] ],
@@ -563,7 +562,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getNextCartElements"),
+        [ XSD::QName.new(ETAP_NS, "getNextCartElements"),
           "",
           "getNextCartElements",
           [ ["retval", "result", ["Etapper::PagedCartElementsResponse", "etapestryAPI/service", "PagedCartElementsResponse"]] ],
@@ -571,7 +570,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getNextDefinedFields"),
+        [ XSD::QName.new(ETAP_NS, "getNextDefinedFields"),
           "",
           "getNextDefinedFields",
           [ ["retval", "result", ["Etapper::PagedDefinedFieldsResponse", "etapestryAPI/service", "PagedDefinedFieldsResponse"]] ],
@@ -579,7 +578,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getNextJournalEntries"),
+        [ XSD::QName.new(ETAP_NS, "getNextJournalEntries"),
           "",
           "getNextJournalEntries",
           [ ["retval", "result", ["Etapper::PagedJournalEntriesResponse", "etapestryAPI/service", "PagedJournalEntriesResponse"]] ],
@@ -587,7 +586,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getNextQueryResults"),
+        [ XSD::QName.new(ETAP_NS, "getNextQueryResults"),
           "",
           "getNextQueryResults",
           [ ["retval", "result", ["Etapper::PagedQueryResultsResponse", "etapestryAPI/service", "PagedQueryResultsResponse"]] ],
@@ -595,7 +594,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getNote"),
+        [ XSD::QName.new(ETAP_NS, "getNote"),
           "",
           "getNote",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -604,7 +603,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getNoteByUniqueDefinedValue"),
+        [ XSD::QName.new(ETAP_NS, "getNoteByUniqueDefinedValue"),
           "",
           "getNoteByUniqueDefinedValue",
           [ ["in", "DefinedValue_1", ["Etapper::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
@@ -613,7 +612,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getNoteRef"),
+        [ XSD::QName.new(ETAP_NS, "getNoteRef"),
           "",
           "getNoteRef",
           [ ["in", "DefinedValue_1", ["Etapper::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
@@ -622,7 +621,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getOrderItem"),
+        [ XSD::QName.new(ETAP_NS, "getOrderItem"),
           "",
           "getOrderItem",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -631,7 +630,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getOrderShipping"),
+        [ XSD::QName.new(ETAP_NS, "getOrderShipping"),
           "",
           "getOrderShipping",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -640,7 +639,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getOrderTax"),
+        [ XSD::QName.new(ETAP_NS, "getOrderTax"),
           "",
           "getOrderTax",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -649,7 +648,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getOrganizationPreferences"),
+        [ XSD::QName.new(ETAP_NS, "getOrganizationPreferences"),
           "",
           "getOrganizationPreferences",
           [ ["retval", "result", ["Etapper::OrganizationPreferences", "etapestryAPI/service", "OrganizationPreferences"]] ],
@@ -657,7 +656,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getOutlookIntegrationContactMethods"),
+        [ XSD::QName.new(ETAP_NS, "getOutlookIntegrationContactMethods"),
           "",
           "getOutlookIntegrationContactMethods",
           [ ["retval", "result", ["Etapper::ArrayOfDefinedValue", "etapestryAPI/service", "ArrayOfDefinedValue"]] ],
@@ -665,7 +664,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getOutlookIntegrationVersion"),
+        [ XSD::QName.new(ETAP_NS, "getOutlookIntegrationVersion"),
           "",
           "getOutlookIntegrationVersion",
           [ ["retval", "result", ["::SOAP::SOAPString"]] ],
@@ -673,7 +672,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getPayment"),
+        [ XSD::QName.new(ETAP_NS, "getPayment"),
           "",
           "getPayment",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -682,7 +681,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getPhoneAThonLists"),
+        [ XSD::QName.new(ETAP_NS, "getPhoneAThonLists"),
           "",
           "getPhoneAThonLists",
           [ ["in", "boolean_1", ["::SOAP::SOAPBoolean"]],
@@ -691,7 +690,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getPledge"),
+        [ XSD::QName.new(ETAP_NS, "getPledge"),
           "",
           "getPledge",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -700,7 +699,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getPrivacyPreferences"),
+        [ XSD::QName.new(ETAP_NS, "getPrivacyPreferences"),
           "",
           "getPrivacyPreferences",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -709,7 +708,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getQueryResultStats"),
+        [ XSD::QName.new(ETAP_NS, "getQueryResultStats"),
           "",
           "getQueryResultStats",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -719,7 +718,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getRecurringGift"),
+        [ XSD::QName.new(ETAP_NS, "getRecurringGift"),
           "",
           "getRecurringGift",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -728,7 +727,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getRecurringGiftSchedule"),
+        [ XSD::QName.new(ETAP_NS, "getRecurringGiftSchedule"),
           "",
           "getRecurringGiftSchedule",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -737,7 +736,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getSegmentedDonation"),
+        [ XSD::QName.new(ETAP_NS, "getSegmentedDonation"),
           "",
           "getSegmentedDonation",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -746,7 +745,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getSegmentedOrder"),
+        [ XSD::QName.new(ETAP_NS, "getSegmentedOrder"),
           "",
           "getSegmentedOrder",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -755,7 +754,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getSegmentedPledge"),
+        [ XSD::QName.new(ETAP_NS, "getSegmentedPledge"),
           "",
           "getSegmentedPledge",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -764,7 +763,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getSoftCredit"),
+        [ XSD::QName.new(ETAP_NS, "getSoftCredit"),
           "",
           "getSoftCredit",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -773,7 +772,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getSystemDefinedValues"),
+        [ XSD::QName.new(ETAP_NS, "getSystemDefinedValues"),
           "",
           "getSystemDefinedValues",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -783,7 +782,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getTransaction"),
+        [ XSD::QName.new(ETAP_NS, "getTransaction"),
           "",
           "getTransaction",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -792,7 +791,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getTransactionByUniqueDefinedValue"),
+        [ XSD::QName.new(ETAP_NS, "getTransactionByUniqueDefinedValue"),
           "",
           "getTransactionByUniqueDefinedValue",
           [ ["in", "DefinedValue_1", ["Etapper::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
@@ -801,7 +800,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getTransactionProcessors"),
+        [ XSD::QName.new(ETAP_NS, "getTransactionProcessors"),
           "",
           "getTransactionProcessors",
           [ ["in", "boolean_1", ["::SOAP::SOAPBoolean"]],
@@ -810,7 +809,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getTransactionRef"),
+        [ XSD::QName.new(ETAP_NS, "getTransactionRef"),
           "",
           "getTransactionRef",
           [ ["in", "DefinedValue_1", ["Etapper::DefinedValue", "etapestryAPI/service", "DefinedValue"]],
@@ -819,7 +818,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "getUserDefinedSetValues"),
+        [ XSD::QName.new(ETAP_NS, "getUserDefinedSetValues"),
           "",
           "getUserDefinedSetValues",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -829,7 +828,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "hasMoreCartElements"),
+        [ XSD::QName.new(ETAP_NS, "hasMoreCartElements"),
           "",
           "hasMoreCartElements",
           [ ["retval", "result", ["::SOAP::SOAPBoolean"]] ],
@@ -837,7 +836,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "hasMoreDefinedFields"),
+        [ XSD::QName.new(ETAP_NS, "hasMoreDefinedFields"),
           "",
           "hasMoreDefinedFields",
           [ ["retval", "result", ["::SOAP::SOAPBoolean"]] ],
@@ -845,7 +844,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "hasMoreJournalEntries"),
+        [ XSD::QName.new(ETAP_NS, "hasMoreJournalEntries"),
           "",
           "hasMoreJournalEntries",
           [ ["retval", "result", ["::SOAP::SOAPBoolean"]] ],
@@ -853,7 +852,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "hasMoreQueryResults"),
+        [ XSD::QName.new(ETAP_NS, "hasMoreQueryResults"),
           "",
           "hasMoreQueryResults",
           [ ["retval", "result", ["::SOAP::SOAPBoolean"]] ],
@@ -861,7 +860,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "initLinkedTransaction"),
+        [ XSD::QName.new(ETAP_NS, "initLinkedTransaction"),
           "",
           "initLinkedTransaction",
           [ ["retval", "result", ["Etapper::LinkedTransaction", "etapestryAPI/service", "LinkedTransaction"]] ],
@@ -869,7 +868,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "isMyPasswordExpired"),
+        [ XSD::QName.new(ETAP_NS, "isMyPasswordExpired"),
           "",
           "isMyPasswordExpired",
           [ ["retval", "result", ["::SOAP::SOAPBoolean"]] ],
@@ -877,7 +876,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "login"),
+        [ XSD::QName.new(ETAP_NS, "login"),
           "",
           "login",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -887,7 +886,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "logout"),
+        [ XSD::QName.new(ETAP_NS, "logout"),
           "",
           "logout",
           [],
@@ -895,7 +894,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "pingOkay"),
+        [ XSD::QName.new(ETAP_NS, "pingOkay"),
           "",
           "pingOkay",
           [ ["retval", "result", ["::SOAP::SOAPString"]] ],
@@ -903,7 +902,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "pingTime"),
+        [ XSD::QName.new(ETAP_NS, "pingTime"),
           "",
           "pingTime",
           [ ["retval", "result", ["::SOAP::SOAPDateTime"]] ],
@@ -911,7 +910,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "processAccountChange"),
+        [ XSD::QName.new(ETAP_NS, "processAccountChange"),
           "",
           "processAccountChange",
           [ ["in", "AccountChangeRequest_1", ["Etapper::AccountChangeRequest", "etapestryAPI/service", "AccountChangeRequest"]] ],
@@ -919,7 +918,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "processCartOrder"),
+        [ XSD::QName.new(ETAP_NS, "processCartOrder"),
           "",
           "processCartOrder",
           [ ["in", "CartOrderRequest_1", ["Etapper::CartOrderRequest", "etapestryAPI/service", "CartOrderRequest"]],
@@ -928,7 +927,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "processEcommerceRequest"),
+        [ XSD::QName.new(ETAP_NS, "processEcommerceRequest"),
           "",
           "processEcommerceRequest",
           [ ["in", "EcommerceRequest_1", ["Etapper::EcommerceRequest", "etapestryAPI/service", "EcommerceRequest"]],
@@ -937,7 +936,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "processForgottenPasswordEmailHelp"),
+        [ XSD::QName.new(ETAP_NS, "processForgottenPasswordEmailHelp"),
           "",
           "processForgottenPasswordEmailHelp",
           [ ["in", "ForgottenPasswordEmailHelpRequest_1", ["Etapper::ForgottenPasswordEmailHelpRequest", "etapestryAPI/service", "ForgottenPasswordEmailHelpRequest"]],
@@ -946,7 +945,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "processForgottenPasswordResetHelp"),
+        [ XSD::QName.new(ETAP_NS, "processForgottenPasswordResetHelp"),
           "",
           "processForgottenPasswordResetHelp",
           [ ["in", "ForgottenPasswordResetHelpRequest_1", ["Etapper::ForgottenPasswordResetHelpRequest", "etapestryAPI/service", "ForgottenPasswordResetHelpRequest"]],
@@ -955,7 +954,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "processTransaction"),
+        [ XSD::QName.new(ETAP_NS, "processTransaction"),
           "",
           "processTransaction",
           [ ["in", "ProcessTransactionRequest_1", ["Etapper::ProcessTransactionRequest", "etapestryAPI/service", "ProcessTransactionRequest"]],
@@ -964,7 +963,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "reverseTransaction"),
+        [ XSD::QName.new(ETAP_NS, "reverseTransaction"),
           "",
           "reverseTransaction",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -974,7 +973,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "sendEmail"),
+        [ XSD::QName.new(ETAP_NS, "sendEmail"),
           "",
           "sendEmail",
           [ ["in", "SendEmailRequest_1", ["Etapper::SendEmailRequest", "etapestryAPI/service", "SendEmailRequest"]],
@@ -983,7 +982,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "updateAccount"),
+        [ XSD::QName.new(ETAP_NS, "updateAccount"),
           "",
           "updateAccount",
           [ ["in", "Account_1", ["Etapper::Account", "etapestryAPI/service", "Account"]],
@@ -993,7 +992,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "updateContact"),
+        [ XSD::QName.new(ETAP_NS, "updateContact"),
           "",
           "updateContact",
           [ ["in", "Contact_1", ["Etapper::Contact", "etapestryAPI/service", "Contact"]],
@@ -1003,7 +1002,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "updateForgottenPassword"),
+        [ XSD::QName.new(ETAP_NS, "updateForgottenPassword"),
           "",
           "updateForgottenPassword",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -1013,7 +1012,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "updateGift"),
+        [ XSD::QName.new(ETAP_NS, "updateGift"),
           "",
           "updateGift",
           [ ["in", "Gift_1", ["Etapper::Gift", "etapestryAPI/service", "Gift"]],
@@ -1023,7 +1022,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "updateMyExpiredPassword"),
+        [ XSD::QName.new(ETAP_NS, "updateMyExpiredPassword"),
           "",
           "updateMyExpiredPassword",
           [ ["in", "String_1", ["::SOAP::SOAPString"]] ],
@@ -1031,7 +1030,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "updateMyLoginCredentials"),
+        [ XSD::QName.new(ETAP_NS, "updateMyLoginCredentials"),
           "",
           "updateMyLoginCredentials",
           [ ["in", "String_1", ["::SOAP::SOAPString"]],
@@ -1040,7 +1039,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "updateMyPassword"),
+        [ XSD::QName.new(ETAP_NS, "updateMyPassword"),
           "",
           "updateMyPassword",
           [ ["in", "String_1", ["::SOAP::SOAPString"]] ],
@@ -1048,7 +1047,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "updateNote"),
+        [ XSD::QName.new(ETAP_NS, "updateNote"),
           "",
           "updateNote",
           [ ["in", "Note_1", ["Etapper::Note", "etapestryAPI/service", "Note"]],
@@ -1058,7 +1057,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "updatePrivacyPreferences"),
+        [ XSD::QName.new(ETAP_NS, "updatePrivacyPreferences"),
           "",
           "updatePrivacyPreferences",
           [ ["in", "PrivacyPreferences_1", ["Etapper::PrivacyPreferences", "etapestryAPI/service", "PrivacyPreferences"]],
@@ -1067,7 +1066,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "validateCartLicense"),
+        [ XSD::QName.new(ETAP_NS, "validateCartLicense"),
           "",
           "validateCartLicense",
           [ ["retval", "result", ["::SOAP::SOAPBoolean"]] ],
@@ -1075,7 +1074,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "validateDonorLoginLicense"),
+        [ XSD::QName.new(ETAP_NS, "validateDonorLoginLicense"),
           "",
           "validateDonorLoginLicense",
           [ ["retval", "result", ["::SOAP::SOAPBoolean"]] ],
@@ -1083,7 +1082,7 @@ module Etapper
             :response_style => :rpc, :response_use => :encoded,
           :faults => {} }
         ],
-        [ XSD::QName.new(NsService, "validateOutlookIntegrationLicense"),
+        [ XSD::QName.new(ETAP_NS, "validateOutlookIntegrationLicense"),
           "",
           "validateOutlookIntegrationLicense",
           [ ["retval", "result", ["::SOAP::SOAPBoolean"]] ],
@@ -1094,6 +1093,5 @@ module Etapper
       ]
 
     end
-
   end
 end

@@ -7,54 +7,53 @@ $:.include?(LIBDIR) || $:.include?(LIBDIR)
 
 require 'rubygems'
 gem 'soap4r'
+require 'etapper'
 require 'serverMethods'
 require 'soap/rpc/standaloneServer'
 
 module Etapper
+  module Test
+    class Server < ::SOAP::RPC::StandaloneServer
 
-  class Server < ::SOAP::RPC::StandaloneServer
+      def initialize(args = {})
+        options = {
+          :app => 'EtapperTestServer',
+          :host => 'localhost',
+          :port => 10080,
+          #      :logfile => File.join(File.dirname(__FILE__), '..', '..', 'tmp', 'server.log')
+        }.merge(args)
 
-    def initialize(args = {})
-      options = {
-        :app => 'EtapperTestServer',
-        :namespace =>'etapestryAPI/service',
-        :host => 'localhost',
-        :port => 10080,
-        #      :logfile => File.join(File.dirname(__FILE__), '..', '..', 'tmp', 'server.log')
-      }.merge(args)
+        super(options[:app], ETAP_NS, options[:host], options[:port])
 
-      super(options[:app], options[:namespace], options[:host], options[:port])
+        # Set log level a lot more verbose
+        self.level = Logger::Severity::INFO
 
-      # Set log level a lot more verbose
-      self.level = Logger::Severity::INFO
-
-      servant = Etapper::Services.new
-      Etapper::Services::Methods.each do |definitions|
-        opt = definitions.last
-        if opt[:request_style] == :document
-          @router.add_document_operation(servant, *definitions)
-        else
-          @router.add_rpc_operation(servant, *definitions)
+        servant = Services.new
+        Services::Methods.each do |definitions|
+          opt = definitions.last
+          if opt[:request_style] == :document
+            @router.add_document_operation(servant, *definitions)
+          else
+            @router.add_rpc_operation(servant, *definitions)
+          end
         end
+        self.mapping_registry = API::ServiceMappingRegistry::EncodedRegistry
+        self.literal_mapping_registry = API::ServiceMappingRegistry::LiteralRegistry
+        self.log = options[:logfile] if options[:logfile]
       end
-      self.mapping_registry = ServiceMappingRegistry::EncodedRegistry
-      self.literal_mapping_registry = ServiceMappingRegistry::LiteralRegistry
-      self.log = options[:logfile] if options[:logfile]
-    end
 
-    def self.launch(args = {})
-      server = Etapper::Server.new(options)
+      def self.launch(args = {})
+        server = Server.new(args)
 
-      trap(:INT) do
-        server.shutdown
+        trap(:INT) do
+          server.shutdown
+        end
+        server.start
       end
-      server.start
     end
   end
-
 end
 
-
 if $0 == __FILE__
-  Etapper::Server.launch
+  Etapper::Test::Server.launch
 end
