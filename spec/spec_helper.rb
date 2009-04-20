@@ -23,21 +23,22 @@ Spec::Runner.configure do |config|
     File.delete(serverlog) if File.exists?(serverlog)
 
     if ENV["ETAPPER_LIVE"] == 'true' then
-      # Hit eTapestry's live environment -- handle with care!
-      @client = Etapper::Client.new(Etapper::ETAPESTRY_URL)
-      @client.wiredump_dev = clientlog
+      Spec::TEST_LIVE = true
+      Spec::TEST_URL = Etapper::ETAPESTRY_URL
     else
+      Spec::TEST_LIVE = false
+      Spec::TEST_URL = 'http://localhost:10080'
       # Start the server in its own thread, or we'll never get back
       @server = Etapper::Server.new(:logfile => serverlog)
       @sthread = Thread.new do 
         @server.start
       end
-      @client = Etapper::Client.new('http://localhost:10080')
-      @client.wiredump_dev = clientlog
       puts "Wait a moment..."
       sleep 2
     end
-
+    # Hit eTapestry's live environment -- handle with care!
+    @client = Etapper::Client.new(Spec::TEST_URL)
+    @client.wiredump_dev = clientlog
   end
   
   config.after(:all) do
