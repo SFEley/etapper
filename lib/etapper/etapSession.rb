@@ -5,23 +5,36 @@ require 'soap/filter/streamhandler'
 
 module Etapper
   class SessionFilter < SOAP::Filter::StreamHandler
-    attr_accessor :cookie_value
+    attr_accessor :cookie_values
 
     def initialize
-      @cookie_value = nil
+      @cookie_values = {}
     end
 
     def on_http_outbound(req)
-      req.header['Cookie'] = @cookie_value if @cookie_value
+      if cookies.empty?
+        req.header.delete('Cookie')
+      else
+        req.header['Cookie'] = cookies
+      end
+      # # Remove whitespace
+      # req.body = req.body.to_s.gsub(/>\s*</m,'><')
     end
 
     def on_http_inbound(req, res)
-      # this sample filter only caputures the first cookie.
-      cookie = res.header['Set-Cookie'][0]
-      #      cookie.sub!(/;.*\z/, '') if cookie
-      @cookie_value = cookie
-      # do not save cookie value.
-      puts "new cookie value: #{@cookie_value}"
+      res.header['Set-Cookie'].each do |cookie|
+        value = cookie.sub(/;.*/, '')
+        if value =~ /(.*?)\s*=\s*(.*)/
+          @cookie_values[$1] = $2
+        end
+      end
+    end
+    
+  private
+    def cookies
+      cookie_array = []
+      @cookie_values.each {|key, value| cookie_array << "#{key}=#{value}"}
+      cookie_array.join("; ")
     end
   end
 end

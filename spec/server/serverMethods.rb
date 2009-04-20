@@ -17,11 +17,11 @@ module Etapper
     #   endpoint          C_String - {http://www.w3.org/2001/XMLSchema}string
     #
     # TESTING:
-    # * login('johntest','mypass') returns success (empty endpoint)
-    # * login('jilltest','anotherpass') returns endpoint to '127.0.0.1:10010' if called from elsewhere; otherwise success
-    # * login('carltest','anotherpass') returns Account Password Expired
-    # * login('fredtest','athirdpass') returns Account Locked Out
-    # * login('saratest','fourthpass') returns Invalid License
+    # * login('etapper_johntest','mypass') returns success (empty endpoint)
+    # * login('etapper_jilltest','anotherpass') returns endpoint to '127.0.0.1:10010' if called from elsewhere; otherwise success
+    # * login('etapper_carltest','anotherpass') returns Account Password Expired
+    # * login('etapper_fredtest','athirdpass') returns Account Locked Out
+    # * login('etapper_saratest','fourthpass') returns Invalid License
     # * Anything else should return Invalid Login
     def login(username, password)
       @log.info 'login', "username: #{username}, password: #{password}"
