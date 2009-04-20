@@ -3,7 +3,6 @@ require 'etapper/api/mapping_registry'
 
 module Etapper
   module Test
-    include API
     
     class Services
       NsService = "etapestryAPI/service"

@@ -11,6 +11,14 @@ $:.unshift(File.join(File.dirname(__FILE__), 'server'))
 require 'etapper'
 require 'server'
 
+if ENV["ETAPPER_LIVE"] == 'true' then
+  Spec::TEST_LIVE = true
+  Spec::TEST_URL = Etapper::ETAPESTRY_URL
+else
+  Spec::TEST_LIVE = false
+  Spec::TEST_URL = 'http://localhost:10080'
+end
+
 # Take our toys out of the toybox
 Spec::Runner.configure do |config|
   config.before(:all) do
@@ -22,23 +30,19 @@ Spec::Runner.configure do |config|
     File.delete(clientlog) if File.exists?(clientlog)
     File.delete(serverlog) if File.exists?(serverlog)
 
-    if ENV["ETAPPER_LIVE"] == 'true' then
-      Spec::TEST_LIVE = true
-      Spec::TEST_URL = Etapper::ETAPESTRY_URL
-    else
-      Spec::TEST_LIVE = false
-      Spec::TEST_URL = 'http://localhost:10080'
+    if Spec::TEST_LIVE then
       # Start the server in its own thread, or we'll never get back
-      @server = Etapper::Server.new(:logfile => serverlog)
+      @server = Etapper::Test::Server.new(:logfile => serverlog)
       @sthread = Thread.new do 
         @server.start
       end
       puts "Wait a moment..."
       sleep 2
     end
+
     # Hit eTapestry's live environment -- handle with care!
-    @client = Etapper::Client.new(Spec::TEST_URL)
-    @client.wiredump_dev = clientlog
+    @client = Etapper::Client.instance(Spec::TEST_URL)
+    @client.log = clientlog
   end
   
   config.after(:all) do

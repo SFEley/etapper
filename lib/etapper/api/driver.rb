@@ -11,8 +11,6 @@ module Etapper
 
     class Driver < ::SOAP::RPC::Driver
       
-      include Methods
-
       def initialize(endpoint_url = nil)
         endpoint_url ||= DefaultEndpointUrl
         super(endpoint_url, nil)
