@@ -13,8 +13,13 @@ module Etapper
     def_delegator :@driver, :endpoint_url, :url
     def_delegator :@driver, :endpoint_url=, :url=
     
-    def initialize(endpoint_url = ETAP_URL)
-      @driver = API::Driver.new(endpoint_url)
+    def initialize(options = {})
+      options[:connect] = true unless options.key?(:connect)        # Default to auto-connect 
+      options[:url] = Etapper::ETAP_URL unless options.key?(:url)   # 'nil' is a valid value
+      @username = options[:username]
+      @password = options[:password]
+      @driver = API::Driver.new(options[:url])
+      connect if options[:connect] && @username && @password
     end
 
     # Delegates from the driver's annoyingly named wiredump_dev property
@@ -27,8 +32,18 @@ module Etapper
       @driver.wiredump_dev = logthing
     end
     
+    def connected?
+      false
+    end
+    
+    def connect
+      true
+    end
+    
     protected
-      attr_accessor :driver
+      def driver
+        @driver
+      end
   end
   
 end

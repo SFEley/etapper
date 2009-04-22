@@ -1,442 +1,442 @@
 # Faults returned by eTapestry
 ---
 Unknown Error:
-  :faultCode: 1
-  :faultString: Unknown Error
+  :faultcode: 1
+  :faultstring: Unknown Error
   :comment: eTapestry encountered an unexpected error while processing the request. Contact api@etapestry.com for assistance.
 Invalid Login:
-  :faultCode: 2
-  :faultString: Invalid Login
+  :faultcode: 2
+  :faultstring: Invalid Login
   :comment: The login id and/or password provided is invalid.
 Missing Name:
-  :faultCode: 3
-  :faultString: Missing Name
+  :faultcode: 3
+  :faultstring: Missing Name
   :comment: An Account is missing a name or name parts (title, first, middle, and last).
 Invalid Month:
-  :faultCode: 4
-  :faultString: Invalid Month
+  :faultcode: 4
+  :faultstring: Invalid Month
   :comment: A CreditCard has an invalid expirationMonth.  This int must be from 1 and 12.
 Invalid Year:
-  :faultCode: 5
-  :faultString: Invalid Year
+  :faultcode: 5
+  :faultstring: Invalid Year
   :comment: A CreditCard has an invalid expirationYear.  This int must be from 1900 to 9999.
 Field Not Found:
-  :faultCode: 6
-  :faultString: Field Not Found
+  :faultcode: 6
+  :faultstring: Field Not Found
   :comment: A DefinedValue has a fieldName that doesn't exist within the eTapestry database.
 Duplicate Matches Found:
-  :faultCode: 7
-  :faultString: Duplicate Matches Found
+  :faultcode: 7
+  :faultstring: Duplicate Matches Found
   :comment: A DefinedValue has been located on multiple accounts.
 Ref Not Found:
-  :faultCode: 8
-  :faultString: Ref Not Found
+  :faultcode: 8
+  :faultstring: Ref Not Found
   :comment: A database ref could not be located within the eTapestry database.
 Invalid Persona Type:
-  :faultCode: 9
-  :faultString: Invalid Persona Type
+  :faultcode: 9
+  :faultstring: Invalid Persona Type
   :comment: An Account has a personaType that doesn't exist within the eTapestry database.
 Invalid Fund:
-  :faultCode: 10
-  :faultString: Invalid Fund
+  :faultcode: 10
+  :faultstring: Invalid Fund
   :comment: A transaction has a fund name that doesn't exist within the eTapestry database.
 Invalid Amount:
-  :faultCode: 11
-  :faultString: Invalid Amount
+  :faultcode: 11
+  :faultstring: Invalid Amount
   :comment: A transaction has an amount that is invalid.  Review each transaction to determine what is appropriate.
 Missing Processor:
-  :faultCode: 12
-  :faultString: Missing Processor
+  :faultcode: 12
+  :faultstring: Missing Processor
   :comment: The organization is missing a transaction processor.
 Credit Card Process Error:
-  :faultCode: 13
-  :faultString: Credit Card Process Error
+  :faultcode: 13
+  :faultstring: Credit Card Process Error
   :comment: The organization's transaction processor encountered an error while processing a credit card.  Review the fault string for further explanation.
 EFT Process Error:
-  :faultCode: 14
-  :faultString: EFT Process Error
+  :faultcode: 14
+  :faultstring: EFT Process Error
   :comment: The organization's transaction processor encountered an error while processing eft valuable.  Review the fault string for further explanation.
 Invalid License:
-  :faultCode: 15
-  :faultString: Invalid License
+  :faultcode: 15
+  :faultstring: Invalid License
   :comment: The organization does not have an active license to access the API.
 Account Locked Out:
-  :faultCode: 16
-  :faultString: Account Locked Out
+  :faultcode: 16
+  :faultstring: Account Locked Out
   :comment: The login id's access has been temporarily locked out of eTapestry.
 Password Length Error:
-  :faultCode: 18
-  :faultString: Password Length Error
+  :faultcode: 18
+  :faultstring: Password Length Error
   :comment: The length of the new password does not meet the organization's required length.
 Password Login Error:
-  :faultCode: 19
-  :faultString: Password Login Error
+  :faultcode: 19
+  :faultstring: Password Login Error
   :comment: The new password cannot match the login id.
 Password Value Error:
-  :faultCode: 20
-  :faultString: Password Value Error
+  :faultcode: 20
+  :faultstring: Password Value Error
   :comment: The new password cannot be 'password', consecutive characeters ('123456') or same characters ('111111').
 Password Complex Error:
-  :faultCode: 21
-  :faultString: Password Complex Error
+  :faultcode: 21
+  :faultstring: Password Complex Error
   :comment: The new password must contain at least 3 of the following 4 items - a lower case letter, an upper case letter, a number, and a special character
 Password History Error:
-  :faultCode: 22
-  :faultString: Password History Error
+  :faultcode: 22
+  :faultstring: Password History Error
   :comment: The new password cannot match any of last x number of passwords.  Each organization defines how many unique passwords are needed before an old one can be reused.
 Password Generic Error:
-  :faultCode: 23
-  :faultString: Password Generic Error
+  :faultcode: 23
+  :faultstring: Password Generic Error
   :comment: eTapestry encountered an unexpected error while trying to save a new password. Contact api@etapestry.com for assistance.
 Invalid Installment Amount:
-  :faultCode: 24
-  :faultString: Invalid Installment Amount
+  :faultcode: 24
+  :faultstring: Invalid Installment Amount
   :comment: A StandardPaymentSchedule has a installment amount that is invalid.
 Invalid Frequency:
-  :faultCode: 25
-  :faultString: Invalid Frequency
+  :faultcode: 25
+  :faultstring: Invalid Frequency
   :comment: A StandardPaymentSchedule or Insurance valuable has an invalid frequency.
 Invalid Scheduled Payments Count:
-  :faultCode: 26
-  :faultString: Invalid Scheduled Payments Count
+  :faultcode: 26
+  :faultstring: Invalid Scheduled Payments Count
   :comment: A Pledge cannot have over 300 scheduled payments.  The StandardPaymentSchedule installmentAmount must be increased.
 Inappropriate Instance:
-  :faultCode: 27
-  :faultString: Inappropriate Instance
+  :faultcode: 27
+  :faultstring: Inappropriate Instance
   :comment: The database ref provided is inappropriate for the anticipated item.  For example, a valid account ref was provided for the getGift method.
 Value Not Found:
-  :faultCode: 28
-  :faultString: Value Not Found
+  :faultcode: 28
+  :faultstring: Value Not Found
   :comment: A DefinedValue has a value name that doesn't exist on the field.  This can only occur for fields with a display type of single select or multi select.
 Missing Ref:
-  :faultCode: 29
-  :faultString: Missing Ref
+  :faultcode: 29
+  :faultstring: Missing Ref
   :comment: A required ref was not provided.  Review the complex type being utilized to determine which refs are required.
 Invalid Empty/Null Data:
-  :faultCode: 30
-  :faultString: Invalid Empty/Null Data
+  :faultcode: 30
+  :faultstring: Invalid Empty/Null Data
   :comment: An empty or null complex type was provided.  Methods with a complex type parameter cannot be null.
 Cannot Create User Account:
-  :faultCode: 31
-  :faultString: Cannot Create User Account
+  :faultcode: 31
+  :faultstring: Cannot Create User Account
   :comment: An Account with an accountRoleType of 'User' cannot be created within eTapestry through the API.
 Account Role Already Exists:
-  :faultCode: 32
-  :faultString: Account Role Already Exists
+  :faultcode: 32
+  :faultstring: Account Role Already Exists
   :comment: The method addAccount was called with the intention of adding a role to an existing account.  The existing account already has the accountRoleType provided.
 Invalid Contact Method:
-  :faultCode: 33
-  :faultString: Invalid Contact Method
+  :faultcode: 33
+  :faultstring: Invalid Contact Method
   :comment: A Contact has a method that doesn't exist within the eTapestry database.
 Missing Contact Method:
-  :faultCode: 34
-  :faultString: Missing Contact Method
+  :faultcode: 34
+  :faultstring: Missing Contact Method
   :comment: A Contact is missing a method.
 Missing Contact Subject:
-  :faultCode: 35
-  :faultString: Missing Contact Subject
+  :faultcode: 35
+  :faultstring: Missing Contact Subject
   :comment: A Contact is missing a subject.
 Missing Note:
-  :faultCode: 36
-  :faultString: Missing Note
+  :faultcode: 36
+  :faultstring: Missing Note
   :comment: A Note is missing a note.
 Missing Field Applies To:
-  :faultCode: 37
-  :faultString: Missing Field Applies To
+  :faultcode: 37
+  :faultstring: Missing Field Applies To
   :comment: A DefinedValue cannot be assigned to an item if the field doesn't apply to that item.  Review the fault string for further details.
 Missing Fund:
-  :faultCode: 38
-  :faultString: Missing Fund
+  :faultcode: 38
+  :faultstring: Missing Fund
   :comment: A transaction is mssing a fund.
 Donor Account Required:
-  :faultCode: 39
-  :faultString: Donor Account Required
+  :faultcode: 39
+  :faultstring: Donor Account Required
   :comment: A journal entry complex type cannot be added to a user or tribute Account.  The accountRef is inappropriate.
 Invalid Campaign:
-  :faultCode: 41
-  :faultString: Invalid Campaign
+  :faultcode: 41
+  :faultstring: Invalid Campaign
   :comment: A transaction has a campaign name that doesn't exist within the eTapestry database.
 Invalid Approach:
-  :faultCode: 42
-  :faultString: Invalid Approach
+  :faultcode: 42
+  :faultstring: Invalid Approach
   :comment: A transaction has a approach name that doesn't exist within the eTapestry database.
 Invalid Letter:
-  :faultCode: 43
-  :faultString: Invalid Letter
+  :faultcode: 43
+  :faultstring: Invalid Letter
   :comment: A transaction has a letter name that doesn't exist within the eTapestry database.
 Invalid Credit Card Type:
-  :faultCode: 44
-  :faultString: Invalid Credit Card Type
+  :faultcode: 44
+  :faultstring: Invalid Credit Card Type
   :comment: A CreditCard has a cardType that doesn't exist within the eTapestry database.
 Cannot Change Valuable:
-  :faultCode: 45
-  :faultString: Cannot Change Valuable
+  :faultcode: 45
+  :faultstring: Cannot Change Valuable
   :comment: An existing transaction cannot have its valuable changed if the transaction has been processed by the organization's transaction processor.
 Invalid Linked Recurring Gift Schedule:
-  :faultCode: 46
-  :faultString: Invalid Linked Recurring Gift Schedule
+  :faultcode: 46
+  :faultstring: Invalid Linked Recurring Gift Schedule
   :comment: A RecurringGift has an invalid recurringGiftScheduleRef or recurringGiftScheduleRef is a valid RecurringGiftSchedule that is marked with a process type of auto.  A RecurringGift cannot be added to a RecurringGiftSchedule with a process type of auto.
 Missing Real Estate Type:
-  :faultCode: 47
-  :faultString: Missing Real Estate Type
+  :faultcode: 47
+  :faultstring: Missing Real Estate Type
   :comment: A RealEstate is missing a realEstateType.
 Invalid Real Estate Type:
-  :faultCode: 48
-  :faultString: Invalid Real Estate Type
+  :faultcode: 48
+  :faultstring: Invalid Real Estate Type
   :comment: A RealEstate has a realEstateType that doesn't exist within the eTapestry database.
 Invalid Stock Shares:
-  :faultCode: 49
-  :faultString: Invalid Stock Shares
+  :faultcode: 49
+  :faultstring: Invalid Stock Shares
   :comment: A Stock has an invalid numberOfShares.
 Invalid Process Valuable:
-  :faultCode: 50
-  :faultString: Invalid Process Valuable
+  :faultcode: 50
+  :faultstring: Invalid Process Valuable
   :comment: The method addAndProcessGift or addAndProcessPayment doesn't have a transaction with a valuable type of CreditCard or ElectronicFundsTransfer.
 Invalid Valuable Type:
-  :faultCode: 51
-  :faultString: Invalid Valuable Type
+  :faultcode: 51
+  :faultstring: Invalid Valuable Type
   :comment: A Valuable provided has an invalid type.
 Invalid Valuable:
-  :faultCode: 52
-  :faultString: Invalid Valuable
+  :faultcode: 52
+  :faultstring: Invalid Valuable
   :comment: A Valuable provided has a type indicated, but empty or null type data.  For example, type is 2 and check is null.
 Invalid Non Deductible Amount:
-  :faultCode: 53
-  :faultString: Invalid Non Deductible Amount
+  :faultcode: 53
+  :faultstring: Invalid Non Deductible Amount
   :comment: A transaction has a nonDeductibleAmount that is invalid.  Review each transaction to determine what is appropriate.
 Missing Recurring Gift Schedule Ref:
-  :faultCode: 54
-  :faultString: Missing Recurring Gift Schedule Ref
+  :faultcode: 54
+  :faultstring: Missing Recurring Gift Schedule Ref
   :comment: A RecurringGift is missing a recurringGiftScheduleRef.
 Missing Pledge Ref:
-  :faultCode: 55
-  :faultString: Missing Pledge Ref
+  :faultcode: 55
+  :faultstring: Missing Pledge Ref
   :comment: A Payment is missing a pledgeRef.
 Missing Check Number:
-  :faultCode: 56
-  :faultString: Missing Check Number
+  :faultcode: 56
+  :faultstring: Missing Check Number
   :comment: A Check valuable is missing a number.
 Missing Credit Card Number:
-  :faultCode: 57
-  :faultString: Missing Credit Card Number
+  :faultcode: 57
+  :faultstring: Missing Credit Card Number
   :comment: A CreditCard valuable is missing a number.
 Missing Stock Company:
-  :faultCode: 58
-  :faultString: Missing Stock Company
+  :faultcode: 58
+  :faultstring: Missing Stock Company
   :comment: A Stock valuable is missing a number.
 Missing Insurance Insurer:
-  :faultCode: 59
-  :faultString: Missing Insurance Insurer
+  :faultcode: 59
+  :faultstring: Missing Insurance Insurer
   :comment: An Insurance valuable is missing a insurer.
 Missing Insurance Policy Number:
-  :faultCode: 60
-  :faultString: Missing Insurance Policy Number
+  :faultcode: 60
+  :faultstring: Missing Insurance Policy Number
   :comment: An Insurance valuable is missing a policyNumber.
 Missing Insurance Beneficiary:
-  :faultCode: 61
-  :faultString: Missing Insurance Beneficiary
+  :faultcode: 61
+  :faultstring: Missing Insurance Beneficiary
   :comment: An Insurance valuable is missing a beneficiary.
 Missing Bond Maturity Date:
-  :faultCode: 62
-  :faultString: Missing Bond Maturity Date
+  :faultcode: 62
+  :faultstring: Missing Bond Maturity Date
   :comment: A Bond valuable is missing a maturityDate.
 Missing Bond Issuing Entity:
-  :faultCode: 63
-  :faultString: Missing Bond Issuing Entity
+  :faultcode: 63
+  :faultstring: Missing Bond Issuing Entity
   :comment: A Bond valuable is missing an issuingEntity.
 Invalid Phone Type:
-  :faultCode: 64
-  :faultString: Invalid Phone Type
+  :faultcode: 64
+  :faultstring: Invalid Phone Type
   :comment: A Phone has a type that doesn't exist within the eTapestry database.
 Missing Field:
-  :faultCode: 66
-  :faultString: Missing Field
+  :faultcode: 66
+  :faultstring: Missing Field
   :comment: A DefinedValue is missing a fieldRef or fieldName.  This error can also occur when the method getUserDefinedSetValues or getSystemDefinedValues is called with a empty or null fieldName parameter.
 Missing Value:
-  :faultCode: 67
-  :faultString: Missing Value
+  :faultcode: 67
+  :faultstring: Missing Value
   :comment: A DefinedValue is missing a value.
 Invalid Value:
-  :faultCode: 68
-  :faultString: Invalid Value
+  :faultcode: 68
+  :faultstring: Invalid Value
   :comment: A DefinedValue has a value that isn't appropriate for the field's data type.  For example, the field 'Graduation Date' has a data type of date, but the value provided is '2006'.  Review the fault string for further explanation.
 Invalid Transaction Segment Update:
-  :faultCode: 69
-  :faultString: Invalid Transaction Segment Update
+  :faultcode: 69
+  :faultstring: Invalid Transaction Segment Update
   :comment: A Gift, Payment or Pledge that belongs to a SegmentedDonation/SegmentedPledge cannot be updated by itself.  It must be updated as a segment within a SegmentedDonation/SegmentedPledge using the method updateSegmentedDonation/updateSegmentedPledge.
 Invalid Segmented Transaction Segments:
-  :faultCode: 70
-  :faultString: Invalid Segmented Transaction Segments
+  :faultcode: 70
+  :faultstring: Invalid Segmented Transaction Segments
   :comment: A SegmentedDonation or SegmentedPledge has an invalid number of segments.
 Invalid Segmented Transaction Segment:
-  :faultCode: 71
-  :faultString: Invalid Segmented Transaction Segment
+  :faultcode: 71
+  :faultstring: Invalid Segmented Transaction Segment
   :comment: The segments of a SegmentedDonation or SegmentedPledge has an invalid item.  Only Gifts and Payments can be segments.
 Invalid Segmented Transaction Amount:
-  :faultCode: 72
-  :faultString: Invalid Segmented Transaction Amount
+  :faultcode: 72
+  :faultstring: Invalid Segmented Transaction Amount
   :comment: A SegmentedDonation or SegmentedPledge has a totalAmount that doesn't equal the sum of the segmented amounts or it has a totalNonDeductibleAmount that doesn't equal the sum of the segmented nonDeductibleAmounts.
 Duplicate Segmented Transaction Segments:
-  :faultCode: 73
-  :faultString: Duplicate Segmented Transaction Segments
+  :faultcode: 73
+  :faultstring: Duplicate Segmented Transaction Segments
   :comment: A SegmentedDonation or SegmentedPledge cannot have two segments with the same ref.
 Missing Soft Credit Account Ref:
-  :faultCode: 74
-  :faultString: Missing Soft Credit Account Ref
+  :faultcode: 74
+  :faultstring: Missing Soft Credit Account Ref
   :comment: A transaction has a softCredit that is missing an accountRef.
 Invalid Auto Process Valuable:
-  :faultCode: 75
-  :faultString: Invalid Auto Process Valuable
+  :faultcode: 75
+  :faultstring: Invalid Auto Process Valuable
   :comment: A Pledge or a RecurringGiftSchedule having a schedule marked with a process type of auto has an empty/null valuable or a valuable other than CreditCard or ElectronicFundsTransfer.
 Invalid Process Type:
-  :faultCode: 76
-  :faultString: Invalid Process Type
+  :faultcode: 76
+  :faultstring: Invalid Process Type
   :comment: A StandardPaymentSchedule or CustomPaymentSchedule has an invalid processType.
 Missing First Installment Date:
-  :faultCode: 77
-  :faultString: Missing First Installment Date
+  :faultcode: 77
+  :faultstring: Missing First Installment Date
   :comment: A StandardPaymentSchedule is missing a firstInstallmentDate.
 Missing Date:
-  :faultCode: 78
-  :faultString: Missing Date
+  :faultcode: 78
+  :faultstring: Missing Date
   :comment: A journal entry complex type is missing a date.
 Missing Phone Type:
-  :faultCode: 79
-  :faultString: Missing Phone Type
+  :faultcode: 79
+  :faultstring: Missing Phone Type
   :comment: A Phone is missing a type.
 Missing Persona Type:
-  :faultCode: 80
-  :faultString: Missing Persona Type
+  :faultcode: 80
+  :faultstring: Missing Persona Type
   :comment: An Account is missing a personaType.
 Invalid Country Code:
-  :faultCode: 81
-  :faultString: Invalid Country Code
+  :faultcode: 81
+  :faultstring: Invalid Country Code
   :comment: An Account has a country that doesn't exist within the eTapestry database.
 Invalid Custom Schedule Amounts:
-  :faultCode: 82
-  :faultString: Invalid Custom Schedule Amounts
+  :faultcode: 82
+  :faultstring: Invalid Custom Schedule Amounts
   :comment: A CustomPaymentSchedule has an empty or null installmentAmounts array.
 Invalid Custom Schedule Dates:
-  :faultCode: 83
-  :faultString: Invalid Custom Schedule Dates
+  :faultcode: 83
+  :faultstring: Invalid Custom Schedule Dates
   :comment: A CustomPaymentSchedule has an empty or null installmentDates array.
 Invalid Custom Schedule Details:
-  :faultCode: 84
-  :faultString: Invalid Custom Schedule Details
+  :faultcode: 84
+  :faultstring: Invalid Custom Schedule Details
   :comment: A CustomPaymentSchedule has a installmentAmounts or installmentDates array that has only one entry or the two arrays don't have the same length.
 Invalid Custom Schedule Date:
-  :faultCode: 85
-  :faultString: Invalid Custom Schedule Date
+  :faultcode: 85
+  :faultstring: Invalid Custom Schedule Date
   :comment: A CustomPaymentSchedule has a installmentDates array entry with a missing date.
 Missing Account Ref:
-  :faultCode: 86
-  :faultString: Missing Account Ref
+  :faultcode: 86
+  :faultstring: Missing Account Ref
   :comment: A journal entry complex type is missing an accountRef.
 Invalid User Defined Field Display Type:
-  :faultCode: 87
-  :faultString: Invalid User Defined Field Display Type
+  :faultcode: 87
+  :faultstring: Invalid User Defined Field Display Type
   :comment: A DefinedValue has an invalid displayType.
 Invalid User Defined Field Data Type:
-  :faultCode: 88
-  :faultString: Invalid User Defined Field Data Type
+  :faultcode: 88
+  :faultstring: Invalid User Defined Field Data Type
   :comment: A DefinedValue has an invalid dataType.
 Invalid EFT Account Type:
-  :faultCode: 89
-  :faultString: Invalid EFT Account Type
+  :faultcode: 89
+  :faultstring: Invalid EFT Account Type
   :comment: An ElectronicFundsTransfer has an invalid accountType.
 Invalid Recognition Type:
-  :faultCode: 90
-  :faultString: Invalid Recognition Type
+  :faultcode: 90
+  :faultstring: Invalid Recognition Type
   :comment: An Account has an invalid donorRecognitionType or a transaction has an invalid recognitionType.
 Invalid Account Role Type:
-  :faultCode: 91
-  :faultString: Invalid Account Role Type
+  :faultcode: 91
+  :faultstring: Invalid Account Role Type
   :comment: An Account has an invalid accountRoleType.
 Missing Payment Schedule:
-  :faultCode: 92
-  :faultString: Missing Payment Schedule
+  :faultcode: 92
+  :faultstring: Missing Payment Schedule
   :comment: A Pledge is missing a standardSchedule or customSchedule.
 Field is not a Set:
-  :faultCode: 93
-  :faultString: Field is not a Set
+  :faultcode: 93
+  :faultstring: Field is not a Set
   :comment: The field provided for method getUserDefinedSetValues or getSystemDefinedValues is not a set (i.e. display type single select or multi select).
 Invalid Id:
-  :faultCode: 94
-  :faultString: Invalid Id
+  :faultcode: 94
+  :faultstring: Invalid Id
   :comment: The id (aka Account Number) provided is invaild.  This number must be greater than zero.
 Missing Search Criteria:
-  :faultCode: 95
-  :faultString: Missing Search Criteria
+  :faultcode: 95
+  :faultstring: Missing Search Criteria
   :comment: No search criteria was provided within AccountSearch.
 Invalid Account Search Role Types:
-  :faultCode: 96
-  :faultString: Invalid Account Search Role Types
+  :faultcode: 96
+  :faultstring: Invalid Account Search Role Types
   :comment: An AccountSearch has an invalid accountRoleTypes value.
 Invalid Payment Pledge Ref:
-  :faultCode: 97
-  :faultString: Invalid Payment Pledge Ref
+  :faultcode: 97
+  :faultstring: Invalid Payment Pledge Ref
   :comment: A Payment has a pledgeRef that isn't a pledge transaction.
 Invalid Payment Addition:
-  :faultCode: 98
-  :faultString: Invalid Payment Addition
+  :faultcode: 98
+  :faultstring: Invalid Payment Addition
   :comment: A Payment has a pledge indicated (pledgeRef) that cannot have a payment added to it.  Payments cannot be added to pledges that are written off, reversed, or fulfilled.
 Invalid Matching Refs:
-  :faultCode: 99
-  :faultString: Invalid Matching Refs
+  :faultcode: 99
+  :faultstring: Invalid Matching Refs
   :comment: A complex type was provided with multiple ref values populated with the same value.  Two or more of those same value refs cannot have matching refs.
 Missing Duplicate Search Criteria:
-  :faultCode: 100
-  :faultString: Missing Duplicate Search Criteria
+  :faultcode: 100
+  :faultstring: Missing Duplicate Search Criteria
   :comment: Search criteria was missing within DuplicateAccountSearch.  Consult getDuplicateAccount to learn what fields are required.
 Missing Required Parameter:
-  :faultCode: 101
-  :faultString: Missing Required Parameter
+  :faultcode: 101
+  :faultstring: Missing Required Parameter
   :comment: A required method parameter was provided a null or empty value.
 Invalid Query Category:
-  :faultCode: 102
-  :faultString: Invalid Query Category
+  :faultcode: 102
+  :faultstring: Invalid Query Category
   :comment: A query category name provided is invalid.
 Invalid Query:
-  :faultCode: 103
-  :faultString: Invalid Query
+  :faultcode: 103
+  :faultstring: Invalid Query
   :comment: A query name provided is invalid.
 Donor Login Role Not Allowed:
-  :faultCode: 104
-  :faultString: Donor Login Role Not Allowed
+  :faultcode: 104
+  :faultstring: Donor Login Role Not Allowed
   :comment: The account with the provided login credentials doesn't have access to use the api.
 Temporarily Unavailable:
-  :faultCode: 105
-  :faultString: Temporarily Unavailable
+  :faultcode: 105
+  :faultstring: Temporarily Unavailable
   :comment: The system is temporarily unavailable.  Please check back shortly.
 Inappropriate Processor:
-  :faultCode: 106
-  :faultString: Inappropriate Processor
+  :faultcode: 106
+  :faultstring: Inappropriate Processor
   :comment: The organization's transaction processor doesn't support this action.
 Invalid Transaction Update:
-  :faultCode: 107
-  :faultString: Invalid Transaction Update
+  :faultcode: 107
+  :faultstring: Invalid Transaction Update
   :comment: The transaction update attempted isn't allowed.  Review the fault string for further explanation.
 Cannot Change Amount:
-  :faultCode: 108
-  :faultString: Cannot Change Amount
+  :faultcode: 108
+  :faultstring: Cannot Change Amount
   :comment: The transaction amount cannot be changed on a transaction that has been processed.
 Missing Valuable:
-  :faultCode: 109
-  :faultString: Missing Valuable
+  :faultcode: 109
+  :faultstring: Missing Valuable
   :comment: The transaction is missing a valuable.
 Invalid Reverse Transaction:
-  :faultCode: 110
-  :faultString: Invalid Reverse Transaction
+  :faultcode: 110
+  :faultstring: Invalid Reverse Transaction
   :comment: The transaction reversal attempted isn't allowed.  Review the fault string for further explanation.
 Cannot Update Immutable Entry:
-  :faultCode: 113
-  :faultString: Cannot Update Immutable Entry
+  :faultcode: 113
+  :faultstring: Cannot Update Immutable Entry
   :comment: Journal Entries marked as immutable cannot be updated.
 Login Not Enabled:
-  :faultCode: 114
-  :faultString: Login Not Enabled
+  :faultcode: 114
+  :faultstring: Login Not Enabled
   :comment: The account with the provided login credentials obtains a disabled login id.
 Invalid Login Time:
-  :faultCode: 115
-  :faultString: Invalid Login Time
+  :faultcode: 115
+  :faultstring: Invalid Login Time
   :comment: The account with the provided login credentials doesn't have access to the database at the current time.
