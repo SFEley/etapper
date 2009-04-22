@@ -7,12 +7,10 @@ require 'etapper/api/methods'
 
 module Etapper
   module API
-    DefaultEndpointUrl = ETAP_URL
 
     class Driver < ::SOAP::RPC::Driver
       
       def initialize(endpoint_url = nil)
-        endpoint_url ||= DefaultEndpointUrl
         super(endpoint_url, nil)
         self.mapping_registry = ServiceMappingRegistry::EncodedRegistry
         self.literal_mapping_registry = ServiceMappingRegistry::LiteralRegistry

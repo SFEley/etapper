@@ -30,7 +30,7 @@ Spec::Runner.configure do |config|
     File.delete(clientlog) if File.exists?(clientlog)
     File.delete(serverlog) if File.exists?(serverlog)
 
-    if Spec::TEST_LIVE then
+    unless Spec::TEST_LIVE then
       # Start the server in its own thread, or we'll never get back
       @server = Etapper::Test::Server.new(:logfile => serverlog)
       @sthread = Thread.new do 
@@ -41,7 +41,7 @@ Spec::Runner.configure do |config|
     end
 
     # Hit eTapestry's live environment -- handle with care!
-    @client = Etapper::Client.instance(Spec::TEST_URL)
+    @client = Etapper::Client.new(Spec::TEST_URL)
     @client.log = clientlog
   end
   
