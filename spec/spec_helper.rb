@@ -24,9 +24,6 @@ end
 # Take our toys out of the toybox
 Spec::Runner.configure do |config|
   config.mock_with :mocha
-  # Configure our mocking framework to complain about things we don't like
-  Mocha::Configuration.prevent :stubbing_non_existent_method
-  Mocha::Configuration.warn_when :stubbing_method_unnecessarily
   
   config.include(MockDriver) unless Spec::TEST_LIVE
 end

@@ -1,11 +1,11 @@
 require 'etapper/api/driver'
 require 'forwardable'
+require 'uri'
 
 module Etapper
   class Client
     extend Forwardable
     
-    attr_reader :session
     attr_accessor :username
     attr_writer :password
     
@@ -19,6 +19,7 @@ module Etapper
       @username = options[:username]
       @password = options[:password]
       @driver = API::Driver.new(options[:url])
+      @connected = false
       connect if options[:connect] && @username && @password
     end
 
@@ -33,11 +34,26 @@ module Etapper
     end
     
     def connected?
-      false
+      @connected
     end
     
     def connect
-      true
+      result = @driver.login(@username, @password)
+      if result == ''
+        @connected = true
+      else  # May need a redirect
+        newurl = URI.parse(result)
+        newurl.query = nil   # Strip off the '?wsdl' parameter at the end
+        @driver.endpoint_url = newurl.to_s
+        @connected = connect
+      end
+    end
+    
+    def disconnect
+      if connected?
+        @driver.logout
+        @connected = false
+      end
     end
     
     protected
