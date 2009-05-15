@@ -1844,7 +1844,7 @@ module Etapper
       attr_accessor :name
       attr_accessor :phoneNumber
 
-      def initialize(accountRoleTypes = nil, address = nil, allowEmailOnlyMatch = nil, email = nil, name = nil, phoneNumber = nil)
+      def initialize(accountRoleTypes = 1, address = nil, allowEmailOnlyMatch = true, email = nil, name = nil, phoneNumber = nil)
         @accountRoleTypes = accountRoleTypes
         @address = address
         @allowEmailOnlyMatch = allowEmailOnlyMatch
