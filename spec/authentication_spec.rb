@@ -73,6 +73,6 @@ describe "Authentication" do
       @client.disconnect
     end
     
-    it "is always called before the object goes away"
+      
   end
 end

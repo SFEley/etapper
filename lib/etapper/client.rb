@@ -22,15 +22,16 @@ module Etapper
       @connected = false
       connect if options[:connect] && @username && @password
     end
+    
 
     # Delegates from the driver's annoyingly named wiredump_dev property
     def log
-      @driver.wiredump_dev
+      driver.wiredump_dev
     end
     
     # Delegates to the driver's annoyingly named wiredump_dev property
     def log=(logthing)
-      @driver.wiredump_dev = logthing
+      driver.wiredump_dev = logthing
     end
     
     def connected?
@@ -38,25 +39,34 @@ module Etapper
     end
     
     def connect
-      result = @driver.login(@username, @password)
-      if result == ''
-        @connected = true
-      else  # May need a redirect
-        newurl = URI.parse(result)
-        newurl.query = nil   # Strip off the '?wsdl' parameter at the end
-        @driver.endpoint_url = newurl.to_s
-        @connected = connect
+      unless connected?
+        result = @driver.login(@username, @password)
+        if result == ''
+          @connected = true
+        else  # May need a redirect
+          newurl = URI.parse(result)
+          newurl.query = nil   # Strip off the '?wsdl' parameter at the end
+          driver.endpoint_url = newurl.to_s
+          @connected = connect
+        end
       end
     end
     
     def disconnect
       if connected?
-        @driver.logout
+        driver.logout
         @connected = false
       end
     end
     
-    protected
+    # Our primary proxy. Sends anything we don't know about to the driver for processing.
+    def method_missing(method, *params)
+      raise NoMethodError if method == :driver  # This is protected for a reason
+      connect unless connected?
+      driver.send(method, *params)
+    end
+ 
+  protected
       def driver
         @driver
       end
