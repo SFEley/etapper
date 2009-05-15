@@ -65,6 +65,29 @@ module Etapper
       connect unless connected?
       driver.send(method, *params)
     end
+    
+    # Returns an Account object retrieved from eTapestry using the supplied parameter.
+    # The exact method used varies by the query parameter type:
+    # * INTEGER: getAccountById()
+    # * ACCOUNT REF (dot-separated number string): getAccount()
+    # * E-MAIL ADDRESS: getDuplicateAccount
+    # * HASH: getAccountRef() with defined value, then getAccount() (only the first hash value is used)
+    def account(query)
+      if query.is_a?(Integer)
+        a = driver.getAccountById(query)
+      elsif query =~ /\d+\.\d+\.\d+/  # "4310.0.2276679"
+        a = driver.getAccount(query)
+      elsif query =~ /\S+@\S+\.\S+/  # very simplistic e-mail checking but suffices for this purpose
+        s = DuplicateAccountSearch.new(:email => query)
+        a = driver.getDuplicateAccount(s)
+      elsif query.is_a?(Hash)
+        v = DefinedValue.new(query.first)
+        r = driver.getAccountRef(v)
+        a = driver.getAccount(r)
+      else
+        nil
+      end
+    end
  
   protected
       def driver
