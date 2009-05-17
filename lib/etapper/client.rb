@@ -3,6 +3,16 @@ require 'forwardable'
 require 'uri'
 
 module Etapper
+  
+  # Load our class wrappers (Account, Defined Value, etc.)
+  Dir[File.dirname(__FILE__) + "/classes/*.rb"].sort.each do |path|
+    filename = File.basename(path, '.rb')
+    require "etapper/classes/#{filename}"
+  end
+  
+  # Set some exception types
+  class BadValueError < StandardError; end
+
   class Client
     extend Forwardable
     
@@ -81,7 +91,7 @@ module Etapper
         s = DuplicateAccountSearch.new(:email => query)
         a = driver.getDuplicateAccount(s)
       elsif query.is_a?(Hash)
-        v = DefinedValue.new(query.first)
+        v = DefinedValue.new(query.to_a.first)
         r = driver.getAccountRef(v)
         a = driver.getAccount(r)
       else
