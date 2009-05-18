@@ -91,7 +91,7 @@ module Etapper
         s = DuplicateAccountSearch.new(:email => query)
         a = driver.getDuplicateAccount(s)
       elsif query.is_a?(Hash)
-        v = DefinedValue.new(query.to_a.first)
+        v = DefinedValue.new(query)
         r = driver.getAccountRef(v)
         a = driver.getAccount(r)
       else

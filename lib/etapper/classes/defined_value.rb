@@ -42,7 +42,7 @@ module Etapper
       display_type = DISPLAY_TYPE[params.delete(:display_type)]
       data_type = DATA_TYPE[params.delete(:data_type)]
       # Check our parameters
-      raise Etapper::BadValueError("Only one field value can be provided") if params.size != 1
+      raise Etapper::BadValueError, "Only one field value can be provided; instead got #{params.size} (#{params.keys.to_s})" if params.size != 1
       fieldname = params.keys.first
       fieldname = fieldname.to_s.titleize if fieldname.is_a?(Symbol)
       value = params[fieldname]
