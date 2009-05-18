@@ -95,6 +95,11 @@ module Etapper
         r = driver.getAccountRef(v)
         a = driver.getAccount(r)
       else
+        a = nil
+      end
+      if a
+        Account.new(a)
+      else
         nil
       end
     end

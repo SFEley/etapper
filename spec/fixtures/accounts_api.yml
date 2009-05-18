@@ -1,0 +1,323 @@
+--- 
+MashalSaif: !ruby/object:Etapper::API::Account 
+  accountCreatedDate: 2007-10-05T16:00:00+00:00
+  accountDefinedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 2
+      fieldName: Data Source
+      fieldRef: 4310.0.2546
+      value: Advanced Import (3/10/2009 12:38 PM)
+      valueRef: 1441.0.23787949
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 1
+      fieldName: Account Type
+      fieldRef: 4310.0.3923
+      value: Individual
+      valueRef: 4310.0.3924
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 2
+      fieldName: Data Source
+      fieldRef: 4310.0.2546
+      value: Advanced Import (1/14/2009 5:49 PM)
+      valueRef: 1441.0.14026222
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 2
+      fieldName: Data Source
+      fieldRef: 4310.0.2546
+      value: Advanced Import (3/10/2009 12:37 PM)
+      valueRef: 1441.0.23785592
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Region
+      fieldRef: 4310.0.3913
+      value: SE - Southeast
+      valueRef: 4310.0.2279164
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 1
+      displayType: 0
+      fieldName: Expire Date
+      fieldRef: 4310.0.3891
+      value: 12/31/2008
+      valueRef: 4310.0.2279166
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 1
+      fieldName: Student ID on File
+      fieldRef: 4310.0.4098
+      value: "Yes"
+      valueRef: 4310.0.4099
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 1
+      fieldName: Gender
+      fieldRef: 4310.0.4070
+      value: Female
+      valueRef: 4310.0.4071
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 1
+      fieldName: Membership Type
+      fieldRef: 4310.0.4074
+      value: Student
+      valueRef: 4310.0.4083
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Institution
+      fieldRef: 4310.0.3893
+      value: Duke University
+      valueRef: 4310.0.2279165
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 2
+      fieldName: Data Source
+      fieldRef: 4310.0.2546
+      value: Advanced Import (3/17/2009 4:26 PM)
+      valueRef: 1441.0.25085062
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Access ID
+      fieldRef: 4310.0.3881
+      value: Z32622
+      valueRef: 4310.0.2279167
+  accountLastModifiedDate: 2009-03-17T20:27:17+00:00
+  accountRoleType: 0
+  address: 852 Louise Circle
+  city: Durham
+  country: US
+  county: 
+  donorRecognitionName: 
+  donorRecognitionType: 0
+  donorRoleRef: 4310.0.2276679
+  email: mashalsaif@gmail.com
+  firstName: 
+  id: 18618
+  lastName: 
+  longSalutation: Ms. Saif
+  middleName: 
+  name: Mashal Saif
+  note: 
+  personaCreatedDate: 2007-10-05T16:00:00+00:00
+  personaDefinedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Envelope Salutation
+      fieldRef: 4310.0.2572
+      value: Ms. Mashal Saif
+      valueRef: 4310.0.2279145
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Other Sal
+      fieldRef: 4310.0.3903
+      value: "Mashal Saif "
+      valueRef: 4310.0.2279144
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Company
+      fieldRef: 4310.0.2570
+      value: Duke University
+      valueRef: 1441.0.14028027
+  personaLastModifiedDate: 2009-03-17T20:27:17+00:00
+  personaType: Business
+  personaTypes: !seq:Etapper::API::ArrayOfstring 
+    - Business
+  phones: !seq:Etapper::API::ArrayOfPhone 
+    - !ruby/object:Etapper::API::Phone 
+      number: 845-380-6725
+      type: Home
+  postalCode: "27705"
+  primaryPersona: true
+  ref: 4310.0.2276679
+  shortSalutation: Mashal
+  sortName: Saif, Mashal
+  state: NC
+  teamRoleRef: 
+  title: 
+  tributeRoleRef: 
+  userRoleRef: 
+  webAddress: 
+SteveEley: !ruby/object:Etapper::API::Account 
+  accountCreatedDate: 2008-09-24T16:00:00+00:00
+  accountDefinedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 1
+      fieldName: Student ID on File
+      fieldRef: 4310.0.4098
+      value: "No"
+      valueRef: 1441.0.5255259
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Institution
+      fieldRef: 4310.0.3893
+      value: American Academy of Religion
+      valueRef: 1441.0.5337120
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Institution Department
+      fieldRef: 4310.0.3895
+      value: Director of Technology
+      valueRef: 1441.0.5337117
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 2
+      fieldName: Data Source
+      fieldRef: 4310.0.2546
+      value: IATS
+      valueRef: 1441.0.4132881
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 2
+      fieldName: Data Source
+      fieldRef: 4310.0.2546
+      value: Advanced Import (11/19/2008 7:41 PM)
+      valueRef: 1441.0.5331100
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 1
+      fieldName: Membership Type
+      fieldRef: 4310.0.4074
+      value: AAR Office
+      valueRef: 4310.0.4075
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 3
+      displayType: 0
+      fieldName: Birth Year
+      fieldRef: 4310.0.3885
+      value: "1974"
+      valueRef: 1441.0.5337121
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 1
+      fieldName: Account Type
+      fieldRef: 4310.0.3923
+      value: Individual
+      valueRef: 4310.0.3924
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Access ID
+      fieldRef: 4310.0.3881
+      value: Z34742
+      valueRef: 1441.0.5337119
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 1
+      fieldName: Citizenship
+      fieldRef: 4310.0.3927
+      value: USA
+      valueRef: 4310.0.4016
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 1
+      fieldName: Gender
+      fieldRef: 4310.0.4070
+      value: Male
+      valueRef: 4310.0.4072
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Region
+      fieldRef: 4310.0.3913
+      value: SE - Southeast
+      valueRef: 1441.0.5337118
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 1
+      fieldName: Ethnic Background
+      fieldRef: 4310.0.4060
+      value: White, Not Hispanic
+      valueRef: 4310.0.4066
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 1
+      displayType: 0
+      fieldName: Expire Date
+      fieldRef: 4310.0.3891
+      value: 12/31/2099
+      valueRef: 1441.0.5337116
+  accountLastModifiedDate: 2008-11-20T00:45:11+00:00
+  accountRoleType: 0
+  address: 825 Houston Mill Rd. NE Ste. 300
+  city: Atlanta
+  country: US
+  county: 
+  donorRecognitionName: 
+  donorRecognitionType: 0
+  donorRoleRef: 4310.0.2351123
+  email: seley@aarweb.org
+  firstName: 
+  id: 20554
+  lastName: 
+  longSalutation: Mr. Stephen Eley
+  middleName: 
+  name: Stephen Eley
+  note: 
+  personaCreatedDate: 2008-09-24T16:00:00+00:00
+  personaDefinedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Company
+      fieldRef: 4310.0.2570
+      value: American Academy of Religion
+      valueRef: 1441.0.5337115
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Nickname
+      fieldRef: 4310.0.3899
+      value: Steve
+      valueRef: 4310.0.2353731
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Other Sal
+      fieldRef: 4310.0.3903
+      value: "Stephen Eley "
+      valueRef: 4310.0.2353732
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Envelope Salutation
+      fieldRef: 4310.0.2572
+      value: Mr. Stephen Eley
+      valueRef: 1441.0.5337114
+  personaLastModifiedDate: 2008-11-20T00:45:11+00:00
+  personaType: Business
+  personaTypes: !seq:Etapper::API::ArrayOfstring 
+    - Business
+  phones: !seq:Etapper::API::ArrayOfPhone 
+    - !ruby/object:Etapper::API::Phone 
+      number: 678-517-2350
+      type: Mobile
+    - !ruby/object:Etapper::API::Phone 
+      number: 404-727-7959
+      type: Fax
+    - !ruby/object:Etapper::API::Phone 
+      number: 404-727-7972
+      type: Business
+    - !ruby/object:Etapper::API::Phone 
+      number: 770-985-2498
+      type: Home
+  postalCode: "30329"
+  primaryPersona: true
+  ref: 4310.0.2351123
+  shortSalutation: Mr. Eley
+  sortName: Eley, Stephen
+  state: GA
+  teamRoleRef: 
+  title: 
+  tributeRoleRef: 
+  userRoleRef: 
+  webAddress: 
