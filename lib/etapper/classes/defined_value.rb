@@ -2,6 +2,7 @@ require 'rubygems'
 require 'active_support'
 
 module Etapper
+  # Wraps the eTapestry API "DefinedValue" complex type with something easier to use.
   class DefinedValue
     extend Forwardable
     

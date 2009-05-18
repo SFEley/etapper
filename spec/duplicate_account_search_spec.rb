@@ -25,12 +25,17 @@ describe "Duplicate Account Search" do
     lambda {d = Etapper::DuplicateAccountSearch.new}.should raise_error(Etapper::BadValueError)
   end
   
-  it "sets allowEmailOnlyMatch to true if an email is provided" do
+  it "allows setting allowEmailOnlyMatch" do
+    d = Etapper::DuplicateAccountSearch.new(:email => "seley@aarweb.org", :name => "Steve Eley", :allow_email_only_match => false)
+    d.allowEmailOnlyMatch.should be_false    
+  end
+  
+  it "defaults allowEmailOnlyMatch to true if an email is provided" do
     d = Etapper::DuplicateAccountSearch.new(:email => "seley@aarweb.org", :name => "Steve Eley")
     d.allowEmailOnlyMatch.should be_true
   end
   
-  it "sets allowEmailOnlyMatch to false if an email is not provided" do
+  it "defaults allowEmailOnlyMatch to false if an email is not provided" do
     d = Etapper::DuplicateAccountSearch.new(:name => "Steve Eley", :phone => "404-727-7972")
     d.allowEmailOnlyMatch.should be_false
   end
