@@ -1,6 +1,3 @@
-require 'rubygems'
-require 'active_support'
-
 module Etapper
   # Wraps the eTapestry API "DefinedValue" complex type with something easier to use.
   class DefinedValue
@@ -39,15 +36,23 @@ module Etapper
       #   fieldRef - SOAP::SOAPString
       #   value - SOAP::SOAPString
       #   valueRef - SOAP::SOAPString
-      
-      display_type = DISPLAY_TYPE[params.delete(:display_type)]
-      data_type = DATA_TYPE[params.delete(:data_type)]
-      # Check our parameters
-      raise Etapper::BadValueError, "Only one field value can be provided; instead got #{params.size} (#{params.keys.to_s})" if params.size != 1
-      fieldname = params.keys.first
-      fieldname = fieldname.to_s.titleize if fieldname.is_a?(Symbol)
-      value = params[fieldname]
-      @base = Etapper::API::DefinedValue.new(data_type, display_type, fieldname, nil, value, nil)
+      if params.kind_of?(Etapper::API::DefinedValue)
+        @base = params
+      else
+        display_type = DISPLAY_TYPE[params.delete(:display_type)]
+        data_type = DATA_TYPE[params.delete(:data_type)]
+        # Check our parameters
+        raise Etapper::BadValueError, "Only one field value can be provided; instead got #{params.size} (#{params.keys.to_s})" if params.size != 1
+        fieldname = params.keys.first
+        value = params[fieldname]
+        fieldname = fieldname.titleize if fieldname.is_a?(Symbol)
+        @base = Etapper::API::DefinedValue.new(data_type, display_type, fieldname, nil, value, nil)
+      end
     end
+    
+    def to_hash
+      {@base.fieldName.symbolize => @base.value}
+    end
+      
   end
 end

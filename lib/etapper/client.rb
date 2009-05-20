@@ -1,6 +1,8 @@
 require 'etapper/api/driver'
 require 'forwardable'
 require 'uri'
+require 'etapper/core_ext/string'
+require 'etapper/core_ext/symbol'
 
 module Etapper
   
