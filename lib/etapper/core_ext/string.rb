@@ -1,7 +1,7 @@
-require 'english/style'
+require 'english/style_orm'
 
 class String
   def symbolize
-    self.snakecase.to_sym
+    self.snakecase.tr(' ','_').gsub(/[^\w_]/,'').to_sym
   end
 end

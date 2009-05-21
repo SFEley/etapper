@@ -119,7 +119,7 @@ describe "Account" do
       @account.note.should == "(test note)"
     end
     
-    it "knows its persona values array" do
+    it "knows its persona values" do
       @account.personaDefinedValues.should have(3).values
     end
     
@@ -129,7 +129,7 @@ describe "Account" do
       @account.company.should == "Duke University"
     end
     
-    it "knows its account values array" do
+    it "knows its account values" do
       @account.accountDefinedValues.should have(9).values
     end
     
@@ -142,6 +142,10 @@ describe "Account" do
       @account.membership_type.should == "Student"
       @account.institution.should == "Duke University"
       @account.access_id.should == "Z32622"
+    end
+    
+    it "has a full values hash with persona and account values" do
+      @account.definedValues.should have(12).values
     end
     
     it "maps multiple account values to an array" do

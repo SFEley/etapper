@@ -39,11 +39,7 @@ module Etapper
     end
     
     def phones
-      unless @phones
-        @phones = Hash.new
-        @base.phones.each {|p| @phones.update(Etapper::Phone.new(p).to_hash)}
-      end
-      @phones
+      @phones ||= hashify(:phones, Etapper::Phone)
     end
     
     def phone
@@ -55,21 +51,29 @@ module Etapper
     end
     
     def personaDefinedValues
-      unless @personaDefinedValues
-        @personaDefinedValues = Hash.new
-        @base.personaDefinedValues.each {|dv| @personaDefinedValues.update(Etapper::DefinedValue.new(dv).to_hash)}
-      end
-      @personaDefinedValues
+      @personaDefinedValues ||= hashify(:personaDefinedValues, Etapper::DefinedValue)
     end
     
     def accountDefinedValues
       @accountDefinedValues ||= hashify(:accountDefinedValues, Etapper::DefinedValue)
     end
     
+    def definedValues
+      @definedValues ||= personaDefinedValues.merge(accountDefinedValues)
+    end
+    
+    def method_missing(attribute, *args)
+      # Try to get it from the defined values hash first
+      definedValues[attribute] or super(attribute, *args)
+    end
+    
     private
     def hashify(attribute, klass)
-      hash = Hash.new
-      @base.send(attribute).each {|x| hash.update(klass.new(x).to_hash)}
+      hash ||= {}
+      @base.send(attribute).each do |api_thing|
+        thing = klass.new(api_thing)
+        hash = thing.append_to_hash(hash)
+      end
       hash
     end
 

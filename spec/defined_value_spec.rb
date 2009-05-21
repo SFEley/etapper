@@ -43,6 +43,11 @@ describe "Defined Value" do
     d = Etapper::DefinedValue.new(:foo => "bar", :display_type => :multi_select)
     d.to_hash.should == {:foo => "bar"}
   end
+  
+  it "knows its key" do
+    d = Etapper::DefinedValue.new("Access ID" => "Z32622")
+    d.key.should == :access_id
+  end
     
     
   

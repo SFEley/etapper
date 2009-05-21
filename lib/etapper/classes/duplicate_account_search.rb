@@ -41,5 +41,9 @@ module Etapper
       #   phoneNumber - SOAP::SOAPString
       @base = Etapper::API::DuplicateAccountSearch.new(roleTypes, address, emailOnly, email, name, phone)
     end 
+    
+    def base
+      @base
+    end
   end
 end

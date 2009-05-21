@@ -1,5 +1,8 @@
+require 'etapper/classes/hashable'
+
 module Etapper
   class Phone
+    include Hashable
     
     TYPES = [
       :voice,
@@ -26,15 +29,19 @@ module Etapper
     end
     
     def type
-      @base.type.symbolize
+      @base.type
     end
     
     def number
       @base.number
     end
     
-    def to_hash
-      {type => number}
+    def key
+      type.symbolize
+    end
+    
+    def value
+      number
     end
   end
 end

@@ -49,4 +49,9 @@ describe "Duplicate Account Search" do
     d = Etapper::DuplicateAccountSearch.new(:phone => "404-727-7972")
     d.accountRoleTypes.should == 1
   end
+  
+  it "can return its base" do
+    d = Etapper::DuplicateAccountSearch.new(:email => "seley@aarweb.org", :account_role_types => :tributes_only)
+    d.base.should be_an(Etapper::API::DuplicateAccountSearch)
+  end
 end

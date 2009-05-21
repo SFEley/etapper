@@ -1,7 +1,9 @@
+require 'etapper/classes/hashable'
 module Etapper
   # Wraps the eTapestry API "DefinedValue" complex type with something easier to use.
   class DefinedValue
     extend Forwardable
+    include Hashable
     
     DATA_TYPE = {
       :text => 0,
@@ -50,9 +52,9 @@ module Etapper
       end
     end
     
-    def to_hash
-      {@base.fieldName.symbolize => @base.value}
+    def key
+      @base.fieldName.symbolize
     end
-      
+    
   end
 end

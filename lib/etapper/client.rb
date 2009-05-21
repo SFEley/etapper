@@ -91,7 +91,7 @@ module Etapper
         a = driver.getAccount(query)
       elsif query =~ /\S+@\S+\.\S+/  # very simplistic e-mail checking but suffices for this purpose
         s = DuplicateAccountSearch.new(:email => query)
-        a = driver.getDuplicateAccount(s)
+        a = driver.getDuplicateAccount(s.base)
       elsif query.is_a?(Hash)
         v = DefinedValue.new(query)
         r = driver.getAccountRef(v)
