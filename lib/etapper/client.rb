@@ -14,6 +14,7 @@ module Etapper
   
   # Set some exception types
   class BadValueError < StandardError; end
+  class ReadOnlyError < StandardError; end
 
   class Client
     extend Forwardable

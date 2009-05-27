@@ -8,33 +8,33 @@ module Etapper
                    :id,
                    :ref,
                    :name,
-                   :sortName,
-                   :title,
-                   :firstName,
-                   :middleName,
-                   :lastName,
-                   :personaType,
+                   :sortName, :sortName=,
+                   :title, :title=,
+                   :firstName, :firstName=,
+                   :middleName, :middleName=,
+                   :lastName, :lastName=,
+                   :personaType, :personaType=,
                    :personaTypes,
-                   :primaryPersona,
-                   :address,
-                   :city,
-                   :state,
-                   :postalCode,
-                   :county,
-                   :country,
-                   :shortSalutation,
-                   :longSalutation,
-                   :email,
-                   :webAddress,
-                   :note,
-                   :donorRecognitionName,
+                   :primaryPersona, :primaryPersona=,
+                   :address, :address=,
+                   :city, :city=,
+                   :state, :state=,
+                   :postalCode, :postalCode=,
+                   :county, :county=,
+                   :country, :country=,
+                   :shortSalutation, :shortSalutation=,
+                   :longSalutation, :longSalutation=,
+                   :email, :email=,
+                   :webAddress, :webAddress=,
+                   :note, :note=,
+                   :donorRecognitionName, :donorRecognitionName=,
                    :donorRecognitionType,
                    :accountRoleType,
                    :donorRoleRef,
                    :tributeRoleRef,
                    :userRoleRef
     
-    def initialize(base)
+    def initialize(base = nil)
       @base = base || Etapper::API::Account.new
     end
     
@@ -67,12 +67,29 @@ module Etapper
       definedValues[attribute] or super(attribute, *args)
     end
     
+    # Raise an exception.  Only eTapestry gets to set the ID.
+    def id=(val)
+      raise Etapper::ReadOnlyError, "Account ID is read-only!"
+    end
+
+    # Raise an exception.  Only eTapestry gets to set the reference.
+    def ref=(val)
+      raise Etapper::ReadOnlyError, "Account Ref is read-only!"
+    end
+
+    # Raise an exception.  Only eTapestry gets to set the persona types.
+    def personaTypes=(val)
+      raise Etapper::ReadOnlyError, "Account Persona Type array is read-only!"
+    end
+    
     private
     def hashify(attribute, klass)
       hash ||= {}
-      @base.send(attribute).each do |api_thing|
-        thing = klass.new(api_thing)
-        hash = thing.append_to_hash(hash)
+      if base_attribute = @base.send(attribute)
+        base_attribute.each do |api_thing|
+          thing = klass.new(api_thing)
+          hash = thing.append_to_hash(hash)
+        end
       end
       hash
     end
