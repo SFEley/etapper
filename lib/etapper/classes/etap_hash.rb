@@ -22,5 +22,16 @@ module Etapper
       friendly = @detailed[key]
       friendly.value = val
     end
+    
+    def add_or_append(key, val)
+      if self.has_key?(key)
+        arr = self[key].to_a << val
+        self.hash_assign(key, arr)
+      else
+        self.hash_assign(key, val)
+      end
+    end
+        
+  
   end
 end

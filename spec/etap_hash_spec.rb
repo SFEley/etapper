@@ -57,8 +57,11 @@ describe Etapper::EtapHash do
   end
   
   it "can return the full Etapper object" do
-    @dummy.detailed['type2'].to_yaml.should == DummyEtapperObject.new(@array[2]).to_yaml
+    @dummy.detailed['type2'].value2.should == 'secondval2'
   end
   
-  
+  it "can append values when needed" do
+    @dummy.add_or_append('type0', 'raboof')
+    @dummy['type0'].should == ['firstval0', 'raboof']
+  end
 end
