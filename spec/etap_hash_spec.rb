@@ -5,7 +5,7 @@ describe Etapper::EtapHash do
   class DummyAPIObject
     attr_accessor :type, :value1, :value2
     
-    def initialize(i)
+    def initialize(i=0)
       @type, @value1, @value2 = ["type#{i}", "firstval#{i}", "secondval#{i}"]
     end
   end
@@ -15,8 +15,15 @@ describe Etapper::EtapHash do
     attr_reader :base
     def_delegators :@base, :type, :type=, :value1, :value1=, :value2, :value2=
     
-    def initialize(object)
-      @base = object
+    def initialize(params)
+      if params.kind_of?(DummyAPIObject)
+        @base = params
+      else
+        @base = DummyAPIObject.new
+        @base.type = params[:type]
+        @base.value1 = params[:value1]
+        @base.value2 = params[:value2]
+      end
     end
     alias_method :key, :type
     alias_method :value, :value1
@@ -27,7 +34,7 @@ describe Etapper::EtapHash do
   # Because EtapHash is a virtual base class, we need to actualize it with a dumb example
   class DummyHash < Etapper::EtapHash
     def initialize(array_from_api)
-      super(array_from_api, DummyEtapperObject)
+      super(array_from_api, DummyEtapperObject, :type, :value1)
     end
   end
   
@@ -59,9 +66,15 @@ describe Etapper::EtapHash do
   it "can return the full Etapper object" do
     @dummy.detailed['type2'].value2.should == 'secondval2'
   end
+
+  it "makes new values in the base when a key is added" do
+    @dummy['type3'] = 'yowza'
+    @array[3].value1.should == 'yowza'
+  end
   
   it "can append values when needed" do
     @dummy.add_or_append('type0', 'raboof')
     @dummy['type0'].should == ['firstval0', 'raboof']
   end
+  
 end
