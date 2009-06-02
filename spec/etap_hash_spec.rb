@@ -1,4 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
+require File.expand_path(File.dirname(__FILE__) + '/shared_etap_hash_spec')
+
 
 # An abstraction to make the common eTapestry API idiom of "array of [complex object]" act more like a hash.
 describe Etapper::EtapHash do
@@ -20,7 +22,7 @@ describe Etapper::EtapHash do
         @base = params
       else
         @base = DummyAPIObject.new
-        @base.type = params[:type]
+        @base.type = params[:type].symbolize
         @base.value1 = params[:value1]
         @base.value2 = params[:value2]
       end
@@ -39,42 +41,16 @@ describe Etapper::EtapHash do
   end
   
   before(:each) do
-    @array = Array.new
+    @basearray = Array.new
     3.times do |i|
-      @array << DummyAPIObject.new(i)
+      @basearray << DummyAPIObject.new(i)
     end
-    @dummy = DummyHash.new(@array)
+    @etaphash = DummyHash.new(@basearray)
+    @keymethod = :type
+    @valmethod = :value1
+    @secondarymethod = :value2
   end
   
-  it "acts like a Hash" do
-    @dummy.should be_a_kind_of(Hash)
-  end
-    
-  it "knows what it represents" do
-    @dummy.base.should == @array
-  end
-    
-  it "returns the hashed value when called" do
-    @array.each {|item| @dummy[item.type].should == item.value1}
-  end
-  
-  it "can set the hashed value in the base" do
-    @dummy['type2'] = 'foobar'
-    @array[2].value1.should == 'foobar'
-  end
-  
-  it "can return the full Etapper object" do
-    @dummy.detailed['type2'].value2.should == 'secondval2'
-  end
-
-  it "makes new values in the base when a key is added" do
-    @dummy['type3'] = 'yowza'
-    @array[3].value1.should == 'yowza'
-  end
-  
-  it "can append values when needed" do
-    @dummy.add_or_append('type0', 'raboof')
-    @dummy['type0'].should == ['firstval0', 'raboof']
-  end
-  
+  it_should_behave_like "an implementation of EtapHash"
+   
 end

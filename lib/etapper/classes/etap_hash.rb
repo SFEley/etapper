@@ -11,14 +11,19 @@ module Etapper
       @detailed = Hash.new
       @base.each do |element|
         friendly = etapper_class.new(element)
-        self.hash_assign(friendly.key, friendly.value)
-        @detailed[friendly.key] = friendly  # So we can easily find our objects later
+        add_to_self(friendly)
+        add_to_detailed(friendly)  # So we can easily find our objects later
       end
     end
     
     def []=(key, val)
-      super
-      # Now update the base object
+      update_base(key, val)
+      hash_assign(key, val)
+    end
+    
+  private 
+  
+    def update_base(key, val)
       if @detailed.has_key?(key)
         friendly = @detailed[key]
         friendly.value = val
@@ -29,16 +34,14 @@ module Etapper
         @base << friendly.base
       end
     end
-    
-    def add_or_append(key, val)
-      if self.has_key?(key)
-        arr = self[key].to_a << val
-        self.hash_assign(key, arr)
-      else
-        self.hash_assign(key, val)
-      end
-    end
-        
   
+    def add_to_self(obj)
+      self.hash_assign(obj.key, obj.value)
+    end
+    
+    def add_to_detailed(obj)
+      @detailed[obj.key] = obj  # So we can easily find our objects later
+    end
   end
+  
 end

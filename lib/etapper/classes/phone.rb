@@ -12,7 +12,6 @@ module Etapper
       :business,
       :home
       ]
-      
                    
     def initialize(params = {})
       if params.kind_of?(Etapper::API::Phone)  # Simply wrap the API object we're given
@@ -29,19 +28,26 @@ module Etapper
     end
     
     def type
-      @base.type
+      @base.type.symbolize
+    end
+    
+    def type=(val)
+      @base.type = val.titleize
     end
     
     def number
       @base.number
     end
     
-    def key
-      type.symbolize
+    def number=(val)
+      @base.number = val
     end
     
-    def value
-      number
-    end
+    
+    alias_method :key, :type
+    alias_method :key=, :type=
+    alias_method :value, :number
+    alias_method :value=, :number=
+
   end
 end

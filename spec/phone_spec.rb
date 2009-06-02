@@ -22,7 +22,7 @@ describe "Phone" do
   it "can be given an API::Phone type" do
     p = Etapper::API::Phone.new('123-456-7890','Mobile')
     d = Etapper::Phone.new(p)
-    d.type.should == "Mobile"
+    d.type.should == :mobile
     d.number.should == "123-456-7890"
     d.base.should === p
   end 

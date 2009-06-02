@@ -1,0 +1,14 @@
+---
+!seq:Etapper::API::ArrayOfPhone 
+  - !ruby/object:Etapper::API::Phone 
+    number: 555-222-3333
+    type: Home
+  - !ruby/object:Etapper::API::Phone 
+    number: 555-777-8888
+    type: Business
+  - !ruby/object:Etapper::API::Phone 
+    number: 555-321-5432
+    type: Mobile
+  - !ruby/object:Etapper::API::Phone 
+    number: 555-987-6543
+    type: Fax

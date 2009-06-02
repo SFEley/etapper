@@ -330,7 +330,7 @@ describe "Account" do
     it "updates its base phone array when the main phone number is set" do
       @account.phone = "555-777-9999"
       phone = @account.base.phones.first
-      phone.type.should == "voice"
+      phone.type.should == "Voice"
       phone.number.should == "555-777-9999"
     end
 

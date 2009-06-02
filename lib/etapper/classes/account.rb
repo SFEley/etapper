@@ -52,7 +52,8 @@ module Etapper
     end
     
     def phones
-      @phones ||= hashify(:phones, Etapper::Phone)
+      @base.phones ||= Etapper::API::ArrayOfPhone.new
+      @phones ||= Etapper::PhoneHash.new(base.phones)
     end
     
     # def phones[]=(key,val)
