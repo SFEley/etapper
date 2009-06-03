@@ -56,14 +56,7 @@ module Etapper
       @phones ||= Etapper::PhoneHash.new(base.phones)
     end
     
-    # def phones[]=(key,val)
-    #   phone = Etapper::Phone.new(:type => key, :number => val)
-    #   @base.phones.delete_if {|elem| elem.type == key.titleize}  # Out with the old value
-    #   @base.phones << phone  # In with the new
-    # end
-      
-      
-    
+
     def phone
       phones[:voice] || phones[:business] || phones[:mobile] || phones[:home]
     end
@@ -76,16 +69,22 @@ module Etapper
       phones[:fax]
     end
     
+    def fax=(val)
+      phones[:fax] = val
+    end
+    
     def personaDefinedValues
-      @personaDefinedValues ||= hashify(:personaDefinedValues, Etapper::DefinedValue)
+      @base.personaDefinedValues ||= Etapper::API::ArrayOfDefinedValue.new
+      @personaDefinedValues ||= Etapper::DefinedValueHash.new(base.personaDefinedValues)
     end
     
     def accountDefinedValues
-      @accountDefinedValues ||= hashify(:accountDefinedValues, Etapper::DefinedValue)
+      @base.accountDefinedValues ||= Etapper::API::ArrayOfDefinedValue.new
+      @accountDefinedValues ||= Etapper::DefinedValueHash.new(base.accountDefinedValues)
     end
     
     def definedValues
-      @definedValues ||= personaDefinedValues.merge(accountDefinedValues)
+      @definedValues = accountDefinedValues.merge(personaDefinedValues)
     end
     
     def donorRecognitionType

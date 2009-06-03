@@ -334,65 +334,56 @@ describe "Account" do
       phone.number.should == "555-777-9999"
     end
 
-
-    #
-    # it "knows its phone number hash" do
-    #   @account.phones.should === {
-    #     :business => "555-777-8888",
-    #     :home => "555-222-3333",
-    #     :mobile => "555-321-5432",
-    #     :fax => "555-987-6543"
-    #   }
-    # end
-    #
-    # it "knows its main phone number (voice or business by default)" do
-    #   @account.phone.should == "555-777-8888"
-    # end
-    #
-    # it "knows its fax" do
-    #   @account.fax.should == "555-987-6543"
-    # end
-    #
-    # it "knows its email address" do
-    #   @account.email.should == "mashalsaif@gmail.com"
-    # end
-    #
-    # it "knows its URL" do
-    #   @account.webAddress.should == "http://yahoo.com"
-    # end
-    #
-    # it "knows its note" do
-    #   @account.note.should == "(test note)"
-    # end
-    #
-    # it "knows its persona values" do
-    #   @account.personaDefinedValues.should have(3).values
-    # end
-    #
-    # it "maps persona values to fields" do
-    #   @account.envelope_salutation.should == "Ms. Mashal Saif"
-    #   @account.other_sal.should == "Mashal Saif "
-    #   @account.company.should == "Duke University"
-    # end
-    #
-    # it "knows its account values" do
-    #   @account.accountDefinedValues.should have(9).values
-    # end
-    #
-    # it "maps account values to fields" do
-    #   @account.account_type.should == "Individual"
-    #   @account.region.should == "SE - Southeast"
-    #   @account.expire_date.should == "12/31/2008"
-    #   @account.student_id_on_file.should == "Yes"
-    #   @account.gender.should == "Female"
-    #   @account.membership_type.should == "Student"
-    #   @account.institution.should == "Duke University"
-    #   @account.access_id.should == "Z32622"
-    # end
-    #
-    # it "has a full values hash with persona and account values" do
-    #   @account.definedValues.should have(12).values
-    # end
+    it "can set its fax number" do
+      @account.fax = "555-999-8888"
+      @account.fax.should == "555-999-8888"
+    end
+    
+    it "updates its base phone array when the fax number is set" do
+      @account.fax = "555-999-8888"
+      fax = @account.base.phones.last
+      fax.type.should == "Fax"
+      fax.number.should == "555-999-8888"
+    end
+    
+    it "can set its email address" do
+      @account.email = "bob@example.com"
+      @account.email.should == "bob@example.com"
+    end
+    
+    it "can set its URL" do
+      @account.webAddress = "http://www.example.com"
+      @account.webAddress.should == "http://www.example.com"
+    end
+    
+    it "can set its note" do
+      @account.note = "The quick brown fox jumped over the lazy dog."
+      @account.note.should == "The quick brown fox jumped over the lazy dog."
+    end
+    
+    it "can set its persona values" do
+      @account.personaDefinedValues[:foo] = "bar"
+      dv = @account.base.personaDefinedValues.last
+      dv.fieldName.should == "Foo"
+      dv.value.should == "bar"
+    end
+    
+    it "updates the defined values when a persona value is set" do
+      @account.personaDefinedValues[:foo] = "bar"
+      @account.foo.should == "bar"
+    end
+    
+    it "can set its account values" do
+      @account.accountDefinedValues[:foo] = "bar"
+      dv = @account.base.accountDefinedValues.last
+      dv.fieldName.should == "Foo"
+      dv.value.should == "bar"
+    end
+    
+    it "updates the defined values when an account value is set" do
+      @account.accountDefinedValues[:foo] = "bar"
+      @account.foo.should == "bar"
+    end
     #
     # it "maps multiple account values to an array" do
     #   @account.data_source.should == [

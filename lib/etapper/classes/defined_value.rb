@@ -23,7 +23,7 @@ module Etapper
     def_delegators :@base, 
                    :dataType,:dataType=,
                    :displayType,:displayType=,
-                   :fieldName,:fieldName=,
+                   :fieldName, :fieldName=,
                    :fieldRef,
                    :value,:value=,
                    :valueRef
@@ -52,11 +52,11 @@ module Etapper
           if params.size == 1
             fieldname = params.keys.first
             value = params[fieldname]
-            fieldname = fieldname.titleize if fieldname.is_a?(Symbol)          
           else
             raise Etapper::BadValueError, "Only one field value can be provided; instead got #{params.size} (#{params.keys.to_s})"
           end
         end
+        fieldname = fieldname.titleize if fieldname.is_a?(Symbol)          
         @base = Etapper::API::DefinedValue.new(data_type, display_type, fieldname, nil, value, nil)
       end
     end
@@ -66,7 +66,11 @@ module Etapper
     end
     
     def key
-      @base.fieldName.symbolize
+      fieldName.symbolize
+    end
+    
+    def key=(val)
+      fieldName = val.titleize
     end
     
   end
