@@ -14,7 +14,10 @@ describe Etapper::DefinedValueHash do
   it_should_behave_like "an implementation of EtapHash"
   
   it "can append values when they already exist" do
-    @etaphash.add_or_append('type0', 'raboof')
-    @etaphash['type0'].should == ['firstval0', 'raboof']
+    @etaphash.add_or_append(:gender, 'Male')
+    @etaphash[:gender].should == ['Female','Male']
   end
+  
+
+
 end

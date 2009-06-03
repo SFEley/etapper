@@ -21,7 +21,7 @@ module Etapper
       hash_assign(key, val)
     end
     
-  private 
+  protected
   
     def update_base(key, val)
       if @detailed.has_key?(key)

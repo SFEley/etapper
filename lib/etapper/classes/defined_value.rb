@@ -21,11 +21,11 @@ module Etapper
     }
 
     def_delegators :@base, 
-                   :dataType,
-                   :displayType,
-                   :fieldName,
+                   :dataType,:dataType=,
+                   :displayType,:displayType=,
+                   :fieldName,:fieldName=,
                    :fieldRef,
-                   :value,
+                   :value,:value=,
                    :valueRef
 
 # Takes a hash specifying a field name and its value.  Also allows :data_type and :display_type as hash keys.
@@ -43,13 +43,26 @@ module Etapper
       else
         display_type = DISPLAY_TYPE[params.delete(:display_type)]
         data_type = DATA_TYPE[params.delete(:data_type)]
-        # Check our parameters
-        raise Etapper::BadValueError, "Only one field value can be provided; instead got #{params.size} (#{params.keys.to_s})" if params.size != 1
-        fieldname = params.keys.first
-        value = params[fieldname]
-        fieldname = fieldname.titleize if fieldname.is_a?(Symbol)
+        fieldname = params.delete(:fieldName)
+        fieldref = params.delete(:fieldRef)
+        value = params.delete(:value)
+        valueRef = params.delete(:valueRef)
+        
+        unless (fieldname and value)
+          if params.size == 1
+            fieldname = params.keys.first
+            value = params[fieldname]
+            fieldname = fieldname.titleize if fieldname.is_a?(Symbol)          
+          else
+            raise Etapper::BadValueError, "Only one field value can be provided; instead got #{params.size} (#{params.keys.to_s})"
+          end
+        end
         @base = Etapper::API::DefinedValue.new(data_type, display_type, fieldname, nil, value, nil)
       end
+    end
+    
+    def base
+      @base
     end
     
     def key

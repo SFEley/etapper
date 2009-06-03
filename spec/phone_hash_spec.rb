@@ -12,4 +12,5 @@ describe Etapper::PhoneHash do
   end
   it_should_behave_like "an implementation of EtapHash"
   
+  
 end

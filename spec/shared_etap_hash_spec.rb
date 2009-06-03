@@ -8,9 +8,17 @@ shared_examples_for "an implementation of EtapHash" do
   end
   
   it "returns the hashed value when called" do
-    @basearray.each {|item| @etaphash[item.send(@keymethod).symbolize].should == item.send(@valmethod)}
+    @basearray.each do |item| 
+      cell = @etaphash[item.send(@keymethod).symbolize]
+      val = item.send(@valmethod)
+      if cell.kind_of?(Array)
+        cell.should include(val)
+      else
+        cell.should == val
+      end
+    end
   end
-
+  
   it "can set the hashed value in the base" do
     @etaphash[:fax] = 'foobar'
     @basearray.last.send(@valmethod).should == 'foobar'
