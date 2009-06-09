@@ -14,11 +14,11 @@ module Etapper
       :tribute,
       :user
       ]
-    
+        
     def_delegators :@base,
                    :id,
                    :ref,
-                   :name,
+                   :name, :name=,
                    :sortName, :sortName=,
                    :title, :title=,
                    :firstName, :firstName=,
@@ -44,6 +44,7 @@ module Etapper
                    :userRoleRef
     
     def initialize(base = nil)
+      @new = !base
       @base = base || Etapper::API::Account.new
     end
     
@@ -138,7 +139,13 @@ module Etapper
       raise Etapper::ReadOnlyError, "Account User Role Ref is read-only!"
     end
     
-
+    def new?
+      @new
+    end
+    
+    def save
+      Etapper::API::updateAccount(base)
+    end
     
     private
     def hashify(attribute, klass)

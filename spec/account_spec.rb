@@ -8,7 +8,10 @@ describe "Account" do
   end
 
   before(:each) do
-    @dummy.expects(:login).once.returns("")
+    @dummy.stubs(:getAccount).with("4310.0.2276679").returns(@api_account)
+    @dummy.stubs(:getAccountById).with(18618).returns(@api_account)
+    @dummy.stubs(:getDuplicateAccount).with("mashalsaif@gmail.com").returns(@api_account)
+    @dummy.stubs(:login).returns("")
     @client = Etapper::Client.new(:username => 'etapper_johntest', :password => 'mypass')
   end
 
@@ -193,12 +196,21 @@ describe "Account" do
       @account = Etapper::Account.new
     end
 
+    it "knows if it is a new account" do
+      @account.should be_new
+    end
+    
     it "cannot set its id" do
       lambda{@account.id = 18618}.should raise_error Etapper::ReadOnlyError, "Account ID is read-only!"
     end
 
     it "cannot set its ref" do
       lambda{@account.ref = "4310.0.2276679"}.should raise_error Etapper::ReadOnlyError, "Account Ref is read-only!"
+    end
+
+    it "can set its name" do
+      @account.name = "John Smith"
+      @account.name.should == "John Smith"
     end
 
     it "can set its sort name" do
@@ -450,13 +462,21 @@ describe "Account" do
       a.name.should == "Mashal Saif"
       a.should be_a_kind_of(Etapper::Account)
     end
-
+    
+    it "knows that this is not a new account" do
+      @dummy.stubs(:getAccount).returns(@api_account)
+      a = @client.account("1441.0.14026222")
+      a.should_not be_new
+    end
   end
 
-  describe "creation" do
-  end
-
-  describe "update" do
+  describe "saving" do
+    it "calls 'updateAccount' if the account is not new" do
+      @dummy.expects(:updateAccount).returns("1441.0.14026222")
+      a = @client.account(18618)
+      a.name = "Bob Test"
+      a.save.should == "1441.0.14026222"
+    end
   end
 
 end

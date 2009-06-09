@@ -101,7 +101,7 @@ module Etapper
         a = nil
       end
       if a
-        Account.new(a)
+        Account.new(a, driver)
       else
         nil
       end

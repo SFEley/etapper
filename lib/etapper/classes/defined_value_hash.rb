@@ -14,7 +14,7 @@ module Etapper
     
     def add_or_append(key, val)
       if self.has_key?(key)
-        arr = self[key].to_a << val
+        arr = Array(self[key]) << val
         self.update_base(key, arr)
         self.hash_assign(key, arr)
       else
@@ -27,7 +27,7 @@ module Etapper
     def add_to_self(obj)
       key, value = obj.key, obj.value
       if self.has_key?(key)
-        arr = self[key].to_a << value
+        arr = Array(self[key]) << value
         self.hash_assign(key, arr)
       else
         self.hash_assign(key, value)
@@ -37,7 +37,7 @@ module Etapper
     def add_to_detailed(obj)
       key = obj.key
       if @detailed.has_key?(key)
-        arr = @detailed[key].to_a << obj
+        arr = Array(@detailed[key]) << obj
         @detailed[key] = arr
       else
         @detailed[key] = obj 
