@@ -144,7 +144,11 @@ module Etapper
     end
     
     def save
-      Etapper::API::updateAccount(base)
+      if new?
+        Client.instance.addAccount(base, true)
+      else
+        Client.instance.updateAccount(base, true)
+      end
     end
     
     private

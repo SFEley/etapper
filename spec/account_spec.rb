@@ -11,8 +11,6 @@ describe "Account" do
     @dummy.stubs(:getAccount).with("4310.0.2276679").returns(@api_account)
     @dummy.stubs(:getAccountById).with(18618).returns(@api_account)
     @dummy.stubs(:getDuplicateAccount).with("mashalsaif@gmail.com").returns(@api_account)
-    @dummy.stubs(:login).returns("")
-    @client = Etapper::Client.new(:username => 'etapper_johntest', :password => 'mypass')
   end
 
   describe "on read" do
@@ -431,26 +429,26 @@ describe "Account" do
 
   describe "retrieval" do
     it "is callable from the client" do
-      @client.should respond_to(:account)
+      client.should respond_to(:account)
     end
 
     it "searches by Account ID if an integer is supplied" do
       @dummy.expects(:getAccountById).returns(@api_account)
-      a = @client.account(18618)
+      a = client.account(18618)
       a.name.should == "Mashal Saif"
       a.should be_a_kind_of(Etapper::Account)
     end
 
     it "searches by Account Ref if a dot-separated string is supplied" do
       @dummy.expects(:getAccount).returns(@api_account)
-      a = @client.account("1441.0.14026222")
+      a = client.account("1441.0.14026222")
       a.name.should == "Mashal Saif"
       a.should be_a_kind_of(Etapper::Account)
     end
 
     it "searches by Duplicate Account if an e-mail address is supplied" do
       @dummy.expects(:getDuplicateAccount).returns(@api_account)
-      a = @client.account("mashalsaif@gmail.com")
+      a = client.account("mashalsaif@gmail.com")
       a.name.should == "Mashal Saif"
       a.should be_a_kind_of(Etapper::Account)
     end
@@ -458,14 +456,14 @@ describe "Account" do
     it "searches by Account Ref using defined values if a hash is supplied" do
       @dummy.expects(:getAccountRef).returns("1441.0.14026222")
       @dummy.expects(:getAccount).with("1441.0.14026222").returns(@api_account)
-      a = @client.account("Access ID" => "Z32622")
+      a = client.account("Access ID" => "Z32622")
       a.name.should == "Mashal Saif"
       a.should be_a_kind_of(Etapper::Account)
     end
     
     it "knows that this is not a new account" do
       @dummy.stubs(:getAccount).returns(@api_account)
-      a = @client.account("1441.0.14026222")
+      a = client.account("1441.0.14026222")
       a.should_not be_new
     end
   end
@@ -473,10 +471,18 @@ describe "Account" do
   describe "saving" do
     it "calls 'updateAccount' if the account is not new" do
       @dummy.expects(:updateAccount).returns("1441.0.14026222")
-      a = @client.account(18618)
+      a = client.account(18618)
       a.name = "Bob Test"
       a.save.should == "1441.0.14026222"
     end
+    
+    it "calls 'addAccount' if the account is new" do
+      @dummy.expects(:addAccount).returns("1441.0.14026223")
+      a = Etapper::Account.new
+      a.name = "Joe Test"
+      a.save.should == "1441.0.14026223"
+    end
+      
   end
 
 end

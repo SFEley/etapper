@@ -2,7 +2,9 @@ require File.dirname(__FILE__) + '/spec_helper'
 
 describe "Method Proxying" do
   before(:each) do
-    @client = Etapper::Client.new(:username => 'etapper_johntest', :password => 'mypass')
+    @client = Etapper::Client.instance
+    @client.username = 'etapper_johntest'
+    @client.password = 'mypass'
   end
   
   it "attempts to call methods on the driver if they aren't defined by the client" do

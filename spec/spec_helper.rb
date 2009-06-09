@@ -22,12 +22,17 @@ else
 end
 
 # Take our toys out of the toybox
+def client
+  Etapper::Client.instance
+end
+
 Spec::Runner.configure do |config|
   config.mock_with :mocha
   
   config.include(MockDriver) unless Spec::TEST_LIVE
+  config.before(:each) do
+    client.username = 'etapper_johntest'
+    client.password = 'mypass'
+  end
 end
 
-def client
-  @client
-end

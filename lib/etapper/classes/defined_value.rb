@@ -41,8 +41,8 @@ module Etapper
       if params.kind_of?(Etapper::API::DefinedValue)
         @base = params
       else
-        display_type = DISPLAY_TYPE[params.delete(:display_type)]
-        data_type = DATA_TYPE[params.delete(:data_type)]
+        display_type = DISPLAY_TYPE[params.delete(:display_type)] || 0
+        data_type = DATA_TYPE[params.delete(:data_type)] || 0
         fieldname = params.delete(:fieldName)
         fieldref = params.delete(:fieldRef)
         value = params.delete(:value)

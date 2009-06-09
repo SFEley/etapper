@@ -36,8 +36,10 @@ share_as :MockDriver do
     #   stubs(:login).raises(MockFault, "Invalid Login")  # The base behavior
     
       stubs(:endpoint_url=).returns(true)
+      stubs(:fakeMethod).returns(true)  # Dummy API method for points where we don't care what we call
+      stubs(:logout).returns(nil)
     end
     # @dummy = mock 'driver'   # A dummy is a mock driver. Get it? Like a crash test dummy? ...Yeah.
-    Etapper::API::Driver.stubs(:new).returns(@dummy)
+    Etapper::Client.instance.instance_variable_set(:@driver, @dummy)
   end
 end

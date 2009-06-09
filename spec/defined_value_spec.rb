@@ -17,9 +17,19 @@ describe "Defined Value" do
     d.displayType.should == 2
   end
   
+  it "defaults Display Type to 0" do
+    d = Etapper::DefinedValue.new(:foo => "bar")
+    d.displayType.should == 0
+  end
+    
   it "allows setting Data Type" do
     d = Etapper::DefinedValue.new(:foo => "bar", :data_type => :month_and_day)
     d.dataType.should == 2
+  end
+
+  it "defaults Data Type to 0" do
+    d = Etapper::DefinedValue.new(:foo => "bar")
+    d.dataType.should == 0
   end
   
   it "raises an exception if no field value is provided" do
