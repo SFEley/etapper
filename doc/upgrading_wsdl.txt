@@ -1,0 +1,8 @@
+Updating the WSDL Definitions
+=============================
+
+1. Make a new git branch!  (In case you hose it completely.)
+2. Go into `lib/etapper/api`
+3. `wsdl2ruby.rb --wsdl https://app.etapestry.com/v2messaging/service?WSDL --type client --module_path Etapper::API`
+4. Edit the files and fix pathnames in require statements
+5. Run `rake spec` to make sure nothing new got broken
