@@ -7,18 +7,6 @@ require 'etapper/core_ext/symbol'
 require 'etapper/session_filter'
 
 module Etapper
-  
-  # Load our class wrappers (Account, Defined Value, etc.)
-  Dir[File.dirname(__FILE__) + "/classes/*.rb"].sort.each do |path|
-    filename = File.basename(path, '.rb')
-    require "etapper/classes/#{filename}"
-  end
-  
-  # Set some exception types
-  class BadValueError < StandardError; end
-  class ReadOnlyError < StandardError; end
-  class ConnectionError < StandardError; end
-
   class Client
     extend Forwardable
     include Singleton
@@ -102,34 +90,6 @@ module Etapper
       end
       driver.send(method, *params)
     end
-    
-    # Returns an Account object retrieved from eTapestry using the supplied parameter.
-    # The exact method used varies by the query parameter type:
-    # * INTEGER: getAccountById()
-    # * ACCOUNT REF (dot-separated number string): getAccount()
-    # * E-MAIL ADDRESS: getDuplicateAccount
-    # * HASH: getAccountRef() with defined value, then getAccount() (only the first hash value is used)
-    def account(query)
-      if query.is_a?(Integer)
-        a = getAccountById(query)
-      elsif query =~ /\d+\.\d+\.\d+/  # "4310.0.2276679"
-        a = getAccount(query)
-      elsif query =~ /\S+@\S+\.\S+/  # very simplistic e-mail checking but suffices for this purpose
-        s = DuplicateAccountSearch.new(:email => query)
-        a = getDuplicateAccount(s.base)
-      elsif query.is_a?(Hash)
-        v = DefinedValue.new(query)
-        r = getAccountRef(v.base)
-        a = getAccount(r)
-      else
-        a = nil
-      end
-      if a
-        Account.new(a)
-      else
-        nil
-      end
-    end
  
   protected
     def driver
@@ -137,4 +97,8 @@ module Etapper
     end
   end
   
+  # Returns the Etapper::Class singleton object.
+  def self.client
+    Client.instance
+  end
 end

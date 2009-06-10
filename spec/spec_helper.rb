@@ -23,7 +23,7 @@ end
 
 # Take our toys out of the toybox
 def client
-  Etapper::Client.instance
+  Etapper.client
 end
 
 Spec::Runner.configure do |config|

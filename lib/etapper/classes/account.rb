@@ -1,6 +1,5 @@
 module Etapper
   class Account 
-    extend Forwardable
     
     DONOR_RECOGNITION_TYPES = [
       :donor_name,
@@ -15,34 +14,28 @@ module Etapper
       :user
       ]
         
-    def_delegators :@base,
-                   :id,
-                   :ref,
-                   :name, :name=,
-                   :sortName, :sortName=,
-                   :title, :title=,
-                   :firstName, :firstName=,
-                   :middleName, :middleName=,
-                   :lastName, :lastName=,
-                   :personaType, :personaType=,
-                   :personaTypes,
-                   :primaryPersona, :primaryPersona=,
-                   :address, :address=,
-                   :city, :city=,
-                   :state, :state=,
-                   :postalCode, :postalCode=,
-                   :county, :county=,
-                   :country, :country=,
-                   :shortSalutation, :shortSalutation=,
-                   :longSalutation, :longSalutation=,
-                   :email, :email=,
-                   :webAddress, :webAddress=,
-                   :note, :note=,
-                   :donorRecognitionName, :donorRecognitionName=,
-                   :donorRoleRef,
-                   :tributeRoleRef,
-                   :userRoleRef
-    
+    # Returns an Account object retrieved from eTapestry using the supplied parameter.
+    # The exact method used varies by the query parameter type:
+    # * INTEGER: getAccountById()
+    # * ACCOUNT REF (dot-separated number string): getAccount()
+    # * E-MAIL ADDRESS: getDuplicateAccount
+    # * HASH: getAccountRef() with defined value, then getAccount() (only the first hash value is used)
+    def self.find(query)
+      case query
+      when Integer
+        a = client.getAccountById(query)
+      when /\d+\.\d+\.\d+/  # "4310.0.2276679"
+        a = client.getAccount(query)
+      when /\S+@\S+\.\S+/  # very simplistic e-mail checking but suffices for this purpose
+        s = DuplicateAccountSearch.new(:email => query)
+        a = client.getDuplicateAccount(s.base)
+      when Hash
+        v = DefinedValue.new(query)
+        a = client.getAccountByUniqueDefinedValue(v.base)
+      end
+      Account.new(a) if a
+    end
+       
     def initialize(base = nil)
       @new = !base
       @base = base || Etapper::API::Account.new
@@ -85,7 +78,7 @@ module Etapper
     end
     
     def definedValues
-      @definedValues = accountDefinedValues.merge(personaDefinedValues)
+      @definedValues = accountDefinedValues.merge(personaDefinedValues).freeze
     end
     
     def donorRecognitionType
@@ -106,7 +99,18 @@ module Etapper
     
     def method_missing(attribute, *args)
       # Try to get it from the defined values hash first
-      definedValues[attribute] or super(attribute, *args)
+      return definedValues[attribute] if definedValues.has_key?(attribute)
+      
+      # Look in the base class next
+      return base.send(attribute, *args) if base.respond_to?(attribute)
+
+      # Finally, bubble up
+      super(attribute, *args)
+    end
+    
+    # Return the eTapestry account ID
+    def id
+      base.id
     end
     
     # Raise an exception.  Only eTapestry gets to set the ID.
@@ -151,6 +155,7 @@ module Etapper
       end
     end
     
+
     private
     def hashify(attribute, klass)
       hash ||= {}

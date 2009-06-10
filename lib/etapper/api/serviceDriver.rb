@@ -1,5 +1,5 @@
-require 'etapper/api/service'
-require 'etapper/api/serviceMappingRegistry'
+require 'service'
+require 'serviceMappingRegistry'
 require 'soap/rpc/driver'
 
 module Etapper::API

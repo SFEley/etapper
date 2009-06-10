@@ -1,4 +1,4 @@
-require 'etapper/api/service.rb'
+require 'service.rb'
 require 'soap/mapping'
 
 module Etapper; module API

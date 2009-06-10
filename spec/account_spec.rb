@@ -394,76 +394,72 @@ describe "Account" do
       @account.accountDefinedValues[:foo] = "bar"
       @account.foo.should == "bar"
     end
-    #
-    # it "maps multiple account values to an array" do
-    #   @account.data_source.should == [
-    #       "Advanced Import (3/10/2009 12:38 PM)",
-    #       "Advanced Import (1/14/2009 5:49 PM)",
-    #       "Advanced Import (3/10/2009 12:37 PM)",
-    #       "Advanced Import (3/17/2009 4:26 PM)"
-    #     ]
-    # end
-    # it "knows its donor recognition name" do
-    #   @account.donorRecognitionName.should be_nil
-    # end
-    # it "knows its donor recognition type" do
-    #   @account.donorRecognitionType.should == 0
-    # end
-    #
-    # it "knows its account role type" do
-    #   @account.accountRoleType.should == 0
-    # end
-    #
-    # it "knows its donor role ref" do
-    #   @account.donorRoleRef.should == "4310.0.2276679"
-    # end
-    #
-    # it "knows its tribute role ref" do
-    #   @account.tributeRoleRef.should be_nil
-    # end
-    #
-    # it "knows its user role ref" do
-    #   @account.userRoleRef.should be_nil
-    # end
+  
+    it "maps multiple account values to an array" do
+      @account.accountDefinedValues.add_or_append(:letters, 'A')
+      @account.accountDefinedValues.add_or_append(:letters, 'B')
+      @account.accountDefinedValues.add_or_append(:letters, 'C')
+      
+      @account.letters.should == ['A','B','C']
+    end
+    
+    it "does not let you write directly to Defined Values" do
+      lambda{@account.definedValues[:yoo] = 'yar'}.should raise_error
+    end
+
+    it "can set its donor recognition name" do
+      @account.donorRecognitionName = "John Smith"
+      @account.donorRecognitionName.should == "John Smith"
+    end
+
+    it "can set its donor recognition type" do
+      @account.donorRecognitionType = :anonymous
+      @account.donorRecognitionType.should == :anonymous
+    end
+  
+    it "can set its account role type" do
+      @account.accountRoleType = :donor
+      @account.accountRoleType.should == :donor
+    end
+  
   end
 
   describe "retrieval" do
     it "is callable from the client" do
-      client.should respond_to(:account)
+      Etapper::Account.should respond_to(:find)
     end
 
     it "searches by Account ID if an integer is supplied" do
       @dummy.expects(:getAccountById).returns(@api_account)
-      a = client.account(18618)
+      a = Etapper::Account.find(18618)
       a.name.should == "Mashal Saif"
       a.should be_a_kind_of(Etapper::Account)
     end
 
     it "searches by Account Ref if a dot-separated string is supplied" do
       @dummy.expects(:getAccount).returns(@api_account)
-      a = client.account("1441.0.14026222")
+      a = Etapper::Account.find("1441.0.14026222")
       a.name.should == "Mashal Saif"
       a.should be_a_kind_of(Etapper::Account)
     end
 
     it "searches by Duplicate Account if an e-mail address is supplied" do
       @dummy.expects(:getDuplicateAccount).returns(@api_account)
-      a = client.account("mashalsaif@gmail.com")
+      a = Etapper::Account.find("mashalsaif@gmail.com")
       a.name.should == "Mashal Saif"
       a.should be_a_kind_of(Etapper::Account)
     end
 
     it "searches by Account Ref using defined values if a hash is supplied" do
-      @dummy.expects(:getAccountRef).returns("1441.0.14026222")
-      @dummy.expects(:getAccount).with("1441.0.14026222").returns(@api_account)
-      a = client.account("Access ID" => "Z32622")
+      @dummy.expects(:getAccountByUniqueDefinedValue).returns(@api_account)
+      a = Etapper::Account.find("Access ID" => "Z32622")
       a.name.should == "Mashal Saif"
       a.should be_a_kind_of(Etapper::Account)
     end
     
     it "knows that this is not a new account" do
       @dummy.stubs(:getAccount).returns(@api_account)
-      a = client.account("1441.0.14026222")
+      a = Etapper::Account.find("1441.0.14026222")
       a.should_not be_new
     end
   end
@@ -471,7 +467,7 @@ describe "Account" do
   describe "saving" do
     it "calls 'updateAccount' if the account is not new" do
       @dummy.expects(:updateAccount).returns("1441.0.14026222")
-      a = client.account(18618)
+      a = Etapper::Account.find(18618)
       a.name = "Bob Test"
       a.save.should == "1441.0.14026222"
     end

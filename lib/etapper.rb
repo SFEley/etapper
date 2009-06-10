@@ -1,6 +1,6 @@
 require 'rubygems'
-gem 'soap4r'
-gem 'english'
+gem 'soap4r', '= 1.5.8'
+gem 'english', '= 0.3.1'
 
 module Etapper
   VERSION = '0.0.1'
@@ -8,9 +8,19 @@ module Etapper
   ETAP_NS = "etapestryAPI/service" # Namespace
 end
 
+ETAPPER_LIB = File.dirname(__FILE__)
+ETAPPER_API = File.join(ETAPPER_LIB, 'etapper', 'api')
 
-$:.unshift(File.dirname(__FILE__)) unless
-  $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
+[ETAPPER_LIB, ETAPPER_API].each do |dir|
+  $:.unshift(dir) unless
+    $:.include?(dir) || $:.include?(File.expand_path(dir))
+end
 
 require 'etapper/client'
+require 'etapper/exceptions'
+# Load our class wrappers (Account, Defined Value, etc.)
+Dir[File.join(ETAPPER_LIB, 'etapper', 'classes', '*.rb')].sort.each do |path|
+  filename = File.basename(path, '.rb')
+  require "etapper/classes/#{filename}"
+end
 

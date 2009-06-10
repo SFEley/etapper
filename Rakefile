@@ -8,11 +8,14 @@ $hoe = Hoe.new('etapper', Etapper::VERSION) do |p|
   p.changes              = p.paragraphs_of("History.txt", 0..1).join("\n\n")
   p.post_install_message = 'PostInstall.txt' # TODO remove if post-install message not required
   p.rubyforge_name       = p.name # TODO this is default value
-  # p.extra_deps         = [
-  #   ['activesupport','>= 2.0.2'],
-  # ]
+  p.extra_deps         = [
+   ['english','=0.3.1'],
+   ['soap4r', '=1.5.8']
+  ]
   p.extra_dev_deps = [
-    ['newgem', ">= #{::Newgem::VERSION}"]
+    ['newgem', ">= #{::Newgem::VERSION}"],
+    ['rspec', '>=1.2.6'],
+    ['mocha', '>=0.9.5']
   ]
   
   p.clean_globs |= %w[**/.DS_Store tmp *.log]

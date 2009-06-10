@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'etapper/api/serviceDriver.rb'
+require 'serviceDriver.rb'
 
 
 module Etapper::API
