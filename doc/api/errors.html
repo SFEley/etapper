@@ -1,0 +1,569 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<img src='images/etap.gif'/> <big>Errors</big>
+<table class='reportTable'>
+  <tr class='reportTableHeader'>
+    <td align='center'>Num</td>
+    <td width='30%'>Short Description</td>
+    <td>Comments</td>
+  </tr
+  <tr class='reportTableRow'>
+    <td align='center'>1</td>
+    <td>Unknown Error</td>
+    <td>eTapestry encountered an unexpected error while processing the request.&nbsp;Contact api@etapestry.com for assistance.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>2</td>
+    <td>Invalid Login</td>
+    <td>The login&nbsp;id and/or password provided is invalid.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>3</td>
+    <td>Missing Name</td>
+    <td>An <a href='ct_Account.html'>Account</a> is missing a name or name parts (title, first, middle, and last).</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>4</td>
+    <td>Invalid Month</td>
+    <td>A <a href='ct_CreditCard.html'>CreditCard</a> has an invalid expirationMonth. &nbsp;This int must be from 1 and 12.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>5</td>
+    <td>Invalid Year</td>
+    <td>A <a href='ct_CreditCard.html'>CreditCard</a> has an invalid expirationYear. &nbsp;This int must be from 1900 to 9999.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>6</td>
+    <td>Field Not Found</td>
+    <td>A <a href='ct_DefinedValue.html'>DefinedValue</a> has a fieldName that doesn't exist within the eTapestry database.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>7</td>
+    <td>Duplicate Matches Found</td>
+    <td>A <a href='ct_DefinedValue.html'>DefinedValue</a> has been located on multiple accounts.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>8</td>
+    <td>Ref Not Found</td>
+    <td>A database ref could not be located within the eTapestry database.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>9</td>
+    <td>Invalid Persona Type</td>
+    <td>An <a href='ct_Account.html'>Account</a> has a personaType that doesn't exist within the eTapestry database.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>10</td>
+    <td>Invalid Fund</td>
+    <td>A transaction has a fund name that doesn't exist within the eTapestry database.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>11</td>
+    <td>Invalid Amount</td>
+    <td>A transaction has an amount that is invalid. &nbsp;Review each transaction to determine what is appropriate.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>12</td>
+    <td>Missing Processor</td>
+    <td>The organization is missing a transaction processor.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>13</td>
+    <td>Credit Card Process Error</td>
+    <td>The organization's transaction processor encountered an error while processing a credit card. &nbsp;Review the fault string for further explanation.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>14</td>
+    <td>EFT Process Error</td>
+    <td>The organization's transaction processor encountered an error while processing eft valuable. &nbsp;Review the fault string for further explanation.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>15</td>
+    <td>Invalid License</td>
+    <td>The organization does not have an active license to access the API.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>16</td>
+    <td>Account Locked Out</td>
+    <td>The login&nbsp;id's access has been temporarily locked out of eTapestry.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>18</td>
+    <td>Password Length Error</td>
+    <td>The length of the new password does not meet the organization's required length.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>19</td>
+    <td>Password Login Error</td>
+    <td>The new password cannot match the login&nbsp;id.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>20</td>
+    <td>Password Value Error</td>
+    <td>The new password cannot be 'password', consecutive characeters ('123456') or same characters ('111111').</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>21</td>
+    <td>Password Complex Error</td>
+    <td>The new password must contain at least 3 of the following 4 items - a lower case letter, an upper case letter, a number, and a special character</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>22</td>
+    <td>Password History Error</td>
+    <td>The new password cannot match any of last x number of passwords. &nbsp;Each organization defines how many unique passwords are needed before an old one can be reused.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>23</td>
+    <td>Password Generic Error</td>
+    <td>eTapestry encountered an unexpected error while trying to save a new password.&nbsp;Contact api@etapestry.com for assistance.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>24</td>
+    <td>Invalid Installment Amount</td>
+    <td>A <a href='ct_StandardPaymentSchedule.html'>StandardPaymentSchedule</a> has a installment amount that is invalid.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>25</td>
+    <td>Invalid Frequency</td>
+    <td>A <a href='ct_StandardPaymentSchedule.html'>StandardPaymentSchedule</a> or <a href='ct_Insurance.html'>Insurance</a> valuable has an invalid frequency.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>26</td>
+    <td>Invalid Scheduled Payments Count</td>
+    <td>A <a href='ct_Pledge.html'>Pledge</a> cannot have over 300 scheduled payments. &nbsp;The <a href='ct_StandardPaymentSchedule.html'>StandardPaymentSchedule</a> installmentAmount must be increased.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>27</td>
+    <td>Inappropriate Instance</td>
+    <td>The database ref provided is inappropriate for the anticipated item. &nbsp;For example, a valid account ref was provided for the <a href='method_getGift.html'>getGift</a> method.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>28</td>
+    <td>Value Not Found</td>
+    <td>A <a href='ct_DefinedValue.html'>DefinedValue</a> has a value name that doesn't exist on the field. &nbsp;This can only occur for fields with a display type of single select or multi select.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>29</td>
+    <td>Missing Ref</td>
+    <td>A required ref was not provided. &nbsp;Review the complex type being utilized to determine which refs are required.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>30</td>
+    <td>Invalid Empty/Null Data</td>
+    <td>An empty or null complex type was provided. &nbsp;Methods with a complex type parameter cannot be null.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>31</td>
+    <td>Cannot Create User Account</td>
+    <td>An <a href='ct_Account.html'>Account</a> with an accountRoleType of 'User' cannot be created within eTapestry through the API.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>32</td>
+    <td>Account Role Already Exists</td>
+    <td>The method <a href='method_addAccount.html'>addAccount</a> was called with the intention of adding a role to an existing account. &nbsp;The existing account already has the accountRoleType provided.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>33</td>
+    <td>Invalid Contact Method</td>
+    <td>A <a href='ct_Contact.html'>Contact</a> has a method that doesn't exist within the eTapestry database.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>34</td>
+    <td>Missing Contact Method</td>
+    <td>A <a href='ct_Contact.html'>Contact</a> is missing a method.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>35</td>
+    <td>Missing Contact Subject</td>
+    <td>A <a href='ct_Contact.html'>Contact</a> is missing a subject.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>36</td>
+    <td>Missing Note</td>
+    <td>A <a href='ct_Note.html'>Note</a> is missing a note.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>37</td>
+    <td>Missing Field Applies To</td>
+    <td>A <a href='ct_DefinedValue.html'>DefinedValue</a> cannot be assigned to an item if the field doesn't apply to that item. &nbsp;Review the fault string for further details.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>38</td>
+    <td>Missing Fund</td>
+    <td>A transaction is mssing a fund.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>39</td>
+    <td>Donor Account Required</td>
+    <td>A journal entry complex type cannot be added to a user or tribute <a href='ct_Account.html'>Account</a>. &nbsp;The accountRef is inappropriate.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>41</td>
+    <td>Invalid Campaign</td>
+    <td>A transaction has a campaign name that doesn't exist within the eTapestry database.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>42</td>
+    <td>Invalid Approach</td>
+    <td>A transaction has a approach name that doesn't exist within the eTapestry database.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>43</td>
+    <td>Invalid Letter</td>
+    <td>A transaction has a letter name that doesn't exist within the eTapestry database.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>44</td>
+    <td>Invalid Credit Card Type</td>
+    <td>A <a href='ct_CreditCard.html'>CreditCard</a> has a cardType that doesn't exist within the eTapestry database.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>45</td>
+    <td>Cannot Change Valuable</td>
+    <td>An existing transaction cannot have its valuable changed if the transaction has been processed by the organization's transaction processor.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>46</td>
+    <td>Invalid Linked Recurring Gift Schedule</td>
+    <td>A <a href='ct_RecurringGift.html'>RecurringGift</a> has an invalid recurringGiftScheduleRef or recurringGiftScheduleRef is a valid <a href='ct_RecurringGiftSchedule.html'>RecurringGiftSchedule</a> that is marked with a process type of auto. &nbsp;A <a href='ct_RecurringGift.html'>RecurringGift</a> cannot be added to a <a href='ct_RecurringGiftSchedule.html'>RecurringGiftSchedule</a> with a process type of auto.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>47</td>
+    <td>Missing Real Estate Type</td>
+    <td>A <a href='ct_RealEstate.html'>RealEstate</a> is missing a realEstateType.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>48</td>
+    <td>Invalid Real Estate Type</td>
+    <td>A <a href='ct_RealEstate.html'>RealEstate</a> has a realEstateType that doesn't exist within the eTapestry database.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>49</td>
+    <td>Invalid Stock Shares</td>
+    <td>A <a href='ct_Stock.html'>Stock</a> has an invalid numberOfShares.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>50</td>
+    <td>Invalid Process Valuable</td>
+    <td>The method <a href='method_addAndProcessGift.html'>addAndProcessGift</a> or <a href='method_addAndProcessPayment.html'>addAndProcessPayment</a> doesn't have a transaction with a valuable type of <a href='ct_CreditCard.html'>CreditCard</a> or <a href='ct_ElectronicFundsTransfer.html'>ElectronicFundsTransfer</a>.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>51</td>
+    <td>Invalid Valuable Type</td>
+    <td>A <a href='ct_Valuable.html'>Valuable</a> provided has an invalid type.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>52</td>
+    <td>Invalid Valuable</td>
+    <td>A <a href='ct_Valuable.html'>Valuable</a> provided has a type indicated, but empty or null type data. &nbsp;For example, type is 2 and check is null.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>53</td>
+    <td>Invalid Non Deductible Amount</td>
+    <td>A transaction has a nonDeductibleAmount that is invalid. &nbsp;Review each transaction to determine what is appropriate.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>54</td>
+    <td>Missing Recurring Gift Schedule Ref</td>
+    <td>A <a href='ct_RecurringGift.html'>RecurringGift</a> is missing a recurringGiftScheduleRef.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>55</td>
+    <td>Missing Pledge Ref</td>
+    <td>A <a href='ct_Payment.html'>Payment</a> is missing a pledgeRef.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>56</td>
+    <td>Missing Check Number</td>
+    <td>A <a href='ct_Check.html'>Check</a> valuable is missing a number.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>57</td>
+    <td>Missing Credit Card Number</td>
+    <td>A <a href='ct_CreditCard.html'>CreditCard</a> valuable is missing a number.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>58</td>
+    <td>Missing Stock Company</td>
+    <td>A <a href='ct_Stock.html'>Stock</a> valuable is missing a number.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>59</td>
+    <td>Missing Insurance Insurer</td>
+    <td>An <a href='ct_Insurance.html'>Insurance</a> valuable is missing a insurer.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>60</td>
+    <td>Missing Insurance Policy Number</td>
+    <td>An <a href='ct_Insurance.html'>Insurance</a> valuable is missing a policyNumber.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>61</td>
+    <td>Missing Insurance Beneficiary</td>
+    <td>An <a href='ct_Insurance.html'>Insurance</a> valuable is missing a beneficiary.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>62</td>
+    <td>Missing Bond Maturity Date</td>
+    <td>A <a href='ct_Bond.html'>Bond</a> valuable is missing a maturityDate.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>63</td>
+    <td>Missing Bond Issuing Entity</td>
+    <td>A <a href='ct_Bond.html'>Bond</a> valuable is missing an issuingEntity.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>64</td>
+    <td>Invalid Phone Type</td>
+    <td>A <a href='ct_Phone.html'>Phone</a> has a type that doesn't exist within the eTapestry database.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>66</td>
+    <td>Missing Field</td>
+    <td>A <a href='ct_DefinedValue.html'>DefinedValue</a> is missing a fieldRef or fieldName. &nbsp;This error can also occur when the method <a href='method_getUserDefinedSetValues.html'>getUserDefinedSetValues</a> or <a href='method_getSystemDefinedValues.html'>getSystemDefinedValues</a> is called with a empty or null fieldName parameter.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>67</td>
+    <td>Missing Value</td>
+    <td>A <a href='ct_DefinedValue.html'>DefinedValue</a> is missing a value.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>68</td>
+    <td>Invalid Value</td>
+    <td>A <a href='ct_DefinedValue.html'>DefinedValue</a> has a value that isn't appropriate for the field's data type. &nbsp;For example, the field 'Graduation Date' has a data type of date, but the value provided is '2006'. &nbsp;Review the fault string for further explanation.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>69</td>
+    <td>Invalid Transaction Segment Update</td>
+    <td>A <a href='ct_Gift.html'>Gift</a>, <a href='ct_Payment.html'>Payment</a> or <a href='ct_Pledge.html'>Pledge</a> that belongs to a SegmentedDonation/SegmentedPledge cannot be updated by itself. &nbsp;It must be updated as a segment within a SegmentedDonation/SegmentedPledge using the method updateSegmentedDonation/updateSegmentedPledge.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>70</td>
+    <td>Invalid Segmented Transaction Segments</td>
+    <td>A <a href='ct_SegmentedDonation.html'>SegmentedDonation</a> or <a href='ct_SegmentedPledge.html'>SegmentedPledge</a> has an invalid number of segments.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>71</td>
+    <td>Invalid Segmented Transaction Segment</td>
+    <td>The segments of a <a href='ct_SegmentedDonation.html'>SegmentedDonation</a> or <a href='ct_SegmentedPledge.html'>SegmentedPledge</a> has an invalid item. &nbsp;Only <a href='errors.html#Gift'>Gifts</a> and <a href='errors.html#Payment'>Payments</a> can be segments.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>72</td>
+    <td>Invalid Segmented Transaction Amount</td>
+    <td>A <a href='ct_SegmentedDonation.html'>SegmentedDonation</a> or <a href='ct_SegmentedPledge.html'>SegmentedPledge</a> has a totalAmount that doesn't equal the sum of the segmented amounts or it has a totalNonDeductibleAmount that doesn't equal the sum of the segmented nonDeductibleAmounts.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>73</td>
+    <td>Duplicate Segmented Transaction Segments</td>
+    <td>A <a href='ct_SegmentedDonation.html'>SegmentedDonation</a> or <a href='ct_SegmentedPledge.html'>SegmentedPledge</a> cannot have two segments with the same ref.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>74</td>
+    <td>Missing Soft Credit Account Ref</td>
+    <td>A transaction has a softCredit that is missing an accountRef.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>75</td>
+    <td>Invalid Auto Process Valuable</td>
+    <td>A <a href='ct_Pledge.html'>Pledge</a> or a <a href='ct_RecurringGiftSchedule.html'>RecurringGiftSchedule</a> having a schedule marked with a process type of auto has an empty/null valuable or a valuable other than <a href='ct_CreditCard.html'>CreditCard</a> or <a href='ct_ElectronicFundsTransfer.html'>ElectronicFundsTransfer</a>.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>76</td>
+    <td>Invalid Process Type</td>
+    <td>A <a href='ct_StandardPaymentSchedule.html'>StandardPaymentSchedule</a> or <a href='ct_CustomPaymentSchedule.html'>CustomPaymentSchedule</a> has an invalid processType.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>77</td>
+    <td>Missing First Installment Date</td>
+    <td>A <a href='ct_StandardPaymentSchedule.html'>StandardPaymentSchedule</a> is missing a firstInstallmentDate.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>78</td>
+    <td>Missing Date</td>
+    <td>A journal entry complex type is missing a date.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>79</td>
+    <td>Missing Phone Type</td>
+    <td>A <a href='ct_Phone.html'>Phone</a> is missing a type.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>80</td>
+    <td>Missing Persona Type</td>
+    <td>An <a href='ct_Account.html'>Account</a> is missing a personaType.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>81</td>
+    <td>Invalid Country Code</td>
+    <td>An <a href='ct_Account.html'>Account</a> has a country that doesn't exist within the eTapestry database.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>82</td>
+    <td>Invalid Custom Schedule Amounts</td>
+    <td>A <a href='ct_CustomPaymentSchedule.html'>CustomPaymentSchedule</a> has an empty or null installmentAmounts array.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>83</td>
+    <td>Invalid Custom Schedule Dates</td>
+    <td>A <a href='ct_CustomPaymentSchedule.html'>CustomPaymentSchedule</a> has an empty or null installmentDates array.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>84</td>
+    <td>Invalid Custom Schedule Details</td>
+    <td>A <a href='ct_CustomPaymentSchedule.html'>CustomPaymentSchedule</a> has a installmentAmounts or installmentDates array that has only one entry or the two arrays don't have the same length.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>85</td>
+    <td>Invalid Custom Schedule Date</td>
+    <td>A <a href='ct_CustomPaymentSchedule.html'>CustomPaymentSchedule</a> has a installmentDates array entry with a missing date.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>86</td>
+    <td>Missing Account Ref</td>
+    <td>A journal entry complex type is missing an accountRef.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>87</td>
+    <td>Invalid User Defined Field Display Type</td>
+    <td>A <a href='ct_DefinedValue.html'>DefinedValue</a> has an invalid displayType.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>88</td>
+    <td>Invalid User Defined Field Data Type</td>
+    <td>A <a href='ct_DefinedValue.html'>DefinedValue</a> has an invalid dataType.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>89</td>
+    <td>Invalid EFT Account Type</td>
+    <td>An <a href='ct_ElectronicFundsTransfer.html'>ElectronicFundsTransfer</a> has an invalid accountType.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>90</td>
+    <td>Invalid Recognition Type</td>
+    <td>An <a href='ct_Account.html'>Account</a> has an invalid donorRecognitionType or a transaction has an invalid recognitionType.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>91</td>
+    <td>Invalid Account Role Type</td>
+    <td>An <a href='ct_Account.html'>Account</a> has an invalid accountRoleType.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>92</td>
+    <td>Missing Payment Schedule</td>
+    <td>A <a href='ct_Pledge.html'>Pledge</a> is missing a standardSchedule or customSchedule.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>93</td>
+    <td>Field is not a Set</td>
+    <td>The field provided for method <a href='method_getUserDefinedSetValues.html'>getUserDefinedSetValues</a> or <a href='method_getSystemDefinedValues.html'>getSystemDefinedValues</a> is not a set (i.e. display type single select or multi select).</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>94</td>
+    <td>Invalid Id</td>
+    <td>The id (aka Account&nbsp;Number) provided is invaild. &nbsp;This number must be greater than zero.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>95</td>
+    <td>Missing Search Criteria</td>
+    <td>No search criteria was provided within AccountSearch.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>96</td>
+    <td>Invalid Account Search Role Types</td>
+    <td>An AccountSearch has an invalid accountRoleTypes value.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>97</td>
+    <td>Invalid Payment Pledge Ref</td>
+    <td>A <a href='ct_Payment.html'>Payment</a> has a pledgeRef that isn't a pledge transaction.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>98</td>
+    <td>Invalid Payment Addition</td>
+    <td>A <a href='ct_Payment.html'>Payment</a> has a pledge indicated (pledgeRef) that cannot have a payment added to it. &nbsp;Payments cannot be added to pledges that are written off, reversed, or fulfilled.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>99</td>
+    <td>Invalid Matching Refs</td>
+    <td>A complex type was provided with multiple ref values populated with the same value. &nbsp;Two or more of those same value refs cannot have matching refs.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>100</td>
+    <td>Missing Duplicate Search Criteria</td>
+    <td>Search criteria was missing within <a href='ct_DuplicateAccountSearch.html'>DuplicateAccountSearch</a>. &nbsp;Consult <a href='method_getDuplicateAccount.html'>getDuplicateAccount</a> to learn what fields are required.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>101</td>
+    <td>Missing Required Parameter</td>
+    <td>A required method parameter was provided a null or empty value.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>102</td>
+    <td>Invalid Query Category</td>
+    <td>A query category name provided is invalid.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>103</td>
+    <td>Invalid Query</td>
+    <td>A query name provided is invalid.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>104</td>
+    <td>Donor Login Role Not Allowed</td>
+    <td>The account with the provided login&nbsp;credentials doesn't have access to use the api.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>105</td>
+    <td>Temporarily Unavailable</td>
+    <td>The system is temporarily unavailable. &nbsp;Please check back shortly.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>106</td>
+    <td>Inappropriate Processor</td>
+    <td>The organization's transaction processor doesn't support this action.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>107</td>
+    <td>Invalid Transaction Update</td>
+    <td>The transaction update attempted isn't allowed. &nbsp;Review the fault string for further explanation.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>108</td>
+    <td>Cannot Change Amount</td>
+    <td>The transaction amount cannot be changed on a transaction that has been processed.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>109</td>
+    <td>Missing Valuable</td>
+    <td>The transaction is missing a valuable.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>110</td>
+    <td>Invalid Reverse Transaction</td>
+    <td>The transaction reversal attempted isn't allowed. &nbsp;Review the fault string for further explanation.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>113</td>
+    <td>Cannot Update Immutable Entry</td>
+    <td>Journal Entries marked as immutable cannot be updated.</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td align='center'>114</td>
+    <td>Login Not Enabled</td>
+    <td>The account with the provided login&nbsp;credentials obtains a disabled login&nbsp;id.</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td align='center'>115</td>
+    <td>Invalid Login Time</td>
+    <td>The account with the provided login&nbsp;credentials doesn't have access to the database at the current time.</td>
+  </tr>
+</table>
+</body>
+</html>
+

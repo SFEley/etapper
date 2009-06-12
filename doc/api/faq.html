@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<p>
+ <div class='faqQuestion'><img src='images/question.gif'/> What is the name of the cookie the login method returns that I am required to pass along on subsequent requests?</div>
+ <div class='faqAnswer'>The cookie name is JSESSIONID.  A sample value of JSESSIONID is EDAE73B1BB810271A430D9FA89BFF232.</div>
+</p>
+<p>
+ <div class='faqQuestion'><img src='images/question.gif'/> I received the following soap fault.  How do I avoid it?</div>
+ <div class='faqAnswer'>This normally means you have an int or boolean variable on a complex type that was passed as null (e.g. xsi:nil='true').  Assuming you are using proxy objects, try initializing int variables to zero and boolean variables to false.  This should prevent the variable from being null.</div>
+ <br><div class='faqCode'>Fault Code: env:Client<br>Fault String: caught exception while handling request: deserialization error: java.lang.NullPointerException</div>
+</p>
+<p>
+ <div class='faqQuestion'><img src='images/question.gif'/> I received the following soap fault.  How do I avoid it?</div>
+ <div class='faqAnswer'>This normally means you have an int or double variable on a complex type that was passed with a non numeric value.  Assuming you are using proxy objects, try initializing int and double variables to zero.</div>
+ <br><div class='faqCode'>Fault Code: env:Client<br>Fault String: caught exception while handling request: deserialization error: java.lang.NumberFormatException: For input string: [value]</div>
+</p>
+</body>
+</html>
+

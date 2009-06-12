@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<div class='methodName'><img src='images/etap.gif'/> getQueryResultStats Method</div>
+<table class='reportTable'>
+  <tr class='reportTableHeader'>
+    <td width='20%'>Order</td>
+    <td width='40%'>Name</td>
+    <td>Type</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>Return</td>
+    <td>queryResultStats</td>
+    <td><a href='ct_QueryResultStats.html'>QueryResultStats</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>Input 1</td>
+    <td>categoryName</td>
+    <td>string</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>Input 2</td>
+    <td>queryName</td>
+    <td>string</td>
+  </tr>
+</table><br>
+<div class='specialComments'>Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td>1)</td>
+    <td>This method will return some basic high level stats concerning the results of a query.</td>
+  </tr>
+  <tr>
+    <td>2)</td>
+    <td>A soap fault will occur if the parameter categoryName or queryName is empty or invalid.</td>
+  </tr>
+</table>
+</body>
+</html>
+

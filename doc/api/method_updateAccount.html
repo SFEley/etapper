@@ -1,0 +1,53 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<div class='methodName'><img src='images/etap.gif'/> updateAccount Method</div>
+<table class='reportTable'>
+  <tr class='reportTableHeader'>
+    <td width='20%'>Order</td>
+    <td width='40%'>Name</td>
+    <td>Type</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>Return</td>
+    <td>accountRef</td>
+    <td>string</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>Input 1</td>
+    <td>account</td>
+    <td><a href='ct_Account.html'>Account</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>Input 2</td>
+    <td>createFieldAndValues</td>
+    <td>boolean</td>
+  </tr>
+</table><br>
+<div class='specialComments'>Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td>1)</td>
+    <td>This method will update an existing account.</td>
+  </tr>
+  <tr>
+    <td>2)</td>
+    <td>A soap fault will occur if the parameter account is empty or invalid. &nbsp;Review <a href='ct_Account.html'>Account</a> to help avoid a soap fault.</td>
+  </tr>
+  <tr>
+    <td>3)</td>
+    <td>This method will add or update the <a href='ct_Account.html'>Account</a> personaType provided depending on whether the account already has the personaType. &nbsp;If the <a href='ct_Account.html'>Account</a> personaType is empty, the account's primary persona will be updated.</td>
+  </tr>
+  <tr>
+    <td>4)</td>
+    <td>If the parameter createFieldAndValues is true, this indicates all <a href='ct_DefinedValue.html'>DefinedValue</a> fields and values that aren't located will be created. &nbsp;When this parameter is set to true, don't forget to set each <a href='ct_DefinedValue.html'>DefinedValue</a> dataType and displayType to appropriate values. &nbsp;Please note, the personaType will not be created if it is invalid.</td>
+  </tr>
+</table>
+</body>
+</html>
+

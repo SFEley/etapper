@@ -1,0 +1,90 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<table width='100%'><tr>
+  <td><div class='complexTypeName'><img src='images/etap.gif'/> DuplicateAccountSearch Complex Type<br></div></td>
+  <td align='right' valign='bottom'><div class='smallText'>Click Column Header to Sort Column</div></td>
+</tr></table>
+<table class='reportTable' id='ct_DuplicateAccountSearch'>
+  <tr class='reportTableHeader' fixed='true'>
+    <td><a href="javascript:sortTable('ct_DuplicateAccountSearch',0)">Name</a></td>
+    <td><a href="javascript:sortTable('ct_DuplicateAccountSearch',1)">Type</a></td>
+    <td><a href="javascript:sortTable('ct_DuplicateAccountSearch',2)">Basic Comments</a></td>
+    <td><a href="javascript:sortTable('ct_DuplicateAccountSearch',3)">Special Comments</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>name</td>
+    <td>string</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_DuplicateAccountSearch.html#scDuplicateAccountSearch1'>SC1</a> - <a href='ct_DuplicateAccountSearch.html#scDuplicateAccountSearch2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>address</td>
+    <td>string</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_DuplicateAccountSearch.html#scDuplicateAccountSearch1'>SC1</a> - <a href='ct_DuplicateAccountSearch.html#scDuplicateAccountSearch3'>SC3</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>email</td>
+    <td>string</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_DuplicateAccountSearch.html#scDuplicateAccountSearch4'>SC4</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>phoneNumber</td>
+    <td>string</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_DuplicateAccountSearch.html#scDuplicateAccountSearch1'>SC1</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>accountRoleTypes</td>
+    <td>int</td>
+    <td>0 = Donors & Tributes<br>1 = Donors Only<br>2 = Tributes Only</td>
+    <td><a href='ct_DuplicateAccountSearch.html#scDuplicateAccountSearch5'>SC5</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>allowEmailOnlyMatch</td>
+    <td>boolean</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_DuplicateAccountSearch.html#scDuplicateAccountSearch6'>SC6</a></td>
+  </tr>
+</table><br>
+<div class='specialComments'>Special Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td><a name='scDuplicateAccountSearch1'></a>SC1)</td>
+    <td>eTapestry doesn't perform an exact match comparison on these fields. &nbsp;Instead, the string provided is tokenized by spaces and other miscellaneous characters (e.g. comma, periods, etc...) and each token is required to be located on the Account returned. &nbsp;Examples:<ul><li>A name search of <u>Robert Smith</u> will match <u>Robert Andrew Smith</u> (i.e. tokens <u>Robert</u> and <u>Smith</u> are found within <u>Robert Andrew Smith</u>).</li><li>An address search of <u>1234 Main Street #2B</u> will match <u>1234 Main Street Apt 2B</u> (i.e. tokens <u>1234</u>, <u>Main</u>, <u>Street</u>, and <u>2B</u> are found within <u>1234 Main Street Apt 2B</u>).</li><li>A phone search of <u>777-9999</u> will match <u>444.777.9999</u> (i.e. tokens <u>777</u> and <u>9999</u> are found within <u>444.777.9999</u>).</li></ul></td>
+  </tr>
+  <tr>
+    <td><a name='scDuplicateAccountSearch2'></a>SC2)</td>
+    <td>Concerning the token details mentioned in comment SC1, only name tokens greater than one character in length are required to be located on the Account returned. &nbsp;In essence, single character tokens, which are predominately middle initials, are not utilized during the comparision process. &nbsp;Example: <ul><li>A name search of <u>Robert A Smith</u> will match <u>Robert Smith</u>.</li></ul></td>
+  </tr>
+  <tr>
+    <td><a name='scDuplicateAccountSearch3'></a>SC3)</td>
+    <td>Concerning the token details mentioned in comment SC1, common address description tokens (e.g. St, Street, Rd, Road, Dr, Drive, etc...) are ignored. &nbsp;This is done to avoid a match failure simply due to the difference between the abbreviated version and the full version. &nbsp;Example: <ul><li>An address search of <u>1234 Main St</u> will match <u>1234 Main Street</u> (i.e. tokens <u>1234</u> and <u>Main</u> are found within <u>1234 Main Street</u>).</li></ul></td>
+  </tr>
+  <tr>
+    <td><a name='scDuplicateAccountSearch4'></a>SC4)</td>
+    <td>eTapestry perfoms an exact match comparison on this field.</td>
+  </tr>
+  <tr>
+    <td><a name='scDuplicateAccountSearch5'></a>SC5)</td>
+    <td>eTapestry will not return user accounts using this type of duplicate account search.</td>
+  </tr>
+  <tr>
+    <td><a name='scDuplicateAccountSearch6'></a>SC6)</td>
+    <td>Set allowEmailOnlyMatch to true when you want to search upon email and other fields primarily, but are willing to match upon email itself as a last resort.</td>
+  </tr>
+  <tr>
+    <td><a name='scDuplicateAccountSearch7'></a>SC7)</td>
+    <td>Review method getDuplicateAccount for more level high requirements of this complex type.</td>
+  </tr>
+</table>
+</body>
+</html>
+

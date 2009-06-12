@@ -1,0 +1,95 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<table width='100%'><tr>
+  <td><div class='complexTypeName'><img src='images/etap.gif'/> StandardPaymentSchedule Complex Type<br></div></td>
+  <td align='right' valign='bottom'><div class='smallText'>ROA = Required on Add, ROU = Required on Update, Click Column Header to Sort Column</div></td>
+</tr></table>
+<table class='reportTable' id='ct_StandardPaymentSchedule'>
+  <tr class='reportTableHeader' fixed='true'>
+    <td><a href="javascript:sortTable('ct_StandardPaymentSchedule',0)">Name</a></td>
+    <td><a href="javascript:sortTable('ct_StandardPaymentSchedule',1)">Type</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_StandardPaymentSchedule',2)" title='Required on Add'>ROA</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_StandardPaymentSchedule',3)" title='Required on Update'>ROU</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_StandardPaymentSchedule',4)">Read Only</a></td>
+    <td><a href="javascript:sortTable('ct_StandardPaymentSchedule',5)">Basic Comments</a></td>
+    <td><a href="javascript:sortTable('ct_StandardPaymentSchedule',6)">Special Comments</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>frequency</td>
+    <td>int</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>1 = Annually<br>2 = Semi-Annually<br>4 = Quarterly<br>6 = Bi-Monthly<br>12 = Monthly<br>24 = Semi-Monthly<br>26 = Bi-Monthly<br>52 = Weekly</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>processType</td>
+    <td>int</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>0 = Manual<br>1 = Auto</td>
+    <td><a href='ct_StandardPaymentSchedule.html#scStandardPaymentSchedule1'>SC1</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>firstInstallmentDate</td>
+    <td>date</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>installmentAmount</td>
+    <td>double</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>Must be greater than zero</td>
+    <td><a href='ct_StandardPaymentSchedule.html#scStandardPaymentSchedule2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>stopDate</td>
+    <td>date</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_StandardPaymentSchedule.html#scStandardPaymentSchedule3'>SC3</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>note</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table><br>
+<div class='specialComments'>Special Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td><a name='scStandardPaymentSchedule1'></a>SC1)</td>
+    <td>The field processType indicates whether processing of payments (for a Pledge) or recurring gifts (for a Recurring Gift Schedule) will be processed by eTapestry automatically. &nbsp;Please note, a transaction processor must be present (which is located at Manage...My Organization...eCommerce) if processType auto is desired for an add or update. &nbsp;If a transaction processor is not found and the processType is set to auto, a soap fault will occur. &nbsp;Also, if the processType is set to auto, the transaction must have a scheduledValuable provided with either creditCard or eft populated.</td>
+  </tr>
+  <tr>
+    <td><a name='scStandardPaymentSchedule2'></a>SC2)</td>
+    <td>If a pledge is being added or updated, the field installmentAmount must be 1/300th of the pledge amount. &nbsp;In essence, the number of payments an individual would need to complete a pledge cannot exceed 300. &nbsp;If a recurring gift schedule is being added or updated, the installmentAmount must exactly match the amount of the recurring gift schedule.</td>
+  </tr>
+  <tr>
+    <td><a name='scStandardPaymentSchedule3'></a>SC3)</td>
+    <td>The field stopDate is only applicable for a standard payment schedule linked to a recurring gift schedule. &nbsp;This field will be ignored if populated when adding or updating a pledge.</td>
+  </tr>
+</table>
+</body>
+</html>
+

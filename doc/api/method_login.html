@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<div class='methodName'><img src='images/etap.gif'/> login Method</div>
+<table class='reportTable'>
+  <tr class='reportTableHeader'>
+    <td width='20%'>Order</td>
+    <td width='40%'>Name</td>
+    <td>Type</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>Return</td>
+    <td>newEndpointURL</td>
+    <td>string</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>Input 1</td>
+    <td>loginId</td>
+    <td>string</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>Input 2</td>
+    <td>password</td>
+    <td>string</td>
+  </tr>
+</table><br>
+<div class='specialComments'>Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td>1)</td>
+    <td>A soap fault can occur for the following reasons: Invalid Login (2), Account&nbsp;Locked Out (16), Account&nbsp;Password Expired (17), and Invalid License (15).</td>
+  </tr>
+  <tr>
+    <td>2)</td>
+    <td><b>Important Return Value Details</b>: eTapestry has multiple sites that host customer data. &nbsp;Each site has the exact same API, but different endpoint urls to access it. &nbsp;If the login&nbsp;information provided links to a customer database found on the current site, an empty string will be returned. &nbsp;If the login&nbsp;information provided links to a customer database on another site, a different endpoint url is returned. &nbsp;When a different endpoint url is provided, you must reconnect to the endpoint url provided and retry the&nbsp;login. eTapestry reserves the right to move customer databases from one site to another.</td>
+  </tr>
+</table>
+</body>
+</html>
+

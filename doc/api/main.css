@@ -1,0 +1,24 @@
+body { margin: 30px 45px 30px 45px; background-color: #CCCC99; font-family: Arial, Helvetica, sans-serif; }
+a { color: #336699; text-decoration: none; }
+a:hover { color: #FFFF66; }
+
+.reportTable { width: 100%; border-width: 0 0 1px 1px; border-style: solid; border-color: #336699; border-collapse: collapse; font-size: 8pt; }
+.reportTable td { border-width: 1px 1px 0 0; border-style: solid; border-color: #336699; padding: 3px; }
+.reportTableHeader { background-color: #336699; color: #FFFFFF; font-weight: bold; }
+.reportTableHeader a { color: #FFFFFF; }
+.reportTableRow { }
+.reportTableRowAlt { background-color: #CCCCCC; }
+
+.specialCommentTable { padding: 12px; font-size: 8pt; }
+.specialCommentTable td { padding: 3px; vertical-align: top; }
+.specialCommentTable tr { }
+
+.methodName { font-size: 13pt; font-family: Verdana, Helvetica, sans-serif; }
+.complexTypeName { font-size: 13pt; font-family: Verdana, Helvetica, sans-serif; }
+.specialComments { font-weight: bold; font-style: italic; font-size: 10pt; }
+.normalText { font-size: 9pt; }
+.smallText { font-size: 8pt; }
+
+.faqQuestion { font-weight: bold; font-size: 10pt; font-family: Verdana, Helvetica, sans-serif; }
+.faqAnswer { font-size: 9pt; }
+.faqCode { margin-left: 30px; border-width: 1px; border-style: solid; border-color: #336699; padding: 5px; background-color: #CCCCCC; font-size: 8pt; }

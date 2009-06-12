@@ -1,0 +1,48 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<div class='methodName'><img src='images/etap.gif'/> getDuplicateAccount Method</div>
+<table class='reportTable'>
+  <tr class='reportTableHeader'>
+    <td width='20%'>Order</td>
+    <td width='40%'>Name</td>
+    <td>Type</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>Return</td>
+    <td>account</td>
+    <td><a href='ct_Account.html'>Account</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>Input 1</td>
+    <td>duplicateAccountSearch</td>
+    <td><a href='ct_DuplicateAccountSearch.html'>DuplicateAccountSearch</a></td>
+  </tr>
+</table><br>
+<div class='specialComments'>Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td>1)</td>
+    <td>An <a href='ct_Account.html'>Account</a> will be returned based upon the search content provided within <a href='ct_DuplicateAccountSearch.html'>DuplicateAccountSearch</a>. &nbsp;Null will be returned if no account matches the search content provided.</td>
+  </tr>
+  <tr>
+    <td>2)</td>
+    <td><b>Important Note</b>: <a href='ct_DuplicateAccountSearch.html'>DuplicateAccountSearch</a> provides a way to locate an existing account within eTapestry using name, address, email address, and phone number. At a minimum, one of the following four critieria must be provided to conduct a basic duplicate account search. &nbsp;This is done to ensure enough information is provided to make the search tough enough to alleviate inappropriate results. &nbsp;In essence, locating duplicates simply on name alone isn't appropirate because multiple accounts in the database may have the same name. eTapestry will attempt to locate an account with all of the data provided. If no account contains all of the data provided, eTapestry will attempt to locate an account by each smaller criteria combinations below as appropirate. &nbsp;This means a search based upon name, address, and email will attempt to locate an account with all three items and if not found, a name/email, a name/address, and email (see <a href='ct_DuplicateAccountSearch.html'>DuplicateAccountSearch</a> for more details about matching on email alone) search will also be conducted.<ul><li>Name & Email</li><li>Name & Address</li><li>Name & Phone</li><li>Email</li></ul></td>
+  </tr>
+  <tr>
+    <td>3)</td>
+    <td>Using the <a href='ct_DuplicateAccountSearch.html'>DuplicateAccountSearch</a> details provided, if eTapestry locates two or more accounts, a random account will be returned. &nbsp;See the method <a href='method_getDuplicateAccounts.html'>getDuplicateAccounts</a> if you prefer to have multiple accounts returned instead of a single account.</td>
+  </tr>
+  <tr>
+    <td>4)</td>
+    <td>A soap fault (100 - Missing Duplicate Search Criteria) will occur if one of the four above basic searches isn't found.</td>
+  </tr>
+</table>
+</body>
+</html>
+

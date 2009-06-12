@@ -1,0 +1,9 @@
+body { margin: 15px; background-color: #CCCC99; font-family: Arial, Helvetica, sans-serif; }
+a { color: #336699; text-decoration: none; }
+a:hover { color: #FFFF66; }
+
+.header { font-size: 10pt; font-weight: bold; border-bottom: 1px solid; }
+.smallText { font-size: 8pt; }
+
+.mainItem { margin: 3px 0 3px 0; font-size: 9pt; font-weight: bold; }
+.offsetItem { margin-left: 10px; font-size: 8pt; }

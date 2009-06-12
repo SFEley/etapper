@@ -1,0 +1,131 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<table width='100%'><tr>
+  <td><div class='complexTypeName'><img src='images/etap.gif'/> Note Complex Type<br></div></td>
+  <td align='right' valign='bottom'><div class='smallText'>ROA = Required on Add, ROU = Required on Update, Click Column Header to Sort Column</div></td>
+</tr></table>
+<table class='reportTable' id='ct_Note'>
+  <tr class='reportTableHeader' fixed='true'>
+    <td><a href="javascript:sortTable('ct_Note',0)">Name</a></td>
+    <td><a href="javascript:sortTable('ct_Note',1)">Type</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Note',2)" title='Required on Add'>ROA</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Note',3)" title='Required on Update'>ROU</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Note',4)">Read Only</a></td>
+    <td><a href="javascript:sortTable('ct_Note',5)">Basic Comments</a></td>
+    <td><a href="javascript:sortTable('ct_Note',6)">Special Comments</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>type</td>
+    <td>int</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>Set to 1 when journal entry is retrieved from eTapestry</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>accountRef</td>
+    <td>string</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>accountName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>ref</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>final</td>
+    <td>boolean</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Note.html#scNote1'>SC1</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>immutable</td>
+    <td>boolean</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Note.html#scNote2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>date</td>
+    <td>date</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>note</td>
+    <td>string</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>definedValues</td>
+    <td><a href='ct_DefinedValue.html'>DefinedValue</a> array</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>attachments</td>
+    <td><a href='ct_Attachment.html'>Attachment</a> array</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Note.html#scNote3'>SC3</a></td>
+  </tr>
+</table><br>
+<div class='specialComments'>Special Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td><a name='scNote1'></a>SC1)</td>
+    <td>The field final indicates whether the transaction can be updated by non admin users. &nbsp;A true value means it cannot be updated by non admin users.</td>
+  </tr>
+  <tr>
+    <td><a name='scNote2'></a>SC2)</td>
+    <td>Notes marked with an immutable value of true cannot be update via the method updateNote. &nbsp;If attempted, soap fault 113 will occur.</td>
+  </tr>
+  <tr>
+    <td><a name='scNote3'></a>SC3)</td>
+    <td>Journal entries retrieved from eTapestry will contain all attachment data except the fileContent. &nbsp;This is done for efficiency purposes.</td>
+  </tr>
+</table>
+</body>
+</html>
+

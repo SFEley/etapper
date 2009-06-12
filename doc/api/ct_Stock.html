@@ -1,0 +1,114 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<table width='100%'><tr>
+  <td><div class='complexTypeName'><img src='images/etap.gif'/> Stock Complex Type<br></div></td>
+  <td align='right' valign='bottom'><div class='smallText'>ROA = Required on Add, ROU = Required on Update, Click Column Header to Sort Column</div></td>
+</tr></table>
+<table class='reportTable' id='ct_Stock'>
+  <tr class='reportTableHeader' fixed='true'>
+    <td><a href="javascript:sortTable('ct_Stock',0)">Name</a></td>
+    <td><a href="javascript:sortTable('ct_Stock',1)">Type</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Stock',2)" title='Required on Add'>ROA</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Stock',3)" title='Required on Update'>ROU</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Stock',4)">Read Only</a></td>
+    <td><a href="javascript:sortTable('ct_Stock',5)">Basic Comments</a></td>
+    <td><a href="javascript:sortTable('ct_Stock',6)">Special Comments</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>company</td>
+    <td>string</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>numberOfShares</td>
+    <td>double</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>Must be greater than or equal to zero<br>Can have up to five decimal places</td>
+    <td><a href='ct_Stock.html#scStock1'>SC1</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>pricePerShare</td>
+    <td>double</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>Must be greater than or equal to zero</td>
+    <td><a href='ct_Stock.html#scStock1'>SC1</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>ticker</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>saleDate</td>
+    <td>date</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>salePricePerShare</td>
+    <td>double</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>brokerName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>brokerageFee</td>
+    <td>double</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>note</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table><br>
+<div class='specialComments'>Special Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td><a name='scStock1'></a>SC1)</td>
+    <td>Please note, the numberOfShares and pricePerShare are multipled together to determine the amount of the transaction. &nbsp;This means if a gift is added with an amount of 5, a numberOfShares of 2, and a pricePerShare of 3, the amount of the gift in eTapestry will be 6.</td>
+  </tr>
+</table>
+</body>
+</html>
+

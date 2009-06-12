@@ -1,0 +1,311 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<table width='100%'><tr>
+  <td><div class='complexTypeName'><img src='images/etap.gif'/> RecurringGiftSchedule Complex Type<br></div></td>
+  <td align='right' valign='bottom'><div class='smallText'>ROA = Required on Add, ROU = Required on Update, Click Column Header to Sort Column</div></td>
+</tr></table>
+<table class='reportTable' id='ct_RecurringGiftSchedule'>
+  <tr class='reportTableHeader' fixed='true'>
+    <td><a href="javascript:sortTable('ct_RecurringGiftSchedule',0)">Name</a></td>
+    <td><a href="javascript:sortTable('ct_RecurringGiftSchedule',1)">Type</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_RecurringGiftSchedule',2)" title='Required on Add'>ROA</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_RecurringGiftSchedule',3)" title='Required on Update'>ROU</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_RecurringGiftSchedule',4)">Read Only</a></td>
+    <td><a href="javascript:sortTable('ct_RecurringGiftSchedule',5)">Basic Comments</a></td>
+    <td><a href="javascript:sortTable('ct_RecurringGiftSchedule',6)">Special Comments</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>type</td>
+    <td>int</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>Set to 8 when journal entry is retrieved from eTapestry</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>accountRef</td>
+    <td>string</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>Must be a donor role account</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>accountName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>ref</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>final</td>
+    <td>boolean</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_RecurringGiftSchedule.html#scRecurringGiftSchedule1'>SC1</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>date</td>
+    <td>date</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>amount</td>
+    <td>double</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>Must be greater than zero</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>nonDeductibleAmount</td>
+    <td>double</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>Must be greater than or equal to zero and less than or equal to the amount</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>fund</td>
+    <td>string</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_RecurringGiftSchedule.html#scRecurringGiftSchedule2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>campaign</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_RecurringGiftSchedule.html#scRecurringGiftSchedule3'>SC3</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>approach</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_RecurringGiftSchedule.html#scRecurringGiftSchedule4'>SC4</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>letter</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_RecurringGiftSchedule.html#scRecurringGiftSchedule5'>SC5</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>receipt</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>note</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>schedule</td>
+    <td><a href='ct_StandardPaymentSchedule.html'>StandardPaymentSchedule</a></td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_RecurringGiftSchedule.html#scRecurringGiftSchedule6'>SC6</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>scheduledValuable</td>
+    <td><a href='ct_Valuable.html'>Valuable</a></td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_RecurringGiftSchedule.html#scRecurringGiftSchedule7'>SC7</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>definedValues</td>
+    <td><a href='ct_DefinedValue.html'>DefinedValue</a> array</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>softCredit</td>
+    <td><a href='ct_SoftCredit.html'>SoftCredit</a></td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_RecurringGiftSchedule.html#scRecurringGiftSchedule8'>SC8</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>tributeAccountRef</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_RecurringGiftSchedule.html#scRecurringGiftSchedule9'>SC9</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>tributeAccountName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>recognitionName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_RecurringGiftSchedule.html#scRecurringGiftSchedule10'>SC10</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>recognitionType</td>
+    <td>int</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>0 = User Donor Name<br>1 = Don't Recognize<br>2 = Anonymous<br>3 = Use Transaction Recognition Name</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>originalAccountRef</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_RecurringGiftSchedule.html#scRecurringGiftSchedule11'>SC11</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>originalAccountName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_RecurringGiftSchedule.html#scRecurringGiftSchedule11'>SC11</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>originalTransactionRef</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_RecurringGiftSchedule.html#scRecurringGiftSchedule11'>SC11</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>attachments</td>
+    <td><a href='ct_Attachment.html'>Attachment</a> array</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_RecurringGiftSchedule.html#scRecurringGiftSchedule12'>SC12</a></td>
+  </tr>
+</table><br>
+<div class='specialComments'>Special Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td><a name='scRecurringGiftSchedule1'></a>SC1)</td>
+    <td>The field final indicates whether the transaction can be updated by non admin users. &nbsp;A true value means it cannot be updated by non admin users.</td>
+  </tr>
+  <tr>
+    <td><a name='scRecurringGiftSchedule2'></a>SC2)</td>
+    <td>The field fund must match (case sensitive) an existing fund name in eTapestry. &nbsp;Existing fund names can be found at Manage...Funds.</td>
+  </tr>
+  <tr>
+    <td><a name='scRecurringGiftSchedule3'></a>SC3)</td>
+    <td>The field campaign must match (case sensitive) an existing campaign name in eTapestry. &nbsp;Existing campaign names can be found at Manage...Campaigns.</td>
+  </tr>
+  <tr>
+    <td><a name='scRecurringGiftSchedule4'></a>SC4)</td>
+    <td>The field approach must match (case sensitive) an existing approach name in eTapestry. &nbsp;Existing approach names can be found at Manage...Approaches.</td>
+  </tr>
+  <tr>
+    <td><a name='scRecurringGiftSchedule5'></a>SC5)</td>
+    <td>The field letter must match (case sensitive) an existing letter name in eTapestry. &nbsp;Existing letter names can be found at Manage...Letters.</td>
+  </tr>
+  <tr>
+    <td><a name='scRecurringGiftSchedule6'></a>SC6)</td>
+    <td>The installment amount on the schedule must match the amount on this recurring gift schedule transaction.</td>
+  </tr>
+  <tr>
+    <td><a name='scRecurringGiftSchedule7'></a>SC7)</td>
+    <td>The field scheduledValuable is required when the schedule has a process type of auto. &nbsp;When required, this field must have either creditCard or eft populated, otherwise a soap fault will occur. &nbsp;When not required, this field is ignored.</td>
+  </tr>
+  <tr>
+    <td><a name='scRecurringGiftSchedule8'></a>SC8)</td>
+    <td>The field softCredit contains the soft credit transaction linked to this recurring gift schedule. &nbsp;The linked soft credit can have a different fund, campaign, approach, letter, and amount. &nbsp;Please note, soft credit transactions can only belong to donor role accounts. &nbsp;If an update is processed, the soft credit account can be switched from one account to another.</td>
+  </tr>
+  <tr>
+    <td><a name='scRecurringGiftSchedule9'></a>SC9)</td>
+    <td>The field tributeAccountRef indicates the transaction is in honor/memorial of a particular account. &nbsp;This must be a tribute role account.</td>
+  </tr>
+  <tr>
+    <td><a name='scRecurringGiftSchedule10'></a>SC10)</td>
+    <td>The field recognitionName should only be populated when recognitionType is 3.</td>
+  </tr>
+  <tr>
+    <td><a name='scRecurringGiftSchedule11'></a>SC11)</td>
+    <td>eTapestry allows transactions to denote a tribute (tributes are separate accounts within the database). &nbsp;For reporting purposes, eTapestry stores a replica of the transaction within the tribute's journal. &nbsp;When the field originalAccountRef, originalAccountName, and originalTransactionRef are populated, this transaction is a tribute's replica. &nbsp;The field originalAccountRef will contain the account ref of the original transaction owner. &nbsp;The field originalAccountName will contain the account name of the original transaction owner. &nbsp;The field originalTransactionRef will contain the ref of the original transaction. &nbsp;<b>Please note</b>, replica tribute transactions cannot be updated. &nbsp;If attempted, soap fault 107 will occur.</td>
+  </tr>
+  <tr>
+    <td><a name='scRecurringGiftSchedule12'></a>SC12)</td>
+    <td>Journal entries retrieved from eTapestry will contain all attachment data except the fileContent. &nbsp;This is done for efficiency purposes.</td>
+  </tr>
+</table>
+</body>
+</html>
+

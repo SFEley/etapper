@@ -1,0 +1,127 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<table width='100%'><tr>
+  <td><div class='complexTypeName'><img src='images/etap.gif'/> Valuable Complex Type<br></div></td>
+  <td align='right' valign='bottom'><div class='smallText'>ROA = Required on Add, ROU = Required on Update, Click Column Header to Sort Column</div></td>
+</tr></table>
+<table class='reportTable' id='ct_Valuable'>
+  <tr class='reportTableHeader' fixed='true'>
+    <td><a href="javascript:sortTable('ct_Valuable',0)">Name</a></td>
+    <td><a href="javascript:sortTable('ct_Valuable',1)">Type</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Valuable',2)" title='Required on Add'>ROA</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Valuable',3)" title='Required on Update'>ROU</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Valuable',4)">Read Only</a></td>
+    <td><a href="javascript:sortTable('ct_Valuable',5)">Basic Comments</a></td>
+    <td><a href="javascript:sortTable('ct_Valuable',6)">Special Comments</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>type</td>
+    <td>int</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>1 = Cash<br>2 = Check<br>3 = Credit Card<br>4 = EFT<br>5 = In Kind<br>6 = Real Estate<br>7 = Stock<br>8 = Bond<br>9 = Insurance</td>
+    <td><a href='ct_Valuable.html#scValuable1'>SC1</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>cash</td>
+    <td><a href='ct_Cash.html'>Cash</a></td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Valuable.html#scValuable2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>check</td>
+    <td><a href='ct_Check.html'>Check</a></td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Valuable.html#scValuable2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>creditCard</td>
+    <td><a href='ct_CreditCard.html'>CreditCard</a></td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Valuable.html#scValuable2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>electronicFundsTransfer</td>
+    <td><a href='ct_ElectronicFundsTransfer.html'>ElectronicFundsTransfer</a></td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Valuable.html#scValuable2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>inKind</td>
+    <td><a href='ct_InKind.html'>InKind</a></td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Valuable.html#scValuable2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>realEstate</td>
+    <td><a href='ct_RealEstate.html'>RealEstate</a></td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Valuable.html#scValuable2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>stock</td>
+    <td><a href='ct_Stock.html'>Stock</a></td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Valuable.html#scValuable2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>bond</td>
+    <td><a href='ct_Bond.html'>Bond</a></td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Valuable.html#scValuable2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>insurance</td>
+    <td><a href='ct_Insurance.html'>Insurance</a></td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Valuable.html#scValuable2'>SC2</a></td>
+  </tr>
+</table><br>
+<div class='specialComments'>Special Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td><a name='scValuable1'></a>SC1)</td>
+    <td>The field type indicates which one of the other fields contains data. &nbsp;If an add or update is being performed and the type contains zero or points to an item that isn't populated, a soap fault will occur.</td>
+  </tr>
+  <tr>
+    <td><a name='scValuable2'></a>SC2)</td>
+    <td>One and only of these fields should be populated. &nbsp;The type int indicates which one should be populated.</td>
+  </tr>
+</table>
+</body>
+</html>
+

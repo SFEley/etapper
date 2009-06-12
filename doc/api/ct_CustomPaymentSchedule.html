@@ -1,0 +1,73 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<table width='100%'><tr>
+  <td><div class='complexTypeName'><img src='images/etap.gif'/> CustomPaymentSchedule Complex Type<br></div></td>
+  <td align='right' valign='bottom'><div class='smallText'>ROA = Required on Add, ROU = Required on Update, Click Column Header to Sort Column</div></td>
+</tr></table>
+<table class='reportTable' id='ct_CustomPaymentSchedule'>
+  <tr class='reportTableHeader' fixed='true'>
+    <td><a href="javascript:sortTable('ct_CustomPaymentSchedule',0)">Name</a></td>
+    <td><a href="javascript:sortTable('ct_CustomPaymentSchedule',1)">Type</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_CustomPaymentSchedule',2)" title='Required on Add'>ROA</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_CustomPaymentSchedule',3)" title='Required on Update'>ROU</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_CustomPaymentSchedule',4)">Read Only</a></td>
+    <td><a href="javascript:sortTable('ct_CustomPaymentSchedule',5)">Basic Comments</a></td>
+    <td><a href="javascript:sortTable('ct_CustomPaymentSchedule',6)">Special Comments</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>installmentDates</td>
+    <td>date array</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>Array must contain two or more dates</td>
+    <td><a href='ct_CustomPaymentSchedule.html#scCustomPaymentSchedule1'>SC1</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>installmentAmounts</td>
+    <td>double array</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>Must be greater than zero<br>Array must contain two or more amounts</td>
+    <td><a href='ct_CustomPaymentSchedule.html#scCustomPaymentSchedule1'>SC1</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>processType</td>
+    <td>int</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_CustomPaymentSchedule.html#scCustomPaymentSchedule2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>note</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table><br>
+<div class='specialComments'>Special Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td><a name='scCustomPaymentSchedule1'></a>SC1)</td>
+    <td>The arrays installmentDates and installmentAmounts must contain the exact same number of items. &nbsp;The first date and first amount will be considered the first scheduled payment. &nbsp;In essence, each item in the date array is paired up with each item in the amount array according to position. &nbsp;Each array must contain multiple entries because a single entry in each would be considered a standard payment schedule.</td>
+  </tr>
+  <tr>
+    <td><a name='scCustomPaymentSchedule2'></a>SC2)</td>
+    <td>The field processType indicates whether processing of payments (for a Pledge) or recurring gifts (for a Recurring Gift Schedule) will be processed by eTapestry automatically. &nbsp;Please note, a transaction processor must be present (which is located at Manage...My Organization...eCommerce) if processType auto is desired for an add or update. &nbsp;If a transaction processor is not found and the processType is set to auto, a soap fault will occur. &nbsp;Also, if the processType is set to auto, the transaction must have a scheduledValuable provided with either creditCard or eft populated.</td>
+  </tr>
+</table>
+</body>
+</html>
+

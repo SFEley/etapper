@@ -1,0 +1,53 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<div class='methodName'><img src='images/etap.gif'/> getUserDefinedSetValues Method</div>
+<table class='reportTable'>
+  <tr class='reportTableHeader'>
+    <td width='20%'>Order</td>
+    <td width='40%'>Name</td>
+    <td>Type</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>Return</td>
+    <td>values</td>
+    <td><a href='ct_DefinedValue.html'>DefinedValue</a> array</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>Input 1</td>
+    <td>fieldName</td>
+    <td>string</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>Input 2</td>
+    <td>includeDisabled</td>
+    <td>boolean</td>
+  </tr>
+</table><br>
+<div class='specialComments'>Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td>1)</td>
+    <td>A soap fault will occur if the parameter fieldName is empty or invalid.</td>
+  </tr>
+  <tr>
+    <td>2)</td>
+    <td>Only fields with a display type of single select or multi select are allowed.</td>
+  </tr>
+  <tr>
+    <td>3)</td>
+    <td>Individual User Defined Fields can be located within eTapestry under Manage...Defined Fields...User Defined Fields.</td>
+  </tr>
+  <tr>
+    <td>4)</td>
+    <td>A high level view of User Defined Fields can be obtained by running one of the User Defined Field Reports within the Main...Report/Export category of 'eTapestry Standard Reports'.</td>
+  </tr>
+</table>
+</body>
+</html>
+

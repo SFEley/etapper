@@ -1,0 +1,95 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<table width='100%'><tr>
+  <td><div class='complexTypeName'><img src='images/etap.gif'/> DefinedValue Complex Type<br></div></td>
+  <td align='right' valign='bottom'><div class='smallText'>ROA = Required on Add, ROU = Required on Update, Click Column Header to Sort Column</div></td>
+</tr></table>
+<table class='reportTable' id='ct_DefinedValue'>
+  <tr class='reportTableHeader' fixed='true'>
+    <td><a href="javascript:sortTable('ct_DefinedValue',0)">Name</a></td>
+    <td><a href="javascript:sortTable('ct_DefinedValue',1)">Type</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_DefinedValue',2)" title='Required on Add'>ROA</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_DefinedValue',3)" title='Required on Update'>ROU</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_DefinedValue',4)">Read Only</a></td>
+    <td><a href="javascript:sortTable('ct_DefinedValue',5)">Basic Comments</a></td>
+    <td><a href="javascript:sortTable('ct_DefinedValue',6)">Special Comments</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>fieldRef</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_DefinedValue.html#scDefinedValue1'>SC1</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>fieldName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_DefinedValue.html#scDefinedValue1'>SC1</a> - <a href='ct_DefinedValue.html#scDefinedValue2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>displayType</td>
+    <td>int</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>0 = Text<br>1 = Single Select<br>2 = Multi Select<br>3 = Text Area (Note)</td>
+    <td><a href='ct_DefinedValue.html#scDefinedValue2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>dataType</td>
+    <td>int</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>0 = Text<br>1 = Date<br>2 = Month + Day<br>3 = Number<br>4 = Currency</td>
+    <td><a href='ct_DefinedValue.html#scDefinedValue2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>value</td>
+    <td>string</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_DefinedValue.html#scDefinedValue3'>SC3</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>valueRef</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table><br>
+<div class='specialComments'>Special Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td><a name='scDefinedValue1'></a>SC1)</td>
+    <td>Either field fieldRef or fieldName must be provided. &nbsp;If both are provided, only fieldRef will be utilized. &nbsp;If a new field should be created during an add or update, the fieldRef must be empty. &nbsp;Please note, if an add or update is processed createFieldAndValues set to false, the field must already apply to the account role type or journal entry type it is being being added or updated. Generally speaking, provided the fieldRef if the user defined field already is encouraged because this will increase the speed of the method call.</td>
+  </tr>
+  <tr>
+    <td><a name='scDefinedValue2'></a>SC2)</td>
+    <td>Fields fieldName, displayType and dataType cannot be updated on an existing user defined field. &nbsp;Fields displayType and dataType only apply when an add or update is being performed, createFieldAndValues is set to true, and a user defined field needs to be created.</td>
+  </tr>
+  <tr>
+    <td><a name='scDefinedValue3'></a>SC3)</td>
+    <td>If the field display type is single or multi select, the value must match (case sensitive) an existing value within the field provided. &nbsp;If the field display type is text, any value is acceptable as long as it appropirate for the field's data type. &nbsp;Data type text will accept any content. &nbsp;Data type date will only accept a date as a string with the format of m/d/yyyy. &nbsp;Data type month + day will only accept a date as a string with the format of m/d. &nbsp;Data type number will accept any valid number as a string (e.g. 3 or 4.5). &nbsp;Data type currency will accept any valid number as a string as long as it has two or fewer decimal places (e.g. 5 or 123.99). &nbsp;Please note, a currency symbol can optionally be added to a data type currency value.</td>
+  </tr>
+</table>
+</body>
+</html>
+

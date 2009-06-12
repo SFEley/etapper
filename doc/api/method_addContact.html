@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<div class='methodName'><img src='images/etap.gif'/> addContact Method</div>
+<table class='reportTable'>
+  <tr class='reportTableHeader'>
+    <td width='20%'>Order</td>
+    <td width='40%'>Name</td>
+    <td>Type</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>Return</td>
+    <td>contactRef</td>
+    <td>string</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>Input 1</td>
+    <td>contact</td>
+    <td><a href='ct_Contact.html'>Contact</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>Input 2</td>
+    <td>createFieldAndValues</td>
+    <td>boolean</td>
+  </tr>
+</table><br>
+<div class='specialComments'>Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td>1)</td>
+    <td>This method will add a new journal contact to an existing account.</td>
+  </tr>
+  <tr>
+    <td>2)</td>
+    <td>A soap fault will occur if the parameter contact is empty or invalid. &nbsp;Review <a href='ct_Contact.html'>Contact</a> to help avoid a soap fault.</td>
+  </tr>
+  <tr>
+    <td>3)</td>
+    <td>If the parameter createFieldAndValues is true, the following items will be created if they aren't located: the <a href='ct_Contact.html'>Contact</a> method and all <a href='ct_DefinedValue.html'>DefinedValue</a> fields and values. &nbsp;When this parameter is set to true, don't forget to set each <a href='ct_DefinedValue.html'>DefinedValue</a> dataType and displayType to appropriate values.</td>
+  </tr>
+</table>
+</body>
+</html>
+

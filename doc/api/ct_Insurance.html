@@ -1,0 +1,116 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<table width='100%'><tr>
+  <td><div class='complexTypeName'><img src='images/etap.gif'/> Insurance Complex Type<br></div></td>
+  <td align='right' valign='bottom'><div class='smallText'>ROA = Required on Add, ROU = Required on Update, Click Column Header to Sort Column</div></td>
+</tr></table>
+<table class='reportTable' id='ct_Insurance'>
+  <tr class='reportTableHeader' fixed='true'>
+    <td><a href="javascript:sortTable('ct_Insurance',0)">Name</a></td>
+    <td><a href="javascript:sortTable('ct_Insurance',1)">Type</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Insurance',2)" title='Required on Add'>ROA</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Insurance',3)" title='Required on Update'>ROU</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Insurance',4)">Read Only</a></td>
+    <td><a href="javascript:sortTable('ct_Insurance',5)">Basic Comments</a></td>
+    <td><a href="javascript:sortTable('ct_Insurance',6)">Special Comments</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>insurer</td>
+    <td>string</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>policyNumber</td>
+    <td>string</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>beneficiary</td>
+    <td>string</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>surrenderDate</td>
+    <td>date</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>surrenderValue</td>
+    <td>double</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>organizationPayingPremiums</td>
+    <td>boolean</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>premiumFrequency</td>
+    <td>int</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>1 = Annually<br>2 = Semi-Annually<br>4 = Quarterly<br>6 = Bi-Monthly<br>12 = Monthly<br>24 = Semi-Monthly<br>26 = Bi-Monthly<br>52 = Weekly</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>premiumAmount</td>
+    <td>double</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>lengthOfPolicyAgreement</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>note</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table><br>
+</body>
+</html>
+

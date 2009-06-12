@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<p><big>SOAP Session</big><br>
+<span class='normalText'>The eTapestry API is SOAP based.  The login method must be called first so eTapestry can validate the login information provided and verify the user has the appropriate license to access the api.  A session cookie is returned that must be passed back to eTapestry for each subsequent call.  If an api method other than login is called without the appropriate session cookie, a soap fault will occur indicating that access is denied.  Most implementations of SOAP have the ability to maintain client cookies.</span></p>
+<p><big>WSDL File</big><br>
+<span class='normalText'>The current eTapestry WSDL file can be found at <a href='https://app.etapestry.com/v2messaging/service?WSDL' target='_blank'>https://app.etapestry.com/v2messaging/service?WSDL</a></span></p>
+<p><big>Login Id</big><br>
+<span class='normalText'>eTapestry recommends a new login id be created for each implementation of the api.  This login id should have full administrator rights and be used exclusively by the api.</span></p>
+<p><big>Errors & How to Avoid Them</big><br>
+<span class='normalText'>All errors are thrown as soap faults.  A soap fault can be thrown during eTapestry's execution of any method.  It is important to properly handle errors in your code.  The best way to avoid errors is to review the comments provided for each method and complex type.  The ROA column on each complex type means <i>Required on Add</i>, ROU means <i>Required on Update</i>.  Pay close attention to these columns for each complex type you use.</span></p>
+<p><big>Using Complex Types</big><br>
+<span class='normalText'>Before calling a method with a complex type, it is important you review its documentation.  Most complex types have fields that are required to have particular values.  If you are looking to perform an add method (e.g. addAccount, addGift, etc...), pay close attention to the ROA column.  These fields are required when an add method is called.  If you are looking to perform an update method (e.g. updateAccount, updateNote, etc...), pay close attention to the ROU column.  These fields are required when an update method is called.  As a final note, pay close attention to any comments provided for any other field you will populate on a complex type.</span></p>
+<p><big>Using Update Methods</big><br>
+<span class='normalText'>All account and journal entry update methods will completely overwrite data that currently exists on that database item (regardless of whether that variable has content or not).  This means if an account currently has two phone types populated (say Voice and Fax) and updateAccount is processed without any phone data, the account will now have zero phone types populated.  The same thing applies for defined values and all object variables that aren't marked read only within the API documentation.  Before processing an update, eTapestry highly recommends retrieving the database object first, updating that retrieved object accordingly and using that updated object for the update method.  Sensitive data can be completely lost if this practice is not followed.</span></p>
+</body>
+</html>
+

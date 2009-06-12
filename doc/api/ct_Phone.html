@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<table width='100%'><tr>
+  <td><div class='complexTypeName'><img src='images/etap.gif'/> Phone Complex Type<br></div></td>
+  <td align='right' valign='bottom'><div class='smallText'>ROA = Required on Add, ROU = Required on Update, Click Column Header to Sort Column</div></td>
+</tr></table>
+<table class='reportTable' id='ct_Phone'>
+  <tr class='reportTableHeader' fixed='true'>
+    <td><a href="javascript:sortTable('ct_Phone',0)">Name</a></td>
+    <td><a href="javascript:sortTable('ct_Phone',1)">Type</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Phone',2)" title='Required on Add'>ROA</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Phone',3)" title='Required on Update'>ROU</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Phone',4)">Read Only</a></td>
+    <td><a href="javascript:sortTable('ct_Phone',5)">Basic Comments</a></td>
+    <td><a href="javascript:sortTable('ct_Phone',6)">Special Comments</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>type</td>
+    <td>string</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Phone.html#scPhone1'>SC1</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>number</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table><br>
+<div class='specialComments'>Special Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td><a name='scPhone1'></a>SC1)</td>
+    <td>The field type must match (case sensitive) an existing phone type name already in eTapestry. &nbsp;Existing phone type names can be found at Manage...System Defined Fields...Phone Type Code.</td>
+  </tr>
+</table>
+</body>
+</html>
+

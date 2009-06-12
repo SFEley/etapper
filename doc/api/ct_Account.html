@@ -1,0 +1,344 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<table width='100%'><tr>
+  <td><div class='complexTypeName'><img src='images/etap.gif'/> Account Complex Type<br></div></td>
+  <td align='right' valign='bottom'><div class='smallText'>ROA = Required on Add, ROU = Required on Update, Click Column Header to Sort Column</div></td>
+</tr></table>
+<table class='reportTable' id='ct_Account'>
+  <tr class='reportTableHeader' fixed='true'>
+    <td><a href="javascript:sortTable('ct_Account',0)">Name</a></td>
+    <td><a href="javascript:sortTable('ct_Account',1)">Type</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Account',2)" title='Required on Add'>ROA</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Account',3)" title='Required on Update'>ROU</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_Account',4)">Read Only</a></td>
+    <td><a href="javascript:sortTable('ct_Account',5)">Basic Comments</a></td>
+    <td><a href="javascript:sortTable('ct_Account',6)">Special Comments</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>id</td>
+    <td>int</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>ref</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>name</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount1'>SC1</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>sortName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>title</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount1'>SC1</a> - <a href='ct_Account.html#scAccount3'>SC3</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>firstName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount1'>SC1</a> - <a href='ct_Account.html#scAccount3'>SC3</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>middleName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount1'>SC1</a> - <a href='ct_Account.html#scAccount3'>SC3</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>lastName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount1'>SC1</a> - <a href='ct_Account.html#scAccount3'>SC3</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>personaTypes</td>
+    <td>string array</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>personaType</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount4'>SC4</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>primaryPersona</td>
+    <td>boolean</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount5'>SC5</a> - <a href='ct_Account.html#scAccount6'>SC6</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>address</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount5'>SC5</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>city</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount5'>SC5</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>state</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount5'>SC5</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>postalCode</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount5'>SC5</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>county</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount5'>SC5</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>country</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount5'>SC5</a> - <a href='ct_Account.html#scAccount7'>SC7</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>shortSalutation</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount5'>SC5</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>longSalutation</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount5'>SC5</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>phones</td>
+    <td><a href='ct_Phone.html'>Phone</a> array</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount5'>SC5</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>email</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount5'>SC5</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>webAddress</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount5'>SC5</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>note</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount5'>SC5</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>personaDefinedValues</td>
+    <td><a href='ct_DefinedValue.html'>DefinedValue</a> array</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount5'>SC5</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>accountDefinedValues</td>
+    <td><a href='ct_DefinedValue.html'>DefinedValue</a> array</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>donorRecognitionName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_Account.html#scAccount8'>SC8</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>donorRecognitionType</td>
+    <td>int</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>0 = User Donor Name<br>1 = Don't Recognize<br>2 = Anonymous<br>3 = Use Recognition Name</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>accountRoleType</td>
+    <td>int</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>0 = Donor<br>1 = Tribute<br>2 = User</td>
+    <td><a href='ct_Account.html#scAccount9'>SC9</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>donorRoleRef</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>Indicates the account has a donor role</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>tributeRoleRef</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>Indicates the account has a tribute role</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>userRoleRef</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>Indicates the account has a user role</td>
+    <td>&nbsp;</td>
+  </tr>
+</table><br>
+<div class='specialComments'>Special Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td><a name='scAccount1'></a>SC1)</td>
+    <td>eTapestry doesn't store individual name parts (title, first, middle, and last) within separate fields. &nbsp;Instead, a single field contains the entire name of an account which may be an individual, couple, business, etc... &nbsp;eTapestry has provided the name parts for convenience. &nbsp;Either an account name or the name parts must be provided on any account add or update. &nbsp;If no account name is provided, the name parts will be added together (title + first + middle + last) to form the account name.</td>
+  </tr>
+  <tr>
+    <td><a name='scAccount2'></a>SC2)</td>
+    <td>If sortName isn't provided on any account retrieval or update, one will be created using title, first, middle, and last. &nbsp;If all of the individual name part fields are empty, the sort name will equal the account name.</td>
+  </tr>
+  <tr>
+    <td><a name='scAccount3'></a>SC3)</td>
+    <td>These fields will always be empty on any account retrieval &nbsp;See comment number one to learn why.</td>
+  </tr>
+  <tr>
+    <td><a name='scAccount4'></a>SC4)</td>
+    <td>If the field personaType is populated, it must match (case sensitive) an existing persona type name in eTapestry. &nbsp;Existing persona type names can be found at Manage...System Defined Fields...Persona Types. &nbsp;If this field is empty when an add is performed, the organizaton's default persona type is used.</td>
+  </tr>
+  <tr>
+    <td><a name='scAccount5'></a>SC5)</td>
+    <td>These fields are all linked to the personaType. &nbsp;eTapestry accounts can have multiple persona types. &nbsp;These fields are subject to change for a single account based upon the personaType provided.</td>
+  </tr>
+  <tr>
+    <td><a name='scAccount6'></a>SC6)</td>
+    <td>The field primaryPersona indicates the personaType provided is primary on any account retrieval &nbsp;It also indicates the personaType should be primary on any account update.</td>
+  </tr>
+  <tr>
+    <td><a name='scAccount7'></a>SC7)</td>
+    <td>The country value provided on an account retrieval is a two character code that represents a country name. &nbsp;All country codes and names can be found within Manage...System Defined Fields...Country Codes. &nbsp;A valid two character country code must be provided on any account add or update, else a soap fault will occur.</td>
+  </tr>
+  <tr>
+    <td><a name='scAccount8'></a>SC8)</td>
+    <td>The field donorRecognitionName should only be populated when donorRecognitionType is 3.</td>
+  </tr>
+  <tr>
+    <td><a name='scAccount9'></a>SC9)</td>
+    <td>The field accountRoleType indicates the role type of the account. &nbsp;All eTapestry accounts will/can have one, two, or all three account role types. &nbsp;The donor role is the most common one. &nbsp;The tribute role is a special role that indicates a gift can be made in honor/memorial of this account (see tributeAccountRef on many of the transaction complex types). &nbsp;A user role is also a special role that has login&nbsp;ability to the eTapestry application. &nbsp;An account role type can be added (except for a user role) to an existing eTapestry account by setting this field and processing addAccount. &nbsp;Please note, the ref will always match either donorRoleRef, tributeRoleRef, or userRoleRef.</td>
+  </tr>
+</table>
+</body>
+</html>
+

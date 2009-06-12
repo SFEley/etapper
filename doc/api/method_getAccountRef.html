@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<div class='methodName'><img src='images/etap.gif'/> getAccountRef Method</div>
+<table class='reportTable'>
+  <tr class='reportTableHeader'>
+    <td width='20%'>Order</td>
+    <td width='40%'>Name</td>
+    <td>Type</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>Return</td>
+    <td>accountRef</td>
+    <td>string</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>Input 1</td>
+    <td>definedValue</td>
+    <td><a href='ct_DefinedValue.html'>DefinedValue</a></td>
+  </tr>
+</table><br>
+<div class='specialComments'>Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td>1)</td>
+    <td>The purpose of this method is to locate a single <a href='ct_Account.html'>Account</a> with the definedValue provided. &nbsp;If multiple accounts have the definedValue provided, soap fault error number 7 will occur. &nbsp;The value traditionally provided is a unique id that is stored within a display type text field.</td>
+  </tr>
+  <tr>
+    <td>2)</td>
+    <td>A soap fault will occur if the parameter definedValue is empty or invalid. &nbsp;Review <a href='ct_DefinedValue.html'>DefinedValue</a> to help avoid a soap fault.</td>
+  </tr>
+</table>
+</body>
+</html>
+

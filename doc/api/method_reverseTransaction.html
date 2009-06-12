@@ -1,0 +1,53 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<div class='methodName'><img src='images/etap.gif'/> reverseTransaction Method</div>
+<table class='reportTable'>
+  <tr class='reportTableHeader'>
+    <td width='20%'>Order</td>
+    <td width='40%'>Name</td>
+    <td>Type</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>Return</td>
+    <td>transactionRef</td>
+    <td>string</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>Input 1</td>
+    <td>transactionRef</td>
+    <td>string</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>Input 2</td>
+    <td>note</td>
+    <td>string</td>
+  </tr>
+</table><br>
+<div class='specialComments'>Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td>1)</td>
+    <td>This method will reverse a transaction (i.e. create a copy of the transaction with an inverse amount) and add this new transaction to the journal of the original transaction's owner. &nbsp;The new transaction is called the reversal and the original is considered the reversed.</td>
+  </tr>
+  <tr>
+    <td>2)</td>
+    <td>A soap fault will occur if the parameter transactionRef is empty or invalid.</td>
+  </tr>
+  <tr>
+    <td>3)</td>
+    <td>The note provided will be added to the note field of the newly created transaction.</td>
+  </tr>
+  <tr>
+    <td>4)</td>
+    <td>The following transaction types cannot be reversed: <a href='ct_RecurringGiftSchedule.html'>RecurringGiftSchedule</a> and <a href='ct_SoftCredit.html'>SoftCredit</a>. &nbsp;Needless to say, reversed or reversal transactions cannot be reversed.</td>
+  </tr>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,165 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<table width='100%'><tr>
+  <td><div class='complexTypeName'><img src='images/etap.gif'/> SegmentedPledge Complex Type<br></div></td>
+  <td align='right' valign='bottom'><div class='smallText'>ROA = Required on Add, ROU = Required on Update, Click Column Header to Sort Column</div></td>
+</tr></table>
+<table class='reportTable' id='ct_SegmentedPledge'>
+  <tr class='reportTableHeader' fixed='true'>
+    <td><a href="javascript:sortTable('ct_SegmentedPledge',0)">Name</a></td>
+    <td><a href="javascript:sortTable('ct_SegmentedPledge',1)">Type</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_SegmentedPledge',2)" title='Required on Add'>ROA</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_SegmentedPledge',3)" title='Required on Update'>ROU</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_SegmentedPledge',4)">Read Only</a></td>
+    <td><a href="javascript:sortTable('ct_SegmentedPledge',5)">Basic Comments</a></td>
+    <td><a href="javascript:sortTable('ct_SegmentedPledge',6)">Special Comments</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>type</td>
+    <td>int</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>Set to 13 when journal entry is retrieved from eTapestry</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>accountRef</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>Must be a donor role account</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>accountName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>ref</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>final</td>
+    <td>boolean</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_SegmentedPledge.html#scSegmentedPledge1'>SC1</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>upgraded</td>
+    <td>boolean</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_SegmentedPledge.html#scSegmentedPledge2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>date</td>
+    <td>date</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>totalAmount</td>
+    <td>double</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>Must be greater than or equal to zero</td>
+    <td><a href='ct_SegmentedPledge.html#scSegmentedPledge3'>SC3</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>totalNonDeductibleAmount</td>
+    <td>double</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>Must be greater than or equal to zero and less than or equal to the totalAmount</td>
+    <td><a href='ct_SegmentedPledge.html#scSegmentedPledge4'>SC4</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>segments</td>
+    <td>object array</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>Must have from 2 to 60 items</td>
+    <td><a href='ct_SegmentedPledge.html#scSegmentedPledge5'>SC5</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>consolidatedCustomSchedule</td>
+    <td><a href='ct_CustomPaymentSchedule.html'>CustomPaymentSchedule</a> array</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_SegmentedPledge.html#scSegmentedPledge6'>SC6</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>offsettingRef</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_SegmentedPledge.html#scSegmentedPledge7'>SC7</a></td>
+  </tr>
+</table><br>
+<div class='specialComments'>Special Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td><a name='scSegmentedPledge1'></a>SC1)</td>
+    <td>The field final indicates whether the transaction can be updated by non admin users. &nbsp;A true value means it cannot be updated by non admin users.</td>
+  </tr>
+  <tr>
+    <td><a name='scSegmentedPledge2'></a>SC2)</td>
+    <td>The field upgraded indicates this segmented pledge was upgraded (e.g. the pledge amount was increased via increased scheduled payment amounts or additional scheduled payments) at some point.</td>
+  </tr>
+  <tr>
+    <td><a name='scSegmentedPledge3'></a>SC3)</td>
+    <td>The field totalAmount must equal the sum of the amounts on the segments.</td>
+  </tr>
+  <tr>
+    <td><a name='scSegmentedPledge4'></a>SC4)</td>
+    <td>The field nonDeductibleAmount must equal the sum of the non deductible amounts on the segments.</td>
+  </tr>
+  <tr>
+    <td><a name='scSegmentedPledge5'></a>SC5)</td>
+    <td>The field segments must contain two or more pledges. &nbsp;This field can only contain pledges.</td>
+  </tr>
+  <tr>
+    <td><a name='scSegmentedPledge6'></a>SC6)</td>
+    <td>The field consolidatedCustomSchedule represents a compressed payment schedule that includes all scheduled payments within all pledge segments on this segmented pledge transaction. &nbsp;If two or more pledge segments have a schedule payment due on the same date, those scheduled payments will be combined into one within the consolidatedCustomSchedule.</td>
+  </tr>
+  <tr>
+    <td><a name='scSegmentedPledge7'></a>SC7)</td>
+    <td>eTapestry allows transactions to be reversed. &nbsp;The field offsettingRef indicates this transaction is a transaction that has been reversed or the reversal transaction. &nbsp;Reversal transanctions or transactions that have been reveresed cannot be updated.</td>
+  </tr>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,144 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<table width='100%'><tr>
+  <td><div class='complexTypeName'><img src='images/etap.gif'/> CreditCard Complex Type<br></div></td>
+  <td align='right' valign='bottom'><div class='smallText'>ROA = Required on Add, ROU = Required on Update, Click Column Header to Sort Column</div></td>
+</tr></table>
+<table class='reportTable' id='ct_CreditCard'>
+  <tr class='reportTableHeader' fixed='true'>
+    <td><a href="javascript:sortTable('ct_CreditCard',0)">Name</a></td>
+    <td><a href="javascript:sortTable('ct_CreditCard',1)">Type</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_CreditCard',2)" title='Required on Add'>ROA</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_CreditCard',3)" title='Required on Update'>ROU</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_CreditCard',4)">Read Only</a></td>
+    <td><a href="javascript:sortTable('ct_CreditCard',5)">Basic Comments</a></td>
+    <td><a href="javascript:sortTable('ct_CreditCard',6)">Special Comments</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>number</td>
+    <td>string</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>nameOnCard</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>expirationMonth</td>
+    <td>int</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>Must be from 1 to 12</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>expirationYear</td>
+    <td>int</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>Must be from 1900 to 9999</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>cardType</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_CreditCard.html#scCreditCard1'>SC1</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>cvv2</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_CreditCard.html#scCreditCard2'>SC2</a> - <a href='ct_CreditCard.html#scCreditCard3'>SC3</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>authorizationCode</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_CreditCard.html#scCreditCard3'>SC3</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>note</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_CreditCard.html#scCreditCard3'>SC3</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>firstName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_CreditCard.html#scCreditCard4'>SC4</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>middleName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_CreditCard.html#scCreditCard4'>SC4</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>lastName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_CreditCard.html#scCreditCard4'>SC4</a></td>
+  </tr>
+</table><br>
+<div class='specialComments'>Special Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td><a name='scCreditCard1'></a>SC1)</td>
+    <td>The field cardType must match (case sensitive) an existing card type name in eTapestry. &nbsp;Existing card type names can be found at Manage...System Defined Fields...Credit Card.</td>
+  </tr>
+  <tr>
+    <td><a name='scCreditCard2'></a>SC2)</td>
+    <td>The field cvv2 will not be stored within eTapestry. &nbsp;This field is only used when addAndProcess is performed.</td>
+  </tr>
+  <tr>
+    <td><a name='scCreditCard3'></a>SC3)</td>
+    <td>These fields are not stored within eTapestry when the corresponding valuable is a scheduled valuable on a pledge.</td>
+  </tr>
+  <tr>
+    <td><a name='scCreditCard4'></a>SC4)</td>
+    <td>These fields are not stored within eTapestry. &nbsp;They are used when addAndProcess is performed. &nbsp;If nameOnCard is empty, these fields will be combined (firstName + middleName + lastName) to set the name on the credit card, which is stored within eTapestry. &nbsp;If neither these fields or nameOnCard is provided when addAndProcess is performed, the name of the account will be used.</td>
+  </tr>
+</table>
+</body>
+</html>
+

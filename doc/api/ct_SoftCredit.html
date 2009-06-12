@@ -1,0 +1,192 @@
+<html>
+<head>
+  <title>eTapestry API Help</title>
+  <link rel='StyleSheet' href='main.css' type='text/css'>
+  <script src='SortTable.js'></script>
+</head>
+<body>
+
+<table width='100%'><tr>
+  <td><div class='complexTypeName'><img src='images/etap.gif'/> SoftCredit Complex Type<br></div></td>
+  <td align='right' valign='bottom'><div class='smallText'>ROA = Required on Add, ROU = Required on Update, Click Column Header to Sort Column</div></td>
+</tr></table>
+<table class='reportTable' id='ct_SoftCredit'>
+  <tr class='reportTableHeader' fixed='true'>
+    <td><a href="javascript:sortTable('ct_SoftCredit',0)">Name</a></td>
+    <td><a href="javascript:sortTable('ct_SoftCredit',1)">Type</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_SoftCredit',2)" title='Required on Add'>ROA</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_SoftCredit',3)" title='Required on Update'>ROU</a></td>
+    <td align='center'><a href="javascript:sortTable('ct_SoftCredit',4)">Read Only</a></td>
+    <td><a href="javascript:sortTable('ct_SoftCredit',5)">Basic Comments</a></td>
+    <td><a href="javascript:sortTable('ct_SoftCredit',6)">Special Comments</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>type</td>
+    <td>int</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>Set to 11 when journal entry is retrieved from eTapestry</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>accountRef</td>
+    <td>string</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>accountName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>ref</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>final</td>
+    <td>boolean</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_SoftCredit.html#scSoftCredit1'>SC1</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>date</td>
+    <td>date</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_SoftCredit.html#scSoftCredit2'>SC2</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>amount</td>
+    <td>double</td>
+    <td align='center'>Yes</td>
+    <td align='center'>Yes</td>
+    <td align='center'>&nbsp;</td>
+    <td>Must be greater than or equal to zero</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>fund</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_SoftCredit.html#scSoftCredit3'>SC3</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>campaign</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_SoftCredit.html#scSoftCredit4'>SC4</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>approach</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_SoftCredit.html#scSoftCredit5'>SC5</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>letter</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_SoftCredit.html#scSoftCredit6'>SC6</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>note</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>hardCreditRef</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_SoftCredit.html#scSoftCredit7'>SC7</a></td>
+  </tr>
+  <tr class='reportTableRowAlt'>
+    <td>hardCreditAccountRef</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_SoftCredit.html#scSoftCredit7'>SC7</a></td>
+  </tr>
+  <tr class='reportTableRow'>
+    <td>hardCreditAccountName</td>
+    <td>string</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>Yes</td>
+    <td>&nbsp;</td>
+    <td><a href='ct_SoftCredit.html#scSoftCredit7'>SC7</a></td>
+  </tr>
+</table><br>
+<div class='specialComments'>Special Comments</div>
+<table class='specialCommentTable'>
+  <tr>
+    <td><a name='scSoftCredit1'></a>SC1)</td>
+    <td>The field final indicates whether the transaction can be updated by non admin users. &nbsp;A true value means it cannot be updated by non admin users.</td>
+  </tr>
+  <tr>
+    <td><a name='scSoftCredit2'></a>SC2)</td>
+    <td>If an add or update is being performed and this soft credit is linked to a hard credit transaction, the date will be overwritten by the date of the hard credit transaction.</td>
+  </tr>
+  <tr>
+    <td><a name='scSoftCredit3'></a>SC3)</td>
+    <td>The field fund must match (case sensitive) an existing fund name in eTapestry. &nbsp;Existing fund names can be found at Manage...Funds.</td>
+  </tr>
+  <tr>
+    <td><a name='scSoftCredit4'></a>SC4)</td>
+    <td>The field campaign must match (case sensitive) an existing campaign name in eTapestry. &nbsp;Existing campaign names can be found at Manage...Campaigns.</td>
+  </tr>
+  <tr>
+    <td><a name='scSoftCredit5'></a>SC5)</td>
+    <td>The field approach must match (case sensitive) an existing approach name in eTapestry. &nbsp;Existing approach names can be found at Manage...Approaches.</td>
+  </tr>
+  <tr>
+    <td><a name='scSoftCredit6'></a>SC6)</td>
+    <td>The field letter must match (case sensitive) an existing letter name in eTapestry. &nbsp;Existing letter names can be found at Manage...Letters.</td>
+  </tr>
+  <tr>
+    <td><a name='scSoftCredit7'></a>SC7)</td>
+    <td>The field hardCreditRef indicates this soft credit is linked to another transaction. &nbsp;The field hardCreditAccountRef will contain the account ref of the other transaction owner. &nbsp;The field hardCreditAccountName will contain the account name of the other transaction owner.</td>
+  </tr>
+</table>
+</body>
+</html>
+
