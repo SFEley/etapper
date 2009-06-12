@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<div class='methodName'><img src='images/etap.gif'/> getNoteRef Method</div>
+<div class='methodName'><img src='images/etap.gif'/> getNoteByUniqueDefinedValue Method</div>
 <table class='reportTable'>
   <tr class='reportTableHeader'>
     <td width='20%'>Order</td>
@@ -15,8 +15,8 @@
   </tr>
   <tr class='reportTableRow'>
     <td>Return</td>
-    <td>noteRef</td>
-    <td>string</td>
+    <td>note</td>
+    <td><a href='ct_Note.html'>Note</a></td>
   </tr>
   <tr class='reportTableRowAlt'>
     <td>Input 1</td>
@@ -28,7 +28,7 @@
 <table class='specialCommentTable'>
   <tr>
     <td>1)</td>
-    <td>The purpose of this method is to locate a single <a href='ct_Note.html'>Note</a> with the definedValue provided. &nbsp;If multiple notes have the definedValue provided, soap fault error number 7 will occur. &nbsp;The value traditionally provided is a unique id that is stored within a display type text field.</td>
+    <td>The purpose of this method is to locate a single <a href='ct_Note.html'>Note</a> with the definedValue provided. &nbsp;If multiple notes have the definedValue provided, a soap fault (7 - Duplicate Matches Found) will occur. &nbsp;The value traditionally provided is a unique id that is stored within a display type text field.</td>
   </tr>
   <tr>
     <td>2)</td>
