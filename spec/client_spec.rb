@@ -17,16 +17,15 @@ describe "Bare client" do
   end
   
   it "knows its username" do
-    client.username = 'johntest'
-    client.username.should == 'johntest'
+    client.username.should == 'etapper_johntest'
+  end
+
+  it "knows its password" do
+    client.password.should == 'mypass'
   end
   
   it "lets you set a password" do
     lambda{client.password = 'mypass'}.should_not raise_error
-  end
-  
-  it "doesn't let you read the password" do
-    client.should_not respond_to(:password)
   end
   
   it "knows if it's connected" do

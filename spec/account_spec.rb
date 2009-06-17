@@ -199,11 +199,11 @@ describe "Account" do
     end
     
     it "cannot set its id" do
-      lambda{@account.id = 18618}.should raise_error Etapper::ReadOnlyError, "Account ID is read-only!"
+      lambda{@account.id = 18618}.should raise_error Etapper::ReadOnlyError, "Account id is read-only!"
     end
 
     it "cannot set its ref" do
-      lambda{@account.ref = "4310.0.2276679"}.should raise_error Etapper::ReadOnlyError, "Account Ref is read-only!"
+      lambda{@account.ref = "4310.0.2276679"}.should raise_error Etapper::ReadOnlyError, "Account ref is read-only!"
     end
 
     it "can set its name" do
@@ -237,7 +237,7 @@ describe "Account" do
     end
 
     it "cannot set its persona type array" do
-      lambda{@account.personaTypes = ["Personal"]}.should raise_error Etapper::ReadOnlyError, "Account Persona Type array is read-only!"
+      lambda{@account.personaTypes = ["Personal"]}.should raise_error Etapper::ReadOnlyError, "Account personaTypes is read-only!"
     end
 
     it "can set its persona type" do
@@ -321,15 +321,15 @@ describe "Account" do
     end
 
     it "cannot set its donor role ref" do
-      lambda{@account.donorRoleRef = "4310.0.2276679"}.should raise_error Etapper::ReadOnlyError, "Account Donor Role Ref is read-only!"
+      lambda{@account.donorRoleRef = "4310.0.2276679"}.should raise_error Etapper::ReadOnlyError, "Account donorRoleRef is read-only!"
     end
 
     it "cannot set its tribute role ref" do
-      lambda{@account.tributeRoleRef = "4310.0.2276679"}.should raise_error Etapper::ReadOnlyError, "Account Tribute Role Ref is read-only!"
+      lambda{@account.tributeRoleRef = "4310.0.2276679"}.should raise_error Etapper::ReadOnlyError, "Account tributeRoleRef is read-only!"
     end
 
     it "cannot set its user role ref" do
-      lambda{@account.userRoleRef = "4310.0.2276679"}.should raise_error Etapper::ReadOnlyError, "Account User Role Ref is read-only!"
+      lambda{@account.userRoleRef = "4310.0.2276679"}.should raise_error Etapper::ReadOnlyError, "Account userRoleRef is read-only!"
     end
 
     it "can set its main phone number" do

@@ -5,6 +5,71 @@ describe "Authentication" do
     client.disconnect
   end
   
+  describe "username/password setting" do
+    before(:each) do
+      client.instance_variable_set(:@username, nil)
+      client.instance_variable_set(:@password, nil)
+    end
+    describe "from environment variables" do
+      it "uses ETAPPER_USERNAME if the username isn't supplied" do
+        ENV.expects(:[]).with('ETAPPER_USERNAME').returns('yoo')
+        client.username.should == 'yoo'
+      end
+      it "uses ETAPPER_PASSWORD if the password isn't supplied" do
+        ENV.expects(:[]).with('ETAPPER_PASSWORD').returns('yar')
+        client.password.should == 'yar'
+      end
+    end
+    describe "from .etapper/config.yml" do
+      before(:each) do
+        ENV.stubs(:[]).returns(nil)
+        File.stubs(:exists?).returns(true)
+        YAML.stubs(:load_file).returns({'username' => 'foo', 'password' => 'bar'})
+      end
+      it "does not load the YAML file if it has what it needs from environment variables" do
+        YAML.expects(:load_file).never
+        ENV.expects(:[]).with('ETAPPER_USERNAME').returns('hoo')
+        client.username.should == 'hoo'
+      end
+      
+      it "loads the YAML file when environment variables and overrides aren't supplied" do
+        YAML.expects(:load_file).returns({'username' => 'floo'})
+        client.username.should == 'floo'
+      end
+      
+      it "returns nil when the YAML file doesn't exist" do
+        File.expects(:exists?).returns(false)
+        client.username.should be_nil
+      end
+      
+      it 'supplies "username" as a last resort' do
+        client.username.should == 'foo'
+      end
+      
+      it 'supplies "password" as a last resort' do
+        client.password.should == 'bar'
+      end
+    end
+    
+    describe "manually from code" do
+      it 'allows the username to be set to anything' do
+        client.username = 'blobbo'
+        client.username.should == 'blobbo'
+      end
+      it 'allows the password to be set to anything' do
+        client.password = 'hoodoo'
+        client.password.should == 'hoodoo'
+      end
+    end
+    
+    # Clean up our mess for subsequent tests
+    after(:each) do
+      client.instance_variable_set(:@username, nil)
+      client.instance_variable_set(:@password, nil)
+      client.instance_variable_set(:@config_file, nil)
+    end
+  end
+  
   it "knows when it isn't connected" do
     client.should_not be_connected
   end
@@ -27,12 +92,12 @@ describe "Authentication" do
   end
   
   it "doesn't try to connect without a username" do
-    client.username = nil
+    client.expects(:username).returns(nil)
     lambda {client.fakeMethod}.should raise_error(Etapper::ConnectionError, "Username is required!")
   end
 
   it "doesn't try to connect without a password" do
-    client.password = nil
+    client.expects(:password).returns(nil)
     lambda {client.fakeMethod}.should raise_error(Etapper::ConnectionError, "Password is required!")
   end
   
@@ -48,13 +113,7 @@ describe "Authentication" do
     client.should_not be_connected
   end
   
-  describe "without connecting first" do
-    before(:each) do
-      @client = Etapper::Client.new(:username => 'etapper_johntest', :password => 'mypass', :connect => false)
-    end
-    
-  end
-  
+ 
   describe "connect method" do
     it "calls login from the driver" do
       @dummy.expects(:login).returns("")

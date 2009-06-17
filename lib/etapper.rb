@@ -6,6 +6,7 @@ module Etapper
   VERSION = '0.0.1'
   ETAP_URL = "https://app.etapestry.com:443/v2messaging/service" # Have to declare before driver
   ETAP_NS = "etapestryAPI/service" # Namespace
+  ETAPPER_DIR = File.expand_path("~/.etapper")
 end
 
 ETAPPER_LIB = File.dirname(__FILE__)

@@ -29,12 +29,16 @@ module Etapper
     end
     
     def username
-      @username
+      @username ||= ENV['ETAPPER_USERNAME'] || config_file["username"]
     end
     
     def username=(val)
       @username = val
       disconnect
+    end
+    
+    def password
+      @password ||= ENV['ETAPPER_PASSWORD'] || config_file["password"]
     end
     
     def password=(val)
@@ -58,8 +62,8 @@ module Etapper
     
     def connect
       unless connected?
-        raise ConnectionError, "Username is required!" unless @username
-        raise ConnectionError, "Password is required!" unless @password
+        raise ConnectionError, "Username is required!" unless username
+        raise ConnectionError, "Password is required!" unless password
         result = @driver.login(@username, @password)
         if result == ''
           @connected = true
@@ -94,6 +98,18 @@ module Etapper
   protected
     def driver
       @driver
+    end
+    
+    def config_file
+      unless @config_file
+        location = File.join(Etapper::ETAPPER_DIR, 'config.yml')
+        if File.exists?(location)
+          @config_file = YAML.load_file(location)
+        else
+          @config_file = {}
+        end
+      end
+      @config_file
     end
   end
   

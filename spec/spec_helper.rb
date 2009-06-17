@@ -10,6 +10,9 @@ class TestError < StandardError; end
 $:.unshift(File.dirname(__FILE__) + '/../lib')
 $:.unshift(File.dirname(__FILE__))
 
+ENV["ETAPPER_USERNAME"] = 'etapper_johntest'
+ENV["ETAPPER_PASSWORD"] = 'mypass'
+
 require 'etapper'
 require 'stub_driver'
 
@@ -30,9 +33,5 @@ Spec::Runner.configure do |config|
   config.mock_with :mocha
   
   config.include(MockDriver) unless Spec::TEST_LIVE
-  config.before(:each) do
-    client.username = 'etapper_johntest'
-    client.password = 'mypass'
-  end
 end
 
