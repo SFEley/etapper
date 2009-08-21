@@ -1,6 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 require File.expand_path(File.dirname(__FILE__) + '/shared_etap_hash_spec')
-require 'YAML'
 
 describe Etapper::PhoneHash do
   before(:each) do

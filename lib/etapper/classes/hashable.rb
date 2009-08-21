@@ -9,7 +9,7 @@ module Etapper
     def append_to_hash(hash)
       hash ||= Hash.new
       if hash.has_key?(key)
-        arr = hash[key].to_a
+        arr = Array(hash[key])
         hash[key] = arr.push(value)
         hash
       else

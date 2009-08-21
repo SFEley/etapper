@@ -1,6 +1,11 @@
 require 'rubygems'
-gem 'soap4r', '= 1.5.8'
-gem 'english', '= 0.3.1'
+
+# Pull stuff out of vendor/gems
+Dir.glob(File.dirname(__FILE__) + "/../vendor/gems/*").each do |path|
+  gem_name = File.basename(path.gsub(/-[\d\.]+$/, ''))
+  $LOAD_PATH << path + "/lib/"
+end
+
 
 module Etapper
   VERSION = '0.0.1'
