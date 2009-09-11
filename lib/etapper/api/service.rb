@@ -1,6 +1,6 @@
 require 'xsd/qname'
 
-module Etapper; module API
+module Etapper::API
 
 
 # {etapestryAPI/service}Account
@@ -174,6 +174,8 @@ end
 #   nonDeductibleAmount - SOAP::SOAPDouble
 #   note - SOAP::SOAPString
 #   offsettingRef - SOAP::SOAPString
+#   orderDetail - Etapper::API::OrderDetail
+#   orderInfo - Etapper::API::OrderInfo
 #   originalAccountName - SOAP::SOAPString
 #   originalAccountRef - SOAP::SOAPString
 #   originalTransactionRef - SOAP::SOAPString
@@ -205,6 +207,8 @@ class Gift
   attr_accessor :nonDeductibleAmount
   attr_accessor :note
   attr_accessor :offsettingRef
+  attr_accessor :orderDetail
+  attr_accessor :orderInfo
   attr_accessor :originalAccountName
   attr_accessor :originalAccountRef
   attr_accessor :originalTransactionRef
@@ -219,7 +223,7 @@ class Gift
   attr_accessor :type
   attr_accessor :valuable
 
-  def initialize(accountName = nil, accountRef = nil, amount = nil, approach = nil, attachments = nil, campaign = nil, createdDate = nil, date = nil, definedValues = nil, final = nil, fund = nil, fundraiser = nil, lastModifiedDate = nil, letter = nil, nonDeductibleAmount = nil, note = nil, offsettingRef = nil, originalAccountName = nil, originalAccountRef = nil, originalTransactionRef = nil, receipt = nil, recognitionName = nil, recognitionType = nil, ref = nil, segmentedTransactionRef = nil, softCredit = nil, tributeAccountName = nil, tributeAccountRef = nil, type = nil, valuable = nil)
+  def initialize(accountName = nil, accountRef = nil, amount = nil, approach = nil, attachments = nil, campaign = nil, createdDate = nil, date = nil, definedValues = nil, final = nil, fund = nil, fundraiser = nil, lastModifiedDate = nil, letter = nil, nonDeductibleAmount = nil, note = nil, offsettingRef = nil, orderDetail = nil, orderInfo = nil, originalAccountName = nil, originalAccountRef = nil, originalTransactionRef = nil, receipt = nil, recognitionName = nil, recognitionType = nil, ref = nil, segmentedTransactionRef = nil, softCredit = nil, tributeAccountName = nil, tributeAccountRef = nil, type = nil, valuable = nil)
     @accountName = accountName
     @accountRef = accountRef
     @amount = amount
@@ -237,6 +241,8 @@ class Gift
     @nonDeductibleAmount = nonDeductibleAmount
     @note = note
     @offsettingRef = offsettingRef
+    @orderDetail = orderDetail
+    @orderInfo = orderInfo
     @originalAccountName = originalAccountName
     @originalAccountRef = originalAccountRef
     @originalTransactionRef = originalTransactionRef
@@ -272,6 +278,74 @@ class Attachment
     @filename = filename
     @mimeType = mimeType
     @ref = ref
+  end
+end
+
+# {etapestryAPI/service}OrderDetail
+#   itemName - SOAP::SOAPString
+#   itemRef - SOAP::SOAPString
+#   quantity - SOAP::SOAPInt
+class OrderDetail
+  attr_accessor :itemName
+  attr_accessor :itemRef
+  attr_accessor :quantity
+
+  def initialize(itemName = nil, itemRef = nil, quantity = nil)
+    @itemName = itemName
+    @itemRef = itemRef
+    @quantity = quantity
+  end
+end
+
+# {etapestryAPI/service}OrderInfo
+#   billingAddress - SOAP::SOAPString
+#   billingCity - SOAP::SOAPString
+#   billingCountry - SOAP::SOAPString
+#   billingEmail - SOAP::SOAPString
+#   billingName - SOAP::SOAPString
+#   billingPhone - SOAP::SOAPString
+#   billingPostalCode - SOAP::SOAPString
+#   billingState - SOAP::SOAPString
+#   shippingAddress - SOAP::SOAPString
+#   shippingCity - SOAP::SOAPString
+#   shippingCountry - SOAP::SOAPString
+#   shippingName - SOAP::SOAPString
+#   shippingPostalCode - SOAP::SOAPString
+#   shippingState - SOAP::SOAPString
+#   shippingType - SOAP::SOAPInt
+class OrderInfo
+  attr_accessor :billingAddress
+  attr_accessor :billingCity
+  attr_accessor :billingCountry
+  attr_accessor :billingEmail
+  attr_accessor :billingName
+  attr_accessor :billingPhone
+  attr_accessor :billingPostalCode
+  attr_accessor :billingState
+  attr_accessor :shippingAddress
+  attr_accessor :shippingCity
+  attr_accessor :shippingCountry
+  attr_accessor :shippingName
+  attr_accessor :shippingPostalCode
+  attr_accessor :shippingState
+  attr_accessor :shippingType
+
+  def initialize(billingAddress = nil, billingCity = nil, billingCountry = nil, billingEmail = nil, billingName = nil, billingPhone = nil, billingPostalCode = nil, billingState = nil, shippingAddress = nil, shippingCity = nil, shippingCountry = nil, shippingName = nil, shippingPostalCode = nil, shippingState = nil, shippingType = nil)
+    @billingAddress = billingAddress
+    @billingCity = billingCity
+    @billingCountry = billingCountry
+    @billingEmail = billingEmail
+    @billingName = billingName
+    @billingPhone = billingPhone
+    @billingPostalCode = billingPostalCode
+    @billingState = billingState
+    @shippingAddress = shippingAddress
+    @shippingCity = shippingCity
+    @shippingCountry = shippingCountry
+    @shippingName = shippingName
+    @shippingPostalCode = shippingPostalCode
+    @shippingState = shippingState
+    @shippingType = shippingType
   end
 end
 
@@ -1650,93 +1724,210 @@ class PagedCartElementsRequest
 end
 
 # {etapestryAPI/service}CartItem
-#   deductibleAmount - SOAP::SOAPDouble
 #   disabled - SOAP::SOAPBoolean
 #   longDescription - SOAP::SOAPString
+#   manageQuantity - SOAP::SOAPBoolean
 #   name - SOAP::SOAPString
-#   nonTaxableAmount - SOAP::SOAPDouble
+#   nonDeductibleAmount - SOAP::SOAPDouble
 #   parents - Etapper::API::ArrayOfCartParent
+#   pricingType - SOAP::SOAPInt
+#   publicizeQuantity - SOAP::SOAPBoolean
 #   publishEndDate - SOAP::SOAPString
 #   publishStartDate - SOAP::SOAPString
 #   publishableNow - SOAP::SOAPBoolean
+#   quantity - SOAP::SOAPInt
+#   questions - Etapper::API::ArrayOfQuestion
 #   ref - SOAP::SOAPString
 #   regularImages - Etapper::API::ArrayOfCartImage
 #   regularPrice - SOAP::SOAPDouble
+#   shippable - SOAP::SOAPBoolean
 #   shippingPrice - SOAP::SOAPDouble
 #   shortDescription - SOAP::SOAPString
+#   taxableAmount - SOAP::SOAPDouble
 #   thumbImage - Etapper::API::CartImage
 #   type - SOAP::SOAPInt
 class CartItem
-  attr_accessor :deductibleAmount
   attr_accessor :disabled
   attr_accessor :longDescription
+  attr_accessor :manageQuantity
   attr_accessor :name
-  attr_accessor :nonTaxableAmount
+  attr_accessor :nonDeductibleAmount
   attr_accessor :parents
+  attr_accessor :pricingType
+  attr_accessor :publicizeQuantity
   attr_accessor :publishEndDate
   attr_accessor :publishStartDate
   attr_accessor :publishableNow
+  attr_accessor :quantity
+  attr_accessor :questions
   attr_accessor :ref
   attr_accessor :regularImages
   attr_accessor :regularPrice
+  attr_accessor :shippable
   attr_accessor :shippingPrice
   attr_accessor :shortDescription
+  attr_accessor :taxableAmount
   attr_accessor :thumbImage
   attr_accessor :type
 
-  def initialize(deductibleAmount = nil, disabled = nil, longDescription = nil, name = nil, nonTaxableAmount = nil, parents = nil, publishEndDate = nil, publishStartDate = nil, publishableNow = nil, ref = nil, regularImages = nil, regularPrice = nil, shippingPrice = nil, shortDescription = nil, thumbImage = nil, type = nil)
-    @deductibleAmount = deductibleAmount
+  def initialize(disabled = nil, longDescription = nil, manageQuantity = nil, name = nil, nonDeductibleAmount = nil, parents = nil, pricingType = nil, publicizeQuantity = nil, publishEndDate = nil, publishStartDate = nil, publishableNow = nil, quantity = nil, questions = nil, ref = nil, regularImages = nil, regularPrice = nil, shippable = nil, shippingPrice = nil, shortDescription = nil, taxableAmount = nil, thumbImage = nil, type = nil)
     @disabled = disabled
     @longDescription = longDescription
+    @manageQuantity = manageQuantity
     @name = name
-    @nonTaxableAmount = nonTaxableAmount
+    @nonDeductibleAmount = nonDeductibleAmount
     @parents = parents
+    @pricingType = pricingType
+    @publicizeQuantity = publicizeQuantity
     @publishEndDate = publishEndDate
     @publishStartDate = publishStartDate
     @publishableNow = publishableNow
+    @quantity = quantity
+    @questions = questions
     @ref = ref
     @regularImages = regularImages
     @regularPrice = regularPrice
+    @shippable = shippable
     @shippingPrice = shippingPrice
     @shortDescription = shortDescription
+    @taxableAmount = taxableAmount
     @thumbImage = thumbImage
     @type = type
   end
 end
 
+# {etapestryAPI/service}Question
+#   displayText - SOAP::SOAPString
+#   field - Etapper::API::DefinedField
+#   ref - SOAP::SOAPString
+#   required - SOAP::SOAPBoolean
+class Question
+  attr_accessor :displayText
+  attr_accessor :field
+  attr_accessor :ref
+  attr_accessor :required
+
+  def initialize(displayText = nil, field = nil, ref = nil, required = nil)
+    @displayText = displayText
+    @field = field
+    @ref = ref
+    @required = required
+  end
+end
+
+# {etapestryAPI/service}DefinedField
+#   applicationTypes - Etapper::API::ArrayOfint
+#   category - SOAP::SOAPString
+#   dataType - SOAP::SOAPInt
+#   desc - SOAP::SOAPString
+#   disabled - SOAP::SOAPBoolean
+#   displayType - SOAP::SOAPInt
+#   name - SOAP::SOAPString
+#   ref - SOAP::SOAPString
+#   required - SOAP::SOAPBoolean
+#   securityRights - Etapper::API::ArrayOfDefinedFieldValue
+#   system - SOAP::SOAPBoolean
+#   values - Etapper::API::ArrayOfDefinedFieldValue
+class DefinedField
+  attr_accessor :applicationTypes
+  attr_accessor :category
+  attr_accessor :dataType
+  attr_accessor :desc
+  attr_accessor :disabled
+  attr_accessor :displayType
+  attr_accessor :name
+  attr_accessor :ref
+  attr_accessor :required
+  attr_accessor :securityRights
+  attr_accessor :system
+  attr_accessor :values
+
+  def initialize(applicationTypes = nil, category = nil, dataType = nil, desc = nil, disabled = nil, displayType = nil, name = nil, ref = nil, required = nil, securityRights = nil, system = nil, values = nil)
+    @applicationTypes = applicationTypes
+    @category = category
+    @dataType = dataType
+    @desc = desc
+    @disabled = disabled
+    @displayType = displayType
+    @name = name
+    @ref = ref
+    @required = required
+    @securityRights = securityRights
+    @system = system
+    @values = values
+  end
+end
+
+# {etapestryAPI/service}DefinedFieldValue
+#   desc - SOAP::SOAPString
+#   disabled - SOAP::SOAPBoolean
+#   ref - SOAP::SOAPString
+#   value - SOAP::SOAPString
+class DefinedFieldValue
+  attr_accessor :desc
+  attr_accessor :disabled
+  attr_accessor :ref
+  attr_accessor :value
+
+  def initialize(desc = nil, disabled = nil, ref = nil, value = nil)
+    @desc = desc
+    @disabled = disabled
+    @ref = ref
+    @value = value
+  end
+end
+
 # {etapestryAPI/service}CartPreferences
+#   categoryHeader - SOAP::SOAPString
+#   checkoutQuestions - Etapper::API::ArrayOfQuestion
+#   domesticCountries - Etapper::API::ArrayOfstring
 #   expressShippingPrice - SOAP::SOAPDouble
+#   freeOrderRegularShippingPrice - SOAP::SOAPDouble
 #   internationalShippingPrice - SOAP::SOAPDouble
 #   regularShippingPrice - SOAP::SOAPDouble
 #   salesTaxKey - SOAP::SOAPInt
 #   siteName - SOAP::SOAPString
 #   siteTitle - SOAP::SOAPString
+#   soldOutLabel - SOAP::SOAPString
 #   stateTaxRates - Etapper::API::ArrayOfStateTaxRate
 #   successMessage - SOAP::SOAPString
 #   templateSetFolder - SOAP::SOAPString
+#   transProcessor - Etapper::API::TransactionProcessor
 #   welcomeMessage - SOAP::SOAPString
 class CartPreferences
+  attr_accessor :categoryHeader
+  attr_accessor :checkoutQuestions
+  attr_accessor :domesticCountries
   attr_accessor :expressShippingPrice
+  attr_accessor :freeOrderRegularShippingPrice
   attr_accessor :internationalShippingPrice
   attr_accessor :regularShippingPrice
   attr_accessor :salesTaxKey
   attr_accessor :siteName
   attr_accessor :siteTitle
+  attr_accessor :soldOutLabel
   attr_accessor :stateTaxRates
   attr_accessor :successMessage
   attr_accessor :templateSetFolder
+  attr_accessor :transProcessor
   attr_accessor :welcomeMessage
 
-  def initialize(expressShippingPrice = nil, internationalShippingPrice = nil, regularShippingPrice = nil, salesTaxKey = nil, siteName = nil, siteTitle = nil, stateTaxRates = nil, successMessage = nil, templateSetFolder = nil, welcomeMessage = nil)
+  def initialize(categoryHeader = nil, checkoutQuestions = nil, domesticCountries = nil, expressShippingPrice = nil, freeOrderRegularShippingPrice = nil, internationalShippingPrice = nil, regularShippingPrice = nil, salesTaxKey = nil, siteName = nil, siteTitle = nil, soldOutLabel = nil, stateTaxRates = nil, successMessage = nil, templateSetFolder = nil, transProcessor = nil, welcomeMessage = nil)
+    @categoryHeader = categoryHeader
+    @checkoutQuestions = checkoutQuestions
+    @domesticCountries = domesticCountries
     @expressShippingPrice = expressShippingPrice
+    @freeOrderRegularShippingPrice = freeOrderRegularShippingPrice
     @internationalShippingPrice = internationalShippingPrice
     @regularShippingPrice = regularShippingPrice
     @salesTaxKey = salesTaxKey
     @siteName = siteName
     @siteTitle = siteTitle
+    @soldOutLabel = soldOutLabel
     @stateTaxRates = stateTaxRates
     @successMessage = successMessage
     @templateSetFolder = templateSetFolder
+    @transProcessor = transProcessor
     @welcomeMessage = welcomeMessage
   end
 end
@@ -1751,6 +1942,28 @@ class StateTaxRate
   def initialize(rate = nil, state = nil)
     @rate = rate
     @state = state
+  end
+end
+
+# {etapestryAPI/service}TransactionProcessor
+#   default - SOAP::SOAPBoolean
+#   disabled - SOAP::SOAPBoolean
+#   ref - SOAP::SOAPString
+#   refName - SOAP::SOAPString
+#   type - SOAP::SOAPInt
+class TransactionProcessor
+  attr_accessor :default
+  attr_accessor :disabled
+  attr_accessor :ref
+  attr_accessor :refName
+  attr_accessor :type
+
+  def initialize(default = nil, disabled = nil, ref = nil, refName = nil, type = nil)
+    @default = default
+    @disabled = disabled
+    @ref = ref
+    @refName = refName
+    @type = type
   end
 end
 
@@ -1815,68 +2028,6 @@ class Declaration
     @state = state
     @type = type
     @verbal = verbal
-  end
-end
-
-# {etapestryAPI/service}DefinedField
-#   applicationTypes - Etapper::API::ArrayOfint
-#   category - SOAP::SOAPString
-#   dataType - SOAP::SOAPInt
-#   desc - SOAP::SOAPString
-#   disabled - SOAP::SOAPBoolean
-#   displayType - SOAP::SOAPInt
-#   name - SOAP::SOAPString
-#   ref - SOAP::SOAPString
-#   required - SOAP::SOAPBoolean
-#   securityRights - Etapper::API::ArrayOfDefinedFieldValue
-#   system - SOAP::SOAPBoolean
-#   values - Etapper::API::ArrayOfDefinedFieldValue
-class DefinedField
-  attr_accessor :applicationTypes
-  attr_accessor :category
-  attr_accessor :dataType
-  attr_accessor :desc
-  attr_accessor :disabled
-  attr_accessor :displayType
-  attr_accessor :name
-  attr_accessor :ref
-  attr_accessor :required
-  attr_accessor :securityRights
-  attr_accessor :system
-  attr_accessor :values
-
-  def initialize(applicationTypes = nil, category = nil, dataType = nil, desc = nil, disabled = nil, displayType = nil, name = nil, ref = nil, required = nil, securityRights = nil, system = nil, values = nil)
-    @applicationTypes = applicationTypes
-    @category = category
-    @dataType = dataType
-    @desc = desc
-    @disabled = disabled
-    @displayType = displayType
-    @name = name
-    @ref = ref
-    @required = required
-    @securityRights = securityRights
-    @system = system
-    @values = values
-  end
-end
-
-# {etapestryAPI/service}DefinedFieldValue
-#   desc - SOAP::SOAPString
-#   disabled - SOAP::SOAPBoolean
-#   ref - SOAP::SOAPString
-#   value - SOAP::SOAPString
-class DefinedFieldValue
-  attr_accessor :desc
-  attr_accessor :disabled
-  attr_accessor :ref
-  attr_accessor :value
-
-  def initialize(desc = nil, disabled = nil, ref = nil, value = nil)
-    @desc = desc
-    @disabled = disabled
-    @ref = ref
-    @value = value
   end
 end
 
@@ -2014,6 +2165,7 @@ end
 #   personaOption - SOAP::SOAPString
 #   returnType - SOAP::SOAPInt
 #   searchCriteria - Etapper::API::ArrayOfSearchCriteria
+#   sortOptions - Etapper::API::ArrayOfSortOption
 class PagedDynamicQueryResultsRequest
   attr_accessor :clearCache
   attr_accessor :count
@@ -2026,8 +2178,9 @@ class PagedDynamicQueryResultsRequest
   attr_accessor :personaOption
   attr_accessor :returnType
   attr_accessor :searchCriteria
+  attr_accessor :sortOptions
 
-  def initialize(clearCache = nil, count = nil, start = nil, accountType = nil, applicationGroup = nil, baseQuery = nil, involvePrivacySettings = nil, matchAny = nil, personaOption = nil, returnType = nil, searchCriteria = nil)
+  def initialize(clearCache = nil, count = nil, start = nil, accountType = nil, applicationGroup = nil, baseQuery = nil, involvePrivacySettings = nil, matchAny = nil, personaOption = nil, returnType = nil, searchCriteria = nil, sortOptions = nil)
     @clearCache = clearCache
     @count = count
     @start = start
@@ -2039,6 +2192,20 @@ class PagedDynamicQueryResultsRequest
     @personaOption = personaOption
     @returnType = returnType
     @searchCriteria = searchCriteria
+    @sortOptions = sortOptions
+  end
+end
+
+# {etapestryAPI/service}SortOption
+#   ascending - SOAP::SOAPBoolean
+#   field - SOAP::SOAPString
+class SortOption
+  attr_accessor :ascending
+  attr_accessor :field
+
+  def initialize(ascending = nil, field = nil)
+    @ascending = ascending
+    @field = field
   end
 end
 
@@ -2176,19 +2343,22 @@ end
 #   start - SOAP::SOAPInt
 #   accountType - SOAP::SOAPInt
 #   query - SOAP::SOAPString
+#   sortOptions - Etapper::API::ArrayOfSortOption
 class PagedExistingQueryResultsRequest
   attr_accessor :clearCache
   attr_accessor :count
   attr_accessor :start
   attr_accessor :accountType
   attr_accessor :query
+  attr_accessor :sortOptions
 
-  def initialize(clearCache = nil, count = nil, start = nil, accountType = nil, query = nil)
+  def initialize(clearCache = nil, count = nil, start = nil, accountType = nil, query = nil, sortOptions = nil)
     @clearCache = clearCache
     @count = count
     @start = start
     @accountType = accountType
     @query = query
+    @sortOptions = sortOptions
   end
 end
 
@@ -2301,304 +2471,6 @@ class PrivacyPreference
   end
 end
 
-# {etapestryAPI/service}OrderItem
-#   accountName - SOAP::SOAPString
-#   accountRef - SOAP::SOAPString
-#   amount - SOAP::SOAPDouble
-#   approach - SOAP::SOAPString
-#   attachments - Etapper::API::ArrayOfAttachment
-#   campaign - SOAP::SOAPString
-#   createdDate - SOAP::SOAPDateTime
-#   date - SOAP::SOAPDateTime
-#   definedValues - Etapper::API::ArrayOfDefinedValue
-#   final - SOAP::SOAPBoolean
-#   fund - SOAP::SOAPString
-#   itemName - SOAP::SOAPString
-#   itemQuantity - SOAP::SOAPInt
-#   itemRef - SOAP::SOAPString
-#   lastModifiedDate - SOAP::SOAPDateTime
-#   letter - SOAP::SOAPString
-#   note - SOAP::SOAPString
-#   offsettingRef - SOAP::SOAPString
-#   orderInfo - Etapper::API::OrderInfo
-#   receipt - SOAP::SOAPString
-#   recognitionName - SOAP::SOAPString
-#   recognitionType - SOAP::SOAPInt
-#   ref - SOAP::SOAPString
-#   segmentedTransactionRef - SOAP::SOAPString
-#   softCredit - Etapper::API::SoftCredit
-#   type - SOAP::SOAPInt
-#   valuable - Etapper::API::Valuable
-class OrderItem
-  attr_accessor :accountName
-  attr_accessor :accountRef
-  attr_accessor :amount
-  attr_accessor :approach
-  attr_accessor :attachments
-  attr_accessor :campaign
-  attr_accessor :createdDate
-  attr_accessor :date
-  attr_accessor :definedValues
-  attr_accessor :final
-  attr_accessor :fund
-  attr_accessor :itemName
-  attr_accessor :itemQuantity
-  attr_accessor :itemRef
-  attr_accessor :lastModifiedDate
-  attr_accessor :letter
-  attr_accessor :note
-  attr_accessor :offsettingRef
-  attr_accessor :orderInfo
-  attr_accessor :receipt
-  attr_accessor :recognitionName
-  attr_accessor :recognitionType
-  attr_accessor :ref
-  attr_accessor :segmentedTransactionRef
-  attr_accessor :softCredit
-  attr_accessor :type
-  attr_accessor :valuable
-
-  def initialize(accountName = nil, accountRef = nil, amount = nil, approach = nil, attachments = nil, campaign = nil, createdDate = nil, date = nil, definedValues = nil, final = nil, fund = nil, itemName = nil, itemQuantity = nil, itemRef = nil, lastModifiedDate = nil, letter = nil, note = nil, offsettingRef = nil, orderInfo = nil, receipt = nil, recognitionName = nil, recognitionType = nil, ref = nil, segmentedTransactionRef = nil, softCredit = nil, type = nil, valuable = nil)
-    @accountName = accountName
-    @accountRef = accountRef
-    @amount = amount
-    @approach = approach
-    @attachments = attachments
-    @campaign = campaign
-    @createdDate = createdDate
-    @date = date
-    @definedValues = definedValues
-    @final = final
-    @fund = fund
-    @itemName = itemName
-    @itemQuantity = itemQuantity
-    @itemRef = itemRef
-    @lastModifiedDate = lastModifiedDate
-    @letter = letter
-    @note = note
-    @offsettingRef = offsettingRef
-    @orderInfo = orderInfo
-    @receipt = receipt
-    @recognitionName = recognitionName
-    @recognitionType = recognitionType
-    @ref = ref
-    @segmentedTransactionRef = segmentedTransactionRef
-    @softCredit = softCredit
-    @type = type
-    @valuable = valuable
-  end
-end
-
-# {etapestryAPI/service}OrderInfo
-#   billingAddress - SOAP::SOAPString
-#   billingCity - SOAP::SOAPString
-#   billingCountry - SOAP::SOAPString
-#   billingEmail - SOAP::SOAPString
-#   billingName - SOAP::SOAPString
-#   billingPhone - SOAP::SOAPString
-#   billingPostalCode - SOAP::SOAPString
-#   billingState - SOAP::SOAPString
-#   shippingAddress - SOAP::SOAPString
-#   shippingCity - SOAP::SOAPString
-#   shippingCountry - SOAP::SOAPString
-#   shippingName - SOAP::SOAPString
-#   shippingPostalCode - SOAP::SOAPString
-#   shippingState - SOAP::SOAPString
-#   shippingType - SOAP::SOAPInt
-class OrderInfo
-  attr_accessor :billingAddress
-  attr_accessor :billingCity
-  attr_accessor :billingCountry
-  attr_accessor :billingEmail
-  attr_accessor :billingName
-  attr_accessor :billingPhone
-  attr_accessor :billingPostalCode
-  attr_accessor :billingState
-  attr_accessor :shippingAddress
-  attr_accessor :shippingCity
-  attr_accessor :shippingCountry
-  attr_accessor :shippingName
-  attr_accessor :shippingPostalCode
-  attr_accessor :shippingState
-  attr_accessor :shippingType
-
-  def initialize(billingAddress = nil, billingCity = nil, billingCountry = nil, billingEmail = nil, billingName = nil, billingPhone = nil, billingPostalCode = nil, billingState = nil, shippingAddress = nil, shippingCity = nil, shippingCountry = nil, shippingName = nil, shippingPostalCode = nil, shippingState = nil, shippingType = nil)
-    @billingAddress = billingAddress
-    @billingCity = billingCity
-    @billingCountry = billingCountry
-    @billingEmail = billingEmail
-    @billingName = billingName
-    @billingPhone = billingPhone
-    @billingPostalCode = billingPostalCode
-    @billingState = billingState
-    @shippingAddress = shippingAddress
-    @shippingCity = shippingCity
-    @shippingCountry = shippingCountry
-    @shippingName = shippingName
-    @shippingPostalCode = shippingPostalCode
-    @shippingState = shippingState
-    @shippingType = shippingType
-  end
-end
-
-# {etapestryAPI/service}OrderShipping
-#   accountName - SOAP::SOAPString
-#   accountRef - SOAP::SOAPString
-#   amount - SOAP::SOAPDouble
-#   approach - SOAP::SOAPString
-#   attachments - Etapper::API::ArrayOfAttachment
-#   campaign - SOAP::SOAPString
-#   createdDate - SOAP::SOAPDateTime
-#   date - SOAP::SOAPDateTime
-#   definedValues - Etapper::API::ArrayOfDefinedValue
-#   final - SOAP::SOAPBoolean
-#   fund - SOAP::SOAPString
-#   lastModifiedDate - SOAP::SOAPDateTime
-#   letter - SOAP::SOAPString
-#   note - SOAP::SOAPString
-#   offsettingRef - SOAP::SOAPString
-#   receipt - SOAP::SOAPString
-#   recognitionName - SOAP::SOAPString
-#   recognitionType - SOAP::SOAPInt
-#   ref - SOAP::SOAPString
-#   segmentedTransactionRef - SOAP::SOAPString
-#   softCredit - Etapper::API::SoftCredit
-#   type - SOAP::SOAPInt
-#   valuable - Etapper::API::Valuable
-class OrderShipping
-  attr_accessor :accountName
-  attr_accessor :accountRef
-  attr_accessor :amount
-  attr_accessor :approach
-  attr_accessor :attachments
-  attr_accessor :campaign
-  attr_accessor :createdDate
-  attr_accessor :date
-  attr_accessor :definedValues
-  attr_accessor :final
-  attr_accessor :fund
-  attr_accessor :lastModifiedDate
-  attr_accessor :letter
-  attr_accessor :note
-  attr_accessor :offsettingRef
-  attr_accessor :receipt
-  attr_accessor :recognitionName
-  attr_accessor :recognitionType
-  attr_accessor :ref
-  attr_accessor :segmentedTransactionRef
-  attr_accessor :softCredit
-  attr_accessor :type
-  attr_accessor :valuable
-
-  def initialize(accountName = nil, accountRef = nil, amount = nil, approach = nil, attachments = nil, campaign = nil, createdDate = nil, date = nil, definedValues = nil, final = nil, fund = nil, lastModifiedDate = nil, letter = nil, note = nil, offsettingRef = nil, receipt = nil, recognitionName = nil, recognitionType = nil, ref = nil, segmentedTransactionRef = nil, softCredit = nil, type = nil, valuable = nil)
-    @accountName = accountName
-    @accountRef = accountRef
-    @amount = amount
-    @approach = approach
-    @attachments = attachments
-    @campaign = campaign
-    @createdDate = createdDate
-    @date = date
-    @definedValues = definedValues
-    @final = final
-    @fund = fund
-    @lastModifiedDate = lastModifiedDate
-    @letter = letter
-    @note = note
-    @offsettingRef = offsettingRef
-    @receipt = receipt
-    @recognitionName = recognitionName
-    @recognitionType = recognitionType
-    @ref = ref
-    @segmentedTransactionRef = segmentedTransactionRef
-    @softCredit = softCredit
-    @type = type
-    @valuable = valuable
-  end
-end
-
-# {etapestryAPI/service}OrderTax
-#   accountName - SOAP::SOAPString
-#   accountRef - SOAP::SOAPString
-#   amount - SOAP::SOAPDouble
-#   approach - SOAP::SOAPString
-#   attachments - Etapper::API::ArrayOfAttachment
-#   campaign - SOAP::SOAPString
-#   createdDate - SOAP::SOAPDateTime
-#   date - SOAP::SOAPDateTime
-#   definedValues - Etapper::API::ArrayOfDefinedValue
-#   final - SOAP::SOAPBoolean
-#   fund - SOAP::SOAPString
-#   lastModifiedDate - SOAP::SOAPDateTime
-#   letter - SOAP::SOAPString
-#   note - SOAP::SOAPString
-#   offsettingRef - SOAP::SOAPString
-#   receipt - SOAP::SOAPString
-#   recognitionName - SOAP::SOAPString
-#   recognitionType - SOAP::SOAPInt
-#   ref - SOAP::SOAPString
-#   segmentedTransactionRef - SOAP::SOAPString
-#   softCredit - Etapper::API::SoftCredit
-#   taxRate - SOAP::SOAPDouble
-#   taxRegion - SOAP::SOAPString
-#   type - SOAP::SOAPInt
-#   valuable - Etapper::API::Valuable
-class OrderTax
-  attr_accessor :accountName
-  attr_accessor :accountRef
-  attr_accessor :amount
-  attr_accessor :approach
-  attr_accessor :attachments
-  attr_accessor :campaign
-  attr_accessor :createdDate
-  attr_accessor :date
-  attr_accessor :definedValues
-  attr_accessor :final
-  attr_accessor :fund
-  attr_accessor :lastModifiedDate
-  attr_accessor :letter
-  attr_accessor :note
-  attr_accessor :offsettingRef
-  attr_accessor :receipt
-  attr_accessor :recognitionName
-  attr_accessor :recognitionType
-  attr_accessor :ref
-  attr_accessor :segmentedTransactionRef
-  attr_accessor :softCredit
-  attr_accessor :taxRate
-  attr_accessor :taxRegion
-  attr_accessor :type
-  attr_accessor :valuable
-
-  def initialize(accountName = nil, accountRef = nil, amount = nil, approach = nil, attachments = nil, campaign = nil, createdDate = nil, date = nil, definedValues = nil, final = nil, fund = nil, lastModifiedDate = nil, letter = nil, note = nil, offsettingRef = nil, receipt = nil, recognitionName = nil, recognitionType = nil, ref = nil, segmentedTransactionRef = nil, softCredit = nil, taxRate = nil, taxRegion = nil, type = nil, valuable = nil)
-    @accountName = accountName
-    @accountRef = accountRef
-    @amount = amount
-    @approach = approach
-    @attachments = attachments
-    @campaign = campaign
-    @createdDate = createdDate
-    @date = date
-    @definedValues = definedValues
-    @final = final
-    @fund = fund
-    @lastModifiedDate = lastModifiedDate
-    @letter = letter
-    @note = note
-    @offsettingRef = offsettingRef
-    @receipt = receipt
-    @recognitionName = recognitionName
-    @recognitionType = recognitionType
-    @ref = ref
-    @segmentedTransactionRef = segmentedTransactionRef
-    @softCredit = softCredit
-    @taxRate = taxRate
-    @taxRegion = taxRegion
-    @type = type
-    @valuable = valuable
-  end
-end
-
 # {etapestryAPI/service}OrganizationPreferences
 #   passwordMinimumLength - SOAP::SOAPInt
 #   passwordRequireComplexity - SOAP::SOAPBoolean
@@ -2637,6 +2509,91 @@ class PhoneAThonList
     @lastGenerated = lastGenerated
     @name = name
     @ref = ref
+  end
+end
+
+# {etapestryAPI/service}Purchase
+#   accountName - SOAP::SOAPString
+#   accountRef - SOAP::SOAPString
+#   amount - SOAP::SOAPDouble
+#   approach - SOAP::SOAPString
+#   attachments - Etapper::API::ArrayOfAttachment
+#   campaign - SOAP::SOAPString
+#   createdDate - SOAP::SOAPDateTime
+#   date - SOAP::SOAPDateTime
+#   definedValues - Etapper::API::ArrayOfDefinedValue
+#   final - SOAP::SOAPBoolean
+#   fund - SOAP::SOAPString
+#   lastModifiedDate - SOAP::SOAPDateTime
+#   letter - SOAP::SOAPString
+#   nonDeductibleAmount - SOAP::SOAPDouble
+#   note - SOAP::SOAPString
+#   offsettingRef - SOAP::SOAPString
+#   orderDetail - Etapper::API::OrderDetail
+#   orderInfo - Etapper::API::OrderInfo
+#   receipt - SOAP::SOAPString
+#   recognitionName - SOAP::SOAPString
+#   recognitionType - SOAP::SOAPInt
+#   ref - SOAP::SOAPString
+#   segmentedTransactionRef - SOAP::SOAPString
+#   softCredit - Etapper::API::SoftCredit
+#   type - SOAP::SOAPInt
+#   valuable - Etapper::API::Valuable
+class Purchase
+  attr_accessor :accountName
+  attr_accessor :accountRef
+  attr_accessor :amount
+  attr_accessor :approach
+  attr_accessor :attachments
+  attr_accessor :campaign
+  attr_accessor :createdDate
+  attr_accessor :date
+  attr_accessor :definedValues
+  attr_accessor :final
+  attr_accessor :fund
+  attr_accessor :lastModifiedDate
+  attr_accessor :letter
+  attr_accessor :nonDeductibleAmount
+  attr_accessor :note
+  attr_accessor :offsettingRef
+  attr_accessor :orderDetail
+  attr_accessor :orderInfo
+  attr_accessor :receipt
+  attr_accessor :recognitionName
+  attr_accessor :recognitionType
+  attr_accessor :ref
+  attr_accessor :segmentedTransactionRef
+  attr_accessor :softCredit
+  attr_accessor :type
+  attr_accessor :valuable
+
+  def initialize(accountName = nil, accountRef = nil, amount = nil, approach = nil, attachments = nil, campaign = nil, createdDate = nil, date = nil, definedValues = nil, final = nil, fund = nil, lastModifiedDate = nil, letter = nil, nonDeductibleAmount = nil, note = nil, offsettingRef = nil, orderDetail = nil, orderInfo = nil, receipt = nil, recognitionName = nil, recognitionType = nil, ref = nil, segmentedTransactionRef = nil, softCredit = nil, type = nil, valuable = nil)
+    @accountName = accountName
+    @accountRef = accountRef
+    @amount = amount
+    @approach = approach
+    @attachments = attachments
+    @campaign = campaign
+    @createdDate = createdDate
+    @date = date
+    @definedValues = definedValues
+    @final = final
+    @fund = fund
+    @lastModifiedDate = lastModifiedDate
+    @letter = letter
+    @nonDeductibleAmount = nonDeductibleAmount
+    @note = note
+    @offsettingRef = offsettingRef
+    @orderDetail = orderDetail
+    @orderInfo = orderInfo
+    @receipt = receipt
+    @recognitionName = recognitionName
+    @recognitionType = recognitionType
+    @ref = ref
+    @segmentedTransactionRef = segmentedTransactionRef
+    @softCredit = softCredit
+    @type = type
+    @valuable = valuable
   end
 end
 
@@ -2798,6 +2755,7 @@ end
 #   ref - SOAP::SOAPString
 #   segments - Etapper::API::ArrayOfanyType
 #   totalAmount - SOAP::SOAPDouble
+#   totalNonDeductibleAmount - SOAP::SOAPDouble
 #   type - SOAP::SOAPInt
 class SegmentedOrder
   attr_accessor :accountName
@@ -2811,9 +2769,10 @@ class SegmentedOrder
   attr_accessor :ref
   attr_accessor :segments
   attr_accessor :totalAmount
+  attr_accessor :totalNonDeductibleAmount
   attr_accessor :type
 
-  def initialize(accountName = nil, accountRef = nil, createdDate = nil, date = nil, final = nil, lastModifiedDate = nil, offsettingRef = nil, orderInfo = nil, ref = nil, segments = nil, totalAmount = nil, type = nil)
+  def initialize(accountName = nil, accountRef = nil, createdDate = nil, date = nil, final = nil, lastModifiedDate = nil, offsettingRef = nil, orderInfo = nil, ref = nil, segments = nil, totalAmount = nil, totalNonDeductibleAmount = nil, type = nil)
     @accountName = accountName
     @accountRef = accountRef
     @createdDate = createdDate
@@ -2825,6 +2784,7 @@ class SegmentedOrder
     @ref = ref
     @segments = segments
     @totalAmount = totalAmount
+    @totalNonDeductibleAmount = totalNonDeductibleAmount
     @type = type
   end
 end
@@ -2878,25 +2838,167 @@ class SegmentedPledge
   end
 end
 
-# {etapestryAPI/service}TransactionProcessor
-#   default - SOAP::SOAPBoolean
-#   disabled - SOAP::SOAPBoolean
+# {etapestryAPI/service}Shipping
+#   accountName - SOAP::SOAPString
+#   accountRef - SOAP::SOAPString
+#   amount - SOAP::SOAPDouble
+#   approach - SOAP::SOAPString
+#   attachments - Etapper::API::ArrayOfAttachment
+#   campaign - SOAP::SOAPString
+#   createdDate - SOAP::SOAPDateTime
+#   date - SOAP::SOAPDateTime
+#   definedValues - Etapper::API::ArrayOfDefinedValue
+#   final - SOAP::SOAPBoolean
+#   fund - SOAP::SOAPString
+#   lastModifiedDate - SOAP::SOAPDateTime
+#   letter - SOAP::SOAPString
+#   nonDeductibleAmount - SOAP::SOAPDouble
+#   note - SOAP::SOAPString
+#   offsettingRef - SOAP::SOAPString
+#   receipt - SOAP::SOAPString
+#   recognitionName - SOAP::SOAPString
+#   recognitionType - SOAP::SOAPInt
 #   ref - SOAP::SOAPString
-#   refName - SOAP::SOAPString
+#   segmentedTransactionRef - SOAP::SOAPString
+#   softCredit - Etapper::API::SoftCredit
 #   type - SOAP::SOAPInt
-class TransactionProcessor
-  attr_accessor :default
-  attr_accessor :disabled
+#   valuable - Etapper::API::Valuable
+class Shipping
+  attr_accessor :accountName
+  attr_accessor :accountRef
+  attr_accessor :amount
+  attr_accessor :approach
+  attr_accessor :attachments
+  attr_accessor :campaign
+  attr_accessor :createdDate
+  attr_accessor :date
+  attr_accessor :definedValues
+  attr_accessor :final
+  attr_accessor :fund
+  attr_accessor :lastModifiedDate
+  attr_accessor :letter
+  attr_accessor :nonDeductibleAmount
+  attr_accessor :note
+  attr_accessor :offsettingRef
+  attr_accessor :receipt
+  attr_accessor :recognitionName
+  attr_accessor :recognitionType
   attr_accessor :ref
-  attr_accessor :refName
+  attr_accessor :segmentedTransactionRef
+  attr_accessor :softCredit
   attr_accessor :type
+  attr_accessor :valuable
 
-  def initialize(default = nil, disabled = nil, ref = nil, refName = nil, type = nil)
-    @default = default
-    @disabled = disabled
+  def initialize(accountName = nil, accountRef = nil, amount = nil, approach = nil, attachments = nil, campaign = nil, createdDate = nil, date = nil, definedValues = nil, final = nil, fund = nil, lastModifiedDate = nil, letter = nil, nonDeductibleAmount = nil, note = nil, offsettingRef = nil, receipt = nil, recognitionName = nil, recognitionType = nil, ref = nil, segmentedTransactionRef = nil, softCredit = nil, type = nil, valuable = nil)
+    @accountName = accountName
+    @accountRef = accountRef
+    @amount = amount
+    @approach = approach
+    @attachments = attachments
+    @campaign = campaign
+    @createdDate = createdDate
+    @date = date
+    @definedValues = definedValues
+    @final = final
+    @fund = fund
+    @lastModifiedDate = lastModifiedDate
+    @letter = letter
+    @nonDeductibleAmount = nonDeductibleAmount
+    @note = note
+    @offsettingRef = offsettingRef
+    @receipt = receipt
+    @recognitionName = recognitionName
+    @recognitionType = recognitionType
     @ref = ref
-    @refName = refName
+    @segmentedTransactionRef = segmentedTransactionRef
+    @softCredit = softCredit
     @type = type
+    @valuable = valuable
+  end
+end
+
+# {etapestryAPI/service}Tax
+#   accountName - SOAP::SOAPString
+#   accountRef - SOAP::SOAPString
+#   amount - SOAP::SOAPDouble
+#   approach - SOAP::SOAPString
+#   attachments - Etapper::API::ArrayOfAttachment
+#   campaign - SOAP::SOAPString
+#   createdDate - SOAP::SOAPDateTime
+#   date - SOAP::SOAPDateTime
+#   definedValues - Etapper::API::ArrayOfDefinedValue
+#   final - SOAP::SOAPBoolean
+#   fund - SOAP::SOAPString
+#   lastModifiedDate - SOAP::SOAPDateTime
+#   letter - SOAP::SOAPString
+#   nonDeductibleAmount - SOAP::SOAPDouble
+#   note - SOAP::SOAPString
+#   offsettingRef - SOAP::SOAPString
+#   receipt - SOAP::SOAPString
+#   recognitionName - SOAP::SOAPString
+#   recognitionType - SOAP::SOAPInt
+#   ref - SOAP::SOAPString
+#   segmentedTransactionRef - SOAP::SOAPString
+#   softCredit - Etapper::API::SoftCredit
+#   taxRate - SOAP::SOAPDouble
+#   taxRegion - SOAP::SOAPString
+#   type - SOAP::SOAPInt
+#   valuable - Etapper::API::Valuable
+class Tax
+  attr_accessor :accountName
+  attr_accessor :accountRef
+  attr_accessor :amount
+  attr_accessor :approach
+  attr_accessor :attachments
+  attr_accessor :campaign
+  attr_accessor :createdDate
+  attr_accessor :date
+  attr_accessor :definedValues
+  attr_accessor :final
+  attr_accessor :fund
+  attr_accessor :lastModifiedDate
+  attr_accessor :letter
+  attr_accessor :nonDeductibleAmount
+  attr_accessor :note
+  attr_accessor :offsettingRef
+  attr_accessor :receipt
+  attr_accessor :recognitionName
+  attr_accessor :recognitionType
+  attr_accessor :ref
+  attr_accessor :segmentedTransactionRef
+  attr_accessor :softCredit
+  attr_accessor :taxRate
+  attr_accessor :taxRegion
+  attr_accessor :type
+  attr_accessor :valuable
+
+  def initialize(accountName = nil, accountRef = nil, amount = nil, approach = nil, attachments = nil, campaign = nil, createdDate = nil, date = nil, definedValues = nil, final = nil, fund = nil, lastModifiedDate = nil, letter = nil, nonDeductibleAmount = nil, note = nil, offsettingRef = nil, receipt = nil, recognitionName = nil, recognitionType = nil, ref = nil, segmentedTransactionRef = nil, softCredit = nil, taxRate = nil, taxRegion = nil, type = nil, valuable = nil)
+    @accountName = accountName
+    @accountRef = accountRef
+    @amount = amount
+    @approach = approach
+    @attachments = attachments
+    @campaign = campaign
+    @createdDate = createdDate
+    @date = date
+    @definedValues = definedValues
+    @final = final
+    @fund = fund
+    @lastModifiedDate = lastModifiedDate
+    @letter = letter
+    @nonDeductibleAmount = nonDeductibleAmount
+    @note = note
+    @offsettingRef = offsettingRef
+    @receipt = receipt
+    @recognitionName = recognitionName
+    @recognitionType = recognitionType
+    @ref = ref
+    @segmentedTransactionRef = segmentedTransactionRef
+    @softCredit = softCredit
+    @taxRate = taxRate
+    @taxRegion = taxRegion
+    @type = type
+    @valuable = valuable
   end
 end
 
@@ -3215,12 +3317,8 @@ end
 class ArrayOfCartParent < ::Array
 end
 
-# {etapestryAPI/service}ArrayOfCartImage
-class ArrayOfCartImage < ::Array
-end
-
-# {etapestryAPI/service}ArrayOfStateTaxRate
-class ArrayOfStateTaxRate < ::Array
+# {etapestryAPI/service}ArrayOfQuestion
+class ArrayOfQuestion < ::Array
 end
 
 # {etapestryAPI/service}ArrayOfint
@@ -3231,8 +3329,28 @@ end
 class ArrayOfDefinedFieldValue < ::Array
 end
 
+# {etapestryAPI/service}ArrayOfCartImage
+class ArrayOfCartImage < ::Array
+end
+
+# {etapestryAPI/service}ArrayOfStateTaxRate
+class ArrayOfStateTaxRate < ::Array
+end
+
+# {etapestryAPI/service}ArrayOfSortOption
+class ArrayOfSortOption < ::Array
+end
+
 # {etapestryAPI/service}ArrayOfPersona
 class ArrayOfPersona < ::Array
+end
+
+# {etapestryAPI/service}ArrayOfOrderDetail
+class ArrayOfOrderDetail < ::Array
+end
+
+# {etapestryAPI/service}ArrayOfCartItem
+class ArrayOfCartItem < ::Array
 end
 
 # {etapestryAPI/service}ArrayOfPrivacyPreference
@@ -3252,4 +3370,4 @@ class ArrayOfTransactionProcessor < ::Array
 end
 
 
-end; end
+end

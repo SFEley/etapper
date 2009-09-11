@@ -1,31 +1,61 @@
-%w[rubygems rake rake/clean fileutils newgem rubigen].each { |f| require f }
-require File.dirname(__FILE__) + '/lib/etapper'
+require 'rubygems'
+require 'rake'
 
-# Generate all the Rake tasks
-# Run 'rake -T' to see list of generated tasks (from gem root directory)
-$hoe = Hoe.new('etapper', Etapper::VERSION) do |p|
-  p.developer('Stephen Eley', 'seley@aarweb.org')
-  p.changes              = p.paragraphs_of("History.txt", 0..1).join("\n\n")
-  p.post_install_message = 'PostInstall.txt' # TODO remove if post-install message not required
-  p.rubyforge_name       = p.name # TODO this is default value
-  p.extra_deps         = [
-   ['english','=0.3.1'],
-   ['soap4r', '=1.5.8']
-  ]
-  p.extra_dev_deps = [
-    ['newgem', ">= #{::Newgem::VERSION}"],
-    ['rspec', '>=1.2.6'],
-    ['mocha', '>=0.9.5']
-  ]
-  
-  p.clean_globs |= %w[**/.DS_Store tmp *.log]
-  path = (p.rubyforge_name == p.name) ? p.rubyforge_name : "\#{p.rubyforge_name}/\#{p.name}"
-  p.remote_rdoc_dir = File.join(path.gsub(/^#{p.rubyforge_name}\/?/,''), 'rdoc')
-  p.rsync_args = '-av --delete --ignore-errors'
+# begin
+   require 'jeweler'
+#   Jeweler::Tasks.new do |gem|
+#     gem.name = "etapper"
+#     gem.summary = %Q{Ruby gem to connect to eTapestry's SOAP API}
+#     gem.description = %Q{TODO: longer description of your gem}
+#     gem.email = "seley@aarweb.org"
+#     gem.homepage = "http://github.com/SFEley/etapper"
+#     gem.authors = ["Stephen Eley"]
+#     gem.rubyforge_project = "etapper"
+#     gem.add_development_dependency "rspec"
+#     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+#   end
+#   Jeweler::RubyforgeTasks.new do |rubyforge|
+#     rubyforge.doc_task = "rdoc"
+#   end
+# rescue LoadError
+#   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
+# end
+
+require 'spec/rake/spectask'
+Spec::Rake::SpecTask.new(:spec) do |spec|
+  spec.libs << 'lib' << 'spec'
+  spec.spec_files = FileList['spec/**/*_spec.rb']
 end
 
-require 'newgem/tasks' # load /tasks/*.rake
-Dir['tasks/**/*.rake'].each { |t| load t }
+Spec::Rake::SpecTask.new(:rcov) do |spec|
+  spec.libs << 'lib' << 'spec'
+  spec.pattern = 'spec/**/*_spec.rb'
+  spec.rcov = true
+end
 
-# TODO - want other tests/tasks run by default? Add them to the list
-# task :default => [:spec, :features]
+task :spec => :check_dependencies
+
+task :default => :spec
+
+require 'rake/rdoctask'
+Rake::RDocTask.new do |rdoc|
+  if File.exist?('VERSION')
+    version = File.read('VERSION')
+  else
+    version = ""
+  end
+
+  rdoc.rdoc_dir = 'rdoc'
+  rdoc.title = "etapper #{version}"
+  rdoc.rdoc_files.include('README*')
+  rdoc.rdoc_files.include('lib/**/*.rb')
+end
+# 
+# namespace :etap do
+#   desc "Update the eTapestry API Web site mirror in /doc/api"
+#   task :doc do
+#     Dir.chdir(File.join(File.dirname(__FILE__),'..','doc','api')) do
+#       system "wget -mkp -nH --cut-dirs=2 http://www.etapestry.com/files/api/index.html"
+#     end
+#   end
+# end

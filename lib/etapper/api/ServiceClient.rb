@@ -685,6 +685,18 @@ string_1 = nil
 puts obj.getGift(string_1)
 
 # SYNOPSIS
+#   getInvalidOrderDetailQuantities(arrayOfOrderDetail_1)
+#
+# ARGS
+#   arrayOfOrderDetail_1 ArrayOfOrderDetail - {etapestryAPI/service}ArrayOfOrderDetail
+#
+# RETURNS
+#   result          ArrayOfCartItem - {etapestryAPI/service}ArrayOfCartItem
+#
+arrayOfOrderDetail_1 = nil
+puts obj.getInvalidOrderDetailQuantities(arrayOfOrderDetail_1)
+
+# SYNOPSIS
 #   getInvitation(string_1)
 #
 # ARGS
@@ -878,42 +890,6 @@ definedValue_1 = nil
 puts obj.getNoteRef(definedValue_1)
 
 # SYNOPSIS
-#   getOrderItem(string_1)
-#
-# ARGS
-#   string_1        C_String - {http://www.w3.org/2001/XMLSchema}string
-#
-# RETURNS
-#   result          OrderItem - {etapestryAPI/service}OrderItem
-#
-string_1 = nil
-puts obj.getOrderItem(string_1)
-
-# SYNOPSIS
-#   getOrderShipping(string_1)
-#
-# ARGS
-#   string_1        C_String - {http://www.w3.org/2001/XMLSchema}string
-#
-# RETURNS
-#   result          OrderShipping - {etapestryAPI/service}OrderShipping
-#
-string_1 = nil
-puts obj.getOrderShipping(string_1)
-
-# SYNOPSIS
-#   getOrderTax(string_1)
-#
-# ARGS
-#   string_1        C_String - {http://www.w3.org/2001/XMLSchema}string
-#
-# RETURNS
-#   result          OrderTax - {etapestryAPI/service}OrderTax
-#
-string_1 = nil
-puts obj.getOrderTax(string_1)
-
-# SYNOPSIS
 #   getOrganizationPreferences
 #
 # ARGS
@@ -998,6 +974,18 @@ string_1 = nil
 puts obj.getPrivacyPreferences(string_1)
 
 # SYNOPSIS
+#   getPurchase(string_1)
+#
+# ARGS
+#   string_1        C_String - {http://www.w3.org/2001/XMLSchema}string
+#
+# RETURNS
+#   result          Purchase - {etapestryAPI/service}Purchase
+#
+string_1 = nil
+puts obj.getPurchase(string_1)
+
+# SYNOPSIS
 #   getQueryResultStats(string_1, string_2)
 #
 # ARGS
@@ -1071,6 +1059,18 @@ string_1 = nil
 puts obj.getSegmentedPledge(string_1)
 
 # SYNOPSIS
+#   getShipping(string_1)
+#
+# ARGS
+#   string_1        C_String - {http://www.w3.org/2001/XMLSchema}string
+#
+# RETURNS
+#   result          Shipping - {etapestryAPI/service}Shipping
+#
+string_1 = nil
+puts obj.getShipping(string_1)
+
+# SYNOPSIS
 #   getSoftCredit(string_1)
 #
 # ARGS
@@ -1094,6 +1094,18 @@ puts obj.getSoftCredit(string_1)
 #
 string_1 = boolean_2 = nil
 puts obj.getSystemDefinedValues(string_1, boolean_2)
+
+# SYNOPSIS
+#   getTax(string_1)
+#
+# ARGS
+#   string_1        C_String - {http://www.w3.org/2001/XMLSchema}string
+#
+# RETURNS
+#   result          Tax - {etapestryAPI/service}Tax
+#
+string_1 = nil
+puts obj.getTax(string_1)
 
 # SYNOPSIS
 #   getTransaction(string_1)
