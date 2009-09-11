@@ -11,6 +11,7 @@ require 'rake'
 #     gem.homepage = "http://github.com/SFEley/etapper"
 #     gem.authors = ["Stephen Eley"]
 #     gem.rubyforge_project = "etapper"
+#     gem.add_dependency "httpclient"
 #     gem.add_development_dependency "rspec"
 #     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
 #   end
