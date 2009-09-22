@@ -51,12 +51,12 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
-# 
-# namespace :etap do
-#   desc "Update the eTapestry API Web site mirror in /doc/api"
-#   task :doc do
-#     Dir.chdir(File.join(File.dirname(__FILE__),'..','doc','api')) do
-#       system "wget -mkp -nH --cut-dirs=2 http://www.etapestry.com/files/api/index.html"
-#     end
-#   end
-# end
+
+namespace :etap do
+  desc "Update the eTapestry API Web site mirror in /doc/api"
+  task :api do
+    Dir.chdir(File.join(File.dirname(__FILE__),'doc','api')) do
+      system "wget -mkp -nH --cut-dirs=2 http://www.etapestry.com/files/api/index.html"
+    end
+  end
+end

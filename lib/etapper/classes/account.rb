@@ -35,7 +35,7 @@ module Etapper
       when Integer
         a = Etapper::client.getAccountById(query)
       when /\d+\.\d+\.\d+/  # "4310.0.2276679"
-        a = client.getAccount(query)
+        a = Etapper::client.getAccount(query)
       when /\S+@\S+\.\S+/  # very simplistic e-mail checking but suffices for this purpose
         s = DuplicateAccountSearch.new(:email => query)
         a = Etapper::client.getDuplicateAccount(s.base)

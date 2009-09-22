@@ -1,8 +1,5 @@
 require 'rubygems'
-gem 'rspec'
 require 'spec'
-
-gem 'mocha'
 require 'mocha'
 
 class TestError < StandardError; end

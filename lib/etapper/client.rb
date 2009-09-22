@@ -5,6 +5,7 @@ require 'singleton'
 require 'etapper/core_ext/string'
 require 'etapper/core_ext/symbol'
 require 'etapper/session_filter'
+require 'yaml'
 
 module Etapper
   class Client
@@ -104,7 +105,7 @@ module Etapper
       unless @config_file
         location = File.join(Etapper::ETAPPER_DIR, 'config.yml')
         if File.exists?(location)
-          @config_file = YAML.load_file(location)
+          @config_file = ::YAML.load_file(location)
         else
           @config_file = {}
         end

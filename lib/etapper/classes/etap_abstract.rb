@@ -48,6 +48,11 @@ module Etapper
       end
       Client.instance.send(method, base, true)
     end
+    
+    # Two eTapper classes are the same if they have the same base object
+    def ==(val)
+      self.base == val.base
+    end
        
       
   end

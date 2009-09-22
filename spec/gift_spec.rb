@@ -45,6 +45,8 @@ describe Etapper::Gift do
   before(:all) do
     @api_collection = YAML.load_file(File.dirname(__FILE__) + '/fixtures/gifts_api.yml')
     @api_object = @api_collection['data'].first
+    @api_accounts = YAML.load_file(File.dirname(__FILE__) + '/fixtures/accounts_api.yml')
+    @api_account = Etapper::Account.new(@api_accounts['MashalSaif'])
   end
 
   before(:each) do
@@ -67,13 +69,15 @@ describe Etapper::Gift do
   end
 
   it "knows its account" do
-    @dummy.expects(:getAccount).once.with("4310.0.2276679").returns("the right account")
-    @this.account.should be_a_kind_of(Etapper::Account)
-    @this.account.base.should == "the right account"
+    @dummy.expects(:getAccount).once.with("4310.0.2276679").returns(@api_account)
+    @this.account.should == @api_account
   end
   
   
   describe "retrieval" do
+    before(:each) do
+      
+    end
     it "implements the 'find' method" do
       Etapper::Gift.should respond_to(:find)
     end
@@ -85,8 +89,23 @@ describe Etapper::Gift do
       g.base.should == @api_object
     end
     
+    it "can find a collection by account" do
+      @dummy.expects(:getDuplicateAccount).once.returns(@api_account)
+      @dummy.expects(:getJournalEntries).returns(@api_collection)
+      g = Etapper::Gift.find(:account => "mashalsaif@gmail.com")
+      g.count.should == 5
+    end
+    
   end
   
+  describe "creation and update" do
+    it "allows an account to be set after creation" do
+      @this = Etapper::Gift.new
+      @this.account = @api_account
+      @this.account.should == @api_account
+    end
+    
+  end
 
 
 end

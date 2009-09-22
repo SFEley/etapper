@@ -8,5 +8,8 @@ module Etapper
   # A connection could not be made.  The username or password may be invalid, or Etapper::Client.autoconnect
   # may be set to false and you didn't run 'connect' before calling an API method.
   class ConnectionError < StandardError; end
+  
+  # A required field was left empty.
+  class RequiredFieldError < StandardError; end
 end
 
