@@ -53,7 +53,7 @@ module Etapper
             fieldname = params.keys.first
             value = params[fieldname]
           else
-            raise Etapper::BadValueError, "Only one field value can be provided; instead got #{params.size} (#{params.keys.to_s})"
+            raise Etapper::BadValueError, "Only one field value can be provided; instead got #{params.size} (#{params.to_s})"
           end
         end
         fieldname = fieldname.titleize if fieldname.is_a?(Symbol)          

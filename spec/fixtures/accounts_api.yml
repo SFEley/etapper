@@ -4,18 +4,39 @@ MashalSaif: !ruby/object:Etapper::API::Account
   accountDefinedValues: !seq:Etapper::API::ArrayOfDefinedValue 
     - !ruby/object:Etapper::API::DefinedValue 
       dataType: 0
+      displayType: 1
+      fieldName: Gender
+      fieldRef: 4310.0.4070
+      value: Female
+      valueRef: 4310.0.4071
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
       displayType: 2
       fieldName: Data Source
       fieldRef: 4310.0.2546
       value: Advanced Import (3/10/2009 12:38 PM)
       valueRef: 1441.0.23787949
     - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 1
+      displayType: 0
+      fieldName: Expire Date
+      fieldRef: 4310.0.3891
+      value: 12/31/2008
+      valueRef: 4310.0.2279166
+    - !ruby/object:Etapper::API::DefinedValue 
       dataType: 0
       displayType: 1
-      fieldName: Account Type
-      fieldRef: 4310.0.3923
-      value: Individual
-      valueRef: 4310.0.3924
+      fieldName: Student ID on File
+      fieldRef: 4310.0.4098
+      value: "Yes"
+      valueRef: 4310.0.4099
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Institution
+      fieldRef: 4310.0.3893
+      value: Duke University
+      valueRef: 4310.0.2279165
     - !ruby/object:Etapper::API::DefinedValue 
       dataType: 0
       displayType: 2
@@ -33,31 +54,10 @@ MashalSaif: !ruby/object:Etapper::API::Account
     - !ruby/object:Etapper::API::DefinedValue 
       dataType: 0
       displayType: 0
-      fieldName: Region
-      fieldRef: 4310.0.3913
-      value: SE - Southeast
-      valueRef: 4310.0.2279164
-    - !ruby/object:Etapper::API::DefinedValue 
-      dataType: 1
-      displayType: 0
-      fieldName: Expire Date
-      fieldRef: 4310.0.3891
-      value: 12/31/2008
-      valueRef: 4310.0.2279166
-    - !ruby/object:Etapper::API::DefinedValue 
-      dataType: 0
-      displayType: 1
-      fieldName: Student ID on File
-      fieldRef: 4310.0.4098
-      value: "Yes"
-      valueRef: 4310.0.4099
-    - !ruby/object:Etapper::API::DefinedValue 
-      dataType: 0
-      displayType: 1
-      fieldName: Gender
-      fieldRef: 4310.0.4070
-      value: Female
-      valueRef: 4310.0.4071
+      fieldName: Access ID
+      fieldRef: 4310.0.3881
+      value: Z32622
+      valueRef: 4310.0.2279167
     - !ruby/object:Etapper::API::DefinedValue 
       dataType: 0
       displayType: 1
@@ -68,10 +68,17 @@ MashalSaif: !ruby/object:Etapper::API::Account
     - !ruby/object:Etapper::API::DefinedValue 
       dataType: 0
       displayType: 0
-      fieldName: Institution
-      fieldRef: 4310.0.3893
-      value: Duke University
-      valueRef: 4310.0.2279165
+      fieldName: Region
+      fieldRef: 4310.0.3913
+      value: SE - Southeast
+      valueRef: 4310.0.2279164
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 1
+      fieldName: Account Type
+      fieldRef: 4310.0.3923
+      value: Individual
+      valueRef: 4310.0.3924
     - !ruby/object:Etapper::API::DefinedValue 
       dataType: 0
       displayType: 2
@@ -79,13 +86,6 @@ MashalSaif: !ruby/object:Etapper::API::Account
       fieldRef: 4310.0.2546
       value: Advanced Import (3/17/2009 4:26 PM)
       valueRef: 1441.0.25085062
-    - !ruby/object:Etapper::API::DefinedValue 
-      dataType: 0
-      displayType: 0
-      fieldName: Access ID
-      fieldRef: 4310.0.3881
-      value: Z32622
-      valueRef: 4310.0.2279167
   accountLastModifiedDate: 2009-03-17T20:27:17+00:00
   accountRoleType: 0
   address: 852 Louise Circle

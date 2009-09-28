@@ -50,7 +50,7 @@ module Etapper
                                                        [5])   # types (5 is for gifts))
       j = Etapper.client.getJournalEntries(p)
       if j.count > 0
-        j.data
+        j.data.collect {|je| Gift.new(je)}
       else
         nil
       end

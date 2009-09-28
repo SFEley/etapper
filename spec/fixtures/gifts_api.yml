@@ -1,4 +1,4 @@
----
+--- !ruby/object:Etapper::API::PagedJournalEntriesResponse 
 count: 5
 data: !seq:Etapper::API::ArrayOfanyType 
   - !ruby/object:Etapper::API::Gift 

@@ -51,7 +51,7 @@ module Etapper
     
     # Two eTapper classes are the same if they have the same base object
     def ==(val)
-      self.base == val.base
+      val.base == base
     end
        
       

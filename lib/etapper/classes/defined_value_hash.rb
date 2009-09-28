@@ -7,8 +7,9 @@ module Etapper
     end
     
     def []=(key, val)
-      update_base(key, val)
-      hash_assign(key, val)
+      add_or_append(key, val)
+      # update_base(key, val)
+      # hash_assign(key, val)
     end
     
     
