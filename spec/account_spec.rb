@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/spec_helper.rb'
 require 'shared_etap_abstract_spec'
 
-describe "Account" do
+describe Etapper::Account do
   before(:all) do
     @api_collection = YAML.load_file(File.dirname(__FILE__) + '/fixtures/accounts_api.yml')
     @api_object = @api_collection['MashalSaif']

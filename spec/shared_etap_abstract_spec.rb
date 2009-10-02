@@ -1,4 +1,8 @@
 shared_examples_for "an Etapper abstract type" do
+  def api_base
+    described_class.name.gsub(/::/, "::API::")
+  end
+
   @api_methods.each do |attribute|
     it "knows its #{attribute}" do
       eval("@this.#{attribute}").should == eval("@api_object.#{attribute}")
@@ -17,5 +21,10 @@ shared_examples_for "an Etapper abstract type" do
       eval("lambda \{@this.#{attribute} = 'foo'\}").should raise_error(Etapper::ReadOnlyError)
     end
   end
+  
+  it "returns its base" do
+    @this.base.class.name.should == api_base
+  end
+  
       
 end

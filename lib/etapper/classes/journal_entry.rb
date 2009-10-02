@@ -1,10 +1,45 @@
-require 'etapper/classes/journal_entry'
+require 'etapper/classes/account'
 
 module Etapper
-  class Gift < JournalEntry
+  class JournalEntry < EtapAbstract
     
-    etap_read_only :offsettingRef, :tributeAccountRef, :tributeAccountName, :segmentedTransactionRef,
-                   :originalAccountName, :originalAccountRef, :originalTransactionRef
+    TYPES = {
+      :note => 1,
+      :contact => 2,
+      :gift => 5,
+      :pledge => 6,
+      :payment => 7,
+      :recurring_gift_schedule => 8,
+      :recurring_gift => 9,
+      :segmented_donation => 10,
+      :soft_credit => 11,
+      :disbursement => 12,
+      :segmented_pledge => 13
+    }
+    attr_reader :type
+    etap_read_only :ref, :type, :accountName, :accountRef
+    
+    # Set the 'type' field based on the real class name, if it wasn't already
+    def initialize(base = nil)
+      super
+      @type = self.class.cname.symbolize
+      @base.type ||= TYPES[@type]
+    end
+    
+    def definedValues
+      @base.definedValues ||= Etapper::API::ArrayOfDefinedValue.new
+      @definedValues ||= Etapper::DefinedValueHash.new(base.definedValues)
+    end
+    
+    # Associates the account that this gift belongs to.
+    def account
+      @account ||= Account.find(accountRef)
+    end
+    
+    # Sets the account that this gift belongs to.
+    def account=(val)
+      @account = val
+    end
     
     def self.find(query)
       case query

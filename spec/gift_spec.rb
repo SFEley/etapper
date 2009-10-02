@@ -1,14 +1,8 @@
 require File.dirname(__FILE__) + '/spec_helper.rb'
-require File.dirname(__FILE__) + '/shared_etap_abstract_spec'
+require File.dirname(__FILE__) + '/shared_journal_entry_spec'
 
 describe Etapper::Gift do
   @api_methods = %w{
-      type
-      accountRef
-      accountName
-      ref
-      final
-      date
       amount
       nonDeductibleAmount
       fund
@@ -16,7 +10,6 @@ describe Etapper::Gift do
       approach
       letter
       receipt
-      note
       tributeAccountRef
       tributeAccountName
       recognitionName
@@ -29,10 +22,6 @@ describe Etapper::Gift do
     }
   
   @api_readonly_methods = %w{
-      type
-      accountRef
-      accountName
-      ref
       tributeAccountRef
       tributeAccountName
       offsettingRef
@@ -55,11 +44,8 @@ describe Etapper::Gift do
     @this = Etapper::Gift.new(@api_object)
   end
 
-  it_should_behave_like "an Etapper abstract type"
+  it_should_behave_like "a Journal Entry class"
   
-  it "returns its base" do
-    @this.base.should be_a_kind_of(Etapper::API::Gift)
-  end
 
   it "maps defined values to fields" do
     @this.batch.should == "OL2009.03.02"
