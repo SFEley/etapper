@@ -61,7 +61,7 @@ module Etapper
                                                        nil,   # baseQuery
                                                        options[:endDate],
                                                        options[:startDate], 
-                                                       [5])   # types (5 is for gifts))
+                                                       type)   # types (5 is for gifts))
       j = Etapper.client.getJournalEntries(p)
       if j.count > 0
         j.data.collect {|je| Gift.new(je)}
