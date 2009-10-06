@@ -17,22 +17,6 @@ module Etapper
       end
     end
     
-    # Retrieves a collection of gifts using getJournalEntries given an account
-    def self.findByAccount(account, options={})
-      p = Etapper::API::PagedJournalEntriesRequest.new(true, # clearCache
-                                                       100,  # count
-                                                       0,    # start
-                                                       account.ref,
-                                                       nil,   # baseQuery
-                                                       options[:endDate],
-                                                       options[:startDate], 
-                                                       [5])   # types (5 is for gifts))
-      j = Etapper.client.getJournalEntries(p)
-      if j.count > 0
-        j.data.collect {|je| Gift.new(je)}
-      else
-        nil
-      end
-    end
+
   end
 end

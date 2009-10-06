@@ -2,9 +2,6 @@ require File.dirname(__FILE__) + '/shared_etap_abstract_spec'
 
 shared_examples_for "a Journal Entry class" do
   
-  def common_type
-    described_class.name.rpartition(/::/).last.symbolize
-  end
   
   # Also assumes these arrays were already initialized with class-specific fields
   @api_methods += %w{
@@ -27,12 +24,12 @@ shared_examples_for "a Journal Entry class" do
   
   it "always has a type" do
     je = described_class.new
-    je.type.should == common_type
+    je.type.should == described_class.symbolize
   end
   
   it "sets the base type if it's a new record" do
     je = described_class.new
-    je.base.type.should == Etapper::JournalEntry::TYPES[common_type]
+    je.base.type.should == Etapper::JournalEntry::TYPES[described_class.symbolize]
   end
   
   it "maps defined values to fields" do
@@ -55,7 +52,7 @@ shared_examples_for "a Journal Entry class" do
     end
     
     it "gets the single gift if given a ref" do
-      @dummy.expects(:getGift).with("1441.0.23787729").returns(@api_object)
+      @dummy.expects(described_class.getter).with("1441.0.23787729").returns(@api_object)
       g = described_class.find("1441.0.23787729")
       g.should be_a_kind_of(described_class)
       g.base.should == @api_object
@@ -65,7 +62,7 @@ shared_examples_for "a Journal Entry class" do
       @dummy.expects(:getDuplicateAccount).once.returns(@api_accounts['MashalSaif'])
       @dummy.expects(:getJournalEntries).returns(@api_collection)
       g = described_class.find(:account => "mashalsaif@gmail.com")
-      g.count.should == 5
+      g.count.should == @api_collection.count
     end
     
   end

@@ -22,7 +22,7 @@ module Etapper
     # Set the 'type' field based on the real class name, if it wasn't already
     def initialize(base = nil)
       super
-      @type = self.class.cname.symbolize
+      @type = self.class.symbolize
       @base.type ||= TYPES[@type]
     end
     
@@ -41,11 +41,26 @@ module Etapper
       @account = val
     end
     
+    # Returns the name of the class as a symbol (e.g. :gift)
+    def self.symbolize
+      cname.symbolize
+    end
+    
+    # Returns the type number of the particular subclass (e.g. 5)
+    def self.type
+      TYPES[self.symbolize]
+    end
+    
+    # Returns the "get" method of the class as a symbol (e.g. :getGift)
+    def self.getter
+      "get#{cname}".to_sym
+    end
+    
     def self.find(query)
       case query
       when /\d+\.\d+\.\d+/  # "4310.0.2276679"
-        g = client.getGift(query)
-        Gift.new(g) if g
+        g = client.send(getter, query)
+        new(g) if g
       when Hash
         a = Account.find(query[:account])
         findByAccount(a)
@@ -61,10 +76,10 @@ module Etapper
                                                        nil,   # baseQuery
                                                        options[:endDate],
                                                        options[:startDate], 
-                                                       type)   # types (5 is for gifts))
+                                                       [type])
       j = Etapper.client.getJournalEntries(p)
       if j.count > 0
-        j.data.collect {|je| Gift.new(je)}
+        j.data.collect {|je| new(je)}
       else
         nil
       end

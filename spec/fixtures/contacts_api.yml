@@ -1,0 +1,98 @@
+--- !ruby/object:Etapper::API::PagedJournalEntriesResponse 
+count: 2
+data: !seq:Etapper::API::ArrayOfanyType 
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Mashal Saif
+    accountRef: 4310.0.2276679
+    attachments: 
+    createdDate: 2008-10-24T14:41:22+00:00
+    date: 2008-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.2279152
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: 2008 Annual Meeting Registrant
+        valueRef: 4310.0.4199
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2008
+        valueRef: 4310.0.2279151
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.2276676
+    subject: 2008 2008 Annual Meeting Registrant
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Mashal Saif
+    accountRef: 4310.0.2276679
+    attachments: 
+    createdDate: 2008-10-24T14:41:22+00:00
+    date: 2008-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.2279150
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 3
+        fieldName: Abstract
+        fieldRef: 4310.0.3879
+        value: "This paper aims at broadening the traditional content-centered approach to fatwa analysis by highlighting the ground realities that inform the practice of issuing fatwas and influence the content of the fatwas themselves. By examining the specific case of fatwas on the Pakistani state issued by two extremely prominent Pakistani Deobandi jami\xC2\x91as, Jami\xC2\x91a Dar al-\xC2\x91Ulum Haqqaniyya and Jami\xC2\x91a Ashrafiyya, this paper elucidates why fatwas must be examined in a manner that accounts not just for their specific textual content, but also the realties that color the outlook of muftis. Moreover, the paper argues for the adoption of a holistic approach that examines the entire practice of fatwa issuance instead of solely the end result of this practice, i.e., the text of the fatwa itself. My paper demonstrates that the merits of this approach include a drastic widening of the scope in which a particular fatwa can be understood and interpreted."
+        valueRef: 4310.0.2279146
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 3
+        fieldName: Paper Title
+        fieldRef: 4310.0.3907
+        value: "Practice versus Text: Revamping the Traditional Content-centered Approach to Fatwa Analysis"
+        valueRef: 4310.0.2279148
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Presenter
+        valueRef: 4310.0.2279149
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Study of Islam Section
+        valueRef: 4310.0.4327
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2008
+        valueRef: 4310.0.2279147
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.2276675
+    subject: 2008 Annual Meeting Participation
+    type: 2
+pages: 1
+start: 0
+total: 2
+usedCache: false
