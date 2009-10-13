@@ -380,6 +380,19 @@ describe Etapper::Account do
       @this.accountRoleType = :donor
       @this.accountRoleType.should == :donor
     end
+    
+    it "knows its gifts" do
+      gifts_collection = YAML.load_file(File.dirname(__FILE__) + '/fixtures/gifts_api.yml')
+      @dummy.expects(:getJournalEntries).returns(gifts_collection)
+      @this.gifts.size.should == gifts_collection.count
+    end
+    
+    it "knows its contacts" do
+      contacts_collection = YAML.load_file(File.dirname(__FILE__) + '/fixtures/contacts_api.yml')
+      @dummy.expects(:getJournalEntries).returns(contacts_collection)
+      @this.contacts.size.should == contacts_collection.count
+    end
+      
   
   end
 

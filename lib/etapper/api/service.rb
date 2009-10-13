@@ -1451,7 +1451,7 @@ end
 #   start - SOAP::SOAPInt
 #   total - SOAP::SOAPInt
 #   usedCache - SOAP::SOAPBoolean
-class PagedJournalEntriesResponse
+ class PagedJournalEntriesResponse
   attr_accessor :count
   attr_accessor :data
   attr_accessor :pages

@@ -16,6 +16,8 @@ module Etapper
       :disbursement => 12,
       :segmented_pledge => 13
     }
+    
+ 
     attr_reader :type
     etap_read_only :ref, :type, :accountName, :accountRef
     
@@ -39,6 +41,7 @@ module Etapper
     # Sets the account that this gift belongs to.
     def account=(val)
       @account = val
+      @base.accountRef = val.ref
     end
     
     # Returns the name of the class as a symbol (e.g. :gift)

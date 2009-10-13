@@ -99,7 +99,16 @@ module Etapper
       @base.accountRoleType = ACCOUNT_ROLE_TYPES.index(val)
     end
     
+    # Retrieves all Gift journal entries for the account. 
+    def gifts
+      @gifts ||= Gift.findByAccount(self)
+    end
      
+    # Retrieves all Contact journal entries for the account.
+    def contacts
+      @contacts ||= Contact.findByAccount(self)
+    end
+    
     # Return the eTapestry account ID
     def id
       base.id

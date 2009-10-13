@@ -1,0 +1,5135 @@
+--- !ruby/object:Etapper::API::PagedJournalEntriesResponse 
+count: 20
+data: !seq:Etapper::API::ArrayOfanyType 
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2009-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2009
+        valueRef: 4310.0.1406230
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2009
+        valueRef: 4310.0.1406231
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Committee
+        fieldRef: 4310.0.4023
+        value: Immediate Past President
+        valueRef: 4310.0.4034
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389676
+    subject: Committees
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2009-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Committee
+        fieldRef: 4310.0.4023
+        value: Nominations Committee
+        valueRef: 4310.0.4041
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2009
+        valueRef: 4310.0.1406211
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2009
+        valueRef: 4310.0.1406212
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389669
+    subject: Committees
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2009-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2009
+        valueRef: 4310.0.1406150
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Committee
+        fieldRef: 4310.0.4023
+        value: Executive Committee
+        valueRef: 4310.0.4027
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2009
+        valueRef: 4310.0.1406151
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389647
+    subject: Committees
+    type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 50.0
+    approach: 2008 Fall Direct Mail
+    attachments: 
+    campaign: 
+    createdDate: 2008-12-11T16:36:50+00:00
+    date: 2008-12-09T05:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: "372"
+        valueRef: 1441.0.8222787
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 2008-12-11T16:55:49+00:00
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: ""
+    recognitionName: ""
+    recognitionType: 0
+    ref: 1441.0.8220705
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: ""
+        bank: ""
+        date: 2008-11-30T05:00:00+00:00
+        note: ""
+        number: "2849"
+        payee: ""
+        signator: ""
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 500.0
+    approach: Gift with Membership
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-08-14T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: OL2008.08.14
+        valueRef: 4310.0.1406402
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Data Source
+        fieldRef: 4310.0.2546
+        value: Online Gift
+        valueRef: 4310.0.2626
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389721
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: 
+      creditCard: !ruby/object:Etapper::API::CreditCard 
+        authorizationCode: 
+        cardType: Unknown
+        cvv2: 
+        expirationMonth: 1
+        expirationYear: 2000
+        firstName: 
+        lastName: 
+        middleName: 
+        nameOnCard: Conversion Data
+        note: 
+        number: "-9999"
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 3
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 156.0
+    approach: 
+    attachments: 
+    campaign: Membership 2009
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-08-14T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: OL2008.08.14
+        valueRef: 4310.0.1406346
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Data Source
+        fieldRef: 4310.0.2546
+        value: Online Gift
+        valueRef: 4310.0.2626
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Payment ID Number
+        fieldRef: 4310.0.3909
+        value: AAR20080814112944R9592A65600
+        valueRef: 4310.0.1406348
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Other Member Info
+        fieldRef: 4310.0.4161
+        value: SBL Member
+        valueRef: 4310.0.4172
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/2009
+        valueRef: 4310.0.1406347
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 156.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389700
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: 
+      creditCard: !ruby/object:Etapper::API::CreditCard 
+        authorizationCode: 
+        cardType: Unknown
+        cvv2: 
+        expirationMonth: 1
+        expirationYear: 2000
+        firstName: 
+        lastName: 
+        middleName: 
+        nameOnCard: Conversion Data
+        note: 
+        number: "-9999"
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 3
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 250.0
+    approach: Gift with Annual Meeting Registration
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-04-18T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: am20080418
+        valueRef: 4310.0.1406399
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389720
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: !ruby/object:Etapper::API::Cash 
+        note: 
+      check: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 1
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.1406239
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Respondent
+        valueRef: 4310.0.1406240
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Ethics Section
+        valueRef: 4310.0.4242
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2008
+        valueRef: 4310.0.1406238
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389679
+    subject: 2008 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.1406225
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: "***Special Topics Forum Other"
+        valueRef: 4310.0.4193
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Presiding
+        valueRef: 4310.0.1406226
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2008
+        valueRef: 4310.0.1406224
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389674
+    subject: 2008 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.1406222
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Committee Meeting
+        valueRef: 4310.0.4225
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Presiding
+        valueRef: 4310.0.1406223
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2008
+        valueRef: 4310.0.1406221
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389673
+    subject: 2008 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.1406220
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Committee
+        fieldRef: 4310.0.4023
+        value: Executive Committee
+        valueRef: 4310.0.4027
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Position
+        fieldRef: 4310.0.4085
+        value: Chair
+        valueRef: 4310.0.4087
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2008
+        valueRef: 4310.0.1406219
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389672
+    subject: Committees
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.1406193
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: merge into Plenary
+        valueRef: 4310.0.4263
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Panelist
+        valueRef: 4310.0.1406194
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2008
+        valueRef: 4310.0.1406192
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389662
+    subject: 2008 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.1406171
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: merge into Plenary
+        valueRef: 4310.0.4263
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Presiding
+        valueRef: 4310.0.1406172
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2008
+        valueRef: 4310.0.1406170
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389653
+    subject: 2008 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.1406168
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Committee Meeting
+        valueRef: 4310.0.4225
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Presiding
+        valueRef: 4310.0.1406169
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2008
+        valueRef: 4310.0.1406167
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389652
+    subject: 2008 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.1406141
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: merge into Plenary
+        valueRef: 4310.0.4263
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Presiding
+        valueRef: 4310.0.1406142
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2008
+        valueRef: 4310.0.1406140
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389643
+    subject: 2008 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.1406127
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Panelist
+        valueRef: 4310.0.1406128
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: "***Special Topics Forum Other"
+        valueRef: 4310.0.4193
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2008
+        valueRef: 4310.0.1406126
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389638
+    subject: 2008 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.1406125
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: 2008 Annual Meeting Registrant
+        valueRef: 4310.0.4199
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2008
+        valueRef: 4310.0.1406124
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389637
+    subject: 2008 2008 Annual Meeting Registrant
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Liberation Theologies Consultation
+        valueRef: 4310.0.4260
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.1406122
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Panelist
+        valueRef: 4310.0.1406123
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2008
+        valueRef: 4310.0.1406121
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389636
+    subject: 2008 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.1406115
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Committee
+        fieldRef: 4310.0.4023
+        value: Officers
+        valueRef: 4310.0.4042
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2008
+        valueRef: 4310.0.1406114
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389633
+    subject: Committees
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Committee
+        fieldRef: 4310.0.4023
+        value: Governance Task Force
+        valueRef: 4310.0.4031
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Position
+        fieldRef: 4310.0.4085
+        value: Co-Chair
+        valueRef: 4310.0.4088
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2008
+        valueRef: 4310.0.1406101
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2015
+        valueRef: 4310.0.1406102
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389628
+    subject: Committees
+    type: 2
+pages: 5
+start: 0
+total: 99
+usedCache: true
+--- !ruby/object:Etapper::API::PagedJournalEntriesResponse 
+count: 20
+data: !seq:Etapper::API::ArrayOfanyType 
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2008-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Presiding
+        valueRef: 4310.0.1406093
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2008
+        valueRef: 4310.0.1406091
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: merge into Plenary
+        valueRef: 4310.0.4263
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.1406092
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389624
+    subject: 2008 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 500.0
+    approach: Online
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2007-12-10T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Data Source
+        fieldRef: 4310.0.2546
+        value: Online Gift
+        valueRef: 4310.0.2626
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389719
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: 
+      creditCard: !ruby/object:Etapper::API::CreditCard 
+        authorizationCode: 
+        cardType: Unknown
+        cvv2: 
+        expirationMonth: 1
+        expirationYear: 2000
+        firstName: 
+        lastName: 
+        middleName: 
+        nameOnCard: Conversion Data
+        note: 
+        number: "-9999"
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 3
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 500.0
+    approach: Gift with Membership
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2007-08-27T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: OL2007.08.27
+        valueRef: 4310.0.1406394
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Data Source
+        fieldRef: 4310.0.2546
+        value: Online Gift
+        valueRef: 4310.0.2626
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389718
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: 
+      creditCard: !ruby/object:Etapper::API::CreditCard 
+        authorizationCode: 
+        cardType: Unknown
+        cvv2: 
+        expirationMonth: 1
+        expirationYear: 2000
+        firstName: 
+        lastName: 
+        middleName: 
+        nameOnCard: Conversion Data
+        note: 
+        number: "-9999"
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 3
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 195.0
+    approach: 
+    attachments: 
+    campaign: Membership 2008
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2007-08-27T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Payment ID Number
+        fieldRef: 4310.0.3909
+        value: AAR20070827193958R1671A69500
+        valueRef: 4310.0.1406342
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: OL2007.08.27
+        valueRef: 4310.0.1406341
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Data Source
+        fieldRef: 4310.0.2546
+        value: Online Gift
+        valueRef: 4310.0.2626
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/2008
+        valueRef: 4310.0.1406340
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 195.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389699
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: 
+      creditCard: !ruby/object:Etapper::API::CreditCard 
+        authorizationCode: 
+        cardType: Unknown
+        cvv2: 
+        expirationMonth: 1
+        expirationYear: 2000
+        firstName: 
+        lastName: 
+        middleName: 
+        nameOnCard: Conversion Data
+        note: 
+        number: "-9999"
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 3
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2007-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Respondent
+        valueRef: 4310.0.1406200
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2007
+        valueRef: 4310.0.1406198
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: merge into Plenary
+        valueRef: 4310.0.4263
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2007
+        valueRef: 4310.0.1406199
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389664
+    subject: 2007 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2007-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Committee
+        fieldRef: 4310.0.4023
+        value: Officers
+        valueRef: 4310.0.4042
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2007
+        valueRef: 4310.0.1406184
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2007
+        valueRef: 4310.0.1406185
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389659
+    subject: Committees
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2007-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: 2007 Annual Meeting Registrant
+        valueRef: 4310.0.4198
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2007
+        valueRef: 4310.0.1406173
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2007
+        valueRef: 4310.0.1406174
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389654
+    subject: 2007 2007 Annual Meeting Registrant
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2007-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Panelist
+        valueRef: 4310.0.1406113
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2007
+        valueRef: 4310.0.1406111
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2007
+        valueRef: 4310.0.1406112
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: "***Special Topics Forum Other"
+        valueRef: 4310.0.4193
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389632
+    subject: 2007 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2007-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Presiding
+        valueRef: 4310.0.1406096
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2007
+        valueRef: 4310.0.1406094
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: merge into Plenary
+        valueRef: 4310.0.4263
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2007
+        valueRef: 4310.0.1406095
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389625
+    subject: 2007 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 100.0
+    approach: Direct Mail
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2006-11-07T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: "167"
+        valueRef: 4310.0.1406391
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389717
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 2006-11-07T17:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 195.0
+    approach: 
+    attachments: 
+    campaign: Membership 2007
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2006-08-25T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: OL2006.08.25
+        valueRef: 4310.0.1406336
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/2007
+        valueRef: 4310.0.1406335
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Data Source
+        fieldRef: 4310.0.2546
+        value: Online Gift
+        valueRef: 4310.0.2626
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Payment ID Number
+        fieldRef: 4310.0.3909
+        value: AAR20060825230807R7434A19500
+        valueRef: 4310.0.1406334
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 195.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389698
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: 
+      creditCard: !ruby/object:Etapper::API::CreditCard 
+        authorizationCode: 
+        cardType: Unknown
+        cvv2: 
+        expirationMonth: 1
+        expirationYear: 2000
+        firstName: 
+        lastName: 
+        middleName: 
+        nameOnCard: Conversion Data
+        note: 
+        number: "-9999"
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 3
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 100.0
+    approach: Direct Mail
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2006-04-12T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: "803"
+        valueRef: 4310.0.1406388
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389716
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 2006-04-12T16:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2006-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Reformed Theology and History Group
+        valueRef: 4310.0.4290
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2006
+        valueRef: 4310.0.1406214
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Panelist
+        valueRef: 4310.0.1406215
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2006
+        valueRef: 4310.0.1406213
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389670
+    subject: 2006 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2006-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2006
+        valueRef: 4310.0.1406210
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2006
+        valueRef: 4310.0.1406209
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Committee
+        fieldRef: 4310.0.4023
+        value: Officers
+        valueRef: 4310.0.4042
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389668
+    subject: Committees
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2006-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2006
+        valueRef: 4310.0.1406207
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Panelist
+        valueRef: 4310.0.1406208
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2006
+        valueRef: 4310.0.1406206
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Women and Religion Section
+        valueRef: 4310.0.4342
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389667
+    subject: 2006 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2006-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2006
+        valueRef: 4310.0.1406178
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2006
+        valueRef: 4310.0.1406177
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: 2006 Annual Meeting Registrant
+        valueRef: 4310.0.4197
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389656
+    subject: 2006 2006 Annual Meeting Registrant
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2006-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Committee
+        fieldRef: 4310.0.4023
+        value: Executive Committee
+        valueRef: 4310.0.4027
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2006
+        valueRef: 4310.0.1406119
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2007
+        valueRef: 4310.0.1406120
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389635
+    subject: Committees
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2006-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2006
+        valueRef: 4310.0.1406106
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Panelist
+        valueRef: 4310.0.1406107
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2006
+        valueRef: 4310.0.1406105
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: "***Special Topics Forum Other"
+        valueRef: 4310.0.4193
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389630
+    subject: 2006 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2006-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2006
+        valueRef: 4310.0.1406097
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.1406098
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Committee
+        fieldRef: 4310.0.4023
+        value: Program Committee
+        valueRef: 4310.0.4043
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389626
+    subject: Committees
+    type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 25.0
+    approach: Direct Mail
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2005-11-09T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: "325"
+        valueRef: 4310.0.1406385
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389715
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 2005-11-09T17:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+pages: 5
+start: 20
+total: 99
+usedCache: true
+--- !ruby/object:Etapper::API::PagedJournalEntriesResponse 
+count: 20
+data: !seq:Etapper::API::ArrayOfanyType 
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 100.0
+    approach: Gift with Membership
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2005-08-08T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Data Source
+        fieldRef: 4310.0.2546
+        value: Online Gift
+        valueRef: 4310.0.2626
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: OL2005.08.08
+        valueRef: 4310.0.1406382
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389714
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: 
+      creditCard: !ruby/object:Etapper::API::CreditCard 
+        authorizationCode: 
+        cardType: Unknown
+        cvv2: 
+        expirationMonth: 1
+        expirationYear: 2000
+        firstName: 
+        lastName: 
+        middleName: 
+        nameOnCard: Conversion Data
+        note: 
+        number: "-9999"
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 3
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 145.0
+    approach: 
+    attachments: 
+    campaign: Membership 2006
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2005-08-08T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/2006
+        valueRef: 4310.0.1406329
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Data Source
+        fieldRef: 4310.0.2546
+        value: Online Gift
+        valueRef: 4310.0.2626
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Payment ID Number
+        fieldRef: 4310.0.3909
+        value: AAR20050808164244R5235A24500
+        valueRef: 4310.0.1406330
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: OL2005.08.08
+        valueRef: 4310.0.1406328
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 145.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389697
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: 
+      creditCard: !ruby/object:Etapper::API::CreditCard 
+        authorizationCode: 
+        cardType: Unknown
+        cvv2: 
+        expirationMonth: 1
+        expirationYear: 2000
+        firstName: 
+        lastName: 
+        middleName: 
+        nameOnCard: Conversion Data
+        note: 
+        number: "-9999"
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 3
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 25.0
+    approach: Direct Mail
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2005-05-06T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: "590"
+        valueRef: 4310.0.1406379
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389713
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 2005-05-06T16:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2005-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2005
+        valueRef: 4310.0.1406203
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Steering Committee
+        valueRef: 4310.0.1406204
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Womanist Approaches to Religion and Society Group
+        valueRef: 4310.0.4341
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2008
+        valueRef: 4310.0.1406205
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389666
+    subject: 2005 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2005-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2005
+        valueRef: 4310.0.1406179
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2005
+        valueRef: 4310.0.1406180
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: 2005 Annual Meeting Registrant
+        valueRef: 4310.0.4196
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389657
+    subject: 2005 2005 Annual Meeting Registrant
+    type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 25.0
+    approach: Direct Mail
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2004-10-19T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: "305"
+        valueRef: 4310.0.1406376
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389712
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 2004-10-19T16:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 25.0
+    approach: Direct Mail
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2004-04-15T16:00:00+00:00
+    definedValues: 
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389711
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 2004-04-15T16:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 0.0
+    approach: 
+    attachments: 
+    campaign: Membership 2005
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2004-01-06T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/2005
+        valueRef: 4310.0.1406325
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: reviewer in 2003
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389696
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: !ruby/object:Etapper::API::Cash 
+        note: 
+      check: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 1
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2004-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Committee
+        fieldRef: 4310.0.4023
+        value: Program Committee
+        valueRef: 4310.0.4043
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2004
+        valueRef: 4310.0.1406201
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2006
+        valueRef: 4310.0.1406202
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389665
+    subject: Committees
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2004-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2004
+        valueRef: 4310.0.1406175
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2004
+        valueRef: 4310.0.1406176
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Committee
+        fieldRef: 4310.0.4023
+        value: Task Force on the Independent Annual Meeting
+        valueRef: 4310.0.4056
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389655
+    subject: Committees
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2004-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2004
+        valueRef: 4310.0.1406138
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2004
+        valueRef: 4310.0.1406139
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: 2004 Annual Meeting Registrant
+        valueRef: 4310.0.4195
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389642
+    subject: 2004 2004 Annual Meeting Registrant
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2004-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2004
+        valueRef: 4310.0.1406132
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2004
+        valueRef: 4310.0.1406133
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Presiding
+        valueRef: 4310.0.1406134
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Womanist Approaches to Religion and Society Group
+        valueRef: 4310.0.4341
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389640
+    subject: 2004 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 25.0
+    approach: Gift with Membership
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2003-08-26T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: OL2003.08.26
+        valueRef: 4310.0.1406371
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Data Source
+        fieldRef: 4310.0.2546
+        value: Online Gift
+        valueRef: 4310.0.2626
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389710
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: 
+      creditCard: !ruby/object:Etapper::API::CreditCard 
+        authorizationCode: 
+        cardType: Unknown
+        cvv2: 
+        expirationMonth: 1
+        expirationYear: 2000
+        firstName: 
+        lastName: 
+        middleName: 
+        nameOnCard: Conversion Data
+        note: 
+        number: "-9999"
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 3
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 110.0
+    approach: 
+    attachments: 
+    campaign: Membership 2004
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2003-08-26T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: OL2003.08.26
+        valueRef: 4310.0.1406320
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/2004
+        valueRef: 4310.0.1406319
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Data Source
+        fieldRef: 4310.0.2546
+        value: Online Gift
+        valueRef: 4310.0.2626
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Payment ID Number
+        fieldRef: 4310.0.3909
+        value: AAR20030826172250R7923A13500
+        valueRef: 4310.0.1406321
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 110.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389695
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: 
+      creditCard: !ruby/object:Etapper::API::CreditCard 
+        authorizationCode: 
+        cardType: Unknown
+        cvv2: 
+        expirationMonth: 1
+        expirationYear: 2000
+        firstName: 
+        lastName: 
+        middleName: 
+        nameOnCard: Conversion Data
+        note: 
+        number: "-9999"
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 3
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 25.0
+    approach: Direct Mail
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2003-06-11T16:00:00+00:00
+    definedValues: 
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389709
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 2003-06-11T16:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2003-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Asian North American Religion, Culture, and Society Group
+        valueRef: 4310.0.4207
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2003
+        valueRef: 4310.0.1406237
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Reviewer
+        valueRef: 4310.0.1406235
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2003
+        valueRef: 4310.0.1406236
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389678
+    subject: 2003 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2003-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Panelist
+        valueRef: 4310.0.1406234
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2003
+        valueRef: 4310.0.1406233
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: "***Special Topics Forum Other"
+        valueRef: 4310.0.4193
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2003
+        valueRef: 4310.0.1406232
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389677
+    subject: 2003 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2003-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Women and Religion Section
+        valueRef: 4310.0.4342
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2003
+        valueRef: 4310.0.1406229
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Reviewer
+        valueRef: 4310.0.1406227
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2003
+        valueRef: 4310.0.1406228
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389675
+    subject: 2003 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2003-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Native Traditions in the Americas Group
+        valueRef: 4310.0.4270
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2003
+        valueRef: 4310.0.1406218
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Reviewer
+        valueRef: 4310.0.1406216
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2003
+        valueRef: 4310.0.1406217
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389671
+    subject: 2003 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2003-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Women and Religion Section
+        valueRef: 4310.0.4342
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2003
+        valueRef: 4310.0.1406191
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Reviewer
+        valueRef: 4310.0.1406189
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2003
+        valueRef: 4310.0.1406190
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389661
+    subject: 2003 Annual Meeting Participation
+    type: 2
+pages: 5
+start: 40
+total: 99
+usedCache: true
+--- !ruby/object:Etapper::API::PagedJournalEntriesResponse 
+count: 20
+data: !seq:Etapper::API::ArrayOfanyType 
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2003-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2003
+        valueRef: 4310.0.1406182
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Reviewer
+        valueRef: 4310.0.1406181
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Women and Religion Section
+        valueRef: 4310.0.4342
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2003
+        valueRef: 4310.0.1406183
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389658
+    subject: 2003 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2003-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2003
+        valueRef: 4310.0.1406165
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Reviewer
+        valueRef: 4310.0.1406164
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Women and Religion Section
+        valueRef: 4310.0.4342
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2003
+        valueRef: 4310.0.1406166
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389651
+    subject: 2003 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2003-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2003
+        valueRef: 4310.0.1406136
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Reviewer
+        valueRef: 4310.0.1406135
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Women and Religion Section
+        valueRef: 4310.0.4342
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2003
+        valueRef: 4310.0.1406137
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389641
+    subject: 2003 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2003-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2003
+        valueRef: 4310.0.1406129
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Womanist Approaches to Religion and Society Group
+        valueRef: 4310.0.4341
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Panelist
+        valueRef: 4310.0.1406131
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2003
+        valueRef: 4310.0.1406130
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389639
+    subject: 2003 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2003-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2003
+        valueRef: 4310.0.1406103
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: 2003 Annual Meeting Registrant
+        valueRef: 4310.0.4194
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2003
+        valueRef: 4310.0.1406104
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389629
+    subject: 2003 2003 Annual Meeting Registrant
+    type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 25.0
+    approach: Gift with Membership
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2002-09-11T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Data Source
+        fieldRef: 4310.0.2546
+        value: Online Gift
+        valueRef: 4310.0.2626
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: OL2002.09.11
+        valueRef: 4310.0.1406366
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389708
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: 
+      creditCard: !ruby/object:Etapper::API::CreditCard 
+        authorizationCode: 
+        cardType: Unknown
+        cvv2: 
+        expirationMonth: 1
+        expirationYear: 2000
+        firstName: 
+        lastName: 
+        middleName: 
+        nameOnCard: Conversion Data
+        note: 
+        number: "-9999"
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 3
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 95.0
+    approach: 
+    attachments: 
+    campaign: Membership 2003
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2002-09-11T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/2003
+        valueRef: 4310.0.1406315
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Data Source
+        fieldRef: 4310.0.2546
+        value: Online Gift
+        valueRef: 4310.0.2626
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: OL2002.09.11
+        valueRef: 4310.0.1406314
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Payment ID Number
+        fieldRef: 4310.0.3909
+        value: AAR20020911165225R8856A12000
+        valueRef: 4310.0.1406313
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 95.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389694
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: 
+      creditCard: !ruby/object:Etapper::API::CreditCard 
+        authorizationCode: 
+        cardType: Unknown
+        cvv2: 
+        expirationMonth: 1
+        expirationYear: 2000
+        firstName: 
+        lastName: 
+        middleName: 
+        nameOnCard: Conversion Data
+        note: 
+        number: "-9999"
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 3
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2002-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Women and Religion Section
+        valueRef: 4310.0.4342
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2002
+        valueRef: 4310.0.1406187
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Panelist
+        valueRef: 4310.0.1406188
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2002
+        valueRef: 4310.0.1406186
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389660
+    subject: 2002 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 95.0
+    approach: 
+    attachments: 
+    campaign: Membership 2002
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2001-11-07T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: 2001.11.009
+        valueRef: 4310.0.1406309
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/2002
+        valueRef: 4310.0.1406308
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Payment ID Number
+        fieldRef: 4310.0.3909
+        value: "1657"
+        valueRef: 4310.0.1406307
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 95.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389693
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 2001-11-07T17:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 25.0
+    approach: Direct Mail
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2001-10-23T16:00:00+00:00
+    definedValues: 
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389707
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 2001-10-23T16:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2001-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2001
+        valueRef: 4310.0.1406159
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 3
+        fieldName: Paper Title
+        fieldRef: 4310.0.3907
+        value: "Vanishing into Limbo:  The Peculiar Career of Aunt Jemina"
+        valueRef: 4310.0.1406163
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Presenter
+        valueRef: 4310.0.1406161
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 3
+        fieldName: Abstract
+        fieldRef: 4310.0.3879
+        value: With the rise of massive global market capitalism, human lives and their cultures have become commodities that are marketed and consumed in the global marketplace.  This paper is a preliminary investigation into one manifestation of this dynamic--the emergence of identity as property.  Through a cursory examination of the image of Aunt Jemina, this paper will explore the structural matrix that supports the commodification of identity and its particular impact on the lives of African Americans.
+        valueRef: 4310.0.1406162
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Womanist Approaches to Religion and Society Group
+        valueRef: 4310.0.4341
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2001
+        valueRef: 4310.0.1406160
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389650
+    subject: 2001 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2001-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2001
+        valueRef: 4310.0.1406143
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Lesbian-Feminist Issues and Religion Group
+        valueRef: 4310.0.4258
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Panelist
+        valueRef: 4310.0.1406145
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2001
+        valueRef: 4310.0.1406144
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389644
+    subject: 2001 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 95.0
+    approach: 
+    attachments: 
+    campaign: Membership 2001
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2000-10-06T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: 2000.10.010
+        valueRef: 4310.0.1406303
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/2001
+        valueRef: 4310.0.1406302
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 95.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389692
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: 
+      creditCard: !ruby/object:Etapper::API::CreditCard 
+        authorizationCode: 
+        cardType: American Express
+        cvv2: 
+        expirationMonth: 1
+        expirationYear: 2000
+        firstName: 
+        lastName: 
+        middleName: 
+        nameOnCard: Conversion Data
+        note: 
+        number: "-9999"
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 3
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 25.0
+    approach: Direct Mail
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2000-10-03T16:00:00+00:00
+    definedValues: 
+    final: false
+    fund: International Programs
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389706
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 2000-10-03T16:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2000-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2000
+        valueRef: 4310.0.1406156
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Respondent
+        valueRef: 4310.0.1406157
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Women and Religion Section
+        valueRef: 4310.0.4342
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2000
+        valueRef: 4310.0.1406158
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389649
+    subject: 2000 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 2000-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Presiding
+        valueRef: 4310.0.1406154
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/2000
+        valueRef: 4310.0.1406153
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 3
+        fieldName: Abstract
+        fieldRef: 4310.0.3879
+        value: |-
+          Alice Walker's four-part definition of a womanist portrays the complexity of "being" and "doing" as a womanist.  This panel will discuss the affiliations
+          and involvement of African American women in religious communities (the Nation of Islam, the Moorish Science Temple, black churches) and social movements (Civil Rights Movement) to liberate the African American community.  Particular attention will be given to loyalties, solidarities,
+          moral norms, and the challenges of being a womanist doing activism, while posing questions about future activism.
+        valueRef: 4310.0.1406152
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Womanist Approaches to Religion and Society Group
+        valueRef: 4310.0.4341
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2000
+        valueRef: 4310.0.1406155
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389648
+    subject: 2000 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 95.0
+    approach: 
+    attachments: 
+    campaign: Membership 2000
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1999-09-02T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Payment ID Number
+        fieldRef: 4310.0.3909
+        value: "1052"
+        valueRef: 4310.0.1406296
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/2000
+        valueRef: 4310.0.1406298
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: 01490299
+        valueRef: 4310.0.1406297
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 95.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389691
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 1999-09-02T16:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1999-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Other Programs
+        fieldRef: 4310.0.4176
+        value: Teaching Workshops
+        valueRef: 4310.0.4185
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/1999
+        valueRef: 4310.0.1406148
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2000
+        valueRef: 4310.0.1406149
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389646
+    subject: Other Programs
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1999-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Other Programs
+        fieldRef: 4310.0.4176
+        value: Teaching Workshops
+        valueRef: 4310.0.4185
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/1999
+        valueRef: 4310.0.1406146
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/2000
+        valueRef: 4310.0.1406147
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389645
+    subject: Other Programs
+    type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 95.0
+    approach: 
+    attachments: 
+    campaign: Membership 1999
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1998-10-06T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/1999
+        valueRef: 4310.0.1406292
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: 025a0698
+        valueRef: 4310.0.1406291
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Payment ID Number
+        fieldRef: 4310.0.3909
+        value: "3334"
+        valueRef: 4310.0.1406290
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 95.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389690
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 1998-10-06T16:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+pages: 5
+start: 60
+total: 99
+usedCache: true
+--- !ruby/object:Etapper::API::PagedJournalEntriesResponse 
+count: 19
+data: !seq:Etapper::API::ArrayOfanyType 
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 25.0
+    approach: Direct Mail
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1998-04-30T16:00:00+00:00
+    definedValues: 
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389705
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 1998-04-30T16:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 70.0
+    approach: 
+    attachments: 
+    campaign: Membership 1998
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1997-09-22T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/1998
+        valueRef: 4310.0.1406286
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Payment ID Number
+        fieldRef: 4310.0.3909
+        value: "3036"
+        valueRef: 4310.0.1406285
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: "11492297"
+        valueRef: 4310.0.1406284
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 70.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389689
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 1997-09-22T16:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 50.0
+    approach: Direct Mail
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1997-05-05T16:00:00+00:00
+    definedValues: 
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389704
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 1997-05-05T16:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1997-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/1997
+        valueRef: 4310.0.1406099
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/1999
+        valueRef: 4310.0.1406100
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Committee
+        fieldRef: 4310.0.4023
+        value: Status of Women in the Profession
+        valueRef: 4310.0.4053
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Position
+        fieldRef: 4310.0.4085
+        value: Chair
+        valueRef: 4310.0.4087
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389627
+    subject: Committees
+    type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 50.0
+    approach: Direct Mail
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1996-12-31T17:00:00+00:00
+    definedValues: 
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389703
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 1996-12-31T17:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 85.0
+    approach: 
+    attachments: 
+    campaign: Membership 1997
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1996-10-08T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/1997
+        valueRef: 4310.0.1406279
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: 025a0896
+        valueRef: 4310.0.1406280
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 85.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389688
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: 
+      creditCard: !ruby/object:Etapper::API::CreditCard 
+        authorizationCode: 
+        cardType: Visa
+        cvv2: 
+        expirationMonth: 1
+        expirationYear: 2000
+        firstName: 
+        lastName: 
+        middleName: 
+        nameOnCard: Conversion Data
+        note: 
+        number: "-9999"
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 3
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 70.0
+    approach: 
+    attachments: 
+    campaign: Membership 1996
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1995-10-12T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/1996
+        valueRef: 4310.0.1406275
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: 049a1295
+        valueRef: 4310.0.1406274
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Payment ID Number
+        fieldRef: 4310.0.3909
+        value: "992"
+        valueRef: 4310.0.1406273
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 70.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389687
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 1995-10-12T16:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 65.0
+    approach: 
+    attachments: 
+    campaign: Membership 1995
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1994-10-06T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/1995
+        valueRef: 4310.0.1406269
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: 020a0694
+        valueRef: 4310.0.1406268
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 65.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389686
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: 
+      creditCard: !ruby/object:Etapper::API::CreditCard 
+        authorizationCode: 
+        cardType: Visa
+        cvv2: 
+        expirationMonth: 1
+        expirationYear: 2000
+        firstName: 
+        lastName: 
+        middleName: 
+        nameOnCard: Conversion Data
+        note: 
+        number: "-9999"
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 3
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1994-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Ethics Section
+        valueRef: 4310.0.4242
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/1996
+        valueRef: 4310.0.1406109
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/1994
+        valueRef: 4310.0.1406110
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Chair
+        valueRef: 4310.0.1406108
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389631
+    subject: 1994 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 55.0
+    approach: 
+    attachments: 
+    campaign: Membership 1994
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1993-10-22T16:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: 072a2293
+        valueRef: 4310.0.1406264
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/1994
+        valueRef: 4310.0.1406263
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 55.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389685
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: 
+      creditCard: !ruby/object:Etapper::API::CreditCard 
+        authorizationCode: 
+        cardType: Visa
+        cvv2: 
+        expirationMonth: 1
+        expirationYear: 2000
+        firstName: 
+        lastName: 
+        middleName: 
+        nameOnCard: Conversion Data
+        note: 
+        number: "-9999"
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 3
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 50.0
+    approach: 
+    attachments: 
+    campaign: Membership 1993
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1992-12-21T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Batch
+        fieldRef: 4310.0.3883
+        value: 075c2192
+        valueRef: 4310.0.1406259
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Payment ID Number
+        fieldRef: 4310.0.3909
+        value: "1381"
+        valueRef: 4310.0.1406258
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/1993
+        valueRef: 4310.0.1406257
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 50.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389684
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 1992-12-21T17:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1992-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/1995
+        valueRef: 4310.0.1406196
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Womanist Approaches to Religion and Society Group
+        valueRef: 4310.0.4341
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Steering Committee
+        valueRef: 4310.0.1406195
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/1992
+        valueRef: 4310.0.1406197
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389663
+    subject: 1992 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Contact 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    attachments: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1992-01-01T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Program Unit
+        fieldRef: 4310.0.4192
+        value: Ethics Section
+        valueRef: 4310.0.4242
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 0
+        fieldName: Role
+        fieldRef: 4310.0.3915
+        value: Steering Committee
+        valueRef: 4310.0.1406117
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure End
+        fieldRef: 4310.0.3919
+        value: 12/31/1993
+        valueRef: 4310.0.1406116
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Tenure Begin
+        fieldRef: 4310.0.3917
+        value: 1/1/1992
+        valueRef: 4310.0.1406118
+    final: false
+    lastModifiedDate: 
+    method: Participation
+    note: ""
+    ref: 4310.0.1389634
+    subject: 1992 Annual Meeting Participation
+    type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 25.0
+    approach: Capital Fund 1993
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1991-12-31T17:00:00+00:00
+    definedValues: 
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389702
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 1991-12-31T17:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 45.0
+    approach: 
+    attachments: 
+    campaign: Membership 1992
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1991-11-19T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/1992
+        valueRef: 4310.0.1406253
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 45.0
+    note: APP TO '92
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389683
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: !ruby/object:Etapper::API::Cash 
+        note: 
+      check: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 1
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 25.0
+    approach: Capital Fund 1993
+    attachments: 
+    campaign: 
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1990-12-31T17:00:00+00:00
+    definedValues: 
+    final: false
+    fund: Unrestricted
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 0.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389701
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: 
+      check: !ruby/object:Etapper::API::Check 
+        account: 
+        bank: 
+        date: 1990-12-31T17:00:00+00:00
+        note: 
+        number: "9999999"
+        payee: 
+        signator: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 2
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 45.0
+    approach: 
+    attachments: 
+    campaign: Membership 1991
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1990-12-20T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/1991
+        valueRef: 4310.0.1406249
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 45.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389682
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: !ruby/object:Etapper::API::Cash 
+        note: 
+      check: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 1
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 45.0
+    approach: 
+    attachments: 
+    campaign: Membership 1990
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1989-12-20T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/1990
+        valueRef: 4310.0.1406245
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Member (Regular)
+        valueRef: 4310.0.4108
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 45.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389681
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: !ruby/object:Etapper::API::Cash 
+        note: 
+      check: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 1
+  - !ruby/object:Etapper::API::Gift 
+    accountName: Emilie M. Townes
+    accountRef: 4310.0.1389722
+    amount: 15.0
+    approach: 
+    attachments: 
+    campaign: Membership 1989
+    createdDate: 2008-10-24T14:22:14+00:00
+    date: 1988-12-07T17:00:00+00:00
+    definedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 2
+        fieldName: Other Member Info
+        fieldRef: 4310.0.4161
+        value: Student Grandfathered
+        valueRef: 4310.0.4174
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 0
+        displayType: 1
+        fieldName: Transaction Membership Type
+        fieldRef: 4310.0.4101
+        value: Student
+        valueRef: 4310.0.4110
+      - !ruby/object:Etapper::API::DefinedValue 
+        dataType: 1
+        displayType: 0
+        fieldName: Transaction Expire Date
+        fieldRef: 4310.0.3921
+        value: 12/31/1989
+        valueRef: 4310.0.1406241
+    final: false
+    fund: Membership
+    fundraiser: 
+    lastModifiedDate: 
+    letter: 
+    nonDeductibleAmount: 15.0
+    note: ""
+    offsettingRef: 
+    orderDetail: 
+    orderInfo: 
+    originalAccountName: 
+    originalAccountRef: 
+    originalTransactionRef: 
+    receipt: 
+    recognitionName: 
+    recognitionType: 0
+    ref: 4310.0.1389680
+    segmentedTransactionRef: 
+    softCredit: 
+    tributeAccountName: 
+    tributeAccountRef: 
+    type: 5
+    valuable: !ruby/object:Etapper::API::Valuable 
+      bond: 
+      cash: !ruby/object:Etapper::API::Cash 
+        note: 
+      check: 
+      creditCard: 
+      electronicFundsTransfer: 
+      inKind: 
+      insurance: 
+      realEstate: 
+      stock: 
+      type: 1
+pages: 5
+start: 80
+total: 99
+usedCache: true

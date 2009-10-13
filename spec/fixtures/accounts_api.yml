@@ -330,3 +330,196 @@ SteveEley: !ruby/object:Etapper::API::Account
   tributeRoleRef: 
   userRoleRef: 
   webAddress: 
+EmilieTownes: !ruby/object:Etapper::API::Account 
+  accountCreatedDate: 1985-01-01T17:00:00+00:00
+  accountDefinedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Institution
+      fieldRef: 4310.0.3893
+      value: Yale University
+      valueRef: 1441.0.16606270
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 2
+      fieldName: Data Source
+      fieldRef: 4310.0.2546
+      value: Advanced Import (12/4/2008 11:04 AM)
+      valueRef: 1441.0.7381071
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 1
+      displayType: 0
+      fieldName: Expire Date
+      fieldRef: 4310.0.3891
+      value: 12/31/2009
+      valueRef: 1441.0.16606266
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 1
+      fieldName: Citizenship
+      fieldRef: 4310.0.3927
+      value: USA
+      valueRef: 4310.0.4016
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Access ID
+      fieldRef: 4310.0.3881
+      value: T29375
+      valueRef: 1441.0.16606268
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Sterling Circle
+      fieldRef: 1441.0.4060192
+      value: Inaugural Member
+      valueRef: 1441.0.16606271
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Institution Department
+      fieldRef: 4310.0.3895
+      value: Associate Dean of Academic Affairs, Andrew W. Mellon Professor of African American Religion and Theology
+      valueRef: 1441.0.16606267
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 1
+      fieldName: Ethnic Background
+      fieldRef: 4310.0.4060
+      value: Black, Not Hispanic
+      valueRef: 4310.0.4062
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 2
+      fieldName: Data Source
+      fieldRef: 4310.0.2546
+      value: Advanced Import (11/17/2008 10:48 AM)
+      valueRef: 1441.0.5048362
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 1
+      fieldName: Gender
+      fieldRef: 4310.0.4070
+      value: Female
+      valueRef: 4310.0.4071
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Region
+      fieldRef: 4310.0.3913
+      value: NE - New England-Maritimes
+      valueRef: 1441.0.16606269
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 1
+      fieldName: Account Type
+      fieldRef: 4310.0.3923
+      value: Individual
+      valueRef: 4310.0.3924
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 3
+      displayType: 0
+      fieldName: Birth Year
+      fieldRef: 4310.0.3885
+      value: "1955"
+      valueRef: 1441.0.16606272
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 1
+      fieldName: Membership Type
+      fieldRef: 4310.0.4074
+      value: Member (Regular)
+      valueRef: 4310.0.4081
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 2
+      fieldName: Data Source
+      fieldRef: 4310.0.2546
+      value: Advanced Import (1/14/2009 5:23 PM)
+      valueRef: 1441.0.13995168
+  accountLastModifiedDate: 2009-01-27T19:00:02+00:00
+  accountRoleType: 0
+  address: |-
+    Yale Divinity School
+    409 Prospect Street
+  city: New Haven
+  country: US
+  county: 
+  donorRecognitionName: 
+  donorRecognitionType: 0
+  donorRoleRef: 4310.0.1389722
+  email: emilie.townes@yale.edu
+  firstName: 
+  id: 6955
+  lastName: 
+  longSalutation: Dr. Townes
+  middleName: 
+  name: Emilie M. Townes
+  note: 
+  personaCreatedDate: 1985-01-01T17:00:00+00:00
+  personaDefinedValues: !seq:Etapper::API::ArrayOfDefinedValue 
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Company
+      fieldRef: 4310.0.2570
+      value: Yale University
+      valueRef: 1441.0.13995666
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Jack's Salutation
+      fieldRef: 1441.0.6404159
+      value: Emilie
+      valueRef: 1441.0.7381092
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Nickname
+      fieldRef: 4310.0.3899
+      value: Emilie
+      valueRef: 4310.0.1406088
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Envelope Salutation
+      fieldRef: 4310.0.2572
+      value: Dr. Emilie M. Townes
+      valueRef: 4310.0.1406089
+    - !ruby/object:Etapper::API::DefinedValue 
+      dataType: 0
+      displayType: 0
+      fieldName: Other Sal
+      fieldRef: 4310.0.3903
+      value: "Emilie M. Townes "
+      valueRef: 4310.0.1406090
+  personaLastModifiedDate: 2009-01-14T22:24:16+00:00
+  personaType: Business
+  personaTypes: !seq:Etapper::API::ArrayOfstring 
+    - Home
+    - Business
+  phones: !seq:Etapper::API::ArrayOfPhone 
+    - !ruby/object:Etapper::API::Phone 
+      number: 203-535-8288
+      type: Mobile
+    - !ruby/object:Etapper::API::Phone 
+      number: 203-432-0360
+      type: Fax
+    - !ruby/object:Etapper::API::Phone 
+      number: 203-432-5309
+      type: Business
+    - !ruby/object:Etapper::API::Phone 
+      number: 203-789-2105
+      type: Home
+  postalCode: "06511"
+  primaryPersona: true
+  ref: 4310.0.1389722
+  shortSalutation: Emilie
+  sortName: Townes, Emilie M.
+  state: CT
+  teamRoleRef: 
+  title: 
+  tributeRoleRef: 1441.0.11462693
+  userRoleRef: 
+  webAddress: 
