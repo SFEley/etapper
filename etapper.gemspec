@@ -10,7 +10,6 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Stephen Eley"]
   s.date = %q{2009-10-16}
-  s.description = %q{TODO: longer description of your gem}
   s.email = %q{seley@aarweb.org}
   s.extra_rdoc_files = [
     "README.rdoc"
@@ -118,6 +117,7 @@ Gem::Specification.new do |s|
      "doc/etapestry_wsdl.xml",
      "doc/faults.yml",
      "doc/upgrading_wsdl.txt",
+     "etapper.gemspec",
      "lib/etapper.rb",
      "lib/etapper/api/ServiceClient.rb",
      "lib/etapper/api/service.rb",
