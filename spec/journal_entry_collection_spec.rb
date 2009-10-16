@@ -66,7 +66,19 @@ describe Etapper::JournalEntryCollection do
     @this.size.should == 99
   end
   
-
-    
+  it "returns eTapper objects of the appropriate type" do
+    @this.first.should be_a_kind_of Etapper::Contact
+  end
+  
+  it "knows its account" do
+    @this.account.should == @account
+  end
+  
+  it "can add journal entries to the account" do
+    @dummy.expects(:addGift).returns("111.1.1111")
+    gift = Etapper::Gift.new
+    (@this << gift).should == @this
+    @this.size.should == 100
+  end
      
 end

@@ -3,12 +3,12 @@ require 'date'
 module Etapper
   # Retrieves journal entries consecutively from eTapestry, and allows us to enumerate over them.
   class JournalEntryCollection < Enumerator
-    attr_reader :request, :type
+    attr_reader :request, :account
     
     # Returns a new collection of journal entries. _Requires_ an Etapper::Account object as the first
     # parameter. Also allows options (:type, :count, etc) to be passed to the journal entry request.
     def initialize(account=nil, options={})
-      raise RequiredFieldError, "An account is required!" unless account
+      raise RequiredFieldError, "An account is required!" unless @account = account
       
       # Set up our request
       @request = API::PagedJournalEntriesRequest.new
@@ -40,7 +40,7 @@ module Etapper
           record = @records[counter]
           etapper_class = Etapper.etapper_class(record.class)
           
-          yielder.yield record
+          yielder.yield etapper_class.new(record)
           counter += 1
         end
       end
@@ -54,6 +54,17 @@ module Etapper
     
     def complete?
       @records.count == size
+    end
+    
+    # Adds a journal entry of the appropriate type to the account, and to the end of this collection.
+    # Note that no exceptional validations happen here, and the added record may not match the collection's
+    # query parameters.  Use with moderate caution.
+    def <<(addendum)
+      addendum.account = @account
+      addendum.save
+      @records.push addendum  # Add to the end of this collection
+      @total += 1  # Increase the size of the collection
+      self  # Return the object again so that << can be chained
     end
   end
 end
