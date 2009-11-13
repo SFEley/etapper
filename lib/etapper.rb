@@ -1,5 +1,3 @@
-require 'rubygems'
-
 # Pull stuff out of vendor/gems
 Dir.glob(File.dirname(__FILE__) + "/../vendor/gems/*").each do |path|
   gem_name = File.basename(path.gsub(/-[\d\.]+$/, ''))

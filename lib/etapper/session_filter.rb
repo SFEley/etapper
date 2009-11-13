@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'soap/rpc/driver'
 require 'soap/filter/streamhandler'
 
