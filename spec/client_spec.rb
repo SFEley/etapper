@@ -17,15 +17,15 @@ describe "Bare client" do
   end
   
   it "knows its username" do
-    client.username.should == 'etapper_johntest'
+    client.username.should == 'etapper_sandbox'
   end
 
   it "knows its password" do
-    client.password.should == 'mypass'
+    client.password.should == 'mypass1234'
   end
   
   it "lets you set a password" do
-    lambda{client.password = 'mypass'}.should_not raise_error
+    lambda{client.password = 'mypass1234'}.should_not raise_error
   end
   
   it "knows if it's connected" do

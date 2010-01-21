@@ -65,35 +65,56 @@ module Etapper
       unless connected?
         raise ConnectionError, "Username is required!" unless username
         raise ConnectionError, "Password is required!" unless password
-        result = @driver.login(@username, @password)
-        if result == ''
-          @connected = true
-        else  # May need a redirect
-          newurl = URI.parse(result)
-          newurl.query = nil   # Strip off the '?wsdl' parameter at the end
-          driver.endpoint_url = newurl.to_s
-          @connected = connect
+        begin
+          result = driver.login(@username, @password)
+          if result == ''
+            @connected = true
+          else  # May need a redirect
+            newurl = URI.parse(result)
+            newurl.query = nil   # Strip off the '?wsdl' parameter at the end
+            driver.endpoint_url = newurl.to_s
+            @connected = connect
+          end
+        rescue  # We just can't connect right now, it seems
+          @connected = false
+          false
         end
       end
     end
     
     def disconnect
-      driver.logout if connected?
-      @connected = false
-      true
+      begin
+        driver.logout if connected?
+        true
+      rescue  # We don't care what went wrong, we just need to know we're not connected
+        false
+      ensure
+        @connected = false
+      end
     end
     
     # Our primary proxy. Sends anything we don't know about to the driver for processing.
     def method_missing(method, *params)
       raise NoMethodError if method == :driver  # This is protected for a reason
-      unless connected?
-        if autoconnect
-          connect
-        else
-          raise ConnectionError, "Autoconnect is disabled! Use the 'connect' method before making any API calls."
+      tries = 0
+      begin
+        unless connected?
+          if autoconnect
+            connect
+          else
+            raise ConnectionError, "Autoconnect is disabled! Use the 'connect' method before making any API calls."
+          end
         end
-      end
-      driver.send(method, *params)
+        driver.send(method, *params)
+      rescue StandardError, SocketError => e
+        # Try three times, waiting a few seconds and forcing login again each time
+        while tries < 3
+          sleep (tries += 1)
+          disconnect
+          retry
+        end
+        raise  # We give up
+      end 
     end
  
   protected

@@ -7,8 +7,8 @@ class TestError < StandardError; end
 $:.unshift(File.dirname(__FILE__) + '/../lib')
 $:.unshift(File.dirname(__FILE__))
 
-ENV["ETAPPER_USERNAME"] = 'etapper_johntest'
-ENV["ETAPPER_PASSWORD"] = 'mypass'
+ENV["ETAPPER_USERNAME"] = 'etapper_sandbox'
+ENV["ETAPPER_PASSWORD"] = 'mypass1234'
 
 require 'etapper'
 require 'stub_driver'

@@ -28,7 +28,7 @@ share_as :MockDriver do
     @dummy = stub('driver') do  
     #   stubs(:endpoint_url).returns('### ORIGINAL URL ###')
     #   # Our good and bad logins
-      stubs(:login).with('etapper_johntest','mypass').returns('')
+      stubs(:login).with('etapper_sandbox','mypass1234').returns('')
       stubs(:login).with('etapper_jilltest','anotherpass').returns('http://redirect.etapestry.com/v2messaging/service?wsdl')
     #   stubs(:login).with('etapper_carltest','anotherpass').raises(MockFault, 'Account Password Expired')
     #   stubs(:login).with('etapper_fredtest','athirdpass').raises(MockFault, 'Account Locked Out')

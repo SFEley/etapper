@@ -92,12 +92,12 @@ describe "Authentication" do
   end
   
   it "doesn't try to connect without a username" do
-    client.expects(:username).returns(nil)
+    client.stubs(:username).returns(nil)
     lambda {client.fakeMethod}.should raise_error(Etapper::ConnectionError, "Username is required!")
   end
 
   it "doesn't try to connect without a password" do
-    client.expects(:password).returns(nil)
+    client.stubs(:password).returns(nil)
     lambda {client.fakeMethod}.should raise_error(Etapper::ConnectionError, "Password is required!")
   end
   
@@ -125,9 +125,9 @@ describe "Authentication" do
       client.connect
     end
     
-    it "bombs out on any failure" do
+    it "returns false on any failure" do
       @dummy.expects(:login).raises(MockFault, "Account Locked Out")
-      lambda{client.connect}.should raise_error
+      client.connect.should be_false
     end
   end
   
