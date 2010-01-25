@@ -6,18 +6,16 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "etapper"
     gem.summary = %Q{Ruby gem to connect to eTapestry's SOAP API}
-    # gem.description = %Q{TODO: longer description of your gem}
+    gem.description = %Q{Ruby gem to connect to eTapestry's SOAP API}
     gem.email = "seley@aarweb.org"
     gem.homepage = "http://github.com/SFEley/etapper"
     gem.authors = ["Stephen Eley"]
-    gem.rubyforge_project = "etapper"
     gem.add_dependency "httpclient"
-    gem.add_development_dependency "rspec"
+    gem.add_development_dependency "rspec", ">= 1.2.9"
+    gem.add_development_dependency "yard", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
-  Jeweler::RubyforgeTasks.new do |rubyforge|
-    rubyforge.doc_task = "rdoc"
-  end
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end
@@ -38,18 +36,13 @@ task :spec => :check_dependencies
 
 task :default => :spec
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  if File.exist?('VERSION')
-    version = File.read('VERSION')
-  else
-    version = ""
+begin
+  require 'yard'
+  YARD::Rake::YardocTask.new
+rescue LoadError
+  task :yardoc do
+    abort "YARD is not available. In order to run yardoc, you must: sudo gem install yard"
   end
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "etapper #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
 namespace :etap do
