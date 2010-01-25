@@ -12,6 +12,12 @@ describe "Defined Value" do
     d.fieldName.should == "Member Name"
   end
   
+  it "converts eTapestry field names to proper method names" do
+    e = Etapper::API::DefinedValue.new(1, 0, "990 DQs", "4310.0.5555", "12/31/2009", "4310.0.5555555")
+    d = Etapper::DefinedValue.new(e)
+    d.key.should == :_990_d_qs
+  end
+    
   it "allows setting Display Type" do
     d = Etapper::DefinedValue.new(:foo => "bar", :display_type => :multi_select)
     d.displayType.should == 2
