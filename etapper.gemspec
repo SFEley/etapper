@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{etapper}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Stephen Eley"]
@@ -666,7 +666,7 @@ Gem::Specification.new do |s|
      "vendor/gems/soap4r-1.5.8.2/test/xsd/xsd2ruby/test_xsd2ruby.rb"
   ]
   s.homepage = %q{http://github.com/SFEley/etapper}
-  # s.rdoc_options = ["--charset=UTF-8"]
+  s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{etapper}
   s.rubygems_version = %q{1.3.5}
